@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #F5F4EF; }
+  body { font-family: 'IBM Plex Sans', sans-serif; color: #201F1B; }
+  a { color: #3A6EA8; text-decoration: none; }
+  a:hover { color: #2A527E; text-decoration: underline; }
+  button { font-family: inherit; }
+</style>
+</helmet>
+
+<div style="max-width: 1440px; margin: 0 auto; padding: 40px 48px 64px 48px; display: flex; flex-direction: column; gap: 48px;">
+
+  <!-- ============ HEADER ============ -->
+  <header style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A8474; text-transform: uppercase;">Africa Operations / <span style="color: #2E7D5B; font-weight: 500;">Burundi</span> · Dashboard Prototype · V3</div>
+    <h1 style="margin: 0; font-size: 34px; font-weight: 700; letter-spacing: -0.01em;">Burundi — Country Dashboard</h1>
+    <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #6E6A5E;">
+      <span style="display: inline-flex; gap: 3px;"><span style="width: 14px; height: 9px; background: #B4533A; border-radius: 2px;"></span><span style="width: 14px; height: 9px; background: #F5F4EF; border: 1px solid #D8D4C8; border-radius: 2px;"></span><span style="width: 14px; height: 9px; background: #2E7D5B; border-radius: 2px;"></span></span>
+      <span>Structured as answers to 5 standard dashboard questions · Sources: VNR 2020, VNR 2026, UN SDG Database</span>
+    </div>
+  </header>
+
+  <!-- ============ HEADLINE INDICATORS ============ -->
+  <section style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 4px; height: 18px; background: #2E7D5B; border-radius: 2px;"></span><h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #45423A;">Headline Indicators</h2></div>
+
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;">
+
+      <!-- Electricity -->
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px 18px 14px 18px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Electricity Access</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="font-size: 32px; font-weight: 700; color: #2E7D5B; letter-spacing: -0.02em;">25.9%</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #2E7D5B; background: #E8F2EC; padding: 2px 7px; border-radius: 999px;">▲ +16.6 pts</span>
+        </div>
+        <svg viewBox="0 0 200 62" style="width: 100%; height: 62px; display: block;">
+          <defs><linearGradient id="gElec" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7D5B" stop-opacity="0.22"></stop><stop offset="1" stop-color="#2E7D5B" stop-opacity="0"></stop></linearGradient></defs>
+          <polygon points="10,40 60,33 110,24 160,23 190,14 190,56 10,56" fill="url(#gElec)"></polygon>
+          <polyline points="10,40 60,33 110,24 160,23 190,14" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round"></polyline>
+          <circle cx="10" cy="40" r="3" fill="#2E7D5B"><title>2017 — 9.3% (VNR 2026, p.52)</title></circle>
+          <circle cx="110" cy="24" r="3" fill="#2E7D5B"><title>2022 — ~20% (VNR 2026, p.52)</title></circle>
+          <circle cx="160" cy="23" r="3" fill="#FFFFFF" stroke="#B0791F" stroke-width="2"><title>2024 — 20.1% per UN SDG Database — flagged gap vs. national narrative figure</title></circle>
+          <circle cx="190" cy="14" r="3.5" fill="#2E7D5B"><title>2025 — 25.9% (VNR 2026, p.52)</title></circle>
+          <text x="10" y="52" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">2017</text>
+          <text x="172" y="52" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">2025</text>
+        </svg>
+        <div style="font-size: 11.5px; line-height: 1.45; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> UN SDG DB shows 20.1% (2024) — data gap flagged.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">VNR 2026, p.52</div></sc-if>
+      </div>
+
+      <!-- Water -->
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px 18px 14px 18px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Improved Water Access</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="font-size: 32px; font-weight: 700; color: #2E7D5B; letter-spacing: -0.02em;">86.3%</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #2E7D5B; background: #E8F2EC; padding: 2px 7px; border-radius: 999px;">▲ +4.0 pts</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px; padding: 4px 0;">
+          <div style="display: grid; grid-template-columns: 38px 1fr 40px; align-items: center; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;">Urban</span>
+            <div style="height: 10px; background: #ECE9E1; border-radius: 999px; overflow: hidden;" title="Urban improved water access, 2024 (JMP)"><div style="width: 97.4%; height: 100%; background: #3A6EA8; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #3A6EA8; font-weight: 500;">97.4%</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 38px 1fr 40px; align-items: center; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;">Rural</span>
+            <div style="height: 10px; background: #ECE9E1; border-radius: 999px; overflow: hidden;" title="Rural improved water access, 2024 (JMP) — down from 85.6% in 2020"><div style="width: 84.4%; height: 100%; background: #B0791F; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F; font-weight: 500;">84.4%</span>
+          </div>
+        </div>
+        <div style="font-size: 11.5px; line-height: 1.45; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> Rural coverage is slipping while urban nears full access.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">VNR 2026, p.61–62 · JMP 2024</div></sc-if>
+      </div>
+
+      <!-- Financing -->
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px 18px 14px 18px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">SDG Financing Tracked</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="font-size: 32px; font-weight: 700; color: #3A6EA8; letter-spacing: -0.02em;">$1.5B</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #3A6EA8; background: #E9F0F7; padding: 2px 7px; border-radius: 999px;">thru 2035</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px; padding: 4px 0;">
+          <div style="display: grid; grid-template-columns: 62px 1fr; align-items: center; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;">Jobs</span>
+            <div style="height: 10px; background: #ECE9E1; border-radius: 999px;" title="Decent jobs (SDG 8) — top-ranked sector of partner commitments (Graphique 74)"><div style="width: 100%; height: 100%; background: #3A6EA8; border-radius: 999px;"></div></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 62px 1fr; align-items: center; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;">Industry</span>
+            <div style="height: 10px; background: #ECE9E1; border-radius: 999px;" title="Industrialization (SDG 9) — 2nd-ranked sector"><div style="width: 82%; height: 100%; background: #6E93BC; border-radius: 999px;"></div></div>
+          </div>
+          <div style="display: grid; grid-template-columns: 62px 1fr; align-items: center; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;">Energy</span>
+            <div style="height: 10px; background: #ECE9E1; border-radius: 999px;" title="Energy (SDG 7) — 3rd-ranked sector"><div style="width: 66%; height: 100%; background: #A3BCD4; border-radius: 999px;"></div></div>
+          </div>
+        </div>
+        <div style="font-size: 11.5px; line-height: 1.45; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> No single aggregate financing-gap figure is stated.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">VNR 2026, p.122</div></sc-if>
+      </div>
+
+      <!-- Revenue -->
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px 18px 14px 18px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Domestic Revenue / GDP</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="font-size: 32px; font-weight: 700; color: #2E7D5B; letter-spacing: -0.02em;">17.7%</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #2E7D5B; background: #E8F2EC; padding: 2px 7px; border-radius: 999px;">▲ +4.3 pts</span>
+        </div>
+        <svg viewBox="0 0 200 62" style="width: 100%; height: 62px; display: block;">
+          <defs><linearGradient id="gRev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7D5B" stop-opacity="0.22"></stop><stop offset="1" stop-color="#2E7D5B" stop-opacity="0"></stop></linearGradient></defs>
+          <polygon points="10,40 100,33 190,20 190,56 10,56" fill="url(#gRev)"></polygon>
+          <polyline points="10,40 100,33 190,20" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round"></polyline>
+          <line x1="10" y1="44" x2="190" y2="44" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 3"></line>
+          <circle cx="10" cy="40" r="3" fill="#2E7D5B"><title>2015 — 13.4% (VNR 2026, p.87)</title></circle>
+          <circle cx="190" cy="20" r="3.5" fill="#2E7D5B"><title>2024 — 17.7% (VNR 2026, p.87, 120)</title></circle>
+          <text x="10" y="56" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">2015</text>
+          <text x="172" y="14" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">2024</text>
+          <text x="90" y="55" font-family="IBM Plex Mono" font-size="8" fill="#B4533A">tax pressure 13.1%</text>
+        </svg>
+        <div style="font-size: 11.5px; line-height: 1.45; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> Tax pressure 13.1% — below the Sevilla threshold.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">VNR 2026, p.87, 120</div></sc-if>
+      </div>
+
+      <!-- Debt -->
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px 18px 14px 18px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Debt Service / Exports</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="font-size: 32px; font-weight: 700; color: #B0791F; letter-spacing: -0.02em;">10.9%</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B0791F; background: #F6EEDD; padding: 2px 7px; border-radius: 999px;">2023</span>
+        </div>
+        <svg viewBox="0 0 200 62" style="width: 100%; height: 62px; display: block;">
+          <polyline points="10,26 100,33 190,40" fill="none" stroke="#9B968A" stroke-width="2" stroke-linecap="round"><title>Internal debt service — declining share</title></polyline>
+          <polyline points="10,46 100,34 190,16" fill="none" stroke="#B0791F" stroke-width="2" stroke-linecap="round"><title>External debt service — rising share</title></polyline>
+          <circle cx="100" cy="33.5" r="3.5" fill="#FFFFFF" stroke="#B4533A" stroke-width="2"><title>2023 — external service overtook internal (UN SDG DB 17.4.1)</title></circle>
+          <text x="88" y="55" font-family="IBM Plex Mono" font-size="8.5" fill="#B4533A">2023</text>
+          <text x="150" y="12" font-family="IBM Plex Mono" font-size="8.5" fill="#B0791F">external</text>
+          <text x="150" y="50" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">internal</text>
+        </svg>
+        <div style="font-size: 11.5px; line-height: 1.45; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> External service overtook internal from 2023.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">UN SDG DB · VNR 2026, p.87</div></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Q1 · FOCUS GOALS ============ -->
+  <section data-screen-label="Q1 Focus Goals" style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <span style="width: 4px; height: 18px; background: #2E7D5B; border-radius: 2px;"></span>
+      <h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #45423A;">Q1 · 2026 HLPF Focus Goals — Achievements &amp; Gaps</h2>
+      <span style="font-size: 12px; color: #9B968A; margin-left: auto;">{{ filterNote }}</span>
+    </div>
+
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <button style="{{ chip.s6 }}" onClick="{{ pick.s6 }}"><span style="font-weight: 600;">6</span>&nbsp;Water &amp; Sanitation</button>
+      <button style="{{ chip.s7 }}" onClick="{{ pick.s7 }}"><span style="font-weight: 600;">7</span>&nbsp;Clean Energy</button>
+      <button style="{{ chip.s9 }}" onClick="{{ pick.s9 }}"><span style="font-weight: 600;">9</span>&nbsp;Industry &amp; Infrastructure</button>
+      <button style="{{ chip.s11 }}" onClick="{{ pick.s11 }}"><span style="font-weight: 600;">11</span>&nbsp;Sustainable Cities</button>
+      <button style="{{ chip.s17 }}" onClick="{{ pick.s17 }}"><span style="font-weight: 600;">17</span>&nbsp;Partnerships</button>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+
+      <sc-if value="{{ show.s6 }}" hint-placeholder-val="{{ true }}">
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 24px; height: 24px; border-radius: 6px; background: #26BDE2; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">6</span><span style="font-weight: 600; font-size: 14px;">Water &amp; Sanitation</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">Water</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Improved water access, 2024"><div style="width: 86.3%; height: 100%; background: #2E7D5B; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #2E7D5B;">86.3</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">Rural</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Rural water access — stagnant"><div style="width: 84.4%; height: 100%; background: #B0791F; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B0791F;">84.4</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">Sanitation</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Adequate sanitation, national, 2023"><div style="width: 12.9%; height: 100%; background: #B4533A; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B4533A;">12.9</span>
+          </div>
+        </div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #2E7D5B; font-weight: 600;">✓</span> Access up to 86.3%; Lake Tanganyika/Cohoha buffer restoration underway.</div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #B0791F; font-weight: 600;">△</span> Rural stagnant at 84.4%; sanitation only 12.9%.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">p.61–65</div></sc-if>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ show.s7 }}" hint-placeholder-val="{{ true }}">
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 24px; height: 24px; border-radius: 6px; background: #FCC30B; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">7</span><span style="font-weight: 600; font-size: 14px;">Clean Energy</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">Urban</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Urban electricity access"><div style="width: 66.3%; height: 100%; background: #2E7D5B; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #2E7D5B;">66.3</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">Rural</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Rural electricity access"><div style="width: 17.6%; height: 100%; background: #B4533A; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B4533A;">17.6</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">2030 target</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Energy Compact target — 70% access by 2030"><div style="width: 70%; height: 100%; background: #A3BCD4; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3A6EA8;">70</span>
+          </div>
+        </div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #2E7D5B; font-weight: 600;">✓</span> Energy Compact mobilizes $3.49B, targeting 70% access by 2030.</div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #B0791F; font-weight: 600;">△</span> Rural access only 17.6%; persistent supply losses.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">p.51–55</div></sc-if>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ show.s9 }}" hint-placeholder-val="{{ true }}">
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 24px; height: 24px; border-radius: 6px; background: #FD6925; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">9</span><span style="font-weight: 600; font-size: 14px;">Industry &amp; Infrastructure</span></div>
+        <svg viewBox="0 0 200 58" style="width: 100%; height: 58px; display: block;">
+          <text x="6" y="12" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">Roads in all-season condition</text>
+          <polyline points="10,20 100,32 190,46" fill="none" stroke="#B4533A" stroke-width="2" stroke-linecap="round"></polyline>
+          <circle cx="10" cy="20" r="3" fill="#B4533A"><title>2020–21 — ~78% of road network in all-season condition</title></circle>
+          <circle cx="190" cy="46" r="3.5" fill="#B4533A"><title>2023 — 32.2% — 'a worrying downward dynamic'</title></circle>
+          <text x="16" y="32" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">78%</text>
+          <text x="158" y="42" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">32.2%</text>
+        </svg>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #2E7D5B; font-weight: 600;">✓</span> New investment banks (BIJE, BIDF, FIGA); mobile coverage 66%; internet 22.9%.</div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #B4533A; font-weight: 600;">▼</span> All-season roads collapsed 78% → 32.2% (2023).</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">p.58–59</div></sc-if>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ show.s11 }}" hint-placeholder-val="{{ true }}">
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 24px; height: 24px; border-radius: 6px; background: #FD9D24; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">11</span><span style="font-weight: 600; font-size: 14px;">Sustainable Cities</span></div>
+        <div style="display: flex; align-items: center; gap: 14px; padding: 4px 0;">
+          <svg viewBox="0 0 58 58" style="width: 58px; height: 58px;">
+            <circle cx="29" cy="29" r="23" fill="none" stroke="#ECE9E1" stroke-width="8"></circle>
+            <circle cx="29" cy="29" r="23" fill="none" stroke="#B0791F" stroke-width="8" stroke-dasharray="49.6 94.9" stroke-linecap="round" transform="rotate(-90 29 29)"><title>34.3% of urban population in slums / informal settlements (2020)</title></circle>
+            <text x="29" y="33" text-anchor="middle" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">34%</text>
+          </svg>
+          <div style="font-size: 11px; line-height: 1.5; color: #6E6A5E;">of urban population in slums / informal settlements, 2020</div>
+        </div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #2E7D5B; font-weight: 600;">✓</span> Territorial planning (SPAT) in all provinces; urban authority OBUHA created.</div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #B0791F; font-weight: 600;">△</span> Housing remains the major urban challenge.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">p.66–67</div></sc-if>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ show.s17 }}" hint-placeholder-val="{{ true }}">
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 24px; height: 24px; border-radius: 6px; background: #19486A; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">17</span><span style="font-weight: 600; font-size: 14px;">Partnerships</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">Rev. 2015</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Public revenue / GDP, 2015"><div style="width: 53.6%; height: 100%; background: #A3BCD4; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;">13.4</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">Rev. 2024</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Public revenue / GDP, 2024"><div style="width: 70.8%; height: 100%; background: #2E7D5B; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #2E7D5B;">17.7</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 6px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">Birth reg.</span>
+            <div style="height: 8px; background: #ECE9E1; border-radius: 999px;" title="Birth registration, 2023"><div style="width: 97%; height: 100%; background: #3A6EA8; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3A6EA8;">97</span>
+          </div>
+        </div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #2E7D5B; font-weight: 600;">✓</span> Revenue up 13% → 17.7% of GDP; birth registration to 97%.</div>
+        <div style="font-size: 12px; line-height: 1.5; color: #45423A;"><span style="color: #B0791F; font-weight: 600;">△</span> External debt service overtook internal from 2023 — 'urgency of ongoing reforms.'</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">p.85–89</div></sc-if>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ============ Q2 · JOINT IMPLEMENTATION ============ -->
+  <section data-screen-label="Q2 Joint Implementation" style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 4px; height: 18px; background: #3A6EA8; border-radius: 2px;"></span><h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #45423A;">Q2 · Innovation for Joint SDG &amp; Agenda 2063 Implementation</h2></div>
+    <p style="margin: 0; max-width: 900px; font-size: 13.5px; line-height: 1.6; color: #45423A;">No stand-alone SDG–Agenda 2063 tool — integration lives in the planning architecture itself: the <strong>PND 2018–2027</strong>, <strong>Vision 2040–2060</strong>, the <strong>"4P" pillar system</strong> and a chapter mapping the digital ecosystem to the <strong>UN Global Digital Compact</strong>.</p>
+
+    <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 14px;">
+
+      <!-- 4P framework -->
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">4P Framework — Self-Assessed Performance</div>
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;"><span>All 17 SDGs</span><span style="color: #2E7D5B;">49% of targets improving</span></div>
+          <div style="display: flex; height: 14px; border-radius: 999px; overflow: hidden;">
+            <div style="width: 49%; background: #2E7D5B;" title="49% improving"></div>
+            <div style="width: 4%; background: #D9A94A;" title="4% stagnant"></div>
+            <div style="width: 12%; background: #B4533A;" title="12% deteriorating"></div>
+            <div style="width: 35%; background: #DDD9CE;" title="35% not evaluable for lack of data"></div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 2px;">
+          <div style="display: grid; grid-template-columns: 110px 1fr 44px; align-items: center; gap: 8px;">
+            <span style="font-size: 12px; color: #45423A;">P1 · Population</span>
+            <div style="display: flex; height: 9px; border-radius: 999px; overflow: hidden;"><div style="width: 51.5%; background: #2E7D5B;" title="Advancing"></div><div style="width: 14%; background: #D9A94A;" title="Stagnant"></div><div style="width: 11%; background: #B4533A;" title="Declining"></div><div style="width: 23.5%; background: #DDD9CE;" title="No data"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #2E7D5B;">51.5%</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 110px 1fr 44px; align-items: center; gap: 8px;">
+            <span style="font-size: 12px; color: #45423A;">P2 · Prosperity</span>
+            <div style="display: flex; height: 9px; border-radius: 999px; overflow: hidden;"><div style="width: 58.3%; background: #2E7D5B;" title="Advancing"></div><div style="width: 12%; background: #D9A94A;" title="Stagnant"></div><div style="width: 9%; background: #B4533A;" title="Declining"></div><div style="width: 20.7%; background: #DDD9CE;" title="No data"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #2E7D5B;">58.3%</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 110px 1fr 44px; align-items: center; gap: 8px;">
+            <span style="font-size: 12px; color: #45423A;">P3 · Planet</span>
+            <div style="display: flex; height: 9px; border-radius: 999px; overflow: hidden;"><div style="width: 21.4%; background: #2E7D5B;" title="Advancing"></div><div style="width: 18%; background: #D9A94A;" title="Stagnant"></div><div style="width: 16%; background: #B4533A;" title="Declining"></div><div style="width: 44.6%; background: #DDD9CE;" title="No data"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B0791F;">21.4%</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 110px 1fr 44px; align-items: center; gap: 8px;">
+            <span style="font-size: 12px; color: #45423A;">P4 · Peace &amp; Part.</span>
+            <div style="display: flex; height: 9px; border-radius: 999px; overflow: hidden;"><div style="width: 70%; background: #2E7D5B;" title="Advancing"></div><div style="width: 10%; background: #D9A94A;" title="Stagnant"></div><div style="width: 6%; background: #B4533A;" title="Declining"></div><div style="width: 14%; background: #DDD9CE;" title="No data"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #2E7D5B;">70%</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #6E6A5E;">
+          <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #2E7D5B;"></span>Advancing</span>
+          <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #D9A94A;"></span>Stagnant</span>
+          <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #B4533A;"></span>Declining</span>
+          <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #DDD9CE;"></span>No data</span>
+        </div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">VNR 2026, p.20–21, xiv, 89–90</div></sc-if>
+      </div>
+
+      <!-- GDC -->
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Global Digital Compact Alignment</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="background: #F5F4EF; border-radius: 8px; padding: 10px;" title="Mobile penetration, Q2 2025 (ARCT)"><div style="font-size: 20px; font-weight: 700; color: #3A6EA8;">71.0%</div><div style="font-size: 10.5px; color: #6E6A5E;">Mobile penetration</div></div>
+          <div style="background: #F5F4EF; border-radius: 8px; padding: 10px;" title="Internet penetration, Q2 2025 — up 3.3 pts in a single quarter"><div style="font-size: 20px; font-weight: 700; color: #3A6EA8;">29.3% <span style="font-size: 11px; color: #2E7D5B;">▲3.3</span></div><div style="font-size: 10.5px; color: #6E6A5E;">Internet penetration</div></div>
+          <div style="background: #F5F4EF; border-radius: 8px; padding: 10px;" title="Mobile-money connected subscriptions"><div style="font-size: 20px; font-weight: 700; color: #3A6EA8;">62.1%</div><div style="font-size: 10.5px; color: #6E6A5E;">Mobile money</div></div>
+          <div style="background: #F5F4EF; border-radius: 8px; padding: 10px;" title="Fibre backbone now reaches all 18 provinces"><div style="font-size: 20px; font-weight: 700; color: #3A6EA8;">18/18</div><div style="font-size: 10.5px; color: #6E6A5E;">Provinces on fibre</div></div>
+        </div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">Digital ecosystem mapped chapter-by-chapter to the UN GDC; COMGOV networks 100+ institutions, BERNET links 14 universities.</p>
+        <div style="font-size: 11.5px; line-height: 1.5; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> ICT-skilled staff shrank 4.4%/yr (2018–2022); most networks remain one-way websites.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">VNR 2026, p.111–119 · ARCT Q2 2025</div></sc-if>
+      </div>
+
+      <!-- PND -->
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">PND 2018–2027 — The Joint Planning Anchor</div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">The revised national plan serves the SDGs, Agenda 2063 and Vision 2040–2060 at once — sector platforms are built to deliver against all of them simultaneously.</p>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.pnd }}">{{ lbl.pnd }}</button>
+        <sc-if value="{{ exp.pnd }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">The same logic drives institutional innovation elsewhere: dedicated finance institutions (FIGA guarantee fund, BIJE youth bank, BIDF women's bank) and program-based budgeting were introduced to move from sectoral, uniform interventions toward integrated, territorialized public policy — the VNR's stated condition for balanced delivery of both agendas. Ex.: Multisectoral Food Security &amp; Nutrition Platform, explicitly mandated to deliver against Vision 2040–2060, the PND, the SDGs, Agenda 2063 and EAC Vision 2050. — VNR 2026, p.22, 29, 85–86</p>
+        </sc-if>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">VNR 2026, p.22, 29, 85–86</div></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Q3 · POLICY RESPONSES ============ -->
+  <section data-screen-label="Q3 Policy Responses" style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;"><span style="width: 4px; height: 18px; background: #2E7D5B; border-radius: 2px; align-self: center;"></span><h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #45423A;">Q3 · Policy Responses in Motion</h2><span style="font-size: 12px; font-style: italic; color: #9B968A;">Six named, costed and dated instruments</span></div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div><div style="font-weight: 600; font-size: 15px;">Pacte National pour l'Énergie ("Energy Compact")</div><div style="font-size: 11.5px; font-style: italic; color: #9B968A;">National Energy Compact</div></div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">Mobilizes <strong>$3.49B</strong> public + private under the revised 2024 electricity law, anchored on the Kabu 16, Ruzibazi and Jiji-Murembwe hydropower plants and the Mubuga solar plant.</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Access 30% by 2027 · 70% by 2030</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Generation ×3.5</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Clean cooking 40% of households</span>
+        </div>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.energy }}">{{ lbl.energy }}</button>
+        <sc-if value="{{ exp.energy }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">The 2024 law opens the sector to private participation; plus grid extension and decentralized rural electrification and biogas. Sits atop a full policy stack: a sectoral energy-development strategy, a national renewables strategy and an energy policy letter. — p.51–53</p>
+        </sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div><div style="font-weight: 600; font-size: 15px;">Cadre National Intégré de Financement (CNIF)</div><div style="font-size: 11.5px; font-style: italic; color: #9B968A;">Integrated National Financing Framework (INFF)</div></div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">Tracks <strong>$1.507B</strong> in development-partner commitments through 2035 — Burundi's vehicle for aligning with the <strong>2025 Sevilla Commitment</strong>.</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">$1.507B tracked</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Roadmap adopted 2024</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Sevilla-aligned</span>
+        </div>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.cnif }}">{{ lbl.cnif }}</button>
+        <sc-if value="{{ exp.cnif }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">Built through a multi-stakeholder review of financing needs, mobilized sources, M&amp;E and governance; commitments led by decent jobs, industrialization and energy, then health, hunger, education and poverty reduction. Shifts from unpredictable external aid toward diversified, structured financing — a "profoundly green" INFF with an aid-and-investment tracking platform inside the public-finance system. — p.xiii, 15, 120–124</p>
+        </sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div><div style="font-weight: 600; font-size: 15px;">Stratégie nationale de lutte contre la corruption 2025–2030</div><div style="font-size: 11.5px; font-style: italic; color: #9B968A;">National Anti-Corruption Strategy</div></div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">Targets structural impunity (SDG 16) — against a CPI score stuck between <strong>17 and 20/100</strong> since 2021, with 80%+ naming corruption a major issue.</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">CPI 17–20/100, flat since 2021</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Justice decentralized to hill level</span>
+        </div>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.corr }}">{{ lbl.corr }}</button>
+        <sc-if value="{{ exp.corr }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">Launched under the direct impetus of the Presidency; deployed with a justice-decentralization reform pushing High Courts to commune level, Residence Tribunals to zone level and hill-level mediators (Notables collinaires) — plus virtual court hearings that cut informal interactions and improve case traceability. — p.75–76</p>
+        </sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div><div style="font-weight: 600; font-size: 15px;">Plan Directeur de Digitalisation des Services Publics 2023–2027</div><div style="font-size: 11.5px; font-style: italic; color: #9B968A;">Public-Service Digitalization Master Plan (PDDSP)</div></div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">Rests on two public infrastructure pillars: <strong>COMGOV</strong> (100+ institutions) and <strong>BERNET</strong> (14 universities); digitized civil registry, hospital informatization, tax and business registration already live.</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Evaluations 2025 / 2028</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">COMGOV 100+ institutions</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">BERNET 14 universities</span>
+        </div>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.pddsp }}">{{ lbl.pddsp }}</button>
+        <sc-if value="{{ exp.pddsp }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">COMGOV connects institutions over 75 km of network in Bujumbura and 18 provincial offices; BERNET links universities through 10 aggregation sites for online teaching. Sectoral wins: civil registry (with UNDP), hospital informatization (Enabel), communal taxation and business registration via the ADB platform — with OBR, PAFE and FENACOBU already serving users online. — p.111–112</p>
+        </sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div><div style="font-weight: 600; font-size: 15px;">Projet d'Appui aux Fondations de l'Économie Numérique (PAFEN)</div><div style="font-size: 11.5px; font-style: italic; color: #9B968A;">Digital Economy Foundations Support Project</div></div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">A <strong>$92M World Bank</strong> project (Sept 2024) expanding high-speed internet and accelerating digital adoption across the administration — in service of Vision 2040–2060.</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">World Bank $92M</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Launched Sept 2024</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Internet 29.3% &amp; rising</span>
+        </div>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.pafen }}">{{ lbl.pafen }}</button>
+        <sc-if value="{{ exp.pafen }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">Launched by the Vice-President; strengthens public-resource management. Lands on a fast-moving market: internet penetration 29.3% in Q2 2025 (up 3.3 pts in a single quarter), mobile penetration 71%, and 7.66M connected mobile-money subscriptions. — p.112, 114</p>
+        </sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div><div style="font-weight: 600; font-size: 15px;">Vision Burundi 2040–2060</div><div style="font-size: 11.5px; font-style: italic; color: #9B968A;">Long-term national vision</div></div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">The reference frame for everything above: <strong>emerging economy by 2040, developed country by 2060</strong> — carried by program-based budgeting as a results-management tool.</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Emerging 2040 · Developed 2060</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Program budgeting adopted</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: #F5F4EF; border: 1px solid #E7E4DC; border-radius: 999px; padding: 3px 9px; color: #45423A;">Capital-markets services created</span>
+        </div>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.vision }}">{{ lbl.vision }}</button>
+        <sc-if value="{{ exp.vision }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">The FIGA guarantee-and-support fund, PPP promotion, and new capital-markets services are designed to mobilize national savings and diversify the financing base — with modernization of mining, transport and public-service digitalization named as priority reform fronts. — p.86, 120</p>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINANCING MECHANISMS ============ -->
+  <section data-screen-label="Financing Mechanisms" style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 4px; height: 18px; background: #3A6EA8; border-radius: 2px;"></span><h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #45423A;">Named Financing Mechanisms — Funding the Gap</h2></div>
+    <p style="margin: 0; max-width: 900px; font-size: 13.5px; line-height: 1.6; color: #45423A;">No consolidated financing-gap figure exists; instead a layered strategy — domestic instruments first, climate and innovative finance second, partnership channels third.</p>
+
+    <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 14px;">
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Partner Commitments Through 2035 — Sector Ranking</div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 8px;"><span style="font-size: 12px; color: #45423A;">Decent jobs <span style="color: #9B968A;">SDG 8</span></span><div style="height: 12px; background: #ECE9E1; border-radius: 999px;" title="Rank 1 — bar length indicates rank only; VNR does not disaggregate dollar values"><div style="width: 100%; height: 100%; background: #3A6EA8; border-radius: 999px;"></div></div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 8px;"><span style="font-size: 12px; color: #45423A;">Industrialization <span style="color: #9B968A;">SDG 9</span></span><div style="height: 12px; background: #ECE9E1; border-radius: 999px;" title="Rank 2"><div style="width: 87%; height: 100%; background: #4C7DB2; border-radius: 999px;"></div></div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 8px;"><span style="font-size: 12px; color: #45423A;">Energy <span style="color: #9B968A;">SDG 7</span></span><div style="height: 12px; background: #ECE9E1; border-radius: 999px;" title="Rank 3"><div style="width: 74%; height: 100%; background: #5F8CBB; border-radius: 999px;"></div></div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 8px;"><span style="font-size: 12px; color: #45423A;">Health <span style="color: #9B968A;">SDG 3</span></span><div style="height: 12px; background: #ECE9E1; border-radius: 999px;" title="Rank 4"><div style="width: 60%; height: 100%; background: #729BC4; border-radius: 999px;"></div></div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 8px;"><span style="font-size: 12px; color: #45423A;">Hunger <span style="color: #9B968A;">SDG 2</span></span><div style="height: 12px; background: #ECE9E1; border-radius: 999px;" title="Rank 5"><div style="width: 47%; height: 100%; background: #86AACD; border-radius: 999px;"></div></div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 8px;"><span style="font-size: 12px; color: #45423A;">Education <span style="color: #9B968A;">SDG 4</span></span><div style="height: 12px; background: #ECE9E1; border-radius: 999px;" title="Rank 6"><div style="width: 35%; height: 100%; background: #9AB9D6; border-radius: 999px;"></div></div></div>
+          <div style="display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 8px;"><span style="font-size: 12px; color: #45423A;">Poverty <span style="color: #9B968A;">SDG 1</span></span><div style="height: 12px; background: #ECE9E1; border-radius: 999px;" title="Rank 7"><div style="width: 24%; height: 100%; background: #AEC8DF; border-radius: 999px;"></div></div></div>
+        </div>
+        <div style="font-size: 11px; line-height: 1.5; color: #9B968A;">Ranking per Graphique 74 (total $1,507,171,475). Bar lengths indicate rank only — dollar values are not disaggregated per sector.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">VNR 2026, p.122</div></sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #2E7D5B;">Domestic Instruments</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12.5px; line-height: 1.5; color: #45423A;">
+          <div><strong>Public bonds</strong> — mobilize national savings, reduce external dependence.</div>
+          <div><strong>Fiscal digitalization</strong> — tax ID (NIF), automated collection; internal revenue 7.8% → 10.6% of GDP (2016–2024).</div>
+          <div><strong>FIGA</strong> — guarantee fund expanding credit for youth- and women-led enterprises.</div>
+        </div>
+        <svg viewBox="0 0 200 44" style="width: 100%; height: 44px; display: block; margin-top: auto;">
+          <polyline points="10,34 100,26 190,12" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round"></polyline>
+          <circle cx="10" cy="34" r="3" fill="#2E7D5B"><title>2016 — internal revenue 7.8% of GDP</title></circle>
+          <circle cx="190" cy="12" r="3.5" fill="#2E7D5B"><title>2024 — internal revenue 10.6% of GDP</title></circle>
+          <text x="10" y="24" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">7.8% '16</text>
+          <text x="138" y="28" font-family="IBM Plex Mono" font-size="8.5" fill="#2E7D5B">10.6% '24</text>
+        </svg>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0;">p.86–88, 121</div></sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #B0791F;">Climate &amp; Innovative Finance</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12.5px; line-height: 1.5; color: #45423A;">
+          <div><strong>GCF + Adaptation Fund</strong> — capacity-building called for to access both.</div>
+          <div><strong>Green &amp; blended finance</strong> — named sources "beyond traditional mechanisms."</div>
+          <div><strong>"Profoundly green" CNIF</strong> — the roadmap's stated end-state, with green business plans for PMEs.</div>
+        </div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0; margin-top: auto;">p.123–125</div></sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #3A6EA8;">Partnership Channels</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12.5px; line-height: 1.5; color: #45423A;">
+          <div><strong>PPPs</strong> — legal framework for green-priority sectors and infrastructure.</div>
+          <div><strong>Diaspora financing</strong> — channel remittances through formal circuits.</div>
+          <div><strong>South-South &amp; triangular</strong> — plus MDB advocacy for more concessional finance.</div>
+        </div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0; margin-top: auto;">p.120–125</div></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Q4 · DEBT / DRM / IFF ============ -->
+  <section data-screen-label="Q4 Debt and Revenue" style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 4px; height: 18px; background: #B0791F; border-radius: 2px;"></span><h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #45423A;">Q4 · Debt Sustainability, Domestic Resource Mobilization &amp; Illicit Flows</h2></div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #B4533A;">● Debt Sustainability</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;"><span style="font-size: 26px; font-weight: 700; color: #B0791F;">10.9%</span><span style="font-size: 12px; color: #6E6A5E;">debt service / exports, 2023</span></div>
+        <div style="font-size: 12.5px; line-height: 1.55; color: #45423A;">VNR gives only a qualitative "high debt level" and "limited debt-management capacity" — recommends concessional financing.</div>
+        <div style="font-size: 11.5px; line-height: 1.5; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> No IMF/WB distress classification or debt-to-GDP % found in either VNR.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0; margin-top: auto;">p.121 · UN SDG DB</div></sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #2E7D5B;">● Domestic Resource Mobilization</div>
+        <svg viewBox="0 0 220 64" style="width: 100%; height: 64px; display: block;">
+          <polyline points="12,46 110,36 208,18" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
+          <circle cx="12" cy="46" r="3.5" fill="#2E7D5B"><title>2015 — domestic revenue 13.4% of GDP</title></circle>
+          <circle cx="208" cy="18" r="4" fill="#2E7D5B"><title>2024 — 17.7% of GDP</title></circle>
+          <text x="12" y="60" font-family="IBM Plex Mono" font-size="9" fill="#9B968A">13.4% · 2015</text>
+          <text x="140" y="12" font-family="IBM Plex Mono" font-size="9" fill="#2E7D5B">17.7% · 2024</text>
+        </svg>
+        <div style="font-size: 12.5px; line-height: 1.55; color: #45423A;">Digitalized fiscal ID (NIF) and tax/customs collection; property-tax and anti-fraud reforms recommended.</div>
+        <div style="font-size: 11.5px; line-height: 1.5; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> Tax pressure still only 13.1%.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0; margin-top: auto;">p.86–88, 120</div></sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #B0791F;">● Illicit Financial Flows</div>
+        <div style="font-size: 26px; font-weight: 700; color: #9B968A;">Not covered</div>
+        <div style="font-size: 12.5px; line-height: 1.55; color: #45423A;">"Flux financiers illicites" appears only as a Target 16.4 label in the 2020 VNR, tied to an arms-trafficking indicator.</div>
+        <div style="font-size: 11.5px; line-height: 1.5; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> No IFF dollar estimates, capital-flight figures, or asset-recovery cases in either VNR or the UN SDG dataset.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0; margin-top: auto;">2020 VNR, p.103–104</div></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Q5 · WATER ============ -->
+  <section data-screen-label="Q5 Water" style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 4px; height: 18px; background: #3A6EA8; border-radius: 2px;"></span><h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #45423A;">Q5 · Water as a Peace &amp; Development Enabler — 2026 AU Year of Water</h2></div>
+    <p style="margin: 0; max-width: 900px; font-size: 13.5px; line-height: 1.6; color: #45423A;">Access improved 82.3% → 86.3% (2017–2024) but rural coverage is slipping; Lake Tanganyika is at once the richest resource and the most disruptive flood risk — the closest either report comes to water-as-peacebuilding.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Transboundary Water Governance</div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">Lake Tanganyika fishing is regulated under the <strong>Lake Tanganyika Authority</strong>; the 2020 VNR adds Nile Basin Initiative membership as a standing regional framework.</p>
+        <svg viewBox="0 0 200 52" style="width: 100%; height: 52px; display: block;">
+          <text x="6" y="10" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">Fish stock, tonnes (2016–2021)</text>
+          <polyline points="10,34 45,26 80,38 115,24 150,36 190,28" fill="none" stroke="#3A6EA8" stroke-width="2" stroke-linecap="round"></polyline>
+          <circle cx="80" cy="38" r="3" fill="#3A6EA8"><title>Low — ~24,400 tonnes</title></circle>
+          <circle cx="115" cy="24" r="3" fill="#3A6EA8"><title>High — ~27,200 tonnes</title></circle>
+          <text x="10" y="50" font-family="IBM Plex Mono" font-size="8.5" fill="#9B968A">fluctuating 24.4k–27.2k t</text>
+        </svg>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.gov }}">{{ lbl.gov }}</button>
+        <sc-if value="{{ exp.gov }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">Via the Convention on Sustainable Management of the lake and a regional charter binding member states on fisheries in the lake and its basin. Nationally: biological closure periods, minimum catch sizes and community co-management. — p.72–73; 2020 VNR p.85–86</p>
+        </sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Water Security as Human Security</div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">Lake Tanganyika's overflows link directly to <strong>displacement, health problems, school dropout and water pollution</strong> — water treated as a driver of social stability.</p>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.human }}">{{ lbl.human }}</button>
+        <sc-if value="{{ exp.human }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">The 2020–2024 flood cycle destroyed housing along the lakeshore and in Gatumba; degraded mental health as urban green space disappears. Citizens' 2030 aspiration: a country that actively protects ecosystems, teaches environmental SDGs from primary school, and brings youth into climate decisions — a water-to-human-security linkage in substance, if not in peacebuilding language. — p.70–74</p>
+        </sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Restoring Water Ecosystems</div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">A visible restoration agenda backs the access numbers: <strong>Nyamabuno marsh</strong>, <strong>Ntahangwa river</strong> banks, buffer zones around <strong>Lakes Tanganyika and Cohoha</strong>.</p>
+        <button style="align-self: flex-start; background: none; border: 1px solid #DDD9CE; border-radius: 999px; padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #6E6A5E; cursor: pointer;" onClick="{{ tg.eco }}">{{ lbl.eco }}</button>
+        <sc-if value="{{ exp.eco }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #6E6A5E; border-top: 1px solid #EFECE4; padding-top: 10px;">Plus rehabilitation of the Buterere wastewater-treatment station, watershed and marshland management, and the national reforestation drive "Ewe Burundi Urambaye." The VNR presents these as the resilience layer that makes durable water access possible. — p.61–62, 74</p>
+        </sc-if>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E7E4DC; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8474;">Policy Anchoring &amp; the Rural Gap</div>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #45423A;">Water anchored in a dedicated PND axis, a <strong>National Water Policy</strong> and <strong>Water Strategy</strong> — but the binding constraint is territorial.</p>
+        <div style="display: flex; flex-direction: column; gap: 7px; padding: 4px 0;">
+          <div style="display: grid; grid-template-columns: 38px 1fr 40px; align-items: center; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;">Urban</span>
+            <div style="height: 10px; background: #ECE9E1; border-radius: 999px;" title="Urban water coverage — near-universal"><div style="width: 97.4%; height: 100%; background: #3A6EA8; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #3A6EA8; font-weight: 500;">97.4%</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 38px 1fr 40px; align-items: center; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #6E6A5E;">Rural</span>
+            <div style="height: 10px; background: #ECE9E1; border-radius: 999px;" title="Rural water coverage — drifting down (85.6% in 2020 → 84.4% in 2023)"><div style="width: 84.4%; height: 100%; background: #B0791F; border-radius: 999px;"></div></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F; font-weight: 500;">84.4%</span>
+          </div>
+        </div>
+        <div style="font-size: 11.5px; line-height: 1.5; color: #6E6A5E;"><span style="color: #B0791F;">◈</span> Rural coverage drifting down while urban is near-universal.</div>
+        <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #B3AEA0; margin-top: auto;">p.61–63, 73</div></sc-if>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px dashed #DDD9CE; border-radius: 10px; padding: 12px 16px; font-size: 12px; line-height: 1.55; color: #6E6A5E;"><strong style="color: #45423A;">Framing note:</strong> neither VNR references the AU "Year of Water" or water/SDG 6 as a peacebuilding enabler — the framing above is layered on editorially and should be labeled as such when replicated across countries.</div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="border-top: 1px solid #E7E4DC; padding-top: 16px; font-size: 11.5px; line-height: 1.6; color: #9B968A;">Sources: Republic of Burundi, Second Voluntary National Review 2026 (Rapport d'Examen National Volontaire, June 2026); First Voluntary National Review 2020; UN SDG Database export (data.xlsx). Page citations refer to VNR 2026 unless otherwise noted. · Prototype for internal review — structure to be replicated identically across all countries once approved.</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1480}, &quot;showSources&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Display&quot;}, &quot;expandAll&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Display&quot;}}">
+class Component extends DCLogic {
+  state = { exp: {}, sdg: null };
+
+  toggle(k) {
+    this.setState(s => ({ exp: { ...s.exp, [k]: !this.isOpen(k, s) } }));
+  }
+
+  isOpen(k, s) {
+    const st = s || this.state;
+    if (k in st.exp) return st.exp[k];
+    return !!(this.props.expandAll ?? false);
+  }
+
+  pick(k) {
+    this.setState(s => ({ sdg: s.sdg === k ? null : k }));
+  }
+
+  renderVals() {
+    const keys = ['pnd', 'energy', 'cnif', 'corr', 'pddsp', 'pafen', 'vision', 'gov', 'human', 'eco', 'policy'];
+    const exp = {}, tg = {}, lbl = {};
+    keys.forEach(k => {
+      exp[k] = this.isOpen(k);
+      tg[k] = () => this.toggle(k);
+      lbl[k] = exp[k] ? 'Hide detail ▴' : 'Full detail ▾';
+    });
+
+    const sdgs = ['s6', 's7', 's9', 's11', 's17'];
+    const sel = this.state.sdg;
+    const show = {}, chip = {}, pick = {};
+    const chipBase = {
+      display: 'inline-flex', alignItems: 'center', padding: '7px 14px',
+      borderRadius: '999px', cursor: 'pointer',
+      fontFamily: "'IBM Plex Mono', monospace", fontSize: '11.5px',
+      transition: 'all 0.15s ease'
+    };
+    sdgs.forEach(k => {
+      const active = sel === k;
+      show[k] = !sel || sel === k;
+      pick[k] = () => this.pick(k);
+      chip[k] = {
+        ...chipBase,
+        background: active ? '#1F5741' : '#FFFFFF',
+        color: active ? '#FFFFFF' : '#45423A',
+        border: active ? '1px solid #1F5741' : '1px solid #DDD9CE'
+      };
+    });
+
+    return {
+      exp, tg, lbl, show, chip, pick,
+      showSrc: this.props.showSources ?? true,
+      filterNote: sel ? 'Focused on one goal — click again to clear' : 'Click a goal to focus'
+    };
+  }
+}
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "Burundi Dashboard v3";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var STAMP = true;
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', source: 'declared', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  // Declared kind: a doc-page tag names the kind outright, so no signal
+  // heuristics run (like the deck branch above, signals report false —
+  // they describe inferred classifications only). The tag alone is not
+  // trusted: the element must have upgraded (shadowRoot present), so a
+  // leftover tag whose script was deleted falls through to the heuristics
+  // that handle plain markup.
+  var stageSx = window.scrollX || 0, stageSy = window.scrollY || 0;
+  var dp = document.querySelector('doc-page');
+  if (dp && dp.shadowRoot) {
+    // Crop to the sheet, not the host — the desk around it is screen-only
+    // chrome that must not land in PNG exports.
+    var sheet = dp.shadowRoot.querySelector('.sheet');
+    var sr = (sheet || dp).getBoundingClientRect();
+    return { kind: 'paper-doc', source: 'declared', doc: doc,
+      frames: [{ left: sr.left + stageSx, top: sr.top + stageSy,
+        width: sr.width, height: sr.height }],
+      authored: [{ width: false, height: false }],
+      signals: { paperPage: false, pxPage: false } };
+  }
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    if (STAMP) el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', source: 'inferred', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: off unless the page opts in via data-om-multi-frame on the
+  // stop element — the explicit opt-in is what guards against card grids
+  // and pricing tables that match the geometry but aren't separate
+  // canvases. Two ways to name the frames, explicit first:
+  // 1. Descendants marked data-om-frame-export (the social-frames starter
+  //    marks each asset frame; shells/panels around them are presentation,
+  //    so nesting is expected). Document order.
+  // 2. Fallback, no marked descendants: direct children with an authored px
+  //    width AND height (the original geometry heuristic).
+  // Frames may be different sizes (a gallery mixes 1080×1920 stories with
+  // 728×90 banners); data-om-frame-label rides along for export filenames.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var visOk = function (e) {
+      var cs; try { cs = getComputedStyle(e); } catch (err) { return false; }
+      return cs.display !== 'none' && cs.visibility !== 'hidden' && cs.position !== 'fixed';
+    };
+    // A frame's crop is its VISUAL box — never the scrollHeight-inflated
+    // rect that rectOf computes for page roots. Shadow-DOM hover controls
+    // (image-slot's Replace bar parks 29px below its host) and similar
+    // escaping UI contribute scrollable overflow to the frame, and the
+    // inflated height both squashes the nominal-size resize and drags
+    // content below the frame into the crop. Zoom-independent; bit every
+    // slot-bearing frame.
+    var frameRectOf = function (e) {
+      var r = e.getBoundingClientRect();
+      return { left: r.left + sx, top: r.top + sy, width: r.width, height: r.height };
+    };
+    var pushCand = function (list, e) {
+      if (!visOk(e)) return;
+      var rc = frameRectOf(e);
+      if (rc.width < 2 || rc.height < 2) return;
+      var lbl = e.getAttribute('data-om-frame-label');
+      if (lbl) rc.label = lbl;
+      list.push(rc);
+    };
+    var cands = [];
+    var marked = el.querySelectorAll('[data-om-frame-export]');
+    if (marked.length) {
+      for (var mk = 0; mk < marked.length; mk++) pushCand(cands, marked[mk]);
+    } else {
+      for (var k = 0; k < el.children.length; k++) {
+        var ch = el.children[k];
+        if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+        pushCand(cands, ch);
+      }
+    }
+    if (cands.length >= 2) {
+      return { kind: 'multi-frame', source: 'inferred', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  if (STAMP) el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', source: 'inferred', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #F6F7F9; }
+  body { font-family: 'Source Sans 3', sans-serif; color: #1B2A3A; }
+  a { color: #1F6FB2; text-decoration: none; }
+  a:hover { color: #16537E; text-decoration: underline; }
+  button { font-family: inherit; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column;">
+  <div style="height: 5px; background: linear-gradient(90deg, #1F6FB2 0%, #1F6FB2 60%, #2E7D5B 60%, #2E7D5B 80%, #B4533A 80%, #B4533A 100%);"></div>
+
+  <!-- ============ HEADER + NAV ============ -->
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E3E7EC; padding: 26px 48px 0 48px;">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Africa Operations / <span style="color: #1F6FB2; font-weight: 500;">Burundi</span> · Country Dashboard · Prototype V4</div>
+      <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
+        <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Burundi</h1>
+        <span style="font-size: 13.5px; color: #5A6B7C;">Data sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">Voluntary National Reviews (VNR) 2020 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">United Nations Sustainable Development Goals (SDG) Database</a></span>
+      </div>
+      <nav style="display: flex; gap: 4px; margin-top: 14px; flex-wrap: wrap;">
+        <button style="{{ tabS.overview }}" onClick="{{ tabGo.overview }}">Overview &amp; Trends</button>
+        <button style="{{ tabS.goals }}" onClick="{{ tabGo.goals }}">2026 Focus Goals</button>
+        <button style="{{ tabS.joint }}" onClick="{{ tabGo.joint }}">Joint Implementation</button>
+        <button style="{{ tabS.policy }}" onClick="{{ tabGo.policy }}">Policy Responses</button>
+        <button style="{{ tabS.financing }}" onClick="{{ tabGo.financing }}">Financing</button>
+        <button style="{{ tabS.debt }}" onClick="{{ tabGo.debt }}">Debt &amp; Revenue</button>
+        <button style="{{ tabS.water }}" onClick="{{ tabGo.water }}">Year of Water Sustainability</button>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex: 1; padding: 32px 48px 56px 48px;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+
+      <!-- ================= OVERVIEW ================= -->
+      <sc-if value="{{ tabShow.overview }}" hint-placeholder-val="{{ true }}">
+      <div data-screen-label="Overview" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
+
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
+          <button style="{{ tileS.elec }}" onClick="{{ tileGo.elec }}">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Electricity Access</span>
+            <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">25.9%</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">▲ +16.6 pts since 2017</span>
+          </button>
+          <button style="{{ tileS.water }}" onClick="{{ tileGo.water }}">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Improved Water</span>
+            <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">86.3%</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">urban-rural divide</span>
+          </button>
+          <button style="{{ tileS.rev }}" onClick="{{ tileGo.rev }}">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Revenue / GDP</span>
+            <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">17.7%</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">▲ +4.3 pts since 2015</span>
+          </button>
+          <button style="{{ tileS.debt }}" onClick="{{ tileGo.debt }}">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Debt Service / Exports</span>
+            <span style="font-size: 28px; font-weight: 700; color: #B0791F;">10.9%</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">shifting toward external</span>
+          </button>
+          <button style="{{ tileS.fin }}" onClick="{{ tileGo.fin }}">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">SDG Financing</span>
+            <span style="font-size: 28px; font-weight: 700; color: #1F6FB2;">$1.5B</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1F6FB2;">committed through 2035</span>
+          </button>
+        </div>
+
+        <!-- Electricity chart -->
+        <sc-if value="{{ metShow.elec }}" hint-placeholder-val="{{ true }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="font-size: 17px; font-weight: 600;">Electricity access, 2017–2025</div>
+            <div style="font-size: 12.5px; color: #5A6B7C;">Hover over points for values and sources</div>
+          </div>
+          <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+            <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
+            <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
+            <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
+            <line x1="60" y1="20" x2="700" y2="20" stroke="#EEF1F4" stroke-width="1"></line>
+            <text x="50" y="204" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">0%</text>
+            <text x="50" y="144" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">10%</text>
+            <text x="50" y="84" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">20%</text>
+            <text x="50" y="24" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">30%</text>
+            <defs><linearGradient id="gE4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7D5B" stop-opacity="0.18"></stop><stop offset="1" stop-color="#2E7D5B" stop-opacity="0"></stop></linearGradient></defs>
+            <polygon points="188,144 380,128 508,92 636,79 700,45 700,200 188,200" fill="url(#gE4)"></polygon>
+            <polyline points="188,144 380,128 508,92 636,79 700,45" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
+            <circle cx="188" cy="144" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2017 — 9.3% (VNR 2026, p.52)</title></circle>
+            <circle cx="380" cy="128" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.2s both;"><title>2020 — ~12% (VNR trajectory)</title></circle>
+            <circle cx="508" cy="92" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.3s both;"><title>2022 — ~18% (VNR trajectory)</title></circle>
+            <circle cx="636" cy="79" r="5" fill="#FFFFFF" stroke="#B0791F" stroke-width="2.5" style="animation: pop 0.4s ease 0.4s both;"><title>2024 — 20.1% per the United Nations SDG Database — official figure below the national narrative</title></circle>
+            <circle cx="700" cy="45" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.5s both;"><title>2025 — 25.9% (VNR 2026, p.52)</title></circle>
+            <text x="712" y="49" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#2E7D5B">25.9%</text>
+            <text x="188" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2017</text>
+            <text x="380" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2020</text>
+            <text x="508" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2022</text>
+            <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
+            <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2025</text>
+          </svg>
+          <p style="margin: 12px 0 0 0; max-width: 860px; font-size: 13.5px; line-height: 1.6; color: #45525F;">Electricity access has nearly tripled since 2017 — from 9.3% to 25.9% of the population — driven by new hydropower and solar capacity. The United Nations SDG Database records a slightly lower 20.1% for 2024 (marked in amber), a gap between national and official figures worth noting when comparing across countries.</p>
+          <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.52</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 7.1.1</a></div></sc-if>
+        </div>
+        </sc-if>
+
+        <!-- Water chart -->
+        <sc-if value="{{ metShow.water }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="font-size: 17px; font-weight: 600;">Improved water access — urban vs. rural, 2017–2024</div>
+            <div style="font-size: 12.5px; color: #5A6B7C;">Hover over points for values and sources</div>
+          </div>
+          <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+            <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
+            <line x1="60" y1="128" x2="700" y2="128" stroke="#EEF1F4" stroke-width="1"></line>
+            <line x1="60" y1="56" x2="700" y2="56" stroke="#EEF1F4" stroke-width="1"></line>
+            <text x="50" y="204" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">75%</text>
+            <text x="50" y="132" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">85%</text>
+            <text x="50" y="60" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">95%</text>
+            <polyline points="188,49 636,39" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
+            <polyline points="188,142 380,124 636,132" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
+            <polyline points="188,147 636,119" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"></polyline>
+            <circle cx="188" cy="49" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>Urban 2017 — ~96%</title></circle>
+            <circle cx="636" cy="39" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>Urban 2024 — 97.4% (WHO/UNICEF Joint Monitoring Programme)</title></circle>
+            <circle cx="188" cy="142" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Rural 2017 — ~83%</title></circle>
+            <circle cx="380" cy="124" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.3s both;"><title>Rural 2020 — 85.6% — the peak</title></circle>
+            <circle cx="636" cy="132" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Rural 2024 — 84.4%</title></circle>
+            <text x="712" y="43" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#1F6FB2">97.4%</text>
+            <text x="712" y="136" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">84.4%</text>
+            <text x="712" y="122" font-family="IBM Plex Mono" font-size="10" fill="#2E7D5B">86.3%</text>
+            <text x="188" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2017</text>
+            <text x="380" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2020</text>
+            <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
+          </svg>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Urban</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Rural</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>National</span>
+          </div>
+          <p style="margin: 12px 0 0 0; max-width: 860px; font-size: 13.5px; line-height: 1.6; color: #45525F;">Nationally, access to improved drinking water rose from 82.3% to 86.3% between 2017 and 2024. The gain is concentrated in towns and cities: urban coverage is near-universal at 97.4%, while rural coverage has eased from its 2020 peak of 85.6% to 84.4% — making rural water supply the clearest opportunity for further progress.</p>
+          <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">WHO/UNICEF Joint Monitoring Programme 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 6.1.1</a></div></sc-if>
+        </div>
+        </sc-if>
+
+        <!-- Revenue chart -->
+        <sc-if value="{{ metShow.rev }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="font-size: 17px; font-weight: 600;">Government revenue as a share of the economy, 2015–2024</div>
+            <div style="font-size: 12.5px; color: #5A6B7C;">Hover over points for values and sources</div>
+          </div>
+          <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+            <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
+            <line x1="60" y1="155" x2="700" y2="155" stroke="#EEF1F4" stroke-width="1"></line>
+            <line x1="60" y1="110" x2="700" y2="110" stroke="#EEF1F4" stroke-width="1"></line>
+            <line x1="60" y1="65" x2="700" y2="65" stroke="#EEF1F4" stroke-width="1"></line>
+            <line x1="60" y1="20" x2="700" y2="20" stroke="#EEF1F4" stroke-width="1"></line>
+            <text x="50" y="204" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">0%</text>
+            <text x="50" y="159" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">5%</text>
+            <text x="50" y="114" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">10%</text>
+            <text x="50" y="69" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">15%</text>
+            <text x="50" y="24" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">20%</text>
+            <line x1="60" y1="82" x2="700" y2="82" stroke="#B4533A" stroke-width="1.5" stroke-dasharray="4 4"></line>
+            <text x="66" y="94" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">tax pressure 13.1% — below the Sevilla benchmark</text>
+            <polyline points="60,79 348,65 636,41" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
+            <polyline points="124,130 636,105" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"></polyline>
+            <circle cx="60" cy="79" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015 — total government revenue, 13.4% of GDP</title></circle>
+            <circle cx="348" cy="65" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.25s both;"><title>2020 — ~15% (trajectory)</title></circle>
+            <circle cx="636" cy="41" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024 — 17.7% of GDP (VNR 2026, p.87, 120)</title></circle>
+            <circle cx="124" cy="130" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2016 — internally-raised revenue, 7.8% of GDP</title></circle>
+            <circle cx="636" cy="105" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.4s both;"><title>2024 — internally-raised revenue, 10.6% of GDP</title></circle>
+            <text x="648" y="45" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#2E7D5B">17.7%</text>
+            <text x="648" y="109" font-family="IBM Plex Mono" font-size="11" fill="#1F6FB2">10.6%</text>
+            <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2015</text>
+            <text x="348" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2020</text>
+            <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
+          </svg>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Total government revenue</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Internally-raised revenue</span>
+          </div>
+          <p style="margin: 12px 0 0 0; max-width: 860px; font-size: 13.5px; line-height: 1.6; color: #45525F;">Government revenue has grown steadily — from 13.4% of gross domestic product (GDP) in 2015 to 17.7% in 2024 — supported by digitalized tax collection. Tax pressure remains at 13.1%, below the benchmark set out in the 2025 Sevilla Commitment on financing for development, so further domestic revenue growth is a stated national priority.</p>
+          <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 17.1.1</a></div></sc-if>
+        </div>
+        </sc-if>
+
+        <!-- Debt chart -->
+        <sc-if value="{{ metShow.debt }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="font-size: 17px; font-weight: 600;">Debt service — external vs. internal, 2017–2024</div>
+            <div style="font-size: 12.5px; color: #5A6B7C;">Hover over points for values and sources</div>
+          </div>
+          <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+            <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
+            <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
+            <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
+            <line x1="60" y1="20" x2="700" y2="20" stroke="#EEF1F4" stroke-width="1"></line>
+            <text x="50" y="204" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">0%</text>
+            <text x="50" y="144" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">5%</text>
+            <text x="50" y="84" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">10%</text>
+            <text x="50" y="24" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">15%</text>
+            <line x1="520" y1="20" x2="520" y2="200" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 4"></line>
+            <text x="528" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">2023 crossover</text>
+            <polyline points="188,68 444,86 636,116" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
+            <polyline points="188,140 444,88 636,69" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
+            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017 — ~11% (indicative trajectory)</title></circle>
+            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024 — declining share</title></circle>
+            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017 — ~5% (indicative trajectory)</title></circle>
+            <circle cx="636" cy="69" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>External 2023 — 10.9% of exports (UN SDG Database, indicator 17.4.1)</title></circle>
+            <text x="648" y="73" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">10.9%</text>
+            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">internal</text>
+            <text x="188" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2017</text>
+            <text x="444" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2021</text>
+            <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
+          </svg>
+          <p style="margin: 12px 0 0 0; max-width: 860px; font-size: 13.5px; line-height: 1.6; color: #45525F;">Since 2023, servicing debt owed to foreign lenders has cost Burundi more than servicing domestic debt — reaching 10.9% of export earnings in 2023, per the United Nations SDG Database. The review presents this shift as grounds for the "urgency of ongoing reforms" and for seeking financing on more favourable (concessional) terms. Line shapes between the published points are indicative.</p>
+          <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.87, 121</a></div></sc-if>
+        </div>
+        </sc-if>
+
+        <!-- Financing bars -->
+        <sc-if value="{{ metShow.fin }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="font-size: 17px; font-weight: 600;">Financing partner commitments through 2035 — by sector</div>
+            <div style="font-size: 12.5px; color: #5A6B7C;">Total $1,507,171,475 · bar length shows rank order</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px; max-width: 860px;">
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Decent jobs <span style="color: #9AA7B4; font-size: 11.5px;">SDG 8</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (VNR 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Industrialization <span style="color: #9AA7B4; font-size: 11.5px;">SDG 9</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 2 of 7"><div style="width: 87%; height: 100%; background: #3981BC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.12s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Energy <span style="color: #9AA7B4; font-size: 11.5px;">SDG 7</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 3 of 7"><div style="width: 74%; height: 100%; background: #5493C6; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.19s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Health <span style="color: #9AA7B4; font-size: 11.5px;">SDG 3</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 4 of 7"><div style="width: 60%; height: 100%; background: #6FA5D0; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Hunger <span style="color: #9AA7B4; font-size: 11.5px;">SDG 2</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 5 of 7"><div style="width: 47%; height: 100%; background: #8AB7DA; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.33s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Education <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Poverty <span style="color: #9AA7B4; font-size: 11.5px;">SDG 1</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
+          </div>
+          <p style="margin: 14px 0 0 0; max-width: 860px; font-size: 13.5px; line-height: 1.6; color: #45525F;">Development partners — bilateral and multilateral funders such as United Nations agencies and development banks — have committed $1.5 billion through 2035, the horizon of Burundi's national financing framework. The review ranks sectors by committed value but reports only the combined total, so bar lengths show rank order rather than dollar amounts.</p>
+          <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.122 (Graphique 74)</a></div></sc-if>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ================= FOCUS GOALS ================= -->
+      <sc-if value="{{ tabShow.goals }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Focus Goals" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">2026 Focus Goals — Achievements &amp; Priorities</h2>
+          <p style="margin: 0; max-width: 880px; font-size: 14px; line-height: 1.6; color: #5A6B7C;">The five Sustainable Development Goals under review at the 2026 United Nations High-Level Political Forum. Figures combine Burundi's Voluntary National Review 2026 with the United Nations SDG Database — select a goal to explore.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
+          <button style="{{ goalS.s6 }}" onClick="{{ goalGo.s6 }}"><span style="width: 30px; height: 30px; border-radius: 7px; background: #26BDE2; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0;">6</span><span style="font-size: 12.5px; font-weight: 600; line-height: 1.3;">Clean Water and Sanitation</span></button>
+          <button style="{{ goalS.s7 }}" onClick="{{ goalGo.s7 }}"><span style="width: 30px; height: 30px; border-radius: 7px; background: #FCC30B; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0;">7</span><span style="font-size: 12.5px; font-weight: 600; line-height: 1.3;">Affordable and Clean Energy</span></button>
+          <button style="{{ goalS.s9 }}" onClick="{{ goalGo.s9 }}"><span style="width: 30px; height: 30px; border-radius: 7px; background: #FD6925; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0;">9</span><span style="font-size: 12.5px; font-weight: 600; line-height: 1.3;">Industry, Innovation and Infrastructure</span></button>
+          <button style="{{ goalS.s11 }}" onClick="{{ goalGo.s11 }}"><span style="width: 30px; height: 30px; border-radius: 7px; background: #FD9D24; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0;">11</span><span style="font-size: 12.5px; font-weight: 600; line-height: 1.3;">Sustainable Cities and Communities</span></button>
+          <button style="{{ goalS.s17 }}" onClick="{{ goalGo.s17 }}"><span style="width: 30px; height: 30px; border-radius: 7px; background: #19486A; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0;">17</span><span style="font-size: 12.5px; font-weight: 600; line-height: 1.3;">Partnerships for the Goals</span></button>
+        </div>
+
+        <sc-if value="{{ goalShow.s6 }}" hint-placeholder-val="{{ true }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-size: 18px; font-weight: 700;">SDG 6 · Clean Water and Sanitation</div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Water access</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Improved water access, national, 2024"><div style="width: 86.3%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">86.3%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Rural</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural water access, 2024"><div style="width: 84.4%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">84.4%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Sanitation</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Adequate sanitation, national, 2023"><div style="width: 12.9%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">12.9%</span></div>
+            </div>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.61–65</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicators 6.1.1 &amp; 6.2.1</a></div></sc-if>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Access up to 86.3%; restoration of buffer zones around Lake Tanganyika and Lake Cohoha is underway.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Extending rural coverage beyond 84.4% and expanding adequate sanitation from 12.9% nationally.</span></div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ goalShow.s7 }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-size: 18px; font-weight: 700;">SDG 7 · Affordable and Clean Energy</div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Urban access</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Urban electricity access, 2025"><div style="width: 66.3%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">66.3%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Rural access</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural electricity access, 2025"><div style="width: 17.6%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">17.6%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">2030 target</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="National Energy Compact — 70% national access by 2030"><div style="width: 70%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">70%</span></div>
+            </div>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.51–55</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 7.1.1</a></div></sc-if>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Access up to 25.9%; the National Energy Compact mobilizes $3.49 billion, targeting 70% access by 2030.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Bringing rural access (17.6%) closer to urban levels (66.3%) and reducing technical and commercial supply losses.</span></div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ goalShow.s9 }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-size: 18px; font-weight: 700;">SDG 9 · Industry, Innovation and Infrastructure</div>
+            <svg viewBox="0 0 380 130" style="width: 100%; height: auto; display: block;">
+              <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">Share of roads in all-season condition</text>
+              <line x1="30" y1="110" x2="360" y2="110" stroke="#E3E7EC" stroke-width="1"></line>
+              <polyline points="40,34 200,66 350,96" fill="none" stroke="#B0791F" stroke-width="3" stroke-linecap="round"></polyline>
+              <circle cx="40" cy="34" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.1s both;"><title>2020–21 — ~78% of the road network (VNR 2026)</title></circle>
+              <circle cx="350" cy="96" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.3s both;"><title>2023 — 32.2% (VNR 2026 / UN SDG Database, indicator 9.1.1)</title></circle>
+              <text x="56" y="32" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">78%</text>
+              <text x="336" y="80" text-anchor="end" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">32.2%</text>
+              <text x="40" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2020–21</text>
+              <text x="350" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2023</text>
+            </svg>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.58–59</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicators 9.1.1 &amp; 9.c.1</a></div></sc-if>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Three new public investment banks created — the Youth Investment Bank (BIJE), the Women's Investment and Development Bank (BIDF) and the Impulse, Guarantee and Support Fund (FIGA). Mobile coverage reaches 66% and internet access 22.9%.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Restoring the all-season road network, which moved from ~78% to 32.2% between 2020 and 2023 — the review's standout infrastructure priority.</span></div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ goalShow.s11 }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-size: 18px; font-weight: 700;">SDG 11 · Sustainable Cities and Communities</div>
+            <div style="display: flex; align-items: center; gap: 24px;">
+              <svg viewBox="0 0 120 120" style="width: 120px; height: 120px;">
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#EEF1F4" stroke-width="16"></circle>
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#B0791F" stroke-width="16" stroke-dasharray="103.4 198.1" stroke-linecap="round" transform="rotate(-90 60 60)"><title>34.3% of urban population in informal settlements (2020 — UN SDG Database, indicator 11.1.1)</title></circle>
+                <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#B0791F">34.3%</text>
+              </svg>
+              <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">of the urban population lived in informal settlements in 2020</div>
+            </div>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.66–67</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 11.1.1</a></div></sc-if>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Provincial territorial planning schemes now cover all provinces, and a new national urban-development authority (OBUHA) has been created.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Expanding decent, affordable housing — the central urban challenge identified in the review.</span></div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ goalShow.s17 }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-size: 18px; font-weight: 700;">SDG 17 · Partnerships for the Goals</div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Revenue 2015</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Government revenue as a share of GDP, 2015"><div style="width: 53.6%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5A6B7C; font-weight: 600;">13.4%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Revenue 2024</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Government revenue as a share of GDP, 2024"><div style="width: 70.8%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">17.7%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Birth registration</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Birth registration, 2023"><div style="width: 97%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">97%</span></div>
+            </div>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.85–89</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicators 17.1.1 &amp; 17.4.1</a></div></sc-if>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Government revenue up from 13% to 17.7% of gross domestic product; birth registration up to 97%.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Managing the growing cost of external debt service, which overtook internal debt service in 2023 — reinforcing the case for ongoing public-finance reforms.</span></div>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ================= JOINT IMPLEMENTATION ================= -->
+      <sc-if value="{{ tabShow.joint }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Joint Implementation" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Joint Implementation of the SDGs &amp; Agenda 2063</h2>
+          <p style="margin: 0; max-width: 900px; font-size: 14px; line-height: 1.6; color: #5A6B7C;">Burundi does not run a separate tracking tool for the United Nations Sustainable Development Goals and the African Union's Agenda 2063. Instead, both agendas are built directly into the country's own planning documents — the National Development Plan 2018–2027, the long-term Vision Burundi 2040–2060, and a "4P" monitoring framework that groups all 17 goals under four pillars: Population, Prosperity, Planet, and Peace &amp; Partnerships.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 16px;">
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 18px;">
+            <div style="font-size: 16px; font-weight: 600;">"4P" monitoring framework — Burundi's self-assessment of progress</div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5A6B7C;"><span>All 17 goals combined</span><span style="color: #2E7D5B; font-weight: 600;">49% of measured targets improving</span></div>
+              <div style="display: flex; height: 18px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both;">
+                <div style="width: 49%; background: #2E7D5B;" title="49% improving"></div>
+                <div style="width: 4%; background: #D9A94A;" title="4% stagnant"></div>
+                <div style="width: 12%; background: #B4533A;" title="12% deteriorating"></div>
+                <div style="width: 35%; background: #DDE3E9;" title="35% not evaluable for lack of data"></div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: grid; grid-template-columns: 150px 1fr 52px; align-items: center; gap: 10px;"><span style="font-size: 13.5px;">P1 · Population</span><div style="display: flex; height: 12px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 51.5%; background: #2E7D5B;" title="Advancing 51.5%"></div><div style="width: 14%; background: #D9A94A;" title="Stagnant"></div><div style="width: 11%; background: #B4533A;" title="Declining"></div><div style="width: 23.5%; background: #DDE3E9;" title="No data"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #2E7D5B; font-weight: 600;">51.5%</span></div>
+              <div style="display: grid; grid-template-columns: 150px 1fr 52px; align-items: center; gap: 10px;"><span style="font-size: 13.5px;">P2 · Prosperity</span><div style="display: flex; height: 12px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 58.3%; background: #2E7D5B;" title="Advancing 58.3%"></div><div style="width: 12%; background: #D9A94A;" title="Stagnant"></div><div style="width: 9%; background: #B4533A;" title="Declining"></div><div style="width: 20.7%; background: #DDE3E9;" title="No data"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #2E7D5B; font-weight: 600;">58.3%</span></div>
+              <div style="display: grid; grid-template-columns: 150px 1fr 52px; align-items: center; gap: 10px;"><span style="font-size: 13.5px;">P3 · Planet</span><div style="display: flex; height: 12px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 21.4%; background: #2E7D5B;" title="Advancing 21.4%"></div><div style="width: 18%; background: #D9A94A;" title="Stagnant"></div><div style="width: 16%; background: #B4533A;" title="Declining"></div><div style="width: 44.6%; background: #DDE3E9;" title="No data"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B0791F; font-weight: 600;">21.4%</span></div>
+              <div style="display: grid; grid-template-columns: 150px 1fr 52px; align-items: center; gap: 10px;"><span style="font-size: 13.5px;">P4 · Peace &amp; Partnerships</span><div style="display: flex; height: 12px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 70%; background: #2E7D5B;" title="Advancing 70%"></div><div style="width: 10%; background: #D9A94A;" title="Stagnant"></div><div style="width: 6%; background: #B4533A;" title="Declining"></div><div style="width: 14%; background: #DDE3E9;" title="No data"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #2E7D5B; font-weight: 600;">70%</span></div>
+            </div>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #5A6B7C;">
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #2E7D5B;"></span>Advancing</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #D9A94A;"></span>Stagnant</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #B4533A;"></span>Declining</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #DDE3E9;"></span>No data</span>
+            </div>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.20–21, xiv, 89–90</a></div></sc-if>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px;">
+              <div style="font-size: 16px; font-weight: 600;">Digital connectivity — Global Digital Compact alignment</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile penetration, Q2 2025 (national telecoms regulator ARCT)"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">71.0%</div><div style="font-size: 11.5px; color: #5A6B7C;">Mobile penetration</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Internet penetration, Q2 2025 — up 3.3 points in one quarter"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">29.3% <span style="font-size: 12px; color: #2E7D5B;">▲3.3</span></div><div style="font-size: 11.5px; color: #5A6B7C;">Internet penetration</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile-money — 7.66 million connected subscriptions"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">62.1%</div><div style="font-size: 11.5px; color: #5A6B7C;">Mobile money</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Fibre-optic backbone now reaches all 18 provinces"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">18/18</div><div style="font-size: 11.5px; color: #5A6B7C;">Provinces on fibre</div></div>
+              </div>
+              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">Burundi maps its digital ecosystem against the United Nations Global Digital Compact. COMGOV, the government's shared administrative network, links over 100 public institutions; BERNET, the national education and research network, connects 14 universities. Public-sector staffing in information and communications technology declined 4.4% per year over 2018–2022 — the review's own flagged constraint.</p>
+              <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.111–119</a> · ARCT (telecoms regulator), Q2 2025</div></sc-if>
+            </div>
+            <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px;">
+              <div style="font-size: 16px; font-weight: 600;">National Development Plan 2018–2027 — the shared anchor</div>
+              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">One national plan serves the Sustainable Development Goals, Agenda 2063 and Vision Burundi 2040–2060 together. Delivery runs through dedicated finance institutions — the Impulse, Guarantee and Support Fund (FIGA), the Youth Investment Bank (BIJE) and the Women's Investment and Development Bank (BIDF) — and budgeting organized around programmes rather than ministries.</p>
+              <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.22, 29, 85–86</a></div></sc-if>
+            </div>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ================= POLICY RESPONSES ================= -->
+      <sc-if value="{{ tabShow.policy }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Policy Responses" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Policy Responses in Motion</h2>
+          <p style="margin: 0; font-size: 14px; color: #5A6B7C;">Six named, costed and dated national instruments — select one to explore.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start;">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <button style="{{ instS.energy }}" onClick="{{ instGo.energy }}"><span style="font-weight: 600;">National Energy Compact</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">$3.49B · 2024</span></button>
+            <button style="{{ instS.cnif }}" onClick="{{ instGo.cnif }}"><span style="font-weight: 600;">National Financing Framework</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">$1.507B tracked</span></button>
+            <button style="{{ instS.corr }}" onClick="{{ instGo.corr }}"><span style="font-weight: 600;">Anti-Corruption Strategy</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2025–2030</span></button>
+            <button style="{{ instS.pddsp }}" onClick="{{ instGo.pddsp }}"><span style="font-weight: 600;">Digitalization Master Plan</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2023–2027</span></button>
+            <button style="{{ instS.pafen }}" onClick="{{ instGo.pafen }}"><span style="font-weight: 600;">Digital Economy Project</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">World Bank $92M</span></button>
+            <button style="{{ instS.vision }}" onClick="{{ instGo.vision }}"><span style="font-weight: 600;">Vision Burundi 2040–2060</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">long-term frame</span></button>
+          </div>
+
+          <div>
+            <sc-if value="{{ instShow.energy }}" hint-placeholder-val="{{ true }}">
+            <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
+              <div><div style="font-size: 19px; font-weight: 700;">Pacte National pour l'Énergie — the National Energy Compact</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Established under the revised 2024 electricity law</div></div>
+              <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">$3.49B</div><div style="font-size: 12px; color: #5A6B7C;">public + private investment mobilized</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">70%</div><div style="font-size: 12px; color: #5A6B7C;">access target by 2030 (30% by 2027)</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">×3.5</div><div style="font-size: 12px; color: #5A6B7C;">generation capacity</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">40%</div><div style="font-size: 12px; color: #5A6B7C;">of households on clean cooking</div></div>
+              </div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Anchored on the Kabu 16, Ruzibazi and Jiji-Murembwe hydropower plants and the Mubuga solar plant. The 2024 law opens the electricity sector to private participation, alongside grid extension, off-grid rural electrification and biogas.</p>
+              <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.51–53</a></div></sc-if>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ instShow.cnif }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
+              <div><div style="font-size: 19px; font-weight: 700;">Cadre National Intégré de Financement — the Integrated National Financing Framework</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Burundi's single plan for how its development will be financed</div></div>
+              <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">$1.507B</div><div style="font-size: 12px; color: #5A6B7C;">partner commitments tracked through 2035</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">2024</div><div style="font-size: 12px; color: #5A6B7C;">financing roadmap adopted</div></div>
+              </div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Aligned with the 2025 Sevilla Commitment on financing for development, the framework shifts from unpredictable external aid toward diversified, structured financing — with an environmental ("profoundly green") orientation and a tracking platform for aid and investment inside the public-finance system.</p>
+              <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.xiii, 15, 120–124</a></div></sc-if>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ instShow.corr }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
+              <div><div style="font-size: 19px; font-weight: 700;">Stratégie nationale de lutte contre la corruption — the National Anti-Corruption Strategy 2025–2030</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Launched under the direct impetus of the Presidency</div></div>
+              <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">17–20</div><div style="font-size: 12px; color: #5A6B7C;">Corruption Perceptions Index score out of 100, unchanged since 2021</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">80%+</div><div style="font-size: 12px; color: #5A6B7C;">of citizens name corruption a major issue</div></div>
+              </div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Deployed alongside a justice-decentralization reform bringing courts to commune, zone and hillside level — including community mediators (Notables collinaires) — with virtual court hearings that reduce informal interactions and improve case traceability.</p>
+              <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.75–76</a></div></sc-if>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ instShow.pddsp }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
+              <div><div style="font-size: 19px; font-weight: 700;">Plan Directeur de Digitalisation des Services Publics — the Public-Service Digitalization Master Plan 2023–2027</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Moving government services online</div></div>
+              <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">100+</div><div style="font-size: 12px; color: #5A6B7C;">public institutions on the shared government network (COMGOV)</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">14</div><div style="font-size: 12px; color: #5A6B7C;">universities linked via the education &amp; research network (BERNET)</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">'25/'28</div><div style="font-size: 12px; color: #5A6B7C;">interim evaluations scheduled</div></div>
+              </div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Services already live include a digitized civil registry (with the United Nations Development Programme), hospital records systems (with the Belgian development agency Enabel), and online communal taxation and business registration — with the national revenue office and other agencies already serving users online.</p>
+              <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.111–112</a></div></sc-if>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ instShow.pafen }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
+              <div><div style="font-size: 19px; font-weight: 700;">Projet d'Appui aux Fondations de l'Économie Numérique — the Digital Economy Foundations Project</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Launched by the Vice-President in September 2024</div></div>
+              <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">$92M</div><div style="font-size: 12px; color: #5A6B7C;">World Bank financing</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">29.3%</div><div style="font-size: 12px; color: #5A6B7C;">internet penetration, up 3.3 points in one quarter (Q2 2025)</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">7.66M</div><div style="font-size: 12px; color: #5A6B7C;">mobile-money subscriptions</div></div>
+              </div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Expands high-speed internet access and accelerates digital adoption across the public administration, in direct service of Vision Burundi 2040–2060.</p>
+              <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.112, 114</a> · <a href="https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=BI" target="_blank" rel="noopener">World Bank projects, Burundi</a></div></sc-if>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ instShow.vision }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
+              <div><div style="font-size: 19px; font-weight: 700;"><a href="https://www.presidence.gov.bi" target="_blank" rel="noopener">Vision Burundi 2040–2060 ↗</a></div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">The long-term national vision — the reference frame for every instrument on this page</div></div>
+              <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">2040</div><div style="font-size: 12px; color: #5A6B7C;">emerging economy</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">2060</div><div style="font-size: 12px; color: #5A6B7C;">developed country</div></div>
+              </div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Carried by programme-based budgeting, the Impulse, Guarantee and Support Fund (FIGA), promotion of public-private partnerships, and new capital-markets services — all designed to mobilize national savings and diversify how development is financed.</p>
+              <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.86, 120</a></div></sc-if>
+            </div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ================= FINANCING ================= -->
+      <sc-if value="{{ tabShow.financing }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Financing" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Financing Partner Commitments</h2>
+          <p style="margin: 0; max-width: 900px; font-size: 14px; line-height: 1.6; color: #5A6B7C;">Burundi sets out a layered financing strategy: domestic instruments first, climate and innovative finance second, partnership channels third — while its national financing framework tracks $1.5 billion in commitments from development partners.</p>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+            <div style="font-size: 16px; font-weight: 600;">Financing partner commitments through 2035 — by sector</div>
+            <div style="font-size: 12.5px; color: #7A8A9A;">Total $1,507,171,475 · bar length shows rank order</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 14px; max-width: 860px;">
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Decent jobs <span style="color: #9AA7B4; font-size: 11px;">SDG 8</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (VNR 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Industrialization <span style="color: #9AA7B4; font-size: 11px;">SDG 9</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 2 of 7"><div style="width: 87%; height: 100%; background: #3981BC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.12s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Energy <span style="color: #9AA7B4; font-size: 11px;">SDG 7</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 3 of 7"><div style="width: 74%; height: 100%; background: #5493C6; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.19s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Health <span style="color: #9AA7B4; font-size: 11px;">SDG 3</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 4 of 7"><div style="width: 60%; height: 100%; background: #6FA5D0; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Hunger <span style="color: #9AA7B4; font-size: 11px;">SDG 2</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 5 of 7"><div style="width: 47%; height: 100%; background: #8AB7DA; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.33s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Education <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Poverty <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
+          </div>
+          <p style="margin: 14px 0 0 0; max-width: 860px; font-size: 13.5px; line-height: 1.6; color: #45525F;"><strong>Why 2035?</strong> Commitments run to 2035 because that is the horizon of the national financing framework's roadmap. <strong>Who are the partners?</strong> Bilateral and multilateral development partners — United Nations agencies, development banks and country donors. <strong>How are sectors ranked?</strong> By committed value, as reported in the review's own chart (Graphique 74); the review publishes only the combined total, so bars show rank order rather than dollar amounts.</p>
+          <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.122 (Graphique 74)</a></div></sc-if>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #E5F1EB; color: #2E7D5B; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">1</span><span style="font-size: 15px; font-weight: 600;">Domestic instruments</span></div>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
+              <div title="Issued to mobilize national savings, smooth treasury needs and reduce external dependence, deliberately building the capital market"><strong>Public bonds</strong> — mobilize national savings</div>
+              <div title="A digital taxpayer identification number, automated declaration and collection, communal property-tax and anti-fraud reforms"><strong>Digitalized tax collection</strong> — including a national taxpayer identification number</div>
+              <div title="Guarantee fund expanding credit for youth- and women-led enterprises"><strong>Impulse, Guarantee and Support Fund (FIGA)</strong> — credit guarantees for youth- and women-led enterprises</div>
+            </div>
+            <svg viewBox="0 0 240 60" style="width: 100%; height: auto; display: block; margin-top: auto;">
+              <polyline points="14,44 120,34 226,16" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
+              <circle cx="14" cy="44" r="3.5" fill="#2E7D5B"><title>2016 — internally-raised revenue, 7.8% of GDP</title></circle>
+              <circle cx="226" cy="16" r="4" fill="#2E7D5B"><title>2024 — internally-raised revenue, 10.6% of GDP</title></circle>
+              <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">7.8% '16</text>
+              <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#2E7D5B">10.6% '24</text>
+            </svg>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.86–88, 121</a></div></sc-if>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F7EEDC; color: #B0791F; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">2</span><span style="font-size: 15px; font-weight: 600;">Climate &amp; innovative finance</span></div>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
+              <div title="The review calls for institutional capacity-building to access both funds, plus biodiversity-finance instruments"><strong>Green Climate Fund &amp; Adaptation Fund</strong> — building capacity to access both</div>
+              <div title="Named explicitly among sources to explore beyond traditional mechanisms"><strong>Green &amp; blended finance</strong> — beyond traditional sources</div>
+              <div title="The financing roadmap's stated end-state, with green-economy business plans for small businesses"><strong>A "profoundly green" financing framework</strong> — the roadmap's stated end-state</div>
+            </div>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.123–125</a></div></sc-if>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F1F6FA; color: #1F6FB2; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">3</span><span style="font-size: 15px; font-weight: 600;">Partnership channels</span></div>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
+              <div title="Legal framework promoted for transformational, green-priority sectors and structuring infrastructure (roads, energy, water, digital)"><strong>Public-private partnerships</strong> — for green-priority infrastructure</div>
+              <div title="Incentive instruments to channel remittances through formal circuits"><strong>Diaspora financing</strong> — channelling remittances through formal circuits</div>
+              <div title="Plus advocacy toward multilateral development banks for more concessional financing to social and productive sectors"><strong>South-South &amp; triangular cooperation</strong> — plus advocacy for more concessional lending</div>
+            </div>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.120–125</a></div></sc-if>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ================= DEBT & REVENUE ================= -->
+      <sc-if value="{{ tabShow.debt }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Debt and Revenue" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Debt Sustainability &amp; Domestic Resource Mobilization</h2>
+          <p style="margin: 0; max-width: 900px; font-size: 14px; line-height: 1.6; color: #5A6B7C;">Two sides of the same public-finance story: what Burundi spends servicing its debt, and what it raises at home to fund development.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-size: 16px; font-weight: 600;">Debt service — external vs. internal</div>
+            <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+              <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
+              <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
+              <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
+              <text x="32" y="154" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">0%</text>
+              <text x="32" y="104" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">6%</text>
+              <text x="32" y="54" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">12%</text>
+              <line x1="330" y1="26" x2="330" y2="150" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 4"></line>
+              <text x="336" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">2023 crossover</text>
+              <polyline points="110,58 280,72 410,92" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
+              <polyline points="110,110 280,74 410,59" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
+              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017 — larger share (indicative trajectory)</title></circle>
+              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024 — declining share</title></circle>
+              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017 — smaller share (indicative trajectory)</title></circle>
+              <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>External 2023 — 10.9% of exports (UN SDG Database, indicator 17.4.1)</title></circle>
+              <text x="418" y="63" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">10.9%</text>
+              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">internal</text>
+              <text x="110" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2017</text>
+              <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
+              <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
+            </svg>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Servicing debt owed to foreign lenders cost 10.9% of export earnings in 2023 — overtaking domestic debt service that year. The review describes a "high debt level" and "limited debt-management capacity" and recommends financing on more favourable (concessional) terms.</p>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources: <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.121</a></div></sc-if>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-size: 16px; font-weight: 600;">Domestic revenue — a decade of growth</div>
+            <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+              <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
+              <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
+              <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
+              <text x="32" y="154" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">0%</text>
+              <text x="32" y="104" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">10%</text>
+              <text x="32" y="54" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">20%</text>
+              <polyline points="60,83 250,75 420,62" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
+              <polyline points="100,111 420,97" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"></polyline>
+              <circle cx="60" cy="83" r="4" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015 — total government revenue, 13.4% of GDP</title></circle>
+              <circle cx="420" cy="62" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024 — 17.7% of GDP</title></circle>
+              <circle cx="100" cy="111" r="4" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2016 — internally-raised revenue, 7.8% of GDP</title></circle>
+              <circle cx="420" cy="97" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.4s both;"><title>2024 — internally-raised revenue, 10.6% of GDP</title></circle>
+              <text x="428" y="66" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#2E7D5B">17.7%</text>
+              <text x="428" y="101" font-family="IBM Plex Mono" font-size="10" fill="#1F6FB2">10.6%</text>
+              <text x="60" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2015</text>
+              <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
+              <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
+            </svg>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Total government revenue rose from 13.4% to 17.7% of gross domestic product between 2015 and 2024, and internally-raised revenue from 7.8% to 10.6% — supported by a digital taxpayer identification number and digitalized tax and customs collection. Property-tax and anti-fraud reforms are the next steps the review recommends.</p>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 17.1.1</a></div></sc-if>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ================= WATER ================= -->
+      <sc-if value="{{ tabShow.water }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Water" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">2026 Year of Water Sustainability</h2>
+          <p style="margin: 0; max-width: 900px; font-size: 14px; line-height: 1.6; color: #5A6B7C;">The African Union's theme for 2026. In Burundi, water access improved from 82.3% to 86.3% between 2017 and 2024, while Lake Tanganyika is at once the country's richest resource and its most disruptive flood risk.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-size: 15px; font-weight: 600;">Transboundary water governance</div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Fishing on Lake Tanganyika is regulated under the <strong>Lake Tanganyika Authority</strong>, a body shared with neighbouring countries; Burundi's membership of the <strong>Nile Basin Initiative</strong> provides a second standing regional framework.</p>
+            <svg viewBox="0 0 420 84" style="width: 100%; height: auto; display: block;">
+              <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">Fish stock, tonnes · 2016–2021</text>
+              <polyline points="16,54 88,40 160,62 232,36 304,58 400,44" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
+              <circle cx="160" cy="62" r="4" fill="#1F6FB2"><title>Low — ~24,400 tonnes</title></circle>
+              <circle cx="232" cy="36" r="4" fill="#1F6FB2"><title>High — ~27,200 tonnes</title></circle>
+              <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">fluctuating 24,400–27,200 tonnes · seasonal closures, minimum catch sizes, community co-management</text>
+            </svg>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.72–73 · VNR 2020, p.85–86</a></div></sc-if>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-size: 15px; font-weight: 600;">The urban-rural gap — policy anchoring</div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Water has a dedicated axis of the National Development Plan, a <strong>National Water Policy</strong> and a <strong>National Water Strategy</strong> — the remaining constraint is geographic reach.</p>
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 4px 0;">
+              <div style="display: grid; grid-template-columns: 48px 1fr 52px; align-items: center; gap: 10px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">Urban</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Urban water coverage — near-universal"><div style="width: 97.4%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">97.4%</span></div>
+              <div style="display: grid; grid-template-columns: 48px 1fr 52px; align-items: center; gap: 10px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">Rural</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural water coverage — 85.6% (2020) → 84.4% (2024)"><div style="width: 84.4%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">84.4%</span></div>
+            </div>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.61–63, 73</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 6.1.1</a></div></sc-if>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-size: 15px; font-weight: 600;">Water security as human security</div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Lake overflows link directly to <strong>displacement, health problems, school dropout and water pollution</strong> — the 2020–2024 flood cycle destroyed housing along the lakeshore and in Gatumba. The review treats reliable water management as a foundation of social stability.</p>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.70–74</a></div></sc-if>
+          </div>
+
+          <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-size: 15px; font-weight: 600;">Restoring water ecosystems</div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Restoration of the <strong>Nyamabuno marsh</strong> and <strong>Ntahangwa river</strong> banks, buffer zones around <strong>Lakes Tanganyika and Cohoha</strong>, rehabilitation of the Buterere wastewater station, and the national reforestation drive <strong>"Ewe Burundi Urambaye"</strong> — the resilience layer that makes durable water access possible.</p>
+            <sc-if value="{{ showSrc }}" hint-placeholder-val="{{ true }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.61–62, 74</a></div></sc-if>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+  </main>
+
+  <footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
+    <div style="max-width: 1280px; margin: 0 auto;">Sources: Republic of Burundi, <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">Second Voluntary National Review 2026</a> (June 2026); First Voluntary National Review 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">United Nations SDG Database</a>. Page citations refer to the VNR 2026 unless otherwise noted. · Prototype for internal review — structure to be replicated identically across all countries once approved.</div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSources&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Display&quot;}}">
+class Component extends DCLogic {
+  state = { tab: 'overview', metric: 'elec', goal: 's6', inst: 'energy' };
+
+  renderVals() {
+    const mk = (list, current, setter, styler) => {
+      const S = {}, Go = {}, Show = {};
+      list.forEach(k => {
+        S[k] = styler(k === current);
+        Go[k] = () => this.setState(setter(k));
+        Show[k] = k === current;
+      });
+      return { S, Go, Show };
+    };
+
+    const tabs = ['overview', 'goals', 'joint', 'policy', 'financing', 'debt', 'water'];
+    const tab = mk(tabs, this.state.tab, k => ({ tab: k }), active => ({
+      background: 'none', border: 'none', cursor: 'pointer',
+      padding: '12px 16px', fontSize: '14px',
+      fontWeight: active ? 700 : 500,
+      color: active ? '#1F6FB2' : '#5A6B7C',
+      borderBottom: active ? '3px solid #1F6FB2' : '3px solid transparent',
+      transition: 'color 0.15s ease'
+    }));
+
+    const tileBase = {
+      display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px',
+      textAlign: 'left', padding: '16px 18px', borderRadius: '12px', cursor: 'pointer',
+      transition: 'all 0.15s ease'
+    };
+    const tile = mk(['elec', 'water', 'rev', 'debt', 'fin'], this.state.metric, k => ({ metric: k }), active => ({
+      ...tileBase,
+      background: '#FFFFFF',
+      border: active ? '2px solid #1F6FB2' : '1px solid #E3E7EC',
+      boxShadow: active ? '0 4px 14px rgba(31,111,178,0.14)' : 'none',
+      padding: active ? '15px 17px' : '16px 18px'
+    }));
+
+    const goal = mk(['s6', 's7', 's9', 's11', 's17'], this.state.goal, k => ({ goal: k }), active => ({
+      display: 'flex', alignItems: 'center', gap: '10px', textAlign: 'left',
+      padding: '14px 16px', borderRadius: '12px', cursor: 'pointer',
+      background: '#FFFFFF',
+      border: active ? '2px solid #1F6FB2' : '1px solid #E3E7EC',
+      boxShadow: active ? '0 4px 14px rgba(31,111,178,0.14)' : 'none',
+      transition: 'all 0.15s ease'
+    }));
+
+    const inst = mk(['energy', 'cnif', 'corr', 'pddsp', 'pafen', 'vision'], this.state.inst, k => ({ inst: k }), active => ({
+      display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '2px',
+      textAlign: 'left', padding: '13px 16px', borderRadius: '10px', cursor: 'pointer',
+      background: active ? '#F1F6FA' : '#FFFFFF',
+      border: active ? '2px solid #1F6FB2' : '1px solid #E3E7EC',
+      color: active ? '#1F6FB2' : '#1B2A3A',
+      fontSize: '13.5px',
+      transition: 'all 0.15s ease'
+    }));
+
+    return {
+      tabS: tab.S, tabGo: tab.Go, tabShow: tab.Show,
+      tileS: tile.S, tileGo: tile.Go, metShow: tile.Show,
+      goalS: goal.S, goalGo: goal.Go, goalShow: goal.Show,
+      instS: inst.S, instGo: inst.Go, instShow: inst.Show,
+      showSrc: this.props.showSources ?? true
+    };
+  }
+}
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "Burundi Dashboard v4";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var STAMP = true;
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', source: 'declared', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  // Declared kind: a doc-page tag names the kind outright, so no signal
+  // heuristics run (like the deck branch above, signals report false —
+  // they describe inferred classifications only). The tag alone is not
+  // trusted: the element must have upgraded (shadowRoot present), so a
+  // leftover tag whose script was deleted falls through to the heuristics
+  // that handle plain markup.
+  var stageSx = window.scrollX || 0, stageSy = window.scrollY || 0;
+  var dp = document.querySelector('doc-page');
+  if (dp && dp.shadowRoot) {
+    // Crop to the sheet, not the host — the desk around it is screen-only
+    // chrome that must not land in PNG exports.
+    var sheet = dp.shadowRoot.querySelector('.sheet');
+    var sr = (sheet || dp).getBoundingClientRect();
+    return { kind: 'paper-doc', source: 'declared', doc: doc,
+      frames: [{ left: sr.left + stageSx, top: sr.top + stageSy,
+        width: sr.width, height: sr.height }],
+      authored: [{ width: false, height: false }],
+      signals: { paperPage: false, pxPage: false } };
+  }
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    if (STAMP) el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', source: 'inferred', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: off unless the page opts in via data-om-multi-frame on the
+  // stop element — the explicit opt-in is what guards against card grids
+  // and pricing tables that match the geometry but aren't separate
+  // canvases. Two ways to name the frames, explicit first:
+  // 1. Descendants marked data-om-frame-export (the social-frames starter
+  //    marks each asset frame; shells/panels around them are presentation,
+  //    so nesting is expected). Document order.
+  // 2. Fallback, no marked descendants: direct children with an authored px
+  //    width AND height (the original geometry heuristic).
+  // Frames may be different sizes (a gallery mixes 1080×1920 stories with
+  // 728×90 banners); data-om-frame-label rides along for export filenames.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var visOk = function (e) {
+      var cs; try { cs = getComputedStyle(e); } catch (err) { return false; }
+      return cs.display !== 'none' && cs.visibility !== 'hidden' && cs.position !== 'fixed';
+    };
+    // A frame's crop is its VISUAL box — never the scrollHeight-inflated
+    // rect that rectOf computes for page roots. Shadow-DOM hover controls
+    // (image-slot's Replace bar parks 29px below its host) and similar
+    // escaping UI contribute scrollable overflow to the frame, and the
+    // inflated height both squashes the nominal-size resize and drags
+    // content below the frame into the crop. Zoom-independent; bit every
+    // slot-bearing frame.
+    var frameRectOf = function (e) {
+      var r = e.getBoundingClientRect();
+      return { left: r.left + sx, top: r.top + sy, width: r.width, height: r.height };
+    };
+    var pushCand = function (list, e) {
+      if (!visOk(e)) return;
+      var rc = frameRectOf(e);
+      if (rc.width < 2 || rc.height < 2) return;
+      var lbl = e.getAttribute('data-om-frame-label');
+      if (lbl) rc.label = lbl;
+      list.push(rc);
+    };
+    var cands = [];
+    var marked = el.querySelectorAll('[data-om-frame-export]');
+    if (marked.length) {
+      for (var mk = 0; mk < marked.length; mk++) pushCand(cands, marked[mk]);
+    } else {
+      for (var k = 0; k < el.children.length; k++) {
+        var ch = el.children[k];
+        if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+        pushCand(cands, ch);
+      }
+    }
+    if (cands.length >= 2) {
+      return { kind: 'multi-frame', source: 'inferred', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  if (STAMP) el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', source: 'inferred', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

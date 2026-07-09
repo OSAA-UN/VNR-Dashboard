@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="./data/vnr-globe-data.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #F6F7F9; }
+  body { font-family: 'Source Sans 3', sans-serif; color: #1B2A3A; }
+  a { color: #1F6FB2; text-decoration: none; }
+  a:hover { color: #16537E; text-decoration: none; }
+  button { font-family: inherit; }
+  @keyframes cardIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+
+<div style="height: 100vh; display: flex; flex-direction: column; overflow: hidden; background: radial-gradient(ellipse at 62% 45%, #EDF3F8 0%, #F6F7F9 62%);">
+  <div style="height: 5px; flex-shrink: 0; background: linear-gradient(90deg, #1F6FB2 0%, #1F6FB2 60%, #2E7D5B 60%, #2E7D5B 80%, #B4533A 80%, #B4533A 100%);"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 20px 36px 16px 36px; background: #FFFFFF; border-bottom: 1px solid #E3E7EC; flex-wrap: wrap; position: relative; z-index: 4;">
+    <div style="display: flex; flex-direction: column; gap: 5px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; color: #7A8A9A; text-transform: uppercase;">Africa Operations · Voluntary National Reviews · HLPF 2026</div>
+      <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: #1B2A3A;">Africa Takes Stock: Nineteen Nations on the Road to 2030</h1>
+    </div>
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #7A8A9A; text-transform: uppercase; display: flex; gap: 22px; flex-wrap: wrap;">
+      <span><span style="color: #1F6FB2; font-weight: 600;">19</span> Countries</span>
+      <span><span style="color: #1F6FB2; font-weight: 600;">2</span> Cycles compared</span>
+      <span><span style="color: #1F6FB2; font-weight: 600;">6</span> SDG themes each</span>
+      <span><span style="color: #2E7D5B; font-weight: 600;">19</span> Dashboards live</span>
+    </div>
+  </header>
+
+  <!-- ============ GLOBE STAGE ============ -->
+  <div data-screen-label="Globe" style="flex: 1; position: relative; min-height: 0;">
+    <canvas ref="{{ canvasRef }}" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block;" onMouseMove="{{ onMove }}" onMouseLeave="{{ onLeave }}" onClick="{{ onClick }}"></canvas>
+
+    <!-- Hover / pinned signal card -->
+    <sc-if value="{{ hasCard }}" hint-placeholder-val="{{ false }}">
+      <div style="{{ cardStyle }}">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 9px;">
+            <span style="{{ cardDotStyle }}"></span>
+            <span style="{{ cardNameStyle }}">{{ cardName }}</span>
+          </div>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: #7A8A9A;">VNR {{ cardYears }}</span>
+        </div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #7A8A9A; text-transform: uppercase; margin-top: 9px;">⚡ 2026 VNR Signals</div>
+        <div style="display: flex; flex-direction: column; margin-top: 4px;">
+          <sc-for list="{{ cardSignals }}" as="s" hint-placeholder-count="3">
+            <div style="padding: 10px 0; border-bottom: 1px solid #EEF1F4; display: flex; flex-direction: column; gap: 5px;">
+              <span style="{{ s.tagStyle }}">{{ s.tag }}</span>
+              <span style="font-size: 13.5px; line-height: 1.5; color: #45525F;">{{ s.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ cardIsLive }}" hint-placeholder-val="{{ false }}">
+          <a href="{{ cardHref }}" style="display: block; margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2E7D5B;" style-hover="color: #1F5C42;">Open full dashboard →</a>
+        </sc-if>
+        <sc-if value="{{ cardNotLive }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #B0791F;">Dashboard coming soon</div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <!-- Country legend (hidden while a signal card is open) -->
+    <sc-if value="{{ showLegend }}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; background: rgba(255,255,255,0.92); border: 1px solid #E3E7EC; border-radius: 10px; padding: 11px 14px 10px 14px; backdrop-filter: blur(6px); box-shadow: 0 6px 18px rgba(20,40,60,0.08); z-index: 3; left: 30px; top: 314px; border-width: 0px">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.2em; color: #7A8A9A; text-transform: uppercase; margin-bottom: 7px;">2026 VNR Countries</div>
+      <div style="display: grid; grid-template-columns: repeat(2, auto); gap: 1px 16px;">
+        <sc-for list="{{ legend }}" as="c" hint-placeholder-count="19">
+          <button style="{{ c.style }}" onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" onClick="{{ c.click }}">
+            <span style="{{ c.dotStyle }}"></span>{{ c.name }}
+          </button>
+        </sc-for>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- Credit -->
+    <div style="position: absolute; right: 36px; bottom: 26px; font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.06em; color: #9AA7B4; text-align: right; z-index: 2; max-width: 380px;">Source: VNR 2026 Key Messages factsheets · OSAA IGS<br>Boundaries shown do not imply UN endorsement · Draft for consultation</div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;rotationSpeed&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1, &quot;min&quot;: 0, &quot;max&quot;: 3, &quot;step&quot;: 0.25, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Globe&quot;}, &quot;showGraticule&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Globe&quot;}}">
+class Component extends DCLogic {
+  state = { hover: null, pinned: null };
+
+  canvasRef = React.createRef();
+
+  componentDidMount() {
+    this.alive = true;
+    this.rotSpeed = 0; // eased
+    this.time = 0;
+    this.dashOffset = 0;
+    this.pulse = 0;
+    this.hitPoints = [];
+    fetch('./data/world-geo.json').then(r => r.json()).then(geo => { this.geo = geo; });
+    const boot = () => {
+      if (!this.alive) return;
+      if (window.d3 && window.VNR_GLOBE && this.geo && this.canvasRef.current) this.start();
+      else setTimeout(boot, 80);
+    };
+    boot();
+  }
+
+  componentWillUnmount() {
+    this.alive = false;
+    if (this.raf) cancelAnimationFrame(this.raf);
+    if (this.ro) this.ro.disconnect();
+  }
+
+  start() {
+    const canvas = this.canvasRef.current;
+    const stage = canvas.parentElement;
+    const d3 = window.d3;
+    this.proj = d3.geoOrthographic().clipAngle(90);
+    this.pathCtx = null;
+    const resize = () => {
+      const r = stage.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      this.w = r.width; this.h = r.height;
+      canvas.width = r.width * dpr; canvas.height = r.height * dpr;
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      this.ctx = ctx;
+      const scale = Math.min(this.h * 0.70, this.w * 0.40);
+      this.proj.scale(scale).translate([this.w * 0.60, this.h * 0.55]);
+      this.geoPath = d3.geoPath(this.proj, ctx);
+    };
+    resize();
+    this.ro = new ResizeObserver(resize);
+    this.ro.observe(stage);
+    let last = performance.now();
+    const loop = (now) => {
+      if (!this.alive) return;
+      const dt = Math.min(0.05, (now - last) / 1000); last = now;
+      const speedProp = (this.props.rotationSpeed != null ? this.props.rotationSpeed : 1);
+      const engaged = this.state.hover || this.state.pinned;
+      const target = engaged ? 0 : speedProp;
+      this.rotSpeed += (target - this.rotSpeed) * Math.min(1, dt * 4);
+      this.time += dt * this.rotSpeed;
+      this.pulse += dt;
+      this.dashOffset -= dt * 18;
+      this.draw();
+      this.raf = requestAnimationFrame(loop);
+    };
+    this.raf = requestAnimationFrame(loop);
+  }
+
+  draw() {
+    const ctx = this.ctx, d3 = window.d3;
+    if (!ctx) return;
+    // slow drift that keeps Africa centered: oscillate around lon 17E
+    const lambda = 17 + 16 * Math.sin(this.time * 0.05);
+    const phi = -2 + 3 * Math.sin(this.time * 0.023);
+    this.proj.rotate([-lambda, phi]);
+    ctx.clearRect(0, 0, this.w, this.h);
+
+    const [cx, cy] = this.proj.translate();
+    const R = this.proj.scale();
+
+    // sphere body (ocean)
+    const grad = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R);
+    grad.addColorStop(0, '#E2EEF7');
+    grad.addColorStop(0.65, '#CFE1EF');
+    grad.addColorStop(1, '#BBD2E4');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2);
+    ctx.fillStyle = grad; ctx.fill();
+
+    // rim
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(126,160,190,0.55)'; ctx.lineWidth = 1.2; ctx.stroke();
+
+    // graticule (optional)
+    if (this.props.showGraticule) {
+      ctx.beginPath(); this.geoPath(d3.geoGraticule10());
+      ctx.strokeStyle = 'rgba(90,130,165,0.12)'; ctx.lineWidth = 0.6; ctx.stroke();
+    }
+
+    // land
+    ctx.beginPath(); this.geoPath(this.geo.land);
+    ctx.fillStyle = '#FFFFFF'; ctx.fill();
+    // borders
+    ctx.beginPath(); this.geoPath(this.geo.borders);
+    ctx.strokeStyle = 'rgba(126,160,190,0.55)'; ctx.lineWidth = 0.55; ctx.stroke();
+
+    // country points
+    const activeIso = this.state.pinned || this.state.hover;
+    this.hitPoints = [];
+    ctx.textAlign = 'center';
+    window.VNR_GLOBE.forEach(c => {
+      const visible = d3.geoDistance([c.lon, c.lat], [lambda, -phi]) < Math.PI / 2 - 0.04;
+      if (!visible) return;
+      const p = this.proj([c.lon, c.lat]);
+      if (!p) return;
+      const [x, y] = p;
+      this.hitPoints.push({ x, y, c });
+      const isActive = activeIso === c.iso;
+
+      // glow
+      const g = ctx.createRadialGradient(x, y, 0, x, y, 13);
+      g.addColorStop(0, c.color + '3C'); g.addColorStop(1, c.color + '00');
+      ctx.beginPath(); ctx.arc(x, y, 13, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
+
+      // live pulse ring (Burundi)
+      if (c.live) {
+        const t = (this.pulse % 2.2) / 2.2;
+        ctx.beginPath(); ctx.arc(x, y, 6 + t * 12, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(46,125,91,' + (0.55 * (1 - t)).toFixed(3) + ')';
+        ctx.lineWidth = 1.4; ctx.stroke();
+      }
+
+      // dot
+      ctx.beginPath(); ctx.arc(x, y, isActive ? 6 : 4.5, 0, Math.PI * 2);
+      ctx.fillStyle = c.color; ctx.fill();
+      ctx.beginPath(); ctx.arc(x, y, isActive ? 6 : 4.5, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(255,255,255,0.95)'; ctx.lineWidth = 1.5; ctx.stroke();
+
+      // label
+      let lx = x + 1, ly, align = 'center';
+      if (c.labelAnchor === 'left') { align = 'left'; lx = x + 11; ly = y + 3.5; }
+      else if (c.labelAnchor === 'right') { align = 'right'; lx = x - 11; ly = y + 3.5; }
+      else { ly = y + ((c.labelDy === -1) ? -11 : 18); }
+      ctx.textAlign = align;
+      ctx.font = '600 8.5px "IBM Plex Mono", monospace';
+      try { ctx.letterSpacing = '1.4px'; } catch (e) {}
+      ctx.fillStyle = isActive ? '#12283C' : '#4A5D70';
+      ctx.shadowColor = 'rgba(255,255,255,0.9)'; ctx.shadowBlur = 3;
+      ctx.fillText(c.name.toUpperCase(), lx, ly);
+      ctx.shadowBlur = 0;
+      try { ctx.letterSpacing = '0px'; } catch (e) {}
+    });
+
+    // dashed connector to card
+    if (activeIso) {
+      const hp = this.hitPoints.find(p => p.c.iso === activeIso);
+      if (hp) {
+        const ax = 36 + 354, ay = 28 + 120; // card right edge anchor
+        ctx.beginPath();
+        ctx.setLineDash([7, 7]);
+        ctx.lineDashOffset = this.dashOffset;
+        ctx.moveTo(hp.x, hp.y);
+        ctx.lineTo(ax, ay);
+        ctx.strokeStyle = hp.c.color; ctx.lineWidth = 1.4; ctx.globalAlpha = 0.85;
+        ctx.stroke();
+        ctx.setLineDash([]); ctx.globalAlpha = 1;
+      }
+    }
+  }
+
+  hitTest(e) {
+    const rect = this.canvasRef.current.getBoundingClientRect();
+    const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+    let best = null, bd = 18;
+    (this.hitPoints || []).forEach(p => {
+      const d = Math.hypot(p.x - mx, p.y - my);
+      if (d < bd) { bd = d; best = p.c; }
+    });
+    return best;
+  }
+
+  renderVals() {
+    const DATA = window.VNR_GLOBE || [];
+    const activeIso = this.state.pinned || this.state.hover;
+    const card = DATA.find(c => c.iso === activeIso);
+
+    const legend = DATA.map(c => {
+      const isActive = activeIso === c.iso;
+      return {
+        name: c.name,
+        style: {
+          display: 'inline-flex', alignItems: 'center', gap: 7, background: 'none', border: 'none',
+          padding: '2px 0', cursor: c.href ? 'pointer' : 'default', fontFamily: "'Source Sans 3', sans-serif",
+          fontSize: 11.5, color: c.href ? '#2E7D5B' : (isActive ? '#12283C' : '#5A6B7C'), fontWeight: (isActive || c.href) ? 600 : 400,
+          transition: 'color 0.12s ease', textAlign: 'left'
+        },
+        dotStyle: { width: 7, height: 7, borderRadius: '50%', background: c.color, display: 'inline-block', flexShrink: 0 },
+        enter: () => this.setState({ hover: c.iso, hoverSrc: 'legend' }),
+        leave: () => this.setState({ hover: null }),
+        click: () => {
+          if (c.href) { window.location.href = c.href; }
+        }
+      };
+    });
+
+    return {
+      canvasRef: this.canvasRef,
+      onMove: (e) => {
+        const hit = this.hitTest(e);
+        this.canvasRef.current.style.cursor = hit ? 'pointer' : 'default';
+        const iso = hit ? hit.iso : null;
+        if (iso !== this.state.hover) this.setState({ hover: iso, hoverSrc: 'map' });
+      },
+      onLeave: () => { if (this.state.hover) this.setState({ hover: null }); },
+      onClick: (e) => {
+        const hit = this.hitTest(e);
+        if (!hit) { if (this.state.pinned) this.setState({ pinned: null }); return; }
+        if (hit.href) { window.location.href = hit.href; return; }
+        this.setState(s => ({ pinned: s.pinned === hit.iso ? null : hit.iso, pinnedSrc: 'map' }));
+      },
+      hasCard: !!card,
+      cardStyle: card ? {
+        position: 'absolute', left: 36, top: 28, width: 354, zIndex: 5,
+        background: 'rgba(255,255,255,0.97)', border: '1px solid #E3E7EC',
+        borderTop: '3px solid ' + card.color,
+        borderRadius: 12, padding: '16px 18px 14px 18px',
+        boxShadow: '0 14px 40px rgba(20,40,60,0.16)',
+        backdropFilter: 'blur(6px)', animation: 'cardIn 0.18s ease both',
+        pointerEvents: this.state.pinned ? 'auto' : 'none'
+      } : { display: 'none' },
+      cardDotStyle: card ? { width: 9, height: 9, borderRadius: '50%', background: card.color, boxShadow: '0 0 8px ' + card.color, display: 'inline-block' } : {},
+      cardNameStyle: card ? { fontSize: 17, fontWeight: 700, color: card.color, letterSpacing: '0.01em' } : {},
+      cardName: card ? card.name : '',
+      cardYears: card ? card.years : '',
+      cardSignals: card ? card.signals.map(s => ({
+        tag: s.tag, text: s.text,
+        tagStyle: {
+          alignSelf: 'flex-start', fontFamily: "'IBM Plex Mono', monospace", fontSize: 9,
+          fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase',
+          color: card.color, background: card.color + '1A', border: '1px solid ' + card.color + '3A',
+          padding: '2px 7px', borderRadius: 4
+        }
+      })) : [],
+      showLegend: !card || (this.state.pinned ? this.state.pinnedSrc : this.state.hoverSrc) === 'legend',
+      cardIsLive: !!(card && card.href),
+      cardNotLive: !!(card && !card.href),
+      cardHref: card ? (card.href || '') : '',
+      legend
+    };
+  }
+}
+
+</script>
+</body>
+</html>
