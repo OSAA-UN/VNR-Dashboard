@@ -30,7 +30,7 @@
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Africa Operations / <span style="color: #1F6FB2; font-weight: 500;">Guinea-Bissau</span> · Tableau de bord pays · RNV 2026</div>
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
         <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Guinea-Bissau</h1>
-        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">Revues nationales volontaires (VNR) 2022 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">United Nations Sustainable Development Goals (SDG) Database</a></span>
+        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">Revues nationales volontaires (VNR) 2022 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
       </div>
       <nav style="display: flex; gap: 4px; margin-top: 14px; flex-wrap: wrap;">
         <button data-tab-btn="overview" style="{{ tabBtn.overview }}" onClick="{{ onTab.overview }}">Aperçu &amp; tendances</button>
@@ -39,7 +39,7 @@
         <button data-tab-btn="policy" style="{{ tabBtn.policy }}" onClick="{{ onTab.policy }}">Réponses politiques</button>
         <button data-tab-btn="financing" style="{{ tabBtn.financing }}" onClick="{{ onTab.financing }}">Financement</button>
         <button data-tab-btn="debt" style="{{ tabBtn.debt }}" onClick="{{ onTab.debt }}">Dette et revenus</button>
-        <button data-tab-btn="water" style="{{ tabBtn.water }}" onClick="{{ onTab.water }}">Année de la durabilité de l'eau</button>
+        <button data-tab-btn="water" style="{{ tabBtn.water }}" onClick="{{ onTab.water }}">Année de la gestion durable de l'eau</button>
       </nav>
     </div>
   </header>
@@ -53,29 +53,29 @@
 
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
           <button data-tile-btn="elec" style="{{ metricBtn.elec }}" onClick="{{ onMetric.elec }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Electricity Access</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Accès à l'électricité</span>
             <span style="font-size: 28px; font-weight: 700; color: #1F6FB2;">43.7%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1F6FB2;">▲ from 37.4% in 2022</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1F6FB2;">▲ depuis 37,4 % en 2022</span>
           </button>
           <button data-tile-btn="water" style="{{ metricBtn.water }}" onClick="{{ onMetric.water }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Basic Water Access</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Accès eau de base</span>
             <span style="font-size: 28px; font-weight: 700; color: #B0791F;">52.6%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">safely managed: 24%</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">gestion sûre : 24 %</span>
           </button>
           <button data-tile-btn="rev" style="{{ metricBtn.rev }}" onClick="{{ onMetric.rev }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Tax Revenue / GDP</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Recettes fisc. / PIB</span>
             <span style="font-size: 28px; font-weight: 700; color: #B4533A;">8.6%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B4533A;">among lowest globally</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B4533A;">parmi les plus faibles au monde</span>
           </button>
           <button data-tile-btn="debt" style="{{ metricBtn.debt }}" onClick="{{ onMetric.debt }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">External Debt / GNI</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Dette ext. / RNB</span>
             <span style="font-size: 28px; font-weight: 700; color: #B0791F;">67.1%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">financing constraint</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">contrainte de financement</span>
           </button>
           <button data-tile-btn="fin" style="{{ metricBtn.fin }}" onClick="{{ onMetric.fin }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Protected Territory</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Territoire protégé</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">59.5%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">74.7% forest cover</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">74,7 % couverture forestière</span>
           </button>
         </div>
 
@@ -83,7 +83,7 @@
         <div data-metric-panel="elec" style="{{ metricPanel.elec }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">Electricity access, national vs rural, 2020–2024</div>
+            <div style="font-size: 17px; font-weight: 600;">Accès à l'électricité, national vs. rural, 2020–2024</div>
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
@@ -110,7 +110,7 @@
             <text x="380" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2022</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès national à l'électricité est passé de 33 % en 2020 à 43,7 % en 2024, porté par le programme d'intégration hydroélectrique régionale de l'OMVG that connects Guinea-Bissau to cross-border clean hydro from shared Gambia River basin projects. The urban-rural gap — 65.6% vs 24.9% — and near-zero clean-cooking access (2%) mark the household energy challenge that regional grid integration has not yet reached.</p>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès national à l'électricité est passé de 33 % en 2020 à 43,7 % en 2024, porté par le programme d'intégration hydroélectrique régionale de l'OMVG that connects Guinea-Bissau to cross-border clean hydro from shared Gambia River basin projects. The urban-rural gap — 65.6% vs 24.9% — et near-zero clean-cooking access (2%) mark the household energy challenge that regional grid integration has not yet reached.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
         </div>
         </div>
@@ -119,7 +119,7 @@
         <div data-metric-panel="water" style="{{ metricPanel.water }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">Water and sanitation access, 2022–2024</div>
+            <div style="font-size: 17px; font-weight: 600;">Accès à l'eau et à l'assainissement, 2022–2024</div>
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
@@ -144,11 +144,11 @@
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Basic water</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Basic sanitation</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px; border-style: dashed;"></span>Safely managed water</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Eau de base</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Assainissement de base</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px; border-style: dashed;"></span>Eau gérée sûrement</span>
           </div>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Basic drinking water access sits at 52.6% and has been effectively flat — a structural challenge the PND 2026–2035 addresses directly. Safely-managed water reaches only 24% of the population, and basic sanitation only 28.9%. The VNR frames universal basic WASH as the foundation condition for human capital progress, recognising that health and educational outcomes cannot improve without it.</p>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès à l'eau potable de base est à 52,6 % et est resté effectivement stable — un défi structurel que le PND 2026–2035 aborde par l'investissement en infrastructure.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 6.1.1, 6.2.1, 1.4.1</a></div></div>
         </div>
         </div>
@@ -157,7 +157,7 @@
         <div data-metric-panel="rev" style="{{ metricPanel.rev }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">GDP growth and inflation, 2022–2024</div>
+            <div style="font-size: 17px; font-weight: 600;">Croissance du PIB et inflation, 2022–2024</div>
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
@@ -191,7 +191,7 @@
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>GDP growth</span>
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Inflation</span>
           </div>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La stabilisation macroéconomique mise en avant par le RNV 2026 : la croissance du PIB s'est maintenue entre 4 et 6 % across three years, and inflation was tamed from 9.4% in 2022 to 3.8% in 2024 within the WAEMU/BCEAO monetary framework. This stability is the economic base the PND 2026–2035 builds on — though government revenue at just 8.6% of GDP remains among the lowest in the world, keeping the state heavily ODA-dependent.</p>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La stabilisation macroéconomique mise en avant par le RNV 2026 : la croissance du PIB s'est maintenue entre 4 et 6 % across three years, et inflation was tamed from 9.4% in 2022 to 3.8% in 2024 within the WAEMU/BCEAO monetary framework. This stability is the economic base the PND 2026–2035 builds on — though government revenue at just 8.6% of GDP remains among the lowest in the world, keeping the state heavily ODA-dependent.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, Goal 17 series</a> · <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026</a></div></div>
         </div>
         </div>
@@ -200,7 +200,7 @@
         <div data-metric-panel="debt" style="{{ metricPanel.debt }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">External debt stock, % of GNI, 2019–2024</div>
+            <div style="font-size: 17px; font-weight: 600;">Stock de dette extérieure, % du RNB, 2019–2024</div>
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
@@ -215,15 +215,15 @@
             <defs><linearGradient id="gD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B0791F" stop-opacity="0.15"></stop><stop offset="1" stop-color="#B0791F" stop-opacity="0"></stop></linearGradient></defs>
             <polygon points="60,60 250,62 380,59 636,60 700,61 700,200 60,200" fill="url(#gD)"></polygon>
             <polyline points="60,60 250,62 380,59 636,60 700,61" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="60" cy="60" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.1s both;"><title>2019, external debt 68.3% of GNI (Base de données ODD des ONU, 17.4.1 series)</title></circle>
-            <circle cx="380" cy="59" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>2022, 67.7% of GNI — stable but high</title></circle>
-            <circle cx="700" cy="61" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.3s both;"><title>2024, 67.1% of GNI (Base de données ODD des ONU)</title></circle>
+            <circle cx="60" cy="60" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.1s both;"><title>2019, dette extérieure 68,3 % du RNB (Base de données ODD des ONU, 17.4.1)</title></circle>
+            <circle cx="380" cy="59" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>2022, 67,7 % du RNB — stable mais élevé</title></circle>
+            <circle cx="700" cy="61" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.3s both;"><title>2024, 67,1 % du RNB (Base de données ODD des ONU)</title></circle>
             <text x="648" y="55" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">67.1%</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2019</text>
             <text x="380" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2022</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">External debt has hovered near 67–68% of GNI since 2019 — a high and stable position that reflects structural ODA and concessional-loan dependence rather than a debt crisis. Combined with tax revenues of only 8.6% of GDP, the fiscal space for SDG investment is narrow. Macroeconomic stabilisation — growth at 4–6% and inflation tamed to 3.8% — is the 2026 VNR's answer to the question of how the PND will be financed.</p>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La dette extérieure oscille autour de 67–68 % du RNB depuis 2019 — une position élevée et stable qui reflète l'APD structurelle et l'emprunt concessionnel plutôt qu'une surchauffe.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, Goal 17 series</a> · <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026</a></div></div>
         </div>
         </div>
@@ -232,19 +232,19 @@
         <div data-metric-panel="fin" style="{{ metricPanel.fin }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">Development finance priorities by sector</div>
-            <div style="font-size: 12.5px; color: #5A6B7C;">Rank order by prominence in PND 2026–2035</div>
+            <div style="font-size: 17px; font-weight: 600;">Priorités de financement du développement par secteur</div>
+            <div style="font-size: 12.5px; color: #5A6B7C;">Classement par importance dans le PND 2026–2035</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px; ">
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Human capital <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 1: PND 2026-2035 first pillar"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Capital humain <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 1: PND 2026-2035 first pillar"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">ODA infrastructure <span style="color: #9AA7B4; font-size: 11.5px;">SDG 9</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 2: $33M infra ODA 2024"><div style="width: 87%; height: 100%; background: #3981BC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.12s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Energy (OMVG) <span style="color: #9AA7B4; font-size: 11.5px;">SDG 7</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 3: regional hydro integration"><div style="width: 74%; height: 100%; background: #5493C6; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.19s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Natural capital <span style="color: #9AA7B4; font-size: 11.5px;">SDG 15</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 4: REDD+, eco-tourism, fisheries"><div style="width: 60%; height: 100%; background: #6FA5D0; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Capital naturel <span style="color: #9AA7B4; font-size: 11.5px;">SDG 15</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 4: REDD+, eco-tourism, fisheries"><div style="width: 60%; height: 100%; background: #6FA5D0; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Eau et assainissement <span style="color: #9AA7B4; font-size: 11.5px;">SDG 6</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 5"><div style="width: 47%; height: 100%; background: #8AB7DA; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.33s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Governance <span style="color: #9AA7B4; font-size: 11.5px;">SDG 16</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 6"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Macro stabilisation <span style="color: #9AA7B4; font-size: 11.5px;">SDG 8</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Stabilisation macro <span style="color: #9AA7B4; font-size: 11.5px;">SDG 8</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Development partners, bilateral and multilateral funders such as United Nations agencies and development banks, have committed $1.5 billion through 2035, the horizon of Guinea-Bissau's national financing framework. The review ranks sectors by committed value but reports only the combined total, so bar lengths show rank order rather than dollar amounts.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement de la Guinée-Bissau.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 122 (Graphique 74)</a></div></div>
         </div>
         </div>
@@ -272,15 +272,15 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 6 · Eau propre et assainissement</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Basic water</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Basic drinking water service, 2024"><div style="width: 52.6%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">52.6%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Safe water</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Safely managed water, 2024"><div style="width: 24%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">24.0%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Basic sanitation</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Basic sanitation service, 2024"><div style="width: 28.9%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">28.9%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Eau de base</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Basic drinking water service, 2024"><div style="width: 52.6%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">52.6%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Eau sûre</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Safely managed water, 2024"><div style="width: 24%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">24.0%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Assainissement de base</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Basic sanitation service, 2024"><div style="width: 28.9%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">28.9%</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 61–65</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 6.1.1 &amp; 6.2.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Basic water access at 52.6% (stable), safely managed water at 24% — the PND 2026–2035 treats universal WASH as the foundation condition for its human capital pillar.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Scaling safely-managed water beyond 24% and lifting basic sanitation from 28.9%, with 4.4% still practising open defecation — the structural water challenge requiring greater investment.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">L'accès à l'eau de base à 52,6 % (stable), eau gérée sûrement à 24 % — le PND 2026–2035 traite l'accès universel à l'eau comme un préalable au développement du capital humain.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Porter l'eau gérée sûrement au-delà de 24 % et relever l'assainissement de base de 28,9 %, avec 4,4 % pratiquant encoreing open defecation — the structural water challenge requiring greater investment.</span></div>
           </div>
         </div>
         </div>
@@ -290,15 +290,15 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 7 · Énergie propre et abordable</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">National access</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="National electricity access, 2024"><div style="width: 43.7%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">43.7%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Rural access</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural electricity access, 2024"><div style="width: 24.9%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">24.9%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Accès national</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="National electricity access, 2024"><div style="width: 43.7%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">43.7%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Accès rural</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural electricity access, 2024"><div style="width: 24.9%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">24.9%</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Renewables</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Renewable share of energy, 2024"><div style="width: 84.1%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">84.1%</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 51–55</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Access rose from 37.4% to 43.7% in two years, driven by OMVG regional hydroelectric integration — 84.1% of the energy supply is now renewable.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Rural access at 24.9% against 65.6% urban, and near-zero clean cooking (2%) — the household energy challenge regional grid integration has not yet reached.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">L'accès est passé de 37,4 % à 43,7 % en deux ans, porté par l'intégration hydroélectrique régionale OMVG — 84.1% of the energy supply is now renewable.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Accès rural à 24,9 % contre 65,6 % urbain, et cuisson propre quasi nulle (2 %) — le défi énergétique des ménages.</span></div>
           </div>
         </div>
         </div>
@@ -308,11 +308,11 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 9 · Industrie, innovation et infrastructure</div>
             <svg viewBox="0 0 380 130" style="width: 100%; height: auto; display: block;">
-              <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">Infrastructure: roads (% paved) and 4G coverage, 2024</text>
+              <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">Infrastructure : routes (% bitumées) et couverture 4G, 2024</text>
               <line x1="30" y1="110" x2="360" y2="110" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="30" y1="60" x2="360" y2="60" stroke="#EEF1F4" stroke-width="1"></line>
               <rect x="60" y="70" width="60" height="40" fill="#1F6FB2" rx="3"><title>4G coverage 35.8%</title></rect>
-              <rect x="180" y="83" width="60" height="27" fill="#B0791F" rx="3"><title>Roads paved 27.5%</title></rect>
+              <rect x="180" y="83" width="60" height="27" fill="#B0791F" rx="3"><title>Routes bitumées 27,5 %</title></rect>
               <text x="90" y="58" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" font-weight="600" fill="#1F6FB2">35.8%</text>
               <text x="210" y="78" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" font-weight="600" fill="#B0791F">27.5%</text>
               <text x="90" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">4G coverage</text>
@@ -321,8 +321,8 @@
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 58–59</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 9.1.1 &amp; 9.c.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">The 2,755 km road network (only 27.5% paved) and modernisation of the sole international airport support economic diversification; ODA infrastructure flows reached $33M in 2024. The OMVG regional hydro programme is the standout infrastructure achievement.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Raising the paved-road share beyond 27.5% and expanding 4G beyond 35.8% of the population, the connectivity gaps that constrain markets and services across a country of fragmented islands and mainland territory.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Le réseau routier de 2 755 km (seulement 27,5 % bitumé) et la modernisation de l'unique aéroport international soutiennent la connectivité.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Porter la part de routes bitumées au-delà de 27,5 % et étendre la 4G au-delà de 35,8 % — les lacunes de connectivité que le PND 2026–2035 doit combler.</span></div>
           </div>
         </div>
         </div>
@@ -334,16 +334,16 @@
             <div style="display: flex; align-items: center; gap: 24px;">
               <svg viewBox="0 0 120 120" style="width: 120px; height: 120px;">
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#EEF1F4" stroke-width="16"></circle>
-                <circle cx="60" cy="60" r="48" fill="none" stroke="#2E7D5B" stroke-width="16" stroke-dasharray="179.6 121.9" stroke-linecap="round" transform="rotate(-90 60 60)"><title>59.5% of national territory is protected (Base de données ODD des ONU, indicator 15.1.2)</title></circle>
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#2E7D5B" stroke-width="16" stroke-dasharray="179.6 121.9" stroke-linecap="round" transform="rotate(-90 60 60)"><title>59,5 % du territoire national est protégé (Base de données ODD des ONU, indicateur 15.1.2)</title></circle>
                 <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#2E7D5B">59.5%</text>
               </svg>
-              <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">of national territory is protected — the Bijagós Archipelago, Cacheu &amp; Cantanhez national parks</div>
+              <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">du territoire national est protégé — l'Archipel des Bijagós, parcs nationaux de Cacheu &amp; Cantanhez</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 66–67</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 11.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">59.5% of the territory is protected and 74.7% is forest cover — exceptional for a country of this income level. The Bijagós UNESCO Biosphere Reserve and near-zero water stress (0.09%) make climate resilience a natural-capital story.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Coastal and island vulnerability: the Bijagós Archipelago faces sea-level rise and storm surge threats that simultaneously endanger Guinea-Bissau's greatest biodiversity asset and its most exposed community of ~25,000 people.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">59,5 % du territoire est protégé et 74,7 % est couvert de forêts — exceptionnel pour un pays à ce niveau de revenu, et fondement de la stratégie de financement du capital naturel.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Vulnérabilité côtière et insulaire : l'Archipel des Bijagós fait face à la montée des eaux et aux risques de tempêtes — une priorité d'adaptation au changement climatique.</span></div>
           </div>
         </div>
         </div>
@@ -351,17 +351,17 @@
         <div data-goal-panel="s17" style="{{ goalPanel.s17 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 16 · Governance and Strong Institutions</div>
+            <div style="font-size: 18px; font-weight: 700;">SDG 16 · Governance et Strong Institutions</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Tax / GDP</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Tax revenue as a share of GDP, 2023"><div style="width: 8.6%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">8.6%</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Ext. debt/GNI</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="External debt as % of GNI, 2024"><div style="width: 67.1%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">67.1%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Vision horizon</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Vision 2035: peaceful, well-governed and prosperous"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">2035</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Horizon vision</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Vision 2035: peaceful, well-governed et prosperous"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">2035</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 85–89</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 17.1.1 &amp; 17.4.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Targeted governance and fiscal-system reforms under the PND 2026–2035; the explicit goal is a peaceful, well-governed and prosperous Guinea-Bissau by 2035. The RNV 2026 acknowledges the monitoring framework needs strengthening.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Building domestic revenue beyond 8.6% of GDP and reducing external debt from 67.1% of GNI — the fiscal foundations without which ODA dependency will persist throughout the PND decade.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Réformes ciblées de gouvernance et du système fiscal dans le cadre du PND 2026–2035 ; l'objectif explicite est une Guinée-Bissau en paix, bien gouvernée et prospère d'ici 2035.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Porter les recettes nationales au-delà de 8,6 % du PIB et réduire la dette extérieure de 67,1 % du RNB — l'espace budgétaire dont la Guinée-Bissau a besoin pour autofinancer son développement.</span></div>
           </div>
         </div>
         </div>
@@ -373,14 +373,14 @@
       <div data-screen-label="Mise en œuvre conjointe" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Mise en œuvre conjointe des ODD et de l'Agenda 2063</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Guinea-Bissau does not run a separate tracking tool for the United Nations Sustainable Development Goals and the African Union's Agenda 2063. Instead, both agendas are built directly into the country's own planning documents, the National Development Plan 2018–2027, the long-term Vision Guinea-Bissau 2040–2060, and a "4P" monitoring framework that groups all 17 goals under four pillars: Population, Prosperity, Planet, and Peace &amp; Partnerships.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La Guinée-Bissau ne dispose pas d'outil de suivi distinct pour les Objectifs de développement durable des Nations Unies et l'Agenda 2063 de l'Union africaine. Instead, both agendas are built directly into the country's own planning documents, the National Development Plan 2018–2027, the long-term Vision Guinea-Bissau 2040–2060, et a "4P" monitoring framework that groups all 17 goals under four pillars: Population, Prosperity, Planet, et Peace &amp; Partnerships.</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 34px 38px; display: flex; flex-direction: column; gap: 26px;">
-            <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">"4P" monitoring framework, Guinea-Bissau's self-assessment of progress</div>
+            <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">Cadre de suivi « 4P » — auto-évaluation des progrès de la Guinée-Bissau</div>
             <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>PND 2026–2035 implementation start</span><span style="color: #1F6FB2; font-weight: 600;">first VNR cycle against the plan</span></div>
+              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>Début de mise en œuvre du PND 2026–2035</span><span style="color: #1F6FB2; font-weight: 600;">premier cycle RNV par rapport au plan</span></div>
               <div style="display: flex; height: 34px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both;">
                 <div style="width: 44%; background: #1F6FB2;" title="44% advancing"></div>
                 <div style="width: 18%; background: #D9A94A;" title="18% partial"></div>
@@ -388,10 +388,10 @@
               </div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 18px;">
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">P1 · Human Capital</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 52%; background: #1F6FB2;"></div><div style="width: 20%; background: #D9A94A;"></div><div style="width: 28%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #1F6FB2; font-weight: 600;">52%</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">P2 · Economic Diversif.</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 44%; background: #2E7D5B;"></div><div style="width: 22%; background: #D9A94A;"></div><div style="width: 34%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">44%</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">P3 · Natural Capital</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 59.5%; background: #2E7D5B;"></div><div style="width: 15%; background: #D9A94A;"></div><div style="width: 25.5%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">59.5%</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">P4 · Governance</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 40%; background: #1F6FB2;"></div><div style="width: 25%; background: #D9A94A;"></div><div style="width: 35%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #1F6FB2; font-weight: 600;">40%</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">P1 · Capital humain</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 52%; background: #1F6FB2;"></div><div style="width: 20%; background: #D9A94A;"></div><div style="width: 28%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #1F6FB2; font-weight: 600;">52%</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">P2 · Diversif. économique</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 44%; background: #2E7D5B;"></div><div style="width: 22%; background: #D9A94A;"></div><div style="width: 34%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">44%</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">P3 · Capital naturel</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 59.5%; background: #2E7D5B;"></div><div style="width: 15%; background: #D9A94A;"></div><div style="width: 25.5%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">59.5%</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">P4 · Gouvernance</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 40%; background: #1F6FB2;"></div><div style="width: 25%; background: #D9A94A;"></div><div style="width: 35%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #1F6FB2; font-weight: 600;">40%</span></div>
             </div>
             <div style="display: flex; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #5A6B7C;">
               <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #1F6FB2;"></span>En progression</span>
@@ -402,19 +402,19 @@
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px;">
-              <div style="font-size: 16px; font-weight: 600;">Digital connectivity, Global Digital Compact alignment</div>
+              <div style="font-size: 16px; font-weight: 600;">Connectivité numérique, alignement sur le Pacte numérique mondial</div>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile penetration, Q2 2025 (national telecoms regulator ARCT)"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">71.0%</div><div style="font-size: 11.5px; color: #5A6B7C;">Mobile penetration</div></div>
-                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Internet penetration, Q2 2025, up 3.3 points in one quarter"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">29.3% <span style="font-size: 12px; color: #2E7D5B;">▲3.3</span></div><div style="font-size: 11.5px; color: #5A6B7C;">Internet penetration</div></div>
-                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile-money, 7.66 million connected subscriptions"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">62.1%</div><div style="font-size: 11.5px; color: #5A6B7C;">Mobile money</div></div>
-                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Fibre-optic backbone now reaches all 18 provinces"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">18/18</div><div style="font-size: 11.5px; color: #5A6B7C;">Provinces on fibre</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile penetration, Q2 2025 (national telecoms regulator ARCT)"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">71.0%</div><div style="font-size: 11.5px; color: #5A6B7C;">Pénétration mobile</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Internet penetration, Q2 2025, up 3.3 points in one quarter"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">29.3% <span style="font-size: 12px; color: #2E7D5B;">▲3.3</span></div><div style="font-size: 11.5px; color: #5A6B7C;">Pénétration internet</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile-money, 7.66 million connected subscriptions"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">62.1%</div><div style="font-size: 11.5px; color: #5A6B7C;">Monnaie mobile</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Fibre-optic backbone now reaches all 18 provinces"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">18/18</div><div style="font-size: 11.5px; color: #5A6B7C;">Provinces sur fibre</div></div>
               </div>
-              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">Guinea-Bissau maps its digital ecosystem against the United Nations Global Digital Compact. COMGOV, the government's shared administrative network, links over 100 public institutions; BERNET, the national education and research network, connects 14 universities. Public-sector staffing in information and communications technology declined 4.4% per year over 2018–2022, the review's own flagged constraint.</p>
+              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">La Guinée-Bissau aligne son écosystème numérique sur le Pacte numérique mondial des Nations Unies. COMGOV, le réseau administratif partagé du gouvernement, links over 100 public institutions; BERNET, the national education et research network, connects 14 universities. Public-sector staffing in information et communications technology declined 4.4% per year over 2018–2022, the review's own flagged constraint.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 111–119</a> · ARCT (telecoms regulator), Q2 2025</div></div>
             </div>
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px;">
-              <div style="font-size: 16px; font-weight: 600;">National Development Plan 2018–2027, the shared anchor</div>
-              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">One national plan serves the Sustainable Development Goals, Agenda 2063 and Vision Guinea-Bissau 2040–2060 together. Delivery runs through dedicated finance institutions, the Impulse, Guarantee and Support Fund (FIGA), the Youth Investment Bank (BIJE) and the Women's Investment and Development Bank (BIDF), and budgeting organized around programmes rather than ministries.</p>
+              <div style="font-size: 16px; font-weight: 600;">Plan national de développement 2026–2035, l'ancre commune</div>
+              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">Un plan national unique sert conjointement les Objectifs de développement durable, l'Agenda 2063 et la Vision Guinée-Bissau 2040–2060. Delivery runs through dedicated finance institutions, the Impulse, Guarantee et Support Fund (FIGA), the Youth Investment Bank (BIJE) et the Women's Investment et Development Bank (BIDF), et budgeting organized around programmes rather than ministries.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 22, 29, 85–86</a></div></div>
             </div>
           </div>
@@ -427,91 +427,91 @@
       <div data-screen-label="Réponses politiques" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Réponses politiques en action</h2>
-          <p style="margin: 0; font-size: 14px; color: #5A6B7C;">Six national instruments identified in the VNR, sélectionnez-en un pour explorer.</p>
+          <p style="margin: 0; font-size: 14px; color: #5A6B7C;">Six instruments nationaux identifiés dans le RNV, sélectionnez-en un pour explorer.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start;">
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">National Energy Compact</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">$3.49B · 2024</span></button>
-            <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">National Financement Framework</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">$1.507B tracked</span></button>
-            <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Anti-Corruption Strategy</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2025–2030</span></button>
-            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Digitalization Master Plan</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2023–2027</span></button>
-            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Digital Economy Project</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">World Bank $92M</span></button>
-            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Vision Guinea-Bissau 2040–2060</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">long-term frame</span></button>
+            <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">Compact national sur l'énergie</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">3,49 Md$ · 2024</span></button>
+            <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">Cadre national de financement</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">1,507 Md$ suivis</span></button>
+            <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Stratégie anti-corruption</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2025–2030</span></button>
+            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Plan directeur de numérisation</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2023–2027</span></button>
+            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Projet d'économie numérique</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Banque mondiale 92 M$</span></button>
+            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Vision Guinée-Bissau 2040–2060</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">cadre à long terme</span></button>
           </div>
 
           <div>
             <div data-inst-panel="energy" style="{{ instPanel.energy }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">PND 2026–2035</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Plan National de Développement — SDG integration framework</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">PND 2026–2035</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Plan national de développement — cadre d'intégration des ODD</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">4 pillars</div><div style="font-size: 12px; color: #5A6B7C;">human capital, economic diversification, natural capital, governance</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">2035</div><div style="font-size: 12px; color: #5A6B7C;">target year — peaceful, governed, prosperous</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">4 piliers</div><div style="font-size: 12px; color: #5A6B7C;">capital humain, diversification économique, capital naturel, gouvernance</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">2035</div><div style="font-size: 12px; color: #5A6B7C;">année cible — pays en paix, gouverné, prospère</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Guinea-Bissau's first comprehensive decade-long plan explicitly integrates the SDGs and Agenda 2063. It replaces fragmented sector plans with a unified framework, with the 2026 VNR its first accountability cycle. The VNR acknowledges that monitoring and evaluation systems need further strengthening to track PND delivery.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le premier plan décennal complet de la Guinée-Bissau intègre explicitement les ODD et l'Agenda 2063. Il remplace les stratégies sectorielles fragmentées par un cadre de résultats unique, avec le RNV 2026 comme premier cycle de responsabilisation.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 51–53</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="cnif" style="{{ instPanel.cnif }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">The Integrated National Financement Framework</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Guinea-Bissau's single plan for how its development will be financed</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Le Cadre intégré national de financement</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Le plan unique de la Guinée-Bissau pour le financement de son développement</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">43.7%</div><div style="font-size: 12px; color: #5A6B7C;">national electricity access, 2024</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">84.1%</div><div style="font-size: 12px; color: #5A6B7C;">renewable energy share</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">4</div><div style="font-size: 12px; color: #5A6B7C;">countries: Guinea-Bissau, Senegal, Gambia, Guinea</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">The OMVG hydroelectric integration programme gives Guinea-Bissau access to clean power from shared river-basin projects rather than expensive isolated diesel generation. The RNV 2026 points to this as the primary driver of energy progress and the model for Agenda 2063 regional infrastructure integration.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le programme d'intégration hydroélectrique OMVG donne à la Guinée-Bissau accès à l'énergie propre provenant de projets partagés du bassin fluvial — le principal vecteur d'expansion de l'accès à l'électricité.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, xiii, 15, 120–124</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="corr" style="{{ instPanel.corr }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Vision 2035</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">"A peaceful, well-governed and prosperous country by 2035"</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Vision 2035</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">« Un pays en paix, bien gouverné et prospère d'ici 2035 »</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">2</div><div style="font-size: 12px; color: #5A6B7C;">VNR cycles: 2022 and 2026</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">2</div><div style="font-size: 12px; color: #5A6B7C;">VNR cycles: 2022 et 2026</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">2035</div><div style="font-size: 12px; color: #5A6B7C;">peaceful, governed, prosperous — Vision horizon</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Vision 2035 is the long-term aspiration that frames both VNRs: peace and governance before economic ambition. Political stability and institutional reform are treated as preconditions for every other development goal, reflecting a history of governance fragility the review is candid about.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">La Vision 2035 est l'aspiration à long terme qui encadre les deux RNV : paix et gouvernance avant l'ambition économique. Political stability et institutional reform are treated as preconditions for every other development goal, reflecting a history of governance fragility the review is cetid about.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 75–76</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="pddsp" style="{{ instPanel.pddsp }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Fiscal &amp; Governance Reform</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Targeted reforms of revenue systems and institutions</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Réforme fiscale &amp; de gouvernance</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Réformes ciblées des systèmes de recettes et des institutions</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #B4533A;">8.6%</div><div style="font-size: 12px; color: #5A6B7C;">tax revenue / GDP — the mobilisation frontier</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">67.1%</div><div style="font-size: 12px; color: #5A6B7C;">external debt / GNI — the financing constraint</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #B4533A;">8.6%</div><div style="font-size: 12px; color: #5A6B7C;">recettes fiscales / PIB — frontière de mobilisation</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">67.1%</div><div style="font-size: 12px; color: #5A6B7C;">dette ext. / RNB — contrainte de financement</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">At 8.6% tax-to-GDP, Guinea-Bissau has among the lowest domestic revenue ratios globally. The PND's fiscal reform pillar targets streamlining tax collection, combating illicit financial flows from cashew exports, and strengthening public financial management — the binding constraint on every other SDG pillar.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Avec un ratio impôts/PIB de 8,6 %, la Guinée-Bissau a l'un des ratios de recettes nationales les plus faibles au monde. Le pilier de réforme fiscale du PND vise à élargir l'assiette fiscale et renforcer les douanes.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 111–112</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="pafen" style="{{ instPanel.pafen }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Airport &amp; Road Programme</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">2,755 km road network · Osvaldo Vieira International Airport</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Programme routes &amp; aéroport</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Réseau routier 2 755 km · Aéroport int. Osvaldo Vieira</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">2,755 km</div><div style="font-size: 12px; color: #5A6B7C;">total road network</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">27.5%</div><div style="font-size: 12px; color: #5A6B7C;">paved — the connectivity gap</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">1</div><div style="font-size: 12px; color: #5A6B7C;">international airport — Osvaldo Vieira, being modernised</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">27.5%</div><div style="font-size: 12px; color: #5A6B7C;">bitumées — l'écart de connectivité</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">1</div><div style="font-size: 12px; color: #5A6B7C;">aéroport international — Osvaldo Vieira, en cours de modernisation</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Expands high-speed internet access and accelerates digital adoption across the public administration, in direct service of Vision Guinea-Bissau 2040–2060.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 112, 114</a> · <a href="https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=BI" target="_blank" rel="noopener">World Bank projects, Guinea-Bissau</a></div></div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Étend l'accès à l'internet haut débit et accélère l'adoption numérique dans toute l'administration publique, au service direct de la Vision Guinée-Bissau 2040–2060.</p>
+              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 112, 114</a> · <a href="https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=BI" target="_blank" rel="noopener">Projets Banque mondiale, Guinée-Bissau</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="vision" style="{{ instPanel.vision }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;"><a href="https://www.presidence.gov.bi" target="_blank" rel="noopener">Vision Guinea-Bissau 2040–2060 ↗</a></div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">The long-term national vision, the reference frame for every instrument on this page</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;"><a href="https://www.presidence.gov.bi" target="_blank" rel="noopener">Vision Guinée-Bissau 2040–2060 ↗</a></div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">La vision nationale à long terme, le cadre de référence de tous les instruments de cette page</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">59.5%</div><div style="font-size: 12px; color: #5A6B7C;">national territory protected</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">74.7%</div><div style="font-size: 12px; color: #5A6B7C;">forest cover of land area</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">Bijagós</div><div style="font-size: 12px; color: #5A6B7C;">UNESCO Biosphere Reserve</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">74.7%</div><div style="font-size: 12px; color: #5A6B7C;">couverture forestière du territoire</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">Bijagós</div><div style="font-size: 12px; color: #5A6B7C;">Réserve de biosphère UNESCO</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">The PND's natural capital pillar mobilises eco-tourism, sustainable fisheries, REDD+ carbon finance and payment-for-ecosystem-services as revenue instruments that align conservation with development — turning 59.5% protected territory into a financing asset.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le pilier capital naturel du PND mobilise l'éco-tourisme, la pêche durable, la finance carbone REDD+ et les mécanismes de paiement pour services écosystémiques.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 86, 120</a></div></div>
             </div>
             </div>
@@ -524,22 +524,22 @@
       <div data-tab-panel="financing" style="{{ tabPanel.financing }}">
       <div data-screen-label="Financement" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
-          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Financement the Goals</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Guinea-Bissau sets out a layered financing strategy: domestic instruments first, climate and innovative finance second, partnership channels third, while its national financing framework tracks $1.5 billion in commitments from development partners.</p>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Financement des objectifs</h2>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La Guinée-Bissau définit une stratégie de financement à plusieurs niveaux : instruments nationaux en premier, financement climatique et innovant en deuxième, canaux de partenariat en troisième, while its national financing framework tracks $1.5 billion in commitments from development partners.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #E5F1EB; color: #2E7D5B; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">1</span><span style="font-size: 15px; font-weight: 600;">Instruments domestiques</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="Tax revenue at 8.6% of GDP — the primary mobilisation target and binding constraint"><strong>Cashew export levies</strong>, primary commodity revenue</div>
-              <div title="Cashew exports are over 90% of total exports; taxation of the cashew trade is key for domestic revenue"><strong>Tax reform</strong>, lifting revenues beyond 8.6% of GDP</div>
-              <div title="WAEMU/BCEAO CFA franc zone — monetary stability without independent tools"><strong>WAEMU monetary discipline</strong>, inflation tamed to 3.8%</div>
+              <div title="Tax revenue at 8.6% of GDP — the primary mobilisation target et binding constraint"><strong>Prélèvements sur l'exportation de noix de cajou</strong>, primary commodity revenue</div>
+              <div title="Cashew exports are over 90% of total exports; taxation of the cashew trade is key for domestic revenue"><strong>Réforme fiscale</strong>, portant les recettes au-delà de 8,6 % du PIB</div>
+              <div title="WAEMU/BCEAO CFA franc zone — monetary stability without independent tools"><strong>WAEMU monetary discipline</strong>, inflation maîtrisée à 3,8 %</div>
             </div>
             <svg viewBox="0 0 240 60" style="width: 100%; height: auto; display: block; margin-top: auto;">
               <polyline points="14,44 120,34 226,16" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
-              <circle cx="14" cy="44" r="3.5" fill="#2E7D5B"><title>2016, internally-raised revenue, 7.8% of GDP</title></circle>
-              <circle cx="226" cy="16" r="4" fill="#2E7D5B"><title>2024, internally-raised revenue, 10.6% of GDP</title></circle>
+              <circle cx="14" cy="44" r="3.5" fill="#2E7D5B"><title>2016, recettes levées en interne, 7,8 % du PIB</title></circle>
+              <circle cx="226" cy="16" r="4" fill="#2E7D5B"><title>2024, recettes levées en interne, 10,6 % du PIB</title></circle>
               <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">6.1% '22</text>
               <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#B4533A">8.6% '23</text>
             </svg>
@@ -549,9 +549,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F7EEDC; color: #B0791F; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">2</span><span style="font-size: 15px; font-weight: 600;">Finance climatique et innovante</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="Official development flows for infrastructure reached $33M in 2024 — a modest but growing base"><strong>Official infrastructure flows</strong>, USD 33M in 2024</div>
-              <div title="WAEMU and ECOWAS solidarity funds, IDA and AfDB concessional lending"><strong>Multilateral concessional</strong>, IDA, AfDB, WAEMU</div>
-              <div title="REDD+ and biodiversity finance tied to the Bijagós Biosphere Reserve and 59.5% protected territory"><strong>REDD+ &amp; biodiversity finance</strong>, tied to 59.5% protected territory</div>
+              <div title="Official development flows for infrastructure reached $33M in 2024 — a modest but growing base"><strong>Flux d'infrastructure officiels</strong>, 33 M USD en 2024</div>
+              <div title="WAEMU et ECOWAS solidarity funds, IDA et AfDB concessional lending"><strong>Concessionnel multilatéral</strong>, IDA, AfDB, WAEMU</div>
+              <div title="REDD+ et biodiversity finance tied to the Bijagós Biosphere Reserve et 59.5% protected territory"><strong>REDD+ &amp; biodiversity finance</strong>, lié à 59,5 % de territoire protégé</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 123–125</a></div></div>
           </div>
@@ -559,9 +559,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F1F6FA; color: #1F6FB2; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">3</span><span style="font-size: 15px; font-weight: 600;">Canaux de partenariat</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="Net FDI near 1.2% of GDP — very limited; primarily in cashew sector"><strong>FDI</strong>, currently ~1.2% of GDP, cashew sector primarily</div>
-              <div title="Eco-tourism in the Bijagós Archipelago is an emerging revenue stream the PND targets"><strong>Eco-tourism</strong>, Bijagós Archipelago and national park revenues</div>
-              <div title="Sustainable fisheries licensing fees — the marine resource revenue stream"><strong>Fisheries licensing</strong>, marine resource revenue from artisanal and commercial fleets</div>
+              <div title="Net FDI near 1.2% of GDP — very limited; primarily in cashew sector"><strong>FDI</strong>, actuellement ~1,2 % du PIB, secteur cajou principalement</div>
+              <div title="Eco-tourism in the Bijagós Archipelago is an emerging revenue stream the PND targets"><strong>Eco-tourism</strong>, Archipel des Bijagós et revenus des parcs nationaux</div>
+              <div title="Sustainable fisheries licensing fees — the marine resource revenue stream"><strong>Licences de pêche</strong>, revenus des ressources marines des flottes artisanales et commerciales</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 120–125</a></div></div>
           </div>
@@ -569,7 +569,7 @@
 
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 16px; font-weight: 600;">Financement partner commitments through 2035, by sector</div>
+            <div style="font-size: 16px; font-weight: 600;">Engagements des partenaires de financement jusqu'en 2035, par secteur</div>
             <div style="font-size: 12.5px; color: #7A8A9A;">Total $1,507,171,475 · la longueur des barres indique le rang</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 14px; ">
@@ -581,7 +581,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Education <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Poverty <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Guinea-Bissau's PND 2026–2035 prioritises human capital, regional energy integration (OMVG) and natural capital as the three pillars that can transform the economic base. Bar lengths show relative prominence in RNV 2026 and PND documentation; ODA and concessional financing are the primary delivery channels given the state's narrow fiscal base of 8.6% tax-to-GDP.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le PND 2026–2035 de la Guinée-Bissau priorise le capital humain, l'intégration énergétique régionale (OMVG) et le capital naturel comme trois secteurs d'investissement phares.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 122 (Graphique 74)</a></div></div>
         </div>
       </div>
@@ -589,15 +589,15 @@
 
       <!-- ================= DEBT & REVENUE ================= -->
       <div data-tab-panel="debt" style="{{ tabPanel.debt }}">
-      <div data-screen-label="Debt and Revenue" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
+      <div data-screen-label="Debt et Revenue" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Durabilité de la dette et revenus</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Two sides of the same public-finance story: what Guinea-Bissau spends servicing its debt, and what it raises at home to fund development.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Deux aspects de la même histoire des finances publiques : ce que la Guinée-Bissau dépense pour le service de sa dette et ce qu'elle lève au niveau national pour financer le développement.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
-            <div style="font-size: 16px; font-weight: 600;">External debt and macro stabilisation</div>
+            <div style="font-size: 16px; font-weight: 600;">Dette extérieure et stabilisation macroéconomique</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
@@ -612,19 +612,19 @@
               <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, larger share (indicative trajectory)</title></circle>
               <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
               <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, smaller share (indicative trajectory)</title></circle>
-              <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>External 2023, 10.9% of exports (Base de données ODD des ONU, indicator 17.4.1)</title></circle>
+              <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
               <text x="418" y="63" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">10.9%</text>
               <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">internal</text>
               <text x="110" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2017</text>
               <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
               <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
-            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">External debt has hovered near 67–68% of GNI since 2019, a stable but constraining position. Within the WAEMU/BCEAO monetary framework, fiscal reform and domestic revenue mobilisation are the only levers available to improve the SDG financing position.</p>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">La dette extérieure oscille près de 67–68 % du RNB depuis 2019, une position stable mais contraignante. Within the WAEMU/BCEAO monetary framework, fiscal reform et domestic revenue mobilisation are the only levers available to improve the SDG financing position.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 121</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
-            <div style="font-size: 16px; font-weight: 600;">GDP growth and inflation, 2022–2024</div>
+            <div style="font-size: 16px; font-weight: 600;">Croissance du PIB et inflation, 2022–2024</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
@@ -634,17 +634,17 @@
               <text x="32" y="54" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">20%</text>
               <polyline points="60,83 250,75 420,62" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
               <polyline points="100,111 420,97" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"></polyline>
-              <circle cx="60" cy="83" r="4" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, total government revenue, 13.4% of GDP</title></circle>
-              <circle cx="420" cy="62" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024, 17.7% of GDP</title></circle>
-              <circle cx="100" cy="111" r="4" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2016, internally-raised revenue, 7.8% of GDP</title></circle>
-              <circle cx="420" cy="97" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.4s both;"><title>2024, internally-raised revenue, 10.6% of GDP</title></circle>
+              <circle cx="60" cy="83" r="4" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, recettes publiques totales, 13,4 % du PIB</title></circle>
+              <circle cx="420" cy="62" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024, 17,7 % du PIB</title></circle>
+              <circle cx="100" cy="111" r="4" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2016, recettes levées en interne, 7,8 % du PIB</title></circle>
+              <circle cx="420" cy="97" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.4s both;"><title>2024, recettes levées en interne, 10,6 % du PIB</title></circle>
               <text x="428" y="66" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#2E7D5B">17.7%</text>
               <text x="428" y="101" font-family="IBM Plex Mono" font-size="10" fill="#1F6FB2">10.6%</text>
               <text x="60" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2015</text>
               <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
               <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
-            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">GDP growth held at 4–6% across three years while inflation was tamed from 9.4% (2022) to 3.8% (2024) — the macrostabilisation the VNR presents as the economic foundation for PND delivery. Tax revenue at 8.6% of GDP remains the fiscal gap the plan must close.</p>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">La croissance du PIB s'est maintenue à 4–6 % sur trois ans tetis que l'inflation a été maîtrisée de 9,4 % (2022) à 3,8 % (2024) — la stabilisation macroéconomiqueation the VNR presents as the economic foundation for PND delivery. Tax revenue at 8.6% of GDP remains the fiscal gap the plan must close.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
           </div>
         </div>
@@ -656,29 +656,29 @@
       <div data-screen-label="Water" style="display: flex; flex-direction: column; gap: 18px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #7A8A9A;">Thème de l'Union africaine · 2026</span>
-          <h2 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em;">Année de la durabilité de l'eau</h2>
+          <h2 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em;">Année de la gestion durable de l'eau</h2>
         </div>
 
         <!-- HERO -->
         <div style="background: linear-gradient(135deg, #1F6FB2 0%, #16537E 100%); border-radius: 18px; padding: 40px 44px; color: #FFFFFF; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: center; box-shadow: 0 14px 34px rgba(22,83,126,0.24);">
           <div style="display: flex; flex-direction: column; gap: 16px;">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);">Level of water stress</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);">Niveau de stress hydrique</span>
             <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
               <span style="font-size: 68px; font-weight: 700; letter-spacing: -0.02em; line-height: 0.9;">0.09%</span>
-              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F4CE8A;">of renewable supply withdrawn</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F4CE8A;">du stock renouvelable prélevé</span>
             </div>
-            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.86);">Guinea-Bissau is among West Africa's most water-abundant countries — the Geba, Cacheu and Corubal river systems provide plentiful freshwater and water stress is near zero. The challenge is not the resource but access and quality: only 24% have safely-managed water and 22.6% safely-managed sanitation.</p>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.86);">La Guinée-Bissau est parmi les pays les plus abondants en eau d'Afrique de l'Ouest — les systèmes fluviaux du Geba, du Cacheu et du Corubal fournissent d'abondantes ressources en eau douce et le stress hydrique est quasi nul. Le défi n'est pas la ressource mais l'accès et la qualité : seulement 24 % ont accès à l'eau gérée sûrement et 22,6 % à l'assainissement géré sûrement.</p>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-              <span style="font-size: 14px; font-weight: 600;">Water and sanitation access, 2024</span>
-              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.7);">basic and safely managed levels</span>
+              <span style="font-size: 14px; font-weight: 600;">Accès à l'eau et à l'assainissement, 2024</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.7);">niveaux de base et gestion sûre</span>
             </div>
             <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Basic water</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Basic drinking water access, 2024: 52.6%"><div style="width: 52.6%; height: 100%; background: #FFFFFF; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;">52.6%</span></div>
-              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Safe water</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Safely managed water, 2024: 24.0%"><div style="width: 24%; height: 100%; background: #F4CE8A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #F4CE8A;">24.0%</span></div>
+              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Eau de base</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Basic drinking water access, 2024: 52.6%"><div style="width: 52.6%; height: 100%; background: #FFFFFF; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;">52.6%</span></div>
+              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Eau sûre</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Safely managed water, 2024: 24.0%"><div style="width: 24%; height: 100%; background: #F4CE8A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #F4CE8A;">24.0%</span></div>
             </div>
-            <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.78);">The PND 2026–2035 treats <strong style="color:#fff; font-weight:600;">universal basic WASH as a foundation condition</strong> for its human capital pillar — recognising that health and education outcomes cannot sustainably improve without clean water and sanitation as a baseline.</p>
+            <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.78);">Le PND 2026–2035 traite <strong style="color:#fff; font-weight:600;">l'accès universel à l'eau et à l'assainissement de base comme condition fondamentale</strong> de son pilier capital humain — reconnaissant que les résultats en matière de santé et d'éducation ne peuvent s'améliorer durablement sans eau propre et assainissement comme base.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.55);">Sources : RNV 2026, 61–63, 73 · Base de données ODD des ONU, indicator 6.1.1</div></div>
           </div>
         </div>
@@ -686,32 +686,32 @@
         <!-- DATA ROW -->
         <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; align-items: stretch;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 16px; font-weight: 600;">IWRM and transboundary water</div>
-            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Fishing on Lake Tanganyika is regulated under the <strong>Lake Tanganyika Authority</strong>, a body shared with neighbouring countries; Guinea-Bissau's membership of the <strong>Nile Basin Initiative</strong> provides a second standing regional framework.</p>
+            <div style="font-size: 16px; font-weight: 600;">GIRE et eau transfrontalière</div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">La pêche est réglementée dans le cadre de <strong>l'OMVG (Organisation pour la Mise en Valeur du fleuve Gambie)</strong>, un organisme partagé avec les pays voisins ; l'adhésion de la Guinée-Bissau à <strong>la CEDEAO</strong> fournit un second cadre régional permanent.</p>
             <div style="background: #F6F9FB; border-radius: 12px; padding: 16px 18px; margin-top: 2px;">
               <svg viewBox="0 0 420 84" style="width: 100%; height: auto; display: block;">
-                <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">IWRM score (0–100) and transboundary cooperation</text>
+                <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">Score GIRE (0–100) et coopération transfrontalière</text>
                 <polyline points="16,62 208,56 400,47" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
                 <circle cx="16" cy="62" r="4" fill="#1F6FB2"><title>2017, IWRM score 18/100 — early implementation</title></circle>
                 <circle cx="208" cy="56" r="4" fill="#1F6FB2"><title>2020, IWRM score 20/100</title></circle>
                 <circle cx="400" cy="47" r="4.5" fill="#1F6FB2"><title>2023, IWRM score 23/100 — improving (Base de données ODD des ONU, 6.5.1)</title></circle>
-                <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">score rising; 73% of transboundary basin area covered by operational cooperation</text>
+                <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">score en hausse ; 73 % du bassin transfrontalier couvert par une coopération opérationnelle</text>
               </svg>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 72–73 · RNV 2022, p.85–86</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 12px;">
-            <div style="font-size: 16px; font-weight: 600;">Coastal and island vulnerability</div>
-            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Restoration of the <strong>Nyamabuno marsh</strong> and <strong>Ntahangwa river</strong> banks, buffer zones around <strong>Lakes Tanganyika and Cohoha</strong>, rehabilitation of the Buterere wastewater station, and the national reforestation drive <strong>"Ewe Guinea-Bissau Urambaye"</strong>, the resilience layer that makes durable water access possible.</p>
+            <div style="font-size: 16px; font-weight: 600;">Vulnérabilité côtière et insulaire</div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Restauration des <strong>zones côtières et mangroves</strong> et <strong>bassins versants du Geba</strong> banks, buffer zones around <strong>Lakes Tanganyika et Cohoha</strong>, des programmes de gestion intégrée des ressources en eau (GIRE), et du programme national de reforestation <strong>"Protéger nos ressources naturelles"</strong>, la couche de résilience qui rend un accès durable à l'eau possible.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 61–62, 74</a></div></div>
           </div>
         </div>
 
         <!-- WATER SECURITY ACCENT STRIP -->
         <div style="background: #FBF1EE; border: 1px solid #EAD3CB; border-left: 5px solid #B4533A; border-radius: 14px; padding: 24px 30px; display: flex; flex-direction: column; gap: 8px;">
-          <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #B4533A;"></span><span style="font-size: 16px; font-weight: 600; color: #8A3B27;">Water as a human capital condition</span></div>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #6B4A40;">With safely-managed water at 24% and sanitation at 22.6%, waterborne disease is a leading cause of child morbidity and school absenteeism. The PND 2026–2035 treats universal basic WASH as the health and education foundation without which its human capital investment cannot yield returns. <strong>Water sustainability for Guinea-Bissau is a development-strategy question</strong>, not only a resource-management one.</p>
+          <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #B4533A;"></span><span style="font-size: 16px; font-weight: 600; color: #8A3B27;">L'eau comme condition du capital humain</span></div>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #6B4A40;">Avec seulement 24 % d'eau gérée sûrement et 22,6 % d'assainissement, les maladies hydriques sont une cause principale de mortalité infantile et d'absentéisme scolaire. <strong>La durabilité de l'eau pour la Guinée-Bissau est une question de stratégie de développement</strong>, et pas seulement de gestion des ressources.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B08A7E;">Source : <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">RNV 2026, 70–74</a></div></div>
         </div>
       </div>
@@ -721,7 +721,7 @@
   </main>
 
   <footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
-    <div style="max-width: 1280px; margin: 0 auto;">Sources : République de Guinée-Bissau, <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">Second Rapport national volontaire 2026</a> (July 2026); Premier Rapport national volontaire (2022); <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Page citations refer to the RNV 2026 unless otherwise noted. · Prototype pour consultation.</div>
+    <div style="max-width: 1280px; margin: 0 auto;">Sources : République de Guinée-Bissau, <a href="https://hlpf.un.org/countries/guinea-bissau" target="_blank" rel="noopener">Deuxième Rapport national volontaire 2026</a> (juillet 2026) ; Premier Rapport national volontaire (2022) ; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gnb" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour consultation.</div>
   </footer>
 </div>
 

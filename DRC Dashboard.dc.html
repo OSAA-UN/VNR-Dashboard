@@ -30,7 +30,7 @@
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Africa Operations / <span style="color: #1F6FB2; font-weight: 500;">DR Congo</span> · Tableau de bord pays · RNV 2026</div>
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
         <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">DR Congo</h1>
-        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">Revues nationales volontaires (VNR) 2020 · 2023 · 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">United Nations Sustainable Development Goals (SDG) Database</a></span>
+        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">Revues nationales volontaires (VNR) 2020 · 2023 · 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
       </div>
       <nav style="display: flex; gap: 4px; margin-top: 14px; flex-wrap: wrap;">
         <button data-tab-btn="overview" style="{{ tabBtn.overview }}" onClick="{{ onTab.overview }}">Aperçu &amp; tendances</button>
@@ -39,7 +39,7 @@
         <button data-tab-btn="policy" style="{{ tabBtn.policy }}" onClick="{{ onTab.policy }}">Réponses politiques</button>
         <button data-tab-btn="financing" style="{{ tabBtn.financing }}" onClick="{{ onTab.financing }}">Financement</button>
         <button data-tab-btn="debt" style="{{ tabBtn.debt }}" onClick="{{ onTab.debt }}">Dette et revenus</button>
-        <button data-tab-btn="water" style="{{ tabBtn.water }}" onClick="{{ onTab.water }}">Année de la durabilité de l'eau</button>
+        <button data-tab-btn="water" style="{{ tabBtn.water }}" onClick="{{ onTab.water }}">Année de la gestion durable de l'eau</button>
       </nav>
     </div>
   </header>
@@ -53,29 +53,29 @@
 
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
           <button data-tile-btn="elec" style="{{ metricBtn.elec }}" onClick="{{ onMetric.elec }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Installed Capacity</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Capacité installée</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">+20%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">since 2020 · doubling by 2030</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">depuis 2020 · doublement d'ici 2030</span>
           </button>
           <button data-tile-btn="water" style="{{ metricBtn.water }}" onClick="{{ onMetric.water }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Under Construction</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">En construction</span>
             <span style="font-size: 28px; font-weight: 700; color: #1F6FB2;">3,282 MW</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1F6FB2;">new capacity pipeline</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1F6FB2;">nouveau pipeline de capacité</span>
           </button>
           <button data-tile-btn="rev" style="{{ metricBtn.rev }}" onClick="{{ onMetric.rev }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">GDP Croissance</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Croissance du PIB</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">6.2%</span>
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">2023, sustained recovery</span>
           </button>
           <button data-tile-btn="debt" style="{{ metricBtn.debt }}" onClick="{{ onMetric.debt }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Hydro Potential</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Potentiel hydro</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">100k MW</span>
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">2nd largest globally</span>
           </button>
           <button data-tile-btn="fin" style="{{ metricBtn.fin }}" onClick="{{ onMetric.fin }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">ODA Context</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Contexte APD</span>
             <span style="font-size: 28px; font-weight: 700; color: #B4533A;">Crisis</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B4533A;">unprecedented global aid cuts</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B4533A;">coupes d'aide mondiale sans précédent</span>
           </button>
         </div>
 
@@ -83,7 +83,7 @@
         <div data-metric-panel="elec" style="{{ metricPanel.elec }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">Electricity access and hydro installed capacity, 2015–2024</div>
+            <div style="font-size: 17px; font-weight: 600;">Accès à l'électricité et capacité hydroélectrique installée, 2015–2024</div>
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
@@ -118,7 +118,7 @@
         <div data-metric-panel="water" style="{{ metricPanel.water }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">Basic water and sanitation access, 2015–2024</div>
+            <div style="font-size: 17px; font-weight: 600;">Accès à l'eau et à l'assainissement de base, 2015–2024</div>
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
@@ -133,7 +133,7 @@
             <circle cx="60" cy="130" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>2015, basic drinking water ~36% (Base de données ODD des ONU, 6.1.1)</title></circle>
             <circle cx="700" cy="112" r="5.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>2024, basic drinking water ~40% — sector reform advancing (RNV 2026)</title></circle>
             <circle cx="60" cy="176" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>2015, basic sanitation ~19%</title></circle>
-            <circle cx="700" cy="166" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>2024, basic sanitation ~22% — improving but still very low (Base de données ODD des ONU, 6.2.1)</title></circle>
+            <circle cx="700" cy="166" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>2024, assainissement de base ~22 % — en amélioration mais encore très faible (Base de données ODD des ONU, 6.2.1)</title></circle>
             <text x="712" y="116" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#1F6FB2">~40%</text>
             <text x="712" y="170" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">~22%</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2015</text>
@@ -141,10 +141,10 @@
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Basic water</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Eau de base</span>
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Basic sanitation</span>
           </div>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Basic drinking water access is improving — the RNV 2026 reports advances in the sector, with an institutional framework being finalised. Progress remains limited by the scale of need: DRC has over 100 million people, large areas inaccessible due to conflict, and a WASH gap where fewer than half the population has even basic service. Sanitation at ~22% is the deeper constraint, with open defecation rates still significant in rural areas.</p>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès à l'eau potable de base s'améliore — le RNV 2026 rapporte des avancées dans le secteur, avec un cadre institutionnel en cours de finalisation. Les progrès restent limités par l'ampleur des besoins : la RDC compte plus de 100 millions d'habitants, de vastes zones inaccessibles en raison du conflit, et un déficit WASH où moins de la moitié population has even basic service. Sanitation at ~22% is the deeper constraint, with open defecation rates still significant in rural areas.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">WHO/UNICEF Joint Monitoring Programme 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
         </div>
         </div>
@@ -153,7 +153,7 @@
         <div data-metric-panel="rev" style="{{ metricPanel.rev }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">GDP growth, 2019–2024</div>
+            <div style="font-size: 17px; font-weight: 600;">Croissance du PIB, 2019–2024</div>
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
@@ -168,14 +168,14 @@
             <text x="50" y="69" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">15%</text>
             <text x="50" y="24" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">20%</text>
             <line x1="60" y1="82" x2="700" y2="82" stroke="#B4533A" stroke-width="1.5" stroke-dasharray="4 4"></line>
-            <text x="66" y="94" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">6.2% in 2023 — sustained despite conflict and crises</text>
+            <text x="66" y="94" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">6,2 % en 2023 — soutenu malgré le conflit et les crises</text>
             <polyline points="60,79 348,65 636,41" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="124,130 636,105" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"></polyline>
-            <circle cx="60" cy="79" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, total government revenue, 13.4% of GDP</title></circle>
+            <circle cx="60" cy="79" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, recettes publiques totales, 13,4 % du PIB</title></circle>
             <circle cx="348" cy="65" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.25s both;"><title>2020, ~15% (trajectory)</title></circle>
-            <circle cx="636" cy="41" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024, 17.7% of GDP (RNV 2026, p.87, 120)</title></circle>
-            <circle cx="124" cy="130" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2016, internally-raised revenue, 7.8% of GDP</title></circle>
-            <circle cx="636" cy="105" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.4s both;"><title>2024, internally-raised revenue, 10.6% of GDP</title></circle>
+            <circle cx="636" cy="41" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024, 17,7 % du PIB (RNV 2026, p.87, 120)</title></circle>
+            <circle cx="124" cy="130" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2016, recettes levées en interne, 7,8 % du PIB</title></circle>
+            <circle cx="636" cy="105" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.4s both;"><title>2024, recettes levées en interne, 10,6 % du PIB</title></circle>
             <text x="648" y="45" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#2E7D5B">17.7%</text>
             <text x="648" y="109" font-family="IBM Plex Mono" font-size="11" fill="#1F6FB2">10.6%</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2015</text>
@@ -183,8 +183,8 @@
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Electricity access</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Installed capacity (indexed)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Accès à l'électricité</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Capacité installée (indexée)</span>
           </div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La RDC a maintenu une croissance du PIB supérieure à 5 % malgré la COVID-19 et le conflit à l'est and the unprecedented global ODA contraction — reaching 6.2% in 2023 and 5.9% in 2022. This resilience reflects the country's mining-led growth (cobalt, coltan, gold) and domestic-demand expansion. The review frames this as evidence that pro-welfare reforms have reduced inequalities despite interlocking crises.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
@@ -195,7 +195,7 @@
         <div data-metric-panel="debt" style="{{ metricPanel.debt }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">External debt and fiscal position, 2015–2024</div>
+            <div style="font-size: 17px; font-weight: 600;">Dette extérieure et position budgétaire, 2015–2024</div>
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
@@ -214,7 +214,7 @@
             <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, ~11% (indicative trajectory)</title></circle>
             <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
             <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, ~5% (indicative trajectory)</title></circle>
-            <circle cx="636" cy="69" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>External 2023, 10.9% of exports (Base de données ODD des ONU, indicator 17.4.1)</title></circle>
+            <circle cx="636" cy="69" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
             <text x="648" y="73" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">10.9%</text>
             <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">internal</text>
             <text x="188" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2017</text>
@@ -230,8 +230,8 @@
         <div data-metric-panel="fin" style="{{ metricPanel.fin }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 17px; font-weight: 600;">PNSD investment priorities by sector</div>
-            <div style="font-size: 12.5px; color: #5A6B7C;">Rank order by prominence in RNV 2026 · PNSD</div>
+            <div style="font-size: 17px; font-weight: 600;">Priorités d'investissement PNSD par secteur</div>
+            <div style="font-size: 12.5px; color: #5A6B7C;">Classement par importance dans le RNV 2026 · PNSD</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px; ">
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Énergie et électricité <span style="color: #9AA7B4; font-size: 11.5px;">SDG 7</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (RNV 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
@@ -242,7 +242,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Education <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Bien-être <span style="color: #9AA7B4; font-size: 11.5px;">SDG 1/3</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Development partners, bilateral and multilateral funders such as United Nations agencies and development banks, have committed $1.5 billion through 2035, the horizon of DR Congo's national financing framework. The review ranks sectors by committed value but reports only the combined total, so bar lengths show rank order rather than dollar amounts.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement de la RDC.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.122 (Graphique 74)</a></div></div>
         </div>
         </div>
@@ -270,15 +270,15 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 6 · Eau propre et assainissement</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Basic water</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Basic drinking water service, ~40% (RNV 2026)"><div style="width: 40%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">~40%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Sanitation</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Basic sanitation service, ~22%"><div style="width: 22%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">~22%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Reform status</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Institutional water reform in progress — framework being finalised (RNV 2026)"><div style="width: 60%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">In progress</div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Eau de base</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Basic drinking water service, ~40% (RNV 2026)"><div style="width: 40%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">~40%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Assainissement</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Basic sanitation service, ~22%"><div style="width: 22%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">~22%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Statut de réforme</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Institutional water reform in progress — framework being finalised (RNV 2026)"><div style="width: 60%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">En cours</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.61–65</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 6.1.1 &amp; 6.2.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Advances in drinking water with an institutional framework being finalised to extend access — the RNV 2026 frames water reform as a cornerstone of the 2026 review alongside energy.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Scaling both water (from ~40%) and sanitation (from ~22%) across a country of 100M+ people, many in conflict-affected zones — the structural challenge that the institutional reform aims to unblock.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Avancées en eau potable avec un cadre institutionnel en cours de finalisation pour étendre l'accès — the RNV 2026 frames water reform as a cornerstone of the 2026 review alongside energy.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Élargir l'eau (de ~40 %) et l'assainissement (de ~22 %) à travers un pays de plus de 100M d'habitants, many in conflict-affected zones — the structural challenge that the institutional reform aims to unblock.</span></div>
           </div>
         </div>
         </div>
@@ -288,15 +288,15 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 7 · Énergie propre et abordable</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">National access</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="National electricity access, ~20%"><div style="width: 20%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">~20%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Capacity +2020</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Installed capacity grew +20% since 2020 after sector liberalisation (RNV 2026)"><div style="width: 100%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">+20%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Under construct.</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="3,282 MW under construction — capacity to double by 2030 (RNV 2026)"><div style="width: 82%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">3,282 MW</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Accès national</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="National electricity access, ~20%"><div style="width: 20%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">~20%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Capacité +2020</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Installed capacity grew +20% since 2020 after sector liberalisation (RNV 2026)"><div style="width: 100%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">+20%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">En constr.</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="3,282 MW under construction — capacity to double by 2030 (RNV 2026)"><div style="width: 82%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">3,282 MW</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.51–55</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Sector liberalisation since 2020 attracted private investment, growing installed capacity by 20%. With 3,282 MW under construction, capacity will double by 2030 — the most significant energy development outcome in the review.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Translating the capacity surge into household access — only ~20% have electricity now — will require grid extension, off-grid solutions and distribution investment across a country larger than Western Europe.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">La libéralisation du secteur depuis 2020 a attiré des investissements privés, augmentant la capacité installée de 20 %. Avec 3 282 MW en construction, le pays est en bonne voie pour doubler sa capacité d'ici 2030.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Traduire la hausse de capacité en accès domestique — seulement ~20 % ont l'électricité — nécessitera une extension massive du réseau et des solutions hors réseau.</span></div>
           </div>
         </div>
         </div>
@@ -306,7 +306,7 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 9 · Industrie, innovation et infrastructure</div>
             <svg viewBox="0 0 380 130" style="width: 100%; height: auto; display: block;">
-              <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">GDP growth and industrial development, 2019–2024</text>
+              <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">Croissance du PIB et développement industriel, 2019–2024</text>
               <line x1="30" y1="110" x2="360" y2="110" stroke="#E3E7EC" stroke-width="1"></line>
               <polyline points="40,55 140,60 200,58 280,48 350,46" fill="none" stroke="#2E7D5B" stroke-width="3" stroke-linecap="round"></polyline>
               <circle cx="40" cy="55" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2019, GDP growth ~4.4%</title></circle>
@@ -321,8 +321,8 @@
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.58–59</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 9.1.1 &amp; 9.c.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">DRC invests in industry, infrastructure and innovation as levers of economic transformation. Mining — cobalt, coltan, gold — drives growth above 6%; the challenge is diversification and keeping value onshore. The 2026 review emphasises sustainable cities and communities as a specific focus given rapid urbanisation.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Building a broader industrial base beyond mining extraction, investing in transport infrastructure across a vast territory, and extending mobile and internet connectivity to support digital economic participation.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">La RDC investit dans l'industrie, l'infrastructure et l'innovation comme leviers de transformation économique. La libéralisation minière est le modèle.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Construire une base industrielle plus large au-delà de l'extraction minière, investir dans l'infrastructure de transport et la connectivité numérique.</span></div>
           </div>
         </div>
         </div>
@@ -334,16 +334,16 @@
             <div style="display: flex; align-items: center; gap: 24px;">
               <svg viewBox="0 0 120 120" style="width: 120px; height: 120px;">
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#EEF1F4" stroke-width="16"></circle>
-                <circle cx="60" cy="60" r="48" fill="none" stroke="#B4533A" stroke-width="16" stroke-dasharray="228.0 73.5" stroke-linecap="round" transform="rotate(-90 60 60)"><title>34.3% of urban population in informal settlements (2020, Base de données ODD des ONU, indicator 11.1.1)</title></circle>
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#B4533A" stroke-width="16" stroke-dasharray="228.0 73.5" stroke-linecap="round" transform="rotate(-90 60 60)"><title>34,3 % de la population urbaine dans des établissements informels (2020, Base de données ODD des ONU, indicateur 11.1.1)</title></circle>
                 <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#B0791F">75.8%</text>
               </svg>
-              <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">of the urban population live in informal settlements — despite urbanisation pressures, the review makes SDG 11 a 2026 priority</div>
+              <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">de la population urbaine vit dans des établissements informels — malgré les pressions d'urbanisation, le rapport fait de l'ODD 11 un objectif prioritaire.</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.66–67</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 11.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Despite rapid urbanisation, the DRC's 2026 VNR places SDG 11 among its five focus goals. Despite extraordinary challenges, the review reports resilience and reforms that improved well-being and reduced inequalities even amid conflict.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Reducing the 75.8% informal-settlement rate — the majority of urban Congolese live without formal housing, clean water or sanitation access — requires investment at a scale the review frames as a partnership imperative.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Malgré une urbanisation rapide, le RNV 2026 de la RDC place l'ODD 11 parmi ses cinq objectifs prioritaires. Despite extraordinary challenges, the review reports resilience and reforms that improved well-being and reduced inequalities even amid conflict.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Réduire le taux de 75,8 % d'établissements informels — la majorité des Congolais urbains vivent sans logement formel adéquat.</span></div>
           </div>
         </div>
         </div>
@@ -351,17 +351,17 @@
         <div data-goal-panel="s17" style="{{ goalPanel.s17 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 17 · Partenariats pour la réalisation des objectifs — Under Strain</div>
+            <div style="font-size: 18px; font-weight: 700;">ODD 17 · Partenariats pour la réalisation des objectifs — Sous pression</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">GDP growth 2023</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="GDP growth 2023: 6.2%"><div style="width: 62%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">6.2%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">ODA context</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="DRC faces unprecedented global ODA contraction"><div style="width: 100%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">Crisis</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">VNR cycles</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Three VNR cycles: 2020, 2023, 2026"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">3rd (2026</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Croissance PIB 2023</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="GDP growth 2023: 6.2%"><div style="width: 62%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">6.2%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Contexte APD</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="DRC faces unprecedented global ODA contraction"><div style="width: 100%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">Crisis</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Cycles RNV</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Three VNR cycles: 2020, 2023, 2026"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">3rd (2026</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.85–89</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 17.1.1 &amp; 17.4.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">GDP growth sustained at 6.2% (2023) and 5.9% (2022) demonstrates economic resilience despite conflict. Third VNR cycle in 2026 — the DRC has consistently engaged with the HLPF accountability process through exceptional circumstances.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Strengthening partnerships despite the unprecedented global ODA crisis — the DRC must find new financing instruments as traditional aid flows contract, just as the PNSD investment programme needs scaling up.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Croissance du PIB soutenue à 6,2 % (2023) et 5,9 % (2022) malgré le conflit et les crises — ancrée par les revenus miniers et la demande intérieure.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Renforcer les partenariats malgré la crise mondiale sans précédent de l'APD — la RDC doit trouver de nouveaux instruments de financement pour remplacer l'aide bilatérale en contraction.</span></div>
           </div>
         </div>
         </div>
@@ -373,7 +373,7 @@
       <div data-screen-label="Mise en œuvre conjointe" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Mise en œuvre conjointe des ODD et de l'Agenda 2063</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La RDC aligne son Plan national stratégique de développement (PNSD) sur l'Agenda 2030 et l'Agenda 2063. All 17 SDGs are integrated into national planning; the 2026 VNR focuses on five goals (6, 7, 9, 11, 17) while reporting on progress across the full agenda. The review covers the 2020–2023 period and identifies SDG localisation as an area for strengthening. This is the DRC's third VNR submission (2020, 2023, 2026).</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La RDC aligne son Plan national stratégique de développement (PNSD) sur l'Agenda 2030 et l'Agenda 2063. Les 17 ODD sont intégrés dans la planification nationale ; le RNV 2026 se concentre sur cinq objectifs (6, 7, 9, 11, 17) tout en rendant compte des progrès sur l'ensemble de l'agenda. The review covers the 2020–2023 period and identifies SDG localisation as an area for strengthening. This is the DRC's third VNR submission (2020, 2023, 2026).</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 16px;">
@@ -391,7 +391,7 @@
             <div style="display: flex; flex-direction: column; gap: 18px;">
               <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">SDG 7 · Essor énergétique</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 80%; background: #2E7D5B;"></div><div style="width: 20%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">+20% capacity</span></div>
               <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">SDG 9 · Croissance</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 62%; background: #2E7D5B;"></div><div style="width: 20%; background: #D9A94A;"></div><div style="width: 18%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">6.2% GDP</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">SDG 6 · Réforme de l'eau</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 40%; background: #2E7D5B;"></div><div style="width: 30%; background: #D9A94A;"></div><div style="width: 30%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">In progress</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">SDG 6 · Réforme de l'eau</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 40%; background: #2E7D5B;"></div><div style="width: 30%; background: #D9A94A;"></div><div style="width: 30%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">En cours</span></div>
               <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">SDG 17 · Partenariats sous pression</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 35%; background: #2E7D5B;"></div><div style="width: 25%; background: #D9A94A;"></div><div style="width: 40%; background: #B4533A;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4533A; font-weight: 600;">ODA crisis</span></div>
             </div>
             <div style="display: flex; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #5A6B7C;">
@@ -404,19 +404,19 @@
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px;">
-              <div style="font-size: 16px; font-weight: 600;">Connectivity and mineral wealth</div>
+              <div style="font-size: 16px; font-weight: 600;">Connectivité et richesse minière</div>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile penetration, Q2 2025 (national telecoms regulator ARCT)"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">~49%</div><div style="font-size: 11.5px; color: #5A6B7C;">Mobile penetration</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile penetration, Q2 2025 (national telecoms regulator ARCT)"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">~49%</div><div style="font-size: 11.5px; color: #5A6B7C;">Pénétration mobile</div></div>
                 <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Internet penetration, Q2 2025, up 3.3 points in one quarter"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">#1</div><div style="font-size: 11.5px; color: #5A6B7C;">Global cobalt reserves</div></div>
                 <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile-money, 7.66 million connected subscriptions"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">100k MW</div><div style="font-size: 11.5px; color: #5A6B7C;">Hydro potential (2nd globally)</div></div>
                 <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Fibre-optic backbone now reaches all 18 provinces"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">3,282 MW</div><div style="font-size: 11.5px; color: #5A6B7C;">Under construction (2030 doubling)</div></div>
               </div>
-              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">DRC holds the world's largest cobalt reserves and the second-largest hydro potential globally. This mineral and natural wealth — cobalt (critical for electric-vehicle batteries), coltan, gold — drives the sustained 6%+ growth but also creates enclave risks. The PNSD's diversification agenda and the energy-sector liberalisation aim to translate resource wealth into broad-based development.</p>
+              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">La RDC détient les plus grandes réserves mondiales de cobalt et le deuxième plus grand potentiel hydroélectrique au monde. Cette richesse minérale et naturelle — cobalt (essentiel pour les batteries de véhicules électriques), coltan, or — alimente une croissance soutenue de plus de 6 % mais crée aussi des risques d'enclave. The PNSD's diversification agenda and the energy-sector liberalisation aim to translate resource wealth into broad-based development.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.111–119</a> · ARCT (telecoms regulator), Q2 2025</div></div>
             </div>
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px;">
-              <div style="font-size: 16px; font-weight: 600;">PNSD — the single anchor for SDGs and Agenda 2063</div>
-              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">The PNSD (Plan National Stratégique de Développement) integrates all 17 SDGs and Agenda 2063. Subnational SDG localisation — extending the framework to provinces and health zones — was a RNV 2023 priority and is described as continuing in 2026. Delivery runs through provincial development plans and a strengthened national statistics system that the review highlights as a data-improvement achievement.</p>
+              <div style="font-size: 16px; font-weight: 600;">PNSD — l'ancre unique pour les ODD et l'Agenda 2063</div>
+              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">Le PNSD (Plan national stratégique de développement) intègre les 17 ODD et l'Agenda 2063. La localisation infra-nationale des ODD — extension du cadre aux provinces et zones de santé — était une priorité du RNV 2023 et se poursuit en 2026. Delivery runs through provincial development plans and a strengthened national statistics system that the review highlights as a data-improvement achievement.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.22, 29, 85–86</a></div></div>
             </div>
           </div>
@@ -429,41 +429,41 @@
       <div data-screen-label="Réponses politiques" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Réponses politiques en action</h2>
-          <p style="margin: 0; font-size: 14px; color: #5A6B7C;">Six national instruments identified in the VNR, sélectionnez-en un pour explorer.</p>
+          <p style="margin: 0; font-size: 14px; color: #5A6B7C;">Six instruments nationaux identifiés dans le RNV, sélectionnez-en un pour explorer.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start;">
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">Electricity Sector Liberalisation</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2020 · +20% capacity · 3,282 MW pipeline</span></button>
-            <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">Water Sector Reform</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">institutional framework · access extension</span></button>
+            <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">Water Sector Reform</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">cadre institutionnel · extension de l'accès</span></button>
             <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">PNSD (National Strategic Development Plan)</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">SDG integration · all 17 goals</span></button>
-            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">SDG Localisation Programme</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">sub-national VNRs · province level</span></button>
-            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Pro-Welfare Reforms</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">reducing inequalities · SDG 10/16</span></button>
-            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Partnerships Strengthening</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">amid global ODA crisis · SDG 17</span></button>
+            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">SDG Localisation Programme</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">RNV infra-nationaux · niveau provincial</span></button>
+            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Pro-Welfare Reforms</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">réduction des inégalités · ODD 10/16</span></button>
+            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Partnerships Strengthening</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">face à la crise APD mondiale · ODD 17</span></button>
           </div>
 
           <div>
             <div data-inst-panel="energy" style="{{ instPanel.energy }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Electricity Sector Liberalisation</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">The standout achievement of the 2026 review cycle</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Electricity Sector Liberalisation</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">La réalisation phare du cycle de rapport 2026</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">+20%</div><div style="font-size: 12px; color: #5A6B7C;">installed capacity growth since 2020</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">3,282 MW</div><div style="font-size: 12px; color: #5A6B7C;">under construction — doubling by 2030</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">3,282 MW</div><div style="font-size: 12px; color: #5A6B7C;">en construction — doublement d'ici 2030</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">100k MW</div><div style="font-size: 12px; color: #5A6B7C;">hydro potential — 2nd largest globally</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Thanks to sector liberalisation, installed capacity grew 20% since 2020 as private investors entered the market. With 3,282 MW under construction — including major hydro projects on the Congo River — the country is on track to double capacity by 2030. This transforms the outlook for electricity access, currently at ~20%, in a country with the world's second-largest hydro potential at 100,000 MW.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Grâce à la libéralisation du secteur, la capacité installée a augmenté de 20 % depuis 2020 avec l'entrée d'investisseurs privés. Avec 3 282 MW en construction — dont de grands projets hydroélectriques sur le fleuve Congo — le pays est en bonne voie pour doubler sa capacité d'ici 2030. This transforms the outlook for electricity access, currently at ~20%, in a country with the world's second-largest hydro potential at 100,000 MW.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.51–53</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="cnif" style="{{ instPanel.cnif }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Water Sector Reform</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Institutional framework being finalised to extend drinking-water access</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Water Sector Reform</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Cadre institutionnel en cours de finalisation pour étendre l'accès à l'eau potable</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">~40%</div><div style="font-size: 12px; color: #5A6B7C;">basic drinking water access (advancing)</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">~22%</div><div style="font-size: 12px; color: #5A6B7C;">basic sanitation — lower priority needing investment</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">The RNV 2026 reports advances in drinking water with an institutional framework being finalised to extend access. The Congo River basin gives DRC immense water resources — the challenge is governance, distribution and sanitation infrastructure, not resource availability.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le RNV 2026 rapporte des avancées en matière d'eau potable avec un cadre institutionnel en cours de finalisation pour étendre l'accès. Le bassin du fleuve Congo donne à la RDC d'immenses ressources en eau — le défi est la gouvernance, la distribution et l'infrastructure d'assainissement, non la disponibilité de la ressource.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.xiii, 15, 120–124</a></div></div>
             </div>
             </div>
@@ -472,46 +472,46 @@
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
               <div><div style="font-size: 19px; font-weight: 700;">PNSD — Plan National Stratégique de Développement</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">SDG integration framework integrating all 17 goals</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">17/17</div><div style="font-size: 12px; color: #5A6B7C;">SDGs integrated in national planning</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">17/17</div><div style="font-size: 12px; color: #5A6B7C;">ODD intégrés dans la planification nationale</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">3</div><div style="font-size: 12px; color: #5A6B7C;">VNR cycles: 2020, 2023, 2026</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">The PNSD aligns sector ministry plans with all 17 SDG targets and Agenda 2063. The 2026 VNR reports a strengthened national statistics system as a cross-cutting achievement, providing the data quality needed to track progress across the five focus goals and beyond.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le PNSD aligne les plans ministériels sectoriels sur les 17 cibles ODD et l'Agenda 2063. Le RNV 2026 signale un système statistique national renforcé comme réalisation transversale, fournissant la qualité de données nécessaire au suivi des progrès sur les cinq objectifs prioritaires et au-delà.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.75–76</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="pddsp" style="{{ instPanel.pddsp }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">SDG Localisation Programme</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Sub-national VNRs and province-level implementation</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">SDG Localisation Programme</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">RNV infra-nationaux et mise en œuvre au niveau provincial</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">26</div><div style="font-size: 12px; color: #5A6B7C;">provinces for sub-national SDG localisation</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">Health zones</div><div style="font-size: 12px; color: #5A6B7C;">SDG indicators tracked at local level</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">26</div><div style="font-size: 12px; color: #5A6B7C;">provinces pour la localisation infra-nationale des ODD</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">Health zones</div><div style="font-size: 12px; color: #5A6B7C;">Indicateurs ODD suivis au niveau local</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">The RNV 2023 prioritised extending SDG implementation to provinces and health zones. The 2026 review continues this localisation work: provincial development plans aligned with PNSD targets and the national statistics system strengthened to track local-level progress across the five focus goals.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le RNV 2023 avait priorisé l'extension de la mise en œuvre des ODD aux provinces et zones de santé. Le rapport 2026 poursuit ce travail de localisation.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.111–112</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="pafen" style="{{ instPanel.pafen }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Pro-Welfare Reforms</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Reforms that improved well-being and reduced inequalities despite crises</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Pro-Welfare Reforms</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Réformes ayant amélioré le bien-être et réduit les inégalités malgré les crises</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">6.2%</div><div style="font-size: 12px; color: #5A6B7C;">GDP growth 2023 despite conflict and ODA crisis</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">SDG 10</div><div style="font-size: 12px; color: #5A6B7C;">reduced inequalities — the welfare reform goal</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">6.2%</div><div style="font-size: 12px; color: #5A6B7C;">Croissance PIB 2023 malgré le conflit et la crise APD</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">SDG 10</div><div style="font-size: 12px; color: #5A6B7C;">inégalités réduites — l'objectif de réforme du bien-être</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Despite the resurgence of conflict in eastern DRC, the review reports that pro-welfare reforms have improved well-being and reduced inequalities. Sustained economic growth above 6% has created fiscal space for social programmes even under the unprecedented pressure of the global ODA contraction.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Malgré la résurgence du conflit dans l'est de la RDC, le rapport indique que les réformes pro-bien-être ont amélioré le bien-être et réduit les inégalités. Sustained economic growth above 6% has created fiscal space for social programmes even under the unprecedented pressure of the global ODA contraction.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.112, 114</a> · <a href="https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=BI" target="_blank" rel="noopener">World Bank projects, DR Congo</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="vision" style="{{ instPanel.vision }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Partnerships Strengthening</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Building development partnerships amid the unprecedented global ODA crisis</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Partnerships Strengthening</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Construire des partenariats de développement face à la crise mondiale sans précédent de l'APD</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">SDG 17</div><div style="font-size: 12px; color: #5A6B7C;">the focus goal the ODA crisis makes most urgent</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">SDG 17</div><div style="font-size: 12px; color: #5A6B7C;">l'objectif prioritaire que la crise APD rend le plus urgent</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #B4533A;">Crisis</div><div style="font-size: 12px; color: #5A6B7C;">unprecedented global official development assistance contraction</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">DRC must strengthen partnerships at exactly the moment when traditional partners are withdrawing. The review calls for new instruments — South-South cooperation, blended finance, private-sector engagement — to replace the contracting ODA flows. Energy-sector liberalisation is the model: private capital replacing public aid.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">La RDC doit renforcer ses partenariats précisément au moment où les partenaires traditionnels se retirent. Le rapport appelle à de nouveaux instruments — coopération Sud-Sud, finance mixte, engagement du secteur privé — pour remplacer les flux d'APD en contraction. Energy-sector liberalisation is the model: private capital replacing public aid.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.86, 120</a></div></div>
             </div>
             </div>
@@ -524,22 +524,22 @@
       <div data-tab-panel="financing" style="{{ tabPanel.financing }}">
       <div data-screen-label="Financement" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
-          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Financement the Goals</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">DRC faces the SDG financing challenge in its most acute form: a country of 100 million people with immense natural resource wealth, low public revenue capacity, deep infrastructure gaps, and now an unprecedented global ODA contraction. The review calls for new financing instruments to bridge the gap as traditional aid flows withdraw.</p>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Financement des objectifs</h2>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La RDC fait face au défi du financement des ODD sous sa forme la plus aiguë : un pays de 100 millions d'habitants avec une immense richesse en ressources naturelles, une faible capacité de recettes publiques, de profondes lacunes infrastructurelles, et désormais une contraction mondiale sans précédent de l'APD. The review calls for new financing instruments to bridge the gap as traditional aid flows withdraw.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #E5F1EB; color: #2E7D5B; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">1</span><span style="font-size: 15px; font-weight: 600;">Instruments domestiques</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="Issued to mobilize national savings, smooth treasury needs and reduce external dependence, deliberately building the capital market"><strong>Mining revenues</strong>, cobalt, coltan, gold — the primary domestic anchor</div>
-              <div title="A digital taxpayer identification number, automated declaration and collection, communal property-tax and anti-fraud reforms"><strong>Revenue mobilisation</strong>, extending the tax base beyond extractives</div>
-              <div title="Guarantee fund expanding credit for youth- and women-led enterprises"><strong>Private energy investment</strong>, enabled by sector liberalisation</div>
+              <div title="Issued to mobilize national savings, smooth treasury needs and reduce external dependence, deliberately building the capital market"><strong>Mining revenues</strong>, cobalt, coltan, or — l'ancre domestique principale</div>
+              <div title="A digital taxpayer identification number, automated declaration and collection, communal property-tax and anti-fraud reforms"><strong>Revenue mobilisation</strong>, élargissement de la base fiscale au-delà de l'extractif</div>
+              <div title="Guarantee fund expanding credit for youth- and women-led enterprises"><strong>Private energy investment</strong>, rendu possible par la libéralisation du secteur</div>
             </div>
             <svg viewBox="0 0 240 60" style="width: 100%; height: auto; display: block; margin-top: auto;">
               <polyline points="14,44 120,34 226,16" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
-              <circle cx="14" cy="44" r="3.5" fill="#2E7D5B"><title>2016, internally-raised revenue, 7.8% of GDP</title></circle>
-              <circle cx="226" cy="16" r="4" fill="#2E7D5B"><title>2024, internally-raised revenue, 10.6% of GDP</title></circle>
+              <circle cx="14" cy="44" r="3.5" fill="#2E7D5B"><title>2016, recettes levées en interne, 7,8 % du PIB</title></circle>
+              <circle cx="226" cy="16" r="4" fill="#2E7D5B"><title>2024, recettes levées en interne, 10,6 % du PIB</title></circle>
               <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">7.8% '16</text>
               <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#2E7D5B">10.6% '24</text>
             </svg>
@@ -559,9 +559,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F1F6FA; color: #1F6FB2; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">3</span><span style="font-size: 15px; font-weight: 600;">Canaux de partenariat</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="Legal framework promoted for transformational, green-priority sectors and structuring infrastructure (roads, energy, water, digital)"><strong>Private sector</strong>, energy and infrastructure PPPs</div>
+              <div title="Legal framework promoted for transformational, green-priority sectors and structuring infrastructure (roads, energy, water, digital)"><strong>Private sector</strong>, PPPs énergie et infrastructure</div>
               <div title="Incentive instruments to channel remittances through formal circuits"><strong>South-South cooperation</strong>, new partnership channels</div>
-              <div title="Plus advocacy toward multilateral development banks for more concessional financing to social and productive sectors"><strong>Congo Basin REDD+</strong>, forest carbon as financing vehicle</div>
+              <div title="Plus advocacy toward multilateral development banks for more concessional financing to social and productive sectors"><strong>Congo Basin REDD+</strong>, carbone forestier comme vecteur de financement</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.120–125</a></div></div>
           </div>
@@ -569,11 +569,11 @@
 
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 16px; font-weight: 600;">Financement partner commitments through 2035, by sector</div>
+            <div style="font-size: 16px; font-weight: 600;">Engagements des partenaires de financement jusqu'en 2035, par secteur</div>
             <div style="font-size: 12.5px; color: #7A8A9A;">Total $1,507,171,475 · la longueur des barres indique le rang</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 14px; ">
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Decent jobs <span style="color: #9AA7B4; font-size: 11px;">SDG 8</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (RNV 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Emplois décents <span style="color: #9AA7B4; font-size: 11px;">SDG 8</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (RNV 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Industrialization <span style="color: #9AA7B4; font-size: 11px;">SDG 9</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 2 of 7"><div style="width: 87%; height: 100%; background: #3981BC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.12s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Energy <span style="color: #9AA7B4; font-size: 11px;">SDG 7</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 3 of 7"><div style="width: 74%; height: 100%; background: #5493C6; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.19s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Health <span style="color: #9AA7B4; font-size: 11px;">SDG 3</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 4 of 7"><div style="width: 60%; height: 100%; background: #6FA5D0; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"></div></div></div>
@@ -581,7 +581,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Education <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Poverty <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">The 2026 VNR covers all 17 SDGs with a particular focus on 6, 7, 9, 11 and 17. Energy leads investment priorities following liberalisation; water and sanitation remain underfunded relative to need. The unprecedented global ODA contraction challenges financing across all sectors, making domestic resource mobilisation and mining-sector revenues the primary fallback. Bar lengths show relative prominence in RNV 2026 documentation.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le RNV 2026 couvre les 17 ODD avec un accent particulier sur 6, 7, 9, 11 et 17. L'énergie mène les priorités d'investissement suite à la libéralisation ; l'eau et l'assainissement restent sous-financés par rapport aux besoins. The unprecedented global ODA contraction challenges financing across all sectors, making domestic resource mobilisation and mining-sector revenues the primary fallback. Bar lengths show relative prominence in RNV 2026 documentation.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.122 (Graphique 74)</a></div></div>
         </div>
       </div>
@@ -592,12 +592,12 @@
       <div data-screen-label="Debt and Revenue" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Durabilité de la dette et revenus</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">DRC's fiscal position reflects the tension between immense mineral wealth — cobalt, coltan, gold — and low public revenue collection. Sustained growth above 6% creates fiscal space, but the global ODA contraction means the country must accelerate domestic resource mobilisation as external support contracts.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La position budgétaire de la RDC reflète la tension entre une immense richesse minérale — cobalt, coltan, or — et une faible collecte de recettes publiques. Sustained growth above 6% creates fiscal space, but the global ODA contraction means the country must accelerate domestic resource mobilisation as external support contracts.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
-            <div style="font-size: 16px; font-weight: 600;">External debt and fiscal position</div>
+            <div style="font-size: 16px; font-weight: 600;">Dette extérieure et position budgétaire</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
@@ -612,19 +612,19 @@
               <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, larger share (indicative trajectory)</title></circle>
               <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
               <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, smaller share (indicative trajectory)</title></circle>
-              <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>External 2023, 10.9% of exports (Base de données ODD des ONU, indicator 17.4.1)</title></circle>
+              <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
               <text x="418" y="63" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">10.9%</text>
               <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">internal</text>
               <text x="110" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2017</text>
               <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
               <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
-            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">DRC reached the HIPC completion point and has managed debt through concessional borrowing. The unprecedented global ODA crisis — partners withdrawing at scale — is the new challenge: debt sustainability requires replacing grant financing with private investment and domestic revenues, not more borrowing.</p>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">La RDC a atteint le point d'achèvement PPTE et a géré sa dette par l'emprunt concessionnel. La crise mondiale sans précédent de l'APD — retrait massif des partenaires — est le nouveau défi : debt sustainability requires replacing grant financing with private investment and domestic revenues, not more borrowing.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.121</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
-            <div style="font-size: 16px; font-weight: 600;">Mining revenues and domestic resource mobilisation</div>
+            <div style="font-size: 16px; font-weight: 600;">Revenus miniers et mobilisation des ressources nationales</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
@@ -634,17 +634,17 @@
               <text x="32" y="54" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">20%</text>
               <polyline points="60,83 250,75 420,62" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
               <polyline points="100,111 420,97" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"></polyline>
-              <circle cx="60" cy="83" r="4" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, total government revenue, 13.4% of GDP</title></circle>
-              <circle cx="420" cy="62" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024, 17.7% of GDP</title></circle>
-              <circle cx="100" cy="111" r="4" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2016, internally-raised revenue, 7.8% of GDP</title></circle>
-              <circle cx="420" cy="97" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.4s both;"><title>2024, internally-raised revenue, 10.6% of GDP</title></circle>
+              <circle cx="60" cy="83" r="4" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, recettes publiques totales, 13,4 % du PIB</title></circle>
+              <circle cx="420" cy="62" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024, 17,7 % du PIB</title></circle>
+              <circle cx="100" cy="111" r="4" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2016, recettes levées en interne, 7,8 % du PIB</title></circle>
+              <circle cx="420" cy="97" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.4s both;"><title>2024, recettes levées en interne, 10,6 % du PIB</title></circle>
               <text x="428" y="66" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#2E7D5B">17.7%</text>
               <text x="428" y="101" font-family="IBM Plex Mono" font-size="10" fill="#1F6FB2">10.6%</text>
               <text x="60" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2015</text>
               <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
               <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
-            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Domestic revenues are growing, anchored by mineral royalties and a strengthening tax administration. GDP growth above 6% (2022–2023) generates fiscal space that the PNSD directs toward the five focus goals. The challenge is translating mining wealth into broad-based public revenue beyond the extractive enclave.</p>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Les recettes intérieures augmentent, ancrées par les redevances minières et une administration fiscale renforcée. La croissance du PIB supérieure à 6 % (2022–2023) génère un espace budgétaire que le PNSD oriente vers les cinq objectifs prioritaires. The challenge is translating mining wealth into broad-based public revenue beyond the extractive enclave.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
           </div>
         </div>
@@ -656,29 +656,29 @@
       <div data-screen-label="Water" style="display: flex; flex-direction: column; gap: 18px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #7A8A9A;">Thème de l'Union africaine · 2026</span>
-          <h2 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em;">Année de la durabilité de l'eau</h2>
+          <h2 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em;">Année de la gestion durable de l'eau</h2>
         </div>
 
         <!-- HERO -->
         <div style="background: linear-gradient(135deg, #1F6FB2 0%, #16537E 100%); border-radius: 18px; padding: 40px 44px; color: #FFFFFF; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: center; box-shadow: 0 14px 34px rgba(22,83,126,0.24);">
           <div style="display: flex; flex-direction: column; gap: 16px;">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);">Basic drinking water access</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);">Accès eau potable de base</span>
             <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
               <span style="font-size: 68px; font-weight: 700; letter-spacing: -0.02em; line-height: 0.9;">~40%</span>
-              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F4CE8A;">with institutional reform advancing</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F4CE8A;">avec la réforme institutionnelle en cours</span>
             </div>
-            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.86);">The Congo River basin gives DRC the world's second-largest freshwater resources — water is not scarce, but access is. Only ~40% of the population has even basic drinking water service. The 2026 review foregrounds water as a focus goal, with an institutional reform framework being finalised to extend the sector's reach across a country of 100 million spanning a territory larger than Western Europe.</p>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.86);">Le bassin du fleuve Congo donne à la RDC les deuxièmes plus grandes ressources en eau douce au monde — l'eau n'est pas rare, mais l'accès l'est. Seulement ~40 % de la population dispose d'un service d'eau potable de base. The 2026 review foregrounds water as a focus goal, with an institutional reform framework being finalised to extend the sector's reach across a country of 100 million spanning a territory larger than Western Europe.</p>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-              <span style="font-size: 14px; font-weight: 600;">Water and sanitation access, 2024</span>
-              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.7);">from basic to safely managed</span>
+              <span style="font-size: 14px; font-weight: 600;">Accès à l'eau et à l'assainissement, 2024</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.7);">de base vers gestion sûre</span>
             </div>
             <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Water</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Basic drinking water service, ~40%"><div style="width: 40%; height: 100%; background: #FFFFFF; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;">~40%</span></div>
-              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Sanitation</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Basic sanitation service, ~22%"><div style="width: 22%; height: 100%; background: #F4CE8A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #F4CE8A;">~22%</span></div>
+              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Eau</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Basic drinking water service, ~40%"><div style="width: 40%; height: 100%; background: #FFFFFF; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;">~40%</span></div>
+              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Assainissement</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Basic sanitation service, ~22%"><div style="width: 22%; height: 100%; background: #F4CE8A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #F4CE8A;">~22%</span></div>
             </div>
-            <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.78);">The <strong style="color:#fff; font-weight:600;">institutional water reform framework</strong> being finalised is the key instrument: extending water-sector governance across 26 provinces and hundreds of health zones, many of which are conflict-affected or extremely remote. The Congo Basin's abundance must be translated into household-level delivery.</p>
+            <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.78);">The <strong style="color:#fff; font-weight:600;">institutional water reform framework</strong> en cours de finalisation est l'instrument clé : étendre la gouvernance du secteur de l'eau à 26 provinces et des centaines de zones de santé, dont beaucoup sont touchées par le conflit ou extrêmement éloignées.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.55);">Sources : RNV 2026, p.61–63, 73 · Base de données ODD des ONU, indicator 6.1.1</div></div>
           </div>
         </div>
@@ -686,31 +686,31 @@
         <!-- DATA ROW -->
         <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; align-items: stretch;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 16px; font-weight: 600;">The Congo Basin — abundance without delivery</div>
-            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Le fleuve Congo transporte environ 30 % du ruissellement d'eau douce africain — DRC is surrounded by water abundance. The challenge is entirely a governance and infrastructure problem: financing treatment plants, distribution networks and sanitation systems across a country larger than Western Europe. CICOS (International Commission of the Congo-Oubangui-Sangha Basin) provides the transboundary governance framework.</p>
+            <div style="font-size: 16px; font-weight: 600;">Le bassin du Congo — abondance sans distribution</div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Le fleuve Congo transporte environ 30 % du ruissellement d'eau douce africain — la RDC est entourée d'abondance en eau. Le défi est entièrement un problème de gouvernance et d'infrastructure.</p>
             <div style="background: #F6F9FB; border-radius: 12px; padding: 16px 18px; margin-top: 2px;">
               <svg viewBox="0 0 420 84" style="width: 100%; height: auto; display: block;">
                 <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">Water access trend, 2015–2024</text>
                 <polyline points="16,62 208,55 400,48" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
                 <circle cx="160" cy="62" r="4" fill="#1F6FB2"><title>2015, basic drinking water ~36%</title></circle>
                 <circle cx="400" cy="48" r="4.5" fill="#1F6FB2"><title>2024, basic drinking water ~40% — institutional reform advancing</title></circle>
-                <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">steady but slow improvement · institutional reform the key accelerator</text>
+                <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">amélioration régulière mais lente · la réforme institutionnelle est le principal accélérateur</text>
               </svg>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.72–73 · RNV 2020, p.85–86</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 12px;">
-            <div style="font-size: 16px; font-weight: 600;">Water and energy as linked investments</div>
-            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">The Congo Basin's 3,000+ mm annual rainfall and river network make DRC water-abundant — the energy-water nexus runs the opposite direction to water-scarce peers. Hydropower (100,000 MW potential) uses the river for energy; the institutional challenge is using that same abundance for household water delivery. The 2026 review links both as priority investments.</p>
+            <div style="font-size: 16px; font-weight: 600;">Eau et énergie comme investissements liés</div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Les précipitations annuelles de plus de 3 000 mm et le réseau fluvial du bassin du Congo font de la RDC un pays abondant en eau — le nexus eau-énergie s'y inverse par rapport aux pays pauvres en eau. Hydropower (100,000 MW potential) uses the river for energy; the institutional challenge is using that same abundance for household water delivery. The 2026 review links both as priority investments.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.61–62, 74</a></div></div>
           </div>
         </div>
 
         <!-- WATER SECURITY ACCENT STRIP -->
         <div style="background: #FBF1EE; border: 1px solid #EAD3CB; border-left: 5px solid #B4533A; border-radius: 14px; padding: 24px 30px; display: flex; flex-direction: column; gap: 8px;">
-          <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #B4533A;"></span><span style="font-size: 16px; font-weight: 600; color: #8A3B27;">Water governance as the binding constraint</span></div>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #6B4A40;">In a country where abundance of water, minerals and hydro energy coexists with ~40% basic water access and ~22% sanitation — <strong>the binding constraint is governance and infrastructure investment</strong>, not resources. The Année de la durabilité de l'eau for DRC is a year of institutional reform: finalising the sector framework, mobilising investment and extending delivery networks to conflict-affected and remote communities.</p>
+          <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #B4533A;"></span><span style="font-size: 16px; font-weight: 600; color: #8A3B27;">La gouvernance de l'eau comme contrainte principale</span></div>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #6B4A40;">Dans un pays où l'abondance de l'eau, des minéraux et de l'énergie hydraulique coexiste avec ~40 % d'accès à l'eau de base et ~22 % d'assainissement — la contrainte principale est la gouvernance et l'investissement en infrastructure. <strong>la contrainte principale est la gouvernance et l'investissement en infrastructure</strong>, non les ressources. L'Année de la gestion durable de l'eau pour la RDC est une année de réforme institutionnelle : finaliser le cadre de gouvernance de l'eau qui apportera l'abondance du bassin du Congo aux robinets des ménages.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B08A7E;">Source : <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">RNV 2026, p.70–74</a></div></div>
         </div>
       </div>
@@ -720,7 +720,7 @@
   </main>
 
   <footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
-    <div style="max-width: 1280px; margin: 0 auto;">Sources : République de DR Congo, <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">Second Rapport national volontaire 2026</a> (June 2026); Premier Rapport national volontaire 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Page citations refer to the RNV 2026 unless otherwise noted. · Prototype pour consultation.</div>
+    <div style="max-width: 1280px; margin: 0 auto;">Sources : République de DR Congo, <a href="https://hlpf.un.org/countries/democratic-republic-of-the-congo" target="_blank" rel="noopener">Second Rapport national volontaire 2026</a> (June 2026); Premier Rapport national volontaire 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cod" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour consultation.</div>
   </footer>
 </div>
 
