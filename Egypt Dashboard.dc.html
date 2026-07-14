@@ -20,6 +20,7 @@
   @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
 </style>
+<script src="nav-bar.js"></script>
 </helmet>
 <div style="min-height: 100vh; display: flex; flex-direction: column;">
   <div style="height: 5px; background: linear-gradient(90deg, #1F6FB2 0%, #1F6FB2 60%, #2E7D5B 60%, #2E7D5B 80%, #B4533A 80%, #B4533A 100%);"></div>
@@ -63,9 +64,9 @@
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1F6FB2;">raised since 2020</span>
           </button>
           <button data-tile-btn="rev" style="{{ metricBtn.rev }}" onClick="{{ onMetric.rev }}">
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">VNR Cycle</span>
-            <span style="font-size: 28px; font-weight: 700; color: #1F6FB2;">4th</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1F6FB2;">2016 · 2018 · 2021 · 2026</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Tax Revenue / GDP</span>
+            <span style="font-size: 28px; font-weight: 700; color: #1F6FB2;">15.1%</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1F6FB2;">▲ from 13.5% in FY2020/21</span>
           </button>
           <button data-tile-btn="debt" style="{{ metricBtn.debt }}" onClick="{{ onMetric.debt }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Water Stress</span>
@@ -87,6 +88,8 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Hover over points for values and sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -109,6 +112,8 @@
             <text x="550" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">FY24</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">FY25</text>
           </svg>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Renewable Energy (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Electricity Access (%)</span></div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">GDP growth recovered from 2.4% (FY2023/24) to 4.4% in FY2024/25, driven by private-sector-led and diversified growth across digital, green energy, tourism and manufacturing — the reform dividend the review presents as Egypt's fourth-VNR headline. Egypt was one of the few economies globally to grow through COVID-19 (3.6% in FY2019/20), demonstrating resilience the review explicitly foregrounds.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://hlpf.un.org/countries/egypt" target="_blank" rel="noopener">VNR 2026, p.52</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/egy" target="_blank" rel="noopener">UN SDG Database, indicator 7.1.1</a></div></div>
         </div>
@@ -122,6 +127,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Hover over points for values and sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="128" x2="700" y2="128" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="56" x2="700" y2="56" stroke="#EEF1F4" stroke-width="1"></line>
@@ -160,6 +168,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Hover over points for values and sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="155" x2="700" y2="155" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="110" x2="700" y2="110" stroke="#EEF1F4" stroke-width="1"></line>
@@ -202,6 +213,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Hover over points for values and sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -224,6 +238,8 @@
             <text x="444" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2021</text>
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>GDP Growth (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Inflation (%)</span></div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Egypt experienced significant inflation through 2022–2023 as import prices and devaluation effects combined, but fiscal and tax reforms — including VAT digitisation, expanded taxpayer identification, and the Ras El-Hekma deal — strengthened resource mobilisation. The Integrated National Financing Framework (INFF) aligns financing flows with SDG investments and the 2025 Sevilla commitments.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/egy" target="_blank" rel="noopener">UN SDG Database, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/egypt" target="_blank" rel="noopener">VNR 2026, p.87, 121</a></div></div>
         </div>
@@ -309,6 +325,8 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 8 · Decent Work — Private-Sector-Led Growth</div>
             <svg viewBox="0 0 380 130" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,65) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  
               <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">GDP growth and startup ecosystem, 2020–2025</text>
               <line x1="30" y1="110" x2="360" y2="110" stroke="#E3E7EC" stroke-width="1"></line>
               <polyline points="40,80 200,60 350,40" fill="none" stroke="#2E7D5B" stroke-width="3" stroke-linecap="round"></polyline>
@@ -321,6 +339,7 @@
               <text x="200" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">FY2022</text>
               <text x="350" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">FY2025</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Tax Revenue (% of GDP)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/egypt" target="_blank" rel="noopener">VNR 2026, p.58–59</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/egy" target="_blank" rel="noopener">UN SDG Database, indicators 9.1.1 &amp; 9.c.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
@@ -340,6 +359,7 @@
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#1F6FB2" stroke-width="16" stroke-dasharray="301.5 0" stroke-linecap="round" transform="rotate(-90 60 60)"><title>34.3% of urban population in informal settlements (2020, UN SDG Database, indicator 11.1.1)</title></circle>
                 <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#B0791F">$2.3B</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>FDI Inflows (USD B)</span></div>
               <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">raised by Egypt's startup ecosystem since 2020 — one of Africa's largest tech investment hubs</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/egypt" target="_blank" rel="noopener">VNR 2026, p.66–67</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/egy" target="_blank" rel="noopener">UN SDG Database, indicator 11.1.1</a></div></div>
@@ -544,6 +564,7 @@
               <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">7.8% '16</text>
               <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#2E7D5B">10.6% '24</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Tax Revenue (% of GDP)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/egypt" target="_blank" rel="noopener">VNR 2026, p.86–88, 121</a></div></div>
           </div>
 
@@ -600,6 +621,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">External debt and fiscal reform</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -620,6 +644,8 @@
               <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
               <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Internal Revenue (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>External Financing (%)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">External debt is managed through a combination of fiscal reform, IMF programme alignment and the reform-led growth acceleration. The Ras El-Hekma coastal development deal ($35B) brought significant private inflows that improved Egypt's reserve position and debt trajectory during FY2023/24.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources: <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/egy" target="_blank" rel="noopener">UN SDG Database, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/egypt" target="_blank" rel="noopener">VNR 2026, p.121</a></div></div>
           </div>
@@ -627,6 +653,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Revenue mobilisation — tax reform and digitisation</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -645,6 +674,8 @@
               <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
               <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Domestic Revenue (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>External Financing (%)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Government revenue is growing through VAT digitization, expanded taxpayer registration and improved compliance. The INFF tracks financing aligned with SDG investment priorities, ensuring that the fiscal reform dividend flows toward the goals — water security, green energy, social protection and innovation — that Vision 2030 targets.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources: <a href="https://hlpf.un.org/countries/egypt" target="_blank" rel="noopener">VNR 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/egy" target="_blank" rel="noopener">UN SDG Database, indicator 17.1.1</a></div></div>
           </div>
@@ -697,6 +728,7 @@
                 <circle cx="400" cy="48" r="4.5" fill="#1F6FB2"><title>2023, water stress 112.9% — rising pressure (UN SDG Database, 6.4.2)</title></circle>
                 <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">water stress above 100% since before 2015 · rising with population and climate pressure</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Investment Priorities (rank)</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources: <a href="https://hlpf.un.org/countries/egypt" target="_blank" rel="noopener">VNR 2026, p.72–73 · VNR 2020, p.85–86</a></div></div>
           </div>

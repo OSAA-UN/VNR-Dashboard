@@ -20,6 +20,7 @@
   @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
 </style>
+<script src="nav-bar.js"></script>
 </helmet>
 <div style="min-height: 100vh; display: flex; flex-direction: column;">
   <div style="height: 5px; background: linear-gradient(90deg, #1F6FB2 0%, #1F6FB2 60%, #2E7D5B 60%, #2E7D5B 80%, #B4533A 80%, #B4533A 100%);"></div>
@@ -27,7 +28,7 @@
   <!-- ============ HEADER + NAV ============ -->
   <header style="background: #FFFFFF; border-bottom: 1px solid #E3E7EC; padding: 26px 48px 0 48px;">
     <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Africa Operations / <span style="color: #1F6FB2; font-weight: 500;">Burundi</span> · Tableau de bord pays · RNV 2026</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Opérations Afrique / <span style="color: #1F6FB2; font-weight: 500;">Burundi</span> · Tableau de bord pays · RNV 2026</div>
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
         <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Burundi</h1>
         <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">Revues nationales volontaires (RNV) 2020 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
@@ -60,12 +61,12 @@
           <button data-tile-btn="water" style="{{ metricBtn.water }}" onClick="{{ onMetric.water }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Eau améliorée</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">86.3%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">urban-rural divide</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">fossé urbain-rural</span>
           </button>
           <button data-tile-btn="rev" style="{{ metricBtn.rev }}" onClick="{{ onMetric.rev }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Recettes / PIB</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">17.7%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">▲ +4.3 pts since 2015</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">▲ +4,3 pts depuis 2015</span>
           </button>
           <button data-tile-btn="debt" style="{{ metricBtn.debt }}" onClick="{{ onMetric.debt }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Service dette / Exports</span>
@@ -87,6 +88,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -110,6 +114,8 @@
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2025</text>
           </svg>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Accès électricité (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Population urbaine (%)</span></div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès à l'électricité a presque triplé depuis 2017, passant de 9,3 % à 25,9 % de la population, grâce aux nouvelles capacités hydroélectriques et solaires. La Base de données ODD des Nations Unies enregistre un taux légèrement inférieur de 20,1 % pour 2024 (marqué en orange), un écart entre les chiffres nationaux et officiels à noter lors des comparaisons entre pays.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.52</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 7.1.1</a></div></div>
         </div>
@@ -123,6 +129,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="128" x2="700" y2="128" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="56" x2="700" y2="56" stroke="#EEF1F4" stroke-width="1"></line>
@@ -133,7 +142,7 @@
             <polyline points="188,142 380,124 636,132" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="188,147 636,119" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"></polyline>
             <circle cx="188" cy="49" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>Urban 2017, ~96%</title></circle>
-            <circle cx="636" cy="39" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>Urban 2024, 97.4% (WHO/UNICEF Joint Monitoring Programme)</title></circle>
+            <circle cx="636" cy="39" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>Urbain 2024, 97,4 % (Programme conjoint de surveillance OMS/UNICEF)</title></circle>
             <circle cx="188" cy="142" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Rural 2017, ~83%</title></circle>
             <circle cx="380" cy="124" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.3s both;"><title>Rural 2020, 85,6 %, le pic</title></circle>
             <circle cx="636" cy="132" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Rural 2024, 84.4%</title></circle>
@@ -145,12 +154,12 @@
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Urban</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Urbain</span>
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Rural</span>
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>National</span>
           </div>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">À l'échelle nationale, l'accès à l'eau potable améliorée est passé de 82,3 % à 86,3 % entre 2017 et 2024. Les progrès se concentrent dans les villes : la couverture urbaine est quasi universelle à 97,4 %, tandis que la couverture rurale est retombée de son pic de 85,6 % en 2020 à 84,4 %, making rural water supply the clearest opportunity for further progress.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">WHO/UNICEF Joint Monitoring Programme 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 6.1.1</a></div></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">À l'échelle nationale, l'accès à l'eau potable améliorée est passé de 82,3 % à 86,3 % entre 2017 et 2024. Les progrès se concentrent dans les villes : la couverture urbaine est quasi universelle à 97,4 %, tandis que la couverture rurale est retombée de son pic de 85,6 % en 2020 à 84,4 %, faisant de l'approvisionnement en eau rurale la principale opportunité de progrès supplémentaires.</p>
+          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">Programme conjoint de surveillance OMS/UNICEF 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 6.1.1</a></div></div>
         </div>
         </div>
 
@@ -162,6 +171,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="155" x2="700" y2="155" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="110" x2="700" y2="110" stroke="#EEF1F4" stroke-width="1"></line>
@@ -188,8 +200,8 @@
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Total government revenue</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Internally-raised revenue</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes publiques totales</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Recettes collectées en interne</span>
           </div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les recettes publiques ont augmenté régulièrement, de 13,4 % du PIB en 2015 à 17,7 % en 2024, soutenues par la numérisation de la collecte fiscale. La pression fiscale reste à 13,1 %, sous le seuil de l'Engagement de Séville 2025 sur le financement du développement, ce qui rend une croissance supplémentaire des recettes à la fois nécessaire et possible.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 17.1.1</a></div></div>
@@ -204,6 +216,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -216,17 +231,19 @@
             <text x="528" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">2023 crossover</text>
             <polyline points="188,68 444,86 636,116" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="188,140 444,88 636,69" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, ~11% (indicative trajectory)</title></circle>
-            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
-            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, ~5% (indicative trajectory)</title></circle>
+            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Interne 2017, ~11 % (trajectoire indicative)</title></circle>
+            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Interne 2024, part en baisse</title></circle>
+            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Externe 2017, ~5 % (trajectoire indicative)</title></circle>
             <circle cx="636" cy="69" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
             <text x="648" y="73" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">10.9%</text>
-            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">internal</text>
+            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">interne</text>
             <text x="188" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2017</text>
             <text x="444" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2021</text>
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Depuis 2023, le service de la dette envers les créanciers étrangers coûte au Burundi plus que le service de la dette intérieure, atteignant 10,9 % des recettes d'exportation en 2023, per the United Nations SDG Database. The review presents this shift as grounds for the "urgency of ongoing reforms" and for seeking financing on more favourable (concessional) terms. Line shapes between the published points are indicative.</p>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Croissance du PIB (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Inflation (%)</span></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Depuis 2023, le service de la dette envers les créanciers étrangers coûte au Burundi plus que le service de la dette intérieure, atteignant 10,9 % des recettes d'exportation en 2023, selon la Base de données ODD des Nations Unies. Le rapport présente ce changement comme justifiant l'« urgence des réformes en cours » et la recherche de financements à des conditions plus favorables (concessionnelles). Les formes des lignes entre les points publiés sont indicatives.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources: <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.87, 121</a></div></div>
         </div>
         </div>
@@ -236,7 +253,7 @@
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; animation: rise 0.3s ease both;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
             <div style="font-size: 17px; font-weight: 600;">Engagements des partenaires de financement jusqu'en 2035, par secteur</div>
-            <div style="font-size: 12.5px; color: #5A6B7C;">Total $1,507,171,475 · bar length shows rank order</div>
+            <div style="font-size: 12.5px; color: #5A6B7C;">Total 1 507 171 475 $ · la longueur des barres indique le rang</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px; ">
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Emplois décents <span style="color: #9AA7B4; font-size: 11.5px;">SDG 8</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (VNR 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
@@ -247,7 +264,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Education <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Poverty <span style="color: #9AA7B4; font-size: 11.5px;">SDG 1</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement du Burundi. The review ranks sectors by committed value but reports only the combined total, so bar lengths show rank order rather than dollar amounts.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement du Burundi. Le rapport classe les secteurs par valeur engagée mais ne publie que le total combiné, de sorte que la longueur des barres indique l'ordre de classement plutôt que les montants en dollars.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.122 (Graphique 74)</a></div></div>
         </div>
         </div>
@@ -258,7 +275,7 @@
       <div data-tab-panel="goals" style="{{ tabPanel.goals }}">
       <div data-screen-label="Focus Goals" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
-          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">2026 Focus Goals: Achievements &amp; Priorities</h2>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Objectifs prioritaires 2026 : Réalisations &amp; Priorités</h2>
           <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau des Nations Unies 2026. Les chiffres combinent le Rapport national volontaire 2026 du Burundi avec la Base de données ODD des Nations Unies, sélectionnez un objectif pour explorer.</p>
         </div>
 
@@ -282,8 +299,8 @@
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.61–65</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicators 6.1.1 &amp; 6.2.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Accès à 86,3 % ; restauration des zones tampons autour du lac Tanganyika et du lac Cohoha en cours.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Étendre la couverture rurale au-delà de 84,4 % et développer l'assainissement adéquat de 12,9 % à l'échelle nationale.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Accès à 86,3 % ; restauration des zones tampons autour du lac Tanganyika et du lac Cohoha en cours.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Étendre la couverture rurale au-delà de 84,4 % et développer l'assainissement adéquat de 12,9 % à l'échelle nationale.</span></div>
           </div>
         </div>
         </div>
@@ -300,8 +317,8 @@
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.51–55</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 7.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Accès à 25,9 % ; le Compact national sur l'énergie mobilise 3,49 milliards de dollars, ciblant 70 % d'accès d'ici 2030.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Rapprocher l'accès rural (17,6 %) des niveaux urbains (66,3 %) et réduire les pertes techniques et commerciales.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Accès à 25,9 % ; le Compact national sur l'énergie mobilise 3,49 milliards de dollars, ciblant 70 % d'accès d'ici 2030.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Rapprocher l'accès rural (17,6 %) des niveaux urbains (66,3 %) et réduire les pertes techniques et commerciales.</span></div>
           </div>
         </div>
         </div>
@@ -311,6 +328,9 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">ODD 9 · Industrie, innovation et infrastructure</div>
             <svg viewBox="0 0 380 130" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,65) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="190" y="128" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">Part des routes en état toutes saisons</text>
               <line x1="30" y1="110" x2="360" y2="110" stroke="#E3E7EC" stroke-width="1"></line>
               <polyline points="40,34 200,66 350,96" fill="none" stroke="#B0791F" stroke-width="3" stroke-linecap="round"></polyline>
@@ -321,11 +341,12 @@
               <text x="40" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2020–21</text>
               <text x="350" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2023</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.58–59</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicators 9.1.1 &amp; 9.c.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Trois nouvelles banques publiques d'investissement créées : la Banque d'investissement pour la jeunesse (BIJE), la Banque d'investissement et de développement des femmes (BIDF) et le Fonds d'impulsion, de garantie et d'accompagnement (FIGA). La couverture mobile a atteint</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Restaurer le réseau routier toutes saisons, passé de ~78 % à 32,2 % entre 2020 et 2023 — la priorité infrastructurelle phare du rapport.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Trois nouvelles banques publiques d'investissement créées : la Banque d'investissement pour la jeunesse (BIJE), la Banque d'investissement et de développement des femmes (BIDF) et le Fonds d'impulsion, de garantie et d'accompagnement (FIGA). La couverture mobile a atteint</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Restaurer le réseau routier toutes saisons, passé de ~78 % à 32,2 % entre 2020 et 2023 — la priorité infrastructurelle phare du rapport.</span></div>
           </div>
         </div>
         </div>
@@ -340,13 +361,14 @@
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#B0791F" stroke-width="16" stroke-dasharray="103.4 198.1" stroke-linecap="round" transform="rotate(-90 60 60)"><title>34,3 % de la population urbaine dans des établissements informels (2020, Base de données ODD des ONU, indicateur 11.1.1)</title></circle>
                 <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#B0791F">34.3%</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Part recettes propres (%)</span></div>
               <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">de la population urbaine vivait dans des établissements informels en 2020</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.66–67</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 11.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Les schémas d'aménagement territorial provinciaux couvrent toutes les provinces, et une nouvelle autorité nationale de développement urbain (OBUHA) a été créée.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Développer des logements décents et abordables, le principal défi urbain identifié dans le rapport.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Les schémas d'aménagement territorial provinciaux couvrent toutes les provinces, et une nouvelle autorité nationale de développement urbain (OBUHA) a été créée.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Développer des logements décents et abordables, le principal défi urbain identifié dans le rapport.</span></div>
           </div>
         </div>
         </div>
@@ -363,8 +385,8 @@
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.85–89</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicators 17.1.1 &amp; 17.4.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Achievement</span><span style="font-size: 14px; line-height: 1.55;">Recettes publiques passées de 13 % à 17,7 % du produit intérieur brut ; enregistrement des naissances à 97 %.</span></div>
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priority Ahead</span><span style="font-size: 14px; line-height: 1.55;">Gérer le coût croissant du service de la dette extérieure, qui a dépassé le service de la dette interne en 2023, renforçant la nécessité de réformes des finances publiques.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Recettes publiques passées de 13 % à 17,7 % du produit intérieur brut ; enregistrement des naissances à 97 %.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Gérer le coût croissant du service de la dette extérieure, qui a dépassé le service de la dette interne en 2023, renforçant la nécessité de réformes des finances publiques.</span></div>
           </div>
         </div>
         </div>
@@ -383,7 +405,7 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 34px 38px; display: flex; flex-direction: column; gap: 26px;">
             <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">Cadre de suivi « 4P » — auto-évaluation des progrès du Burundi</div>
             <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>All 17 goals combined</span><span style="color: #2E7D5B; font-weight: 600;">49 % des cibles mesurées en amélioration</span></div>
+              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>Les 17 objectifs combinés</span><span style="color: #2E7D5B; font-weight: 600;">49 % des cibles mesurées en amélioration</span></div>
               <div style="display: flex; height: 34px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both;">
                 <div style="width: 49%; background: #2E7D5B;" title="49% improving"></div>
                 <div style="width: 4%; background: #D9A94A;" title="4% stagnant"></div>
@@ -414,7 +436,7 @@
                 <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Mobile-money, 7.66 million connected subscriptions"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">62.1%</div><div style="font-size: 11.5px; color: #5A6B7C;">Mobile money</div></div>
                 <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Fibre-optic backbone now reaches all 18 provinces"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">18/18</div><div style="font-size: 11.5px; color: #5A6B7C;">Provinces sur fibre</div></div>
               </div>
-              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">Le Burundi aligne son écosystème numérique sur le Pacte numérique mondial des Nations Unies. COMGOV, le réseau administratif partagé du gouvernement, relie plus de 100 institutions publiques ; BERNET, le réseau national d'éducation et de recherche, connecte 14 universités. Public-sector staffing in information and communications technology declined 4.4% per year over 2018–2022, the review's own flagged constraint.</p>
+              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">Le Burundi aligne son écosystème numérique sur le Pacte numérique mondial des Nations Unies. COMGOV, le réseau administratif partagé du gouvernement, relie plus de 100 institutions publiques ; BERNET, le réseau national d'éducation et de recherche, connecte 14 universités. Les effectifs du secteur public dans les technologies de l'information et de la communication ont diminué de 4,4 % par an entre 2018 et 2022, une contrainte que le rapport lui-même signale.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.111–119</a> · ARCT (telecoms regulator), Q2 2025</div></div>
             </div>
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px;">
@@ -439,10 +461,10 @@
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">Compact national sur l'énergie</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">3,49 Md$ · 2024</span></button>
             <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">Cadre national de financement</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">$1.507B tracked</span></button>
-            <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Anti-Corruption Strategy</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2025–2030</span></button>
-            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Digitalization Master Plan</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2023–2027</span></button>
+            <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Stratégie anti-corruption</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2025–2030</span></button>
+            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Plan directeur de numérisation</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2023–2027</span></button>
             <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Digital Economy Project</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Banque mondiale 92 M$</span></button>
-            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Vision Burundi 2040–2060</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">long-term frame</span></button>
+            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Vision Burundi 2040–2060</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">cadre à long terme</span></button>
           </div>
 
           <div>
@@ -549,6 +571,7 @@
               <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">7.8% '16</text>
               <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#2E7D5B">10.6% '24</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.86–88, 121</a></div></div>
           </div>
 
@@ -563,11 +586,11 @@
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
-            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F1F6FA; color: #1F6FB2; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">3</span><span style="font-size: 15px; font-weight: 600;">Partnership channels</span></div>
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F1F6FA; color: #1F6FB2; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">3</span><span style="font-size: 15px; font-weight: 600;">canaux de partenariat</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
               <div title="Legal framework promoted for transformational, green-priority sectors and structuring infrastructure (roads, energy, water, digital)"><strong>Public-private partnerships</strong>, pour l'infrastructure à priorité verte</div>
               <div title="Incentive instruments to channel remittances through formal circuits"><strong>Diaspora financing</strong>, channelling remittances through formal circuits</div>
-              <div title="Plus advocacy toward multilateral development banks for more concessional financing to social and productive sectors"><strong>South-South &amp; triangular cooperation</strong>, plus le plaidoyer pour des prêts plus concessionnels</div>
+              <div title="Plus advocacy toward multilateral development banks for more concessional financing to social and productive sectors"><strong>Coopération Sud-Sud &amp; triangulaire</strong>, plus le plaidoyer pour des prêts plus concessionnels</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.120–125</a></div></div>
           </div>
@@ -576,7 +599,7 @@
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
             <div style="font-size: 16px; font-weight: 600;">Engagements des partenaires de financement jusqu'en 2035, par secteur</div>
-            <div style="font-size: 12.5px; color: #7A8A9A;">Total $1,507,171,475 · bar length shows rank order</div>
+            <div style="font-size: 12.5px; color: #7A8A9A;">Total 1 507 171 475 $ · la longueur des barres indique le rang</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 14px; ">
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Emplois décents <span style="color: #9AA7B4; font-size: 11px;">SDG 8</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (VNR 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
@@ -587,7 +610,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Education <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Poverty <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les engagements courent jusqu'en 2035 car c'est l'horizon de la feuille de route du cadre national de financement. Les partenaires sont des bailleurs de développement bilatéraux et multilatéraux : agences des Nations Unies, banques de développement et donateurs nationaux. Sectors are ranked by committed value, as reported in the review's own chart (Graphique 74); because the review publishes only the combined total, bar lengths show rank order rather than dollar amounts.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les engagements courent jusqu'en 2035 car c'est l'horizon de la feuille de route du cadre national de financement. Les partenaires sont des bailleurs de développement bilatéraux et multilatéraux : agences des Nations Unies, banques de développement et donateurs nationaux. Les secteurs sont classés par valeur engagée, telle que rapportée dans le graphique 74 du rapport ; le rapport ne publiant que le total combiné, la longueur des barres indique l'ordre de classement plutôt que les montants en dollars.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.122 (Graphique 74)</a></div></div>
         </div>
       </div>
@@ -597,7 +620,7 @@
       <div data-tab-panel="debt" style="{{ tabPanel.debt }}">
       <div data-screen-label="Debt and Revenue" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
-          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Debt Sustainability &amp; Domestic Resource Mobilization</h2>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Viabilité de la dette &amp; Mobilisation des ressources nationales</h2>
           <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Deux aspects de la même histoire des finances publiques : ce que le Burundi dépense pour le service de sa dette et ce qu'il lève au niveau national pour financer le développement.</p>
         </div>
 
@@ -605,6 +628,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Service de la dette, externe vs. interne</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -615,16 +641,18 @@
               <text x="336" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">2023 crossover</text>
               <polyline points="110,58 280,72 410,92" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
               <polyline points="110,110 280,74 410,59" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, larger share (indicative trajectory)</title></circle>
-              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
-              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, smaller share (indicative trajectory)</title></circle>
+              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Interne 2017, part plus élevée (trajectoire indicative)</title></circle>
+              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Interne 2024, part en baisse</title></circle>
+              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Externe 2017, part plus faible (trajectoire indicative)</title></circle>
               <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
               <text x="418" y="63" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">10.9%</text>
-              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">internal</text>
+              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">interne</text>
               <text x="110" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2017</text>
               <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
               <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Recettes internes (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Financement externe (%)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Le service de la dette envers les créanciers étrangers a coûté 10,9 % des recettes d'exportation en 2023, dépassant le service de la dette intérieure cette année-là. Le rapport décrit un « niveau d'endettement élevé » et une « capacité limitée de gestion de la dette » et recommande des financements à des conditions plus favorables (concessionnelles).</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources: <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.121</a></div></div>
           </div>
@@ -632,6 +660,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Recettes intérieures, une décennie de croissance</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -650,7 +681,9 @@
               <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
               <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
-            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Les recettes publiques totales sont passées de 13,4 % à 17,7 % du produit intérieur brut entre 2015 et 2024, et les recettes levées en interne de 7,8 % à 10,6 %, soutenues par un numéro d'identification fiscale numérique et la numérisation de la collecte fiscale et douanière. Property-tax and anti-fraud reforms are the next steps the review recommends.</p>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes nationales (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Financement externe (%)</span></div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Les recettes publiques totales sont passées de 13,4 % à 17,7 % du produit intérieur brut entre 2015 et 2024, et les recettes levées en interne de 7,8 % à 10,6 %, soutenues par un numéro d'identification fiscale numérique et la numérisation de la collecte fiscale et douanière. Les réformes de la taxe foncière et de la lutte contre la fraude sont les prochaines étapes recommandées par le rapport.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">UN SDG Database, indicator 17.1.1</a></div></div>
           </div>
         </div>
@@ -681,7 +714,7 @@
               <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.7);">l'écart urbain-rural</span>
             </div>
             <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Urban</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Urban water coverage, near-universal"><div style="width: 97.4%; height: 100%; background: #FFFFFF; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;">97.4%</span></div>
+              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Urbain</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Urban water coverage, near-universal"><div style="width: 97.4%; height: 100%; background: #FFFFFF; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;">97.4%</span></div>
               <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Rural</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Rural water coverage, 85.6% (2020) to 84.4% (2024)"><div style="width: 84.4%; height: 100%; background: #F4CE8A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #F4CE8A;">84.4%</span></div>
             </div>
             <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.78);">L'eau dispose d'un axe dédié du Plan national de développement, d'une <strong style="color:#fff; font-weight:600;">National Water Policy</strong> and a <strong style="color:#fff; font-weight:600;">National Water Strategy</strong>. La couverture urbaine est quasi universelle ; la contrainte restante est la portée géographique vers les zones rurales.</p>
@@ -702,6 +735,7 @@
                 <circle cx="232" cy="36" r="4" fill="#1F6FB2"><title>High, ~27,200 tonnes</title></circle>
                 <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">fluctuating 24,400–27,200 tonnes · seasonal closures, minimum catch sizes, community co-management</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Priorités d'investissement (rang)</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources: <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">VNR 2026, p.72–73 · VNR 2020, p.85–86</a></div></div>
           </div>
@@ -726,7 +760,7 @@
   </main>
 
   <footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
-    <div style="max-width: 1280px; margin: 0 auto;">Sources : République du Burundi, <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">Second Voluntary National Review 2026</a> (June 2026); First Voluntary National Review 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">United Nations SDG Database</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour révision interne, structure à reproduire à l'identique pour tous les pays.</div>
+    <div style="max-width: 1280px; margin: 0 auto;">Sources : République du Burundi, <a href="https://hlpf.un.org/countries/burundi" target="_blank" rel="noopener">Second Revue nationale volontaire 2026</a> (juin 2026); First Voluntary National Review 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bdi" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour révision interne, structure à reproduire à l'identique pour tous les pays.</div>
   </footer>
 </div>
 

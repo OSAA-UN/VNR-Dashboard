@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Methodology — Africa VNR 2026 · OSAA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  background: #fff;
+  color: #1B2A3A;
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+a { color: #1F6FB2; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Top rule ── */
+.top-rule {
+  height: 6px;
+  background: #1F6FB2;
+}
+
+/* ── Header ── */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #D0D7DF;
+  padding: 0 64px;
+}
+.site-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.site-header-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.brand-sup {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7A8A9A;
+}
+.brand-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1B2A3A;
+  letter-spacing: -0.01em;
+}
+.back-btn {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1F6FB2;
+  padding: 7px 16px;
+  border: 1px solid #C4D4E4;
+  background: #F0F6FC;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.back-btn:hover { background: #DDE9F5; text-decoration: none; }
+
+/* ── Page layout ── */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 64px 96px;
+}
+
+/* ── Document header ── */
+.doc-header {
+  padding: 52px 0 40px;
+  border-bottom: 3px solid #1F6FB2;
+  margin-bottom: 56px;
+}
+.doc-header-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7A8A9A;
+  margin-bottom: 16px;
+}
+.doc-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0D1B2A;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.doc-header .lead {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #45525F;
+  max-width: 640px;
+  font-weight: 400;
+}
+
+/* ── Sections ── */
+.section {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 40px;
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid #E3E7EC;
+}
+.section:last-of-type { border-bottom: none; }
+
+.section-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1F6FB2;
+  letter-spacing: 0.06em;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.section-body h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0D1B2A;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section-body p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #2E3E50;
+  margin-bottom: 14px;
+}
+.section-body p:last-child { margin-bottom: 0; }
+
+/* ── Two-col cards ── */
+.card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #E3E7EC;
+  border: 1px solid #E3E7EC;
+  margin-top: 24px;
+}
+.card-row.three { grid-template-columns: 1fr 1fr 1fr; }
+
+.def-card {
+  background: #fff;
+  padding: 18px 22px;
+}
+.def-card-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9AA7B4;
+  margin-bottom: 5px;
+}
+.def-card-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1B2A3A;
+  margin-bottom: 5px;
+}
+.def-card-body {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #5A6B7C;
+}
+
+/* ── Tab table ── */
+.tab-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 13.5px;
+}
+.tab-table thead th {
+  background: #F4F6F9;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7A8A9A;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 2px solid #D0D7DF;
+  font-weight: 500;
+}
+.tab-table tbody tr {
+  border-bottom: 1px solid #E3E7EC;
+}
+.tab-table tbody tr:last-child { border-bottom: none; }
+.tab-table tbody td {
+  padding: 14px;
+  vertical-align: top;
+  color: #2E3E50;
+  line-height: 1.6;
+}
+.tab-table tbody td:first-child {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1F6FB2;
+  white-space: nowrap;
+  width: 32px;
+  text-align: center;
+}
+.tab-table tbody td:nth-child(2) {
+  font-weight: 600;
+  color: #1B2A3A;
+  width: 200px;
+}
+.tab-table tbody tr:nth-child(odd) td { background: #FAFBFC; }
+
+/* ── Sources ── */
+.source-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 13.5px;
+}
+.source-table tr { border-bottom: 1px solid #E3E7EC; }
+.source-table tr:last-child { border-bottom: none; }
+.source-table td { padding: 14px 0; vertical-align: top; }
+.source-table td:first-child {
+  width: 80px;
+  padding-right: 16px;
+}
+.source-tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #EBF3FB;
+  color: #1F6FB2;
+  padding: 3px 9px;
+  border-radius: 3px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.source-text { line-height: 1.6; color: #2E3E50; }
+
+/* ── Callout ── */
+.callout {
+  background: #FFFBF0;
+  border-left: 4px solid #D4A017;
+  padding: 18px 22px;
+  margin-top: 24px;
+}
+.callout-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #7A5C00;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+}
+.callout p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #5A4500;
+  margin-bottom: 8px;
+}
+.callout p:last-child { margin-bottom: 0; }
+
+/* ── Footer ── */
+footer {
+  background: #F4F6F9;
+  border-top: 1px solid #D0D7DF;
+  padding: 20px 64px;
+  color: #9AA7B4;
+  font-size: 11.5px;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-header-brand">
+      <div class="brand-sup">Office of the Special Adviser on Africa (OSAA) · United Nations</div>
+      <div class="brand-title">Africa VNR Dashboards 2026</div>
+    </div>
+    <a href="index.html" class="back-btn">← Back to countries</a>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- Document header -->
+  <div class="doc-header">
+    <div class="doc-header-meta">Reference Document · OSAA · HLPF July 2026 · Internal Use</div>
+    <h1>Analytical Methodology<br>& Technical Notes</h1>
+    <div class="lead">This document sets out the analytical approach, data sources, structural decisions and limitations underlying the 19 country dashboards produced by OSAA for the 2026 High-Level Political Forum on Sustainable Development.</div>
+  </div>
+
+  <!-- 01 Purpose -->
+  <div class="section">
+    <div class="section-num">01</div>
+    <div class="section-body">
+      <h2>Purpose and Intended Use</h2>
+      <p>The VNR Dashboards were produced using a combination of large language models (LLMs), large-scale structured datasets and machine learning techniques. OSAA trained and prompted LLMs on the full text of each country's VNR document, the UN SDG Database indicator series, and prior VNR submissions, enabling the models to extract thematic priorities, identify cross-cycle continuities, and surface the most frequently referenced policy concepts from each review.</p>
+      <p>The analytical framework — including the six SDG focus themes, the continuity classification (maintained vs. evolved), and the concept frequency rankings — was generated through iterative LLM inference guided by OSAA subject-matter experts. Each output was reviewed, verified against primary source page references, and corrected where the model diverged from the source text.</p>
+      <p>The dashboards are <strong>synthesis and analysis tools, not official UN statistical products.</strong> All quantitative figures are drawn from primary sources (VNR documents and the UN SDG Database); OSAA has not altered or reweighted any data point.</p>
+
+      <div class="card-row three">
+        <div class="def-card">
+          <div class="def-card-label">Primary audience</div>
+          <div class="def-card-title">OSAA Staff &amp; Delegations</div>
+          <div class="def-card-body">Rapid country briefing before and during HLPF sessions; comparative SDG trend reading across the 19-country cohort.</div>
+        </div>
+        <div class="def-card">
+          <div class="def-card-label">Nature of product</div>
+          <div class="def-card-title">Synthesis Dashboards</div>
+          <div class="def-card-body">Seven-tab interactive profiles combining VNR narrative with UN SDG Database indicators and chart visualisations.</div>
+        </div>
+        <div class="def-card">
+          <div class="def-card-label">Not a substitute for</div>
+          <div class="def-card-title">Official UN Statistics</div>
+          <div class="def-card-body">Figures are sourced verbatim from primary documents; OSAA has not produced independent estimates or projections.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 Scope -->
+  <div class="section">
+    <div class="section-num">02</div>
+    <div class="section-body">
+      <h2>Country Coverage and Selection</h2>
+      <p>All 19 African countries presenting VNRs at HLPF 2026 are included. No countries were excluded. The cohort spans all five African sub-regions — North, West, Central, East and Southern Africa — and seven official languages.</p>
+      <p>Dashboards for countries whose 2026 VNR was submitted in French (Algeria, Burkina Faso, Burundi, Cabo Verde, Cameroon, DRC, Gabon, Guinea, Guinea-Bissau, Senegal, Togo, Tunisia) are presented entirely in French. Dashboards for countries submitting in English are in English. The analytical structure — seven tabs, identical indicators — is identical across all 19 countries.</p>
+    </div>
+  </div>
+
+  <!-- 03 Structure -->
+  <div class="section">
+    <div class="section-num">03</div>
+    <div class="section-body">
+      <h2>Dashboard Structure: Seven Analytical Tabs</h2>
+      <p>Every dashboard uses the same seven-tab structure, ensuring comparability across the cohort. The tab sequence follows the standard VNR reporting logic: macro overview → SDG spotlight → integration framework → policy instruments → financing → fiscal position → water.</p>
+
+      <table class="tab-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tab</th>
+            <th>Content and sources</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Overview &amp; Trends</td>
+            <td>Five headline metric tiles (electricity access, water access, domestic revenue, public debt, country-specific fifth indicator) with interactive trend charts and narrative synthesis. Sourced from VNR + UN SDG Database.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2026 Focus Goals</td>
+            <td>The five SDGs each country selected for in-depth review at HLPF 2026. Each goal shows key indicators, an achievement and a forward priority drawn verbatim from the VNR.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Joint Implementation</td>
+            <td>How each country aligns the 2030 Agenda with Agenda 2063 through its national planning framework — integration architecture, monitoring system and connectivity indicators.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Policy Responses</td>
+            <td>Six national policy instruments named in each VNR as primary SDG delivery vehicles. Each panel shows headline metrics, a narrative description and the SDGs addressed.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Financing</td>
+            <td>Three financing pillars (domestic, international/concessional, private/blended) with a bar chart ranking development partner commitments by sector prominence in the VNR.</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Debt &amp; Revenue</td>
+            <td>Public debt trajectory, internal vs. external debt composition and domestic revenue trend. Sourced from UN SDG Database indicator 17.4.1 and VNR fiscal chapters.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Year of Water Sustainability</td>
+            <td>Dedicated to the AU 2026 theme. Covers water access metrics, water stress, IWRM score and country-specific water narrative. Sourced from VNR + WHO/UNICEF JMP + UN SDG Database indicator 6.5.1.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 04 Data Sources -->
+  <div class="section">
+    <div class="section-num">04</div>
+    <div class="section-body">
+      <h2>Primary Data Sources</h2>
+      <p>Every figure displayed in the dashboards is traceable to one of the following primary sources. Source footnotes appear on each chart and card within the dashboards.</p>
+
+      <table class="source-table">
+        <tbody>
+          <tr>
+            <td><span class="source-tag">VNR 2026</span></td>
+            <td class="source-text"><strong>Voluntary National Review documents</strong> — primary source for all narrative content, policy instrument descriptions, national targets and country-reported indicators. Page references are cited where precision matters. Available at <a href="https://hlpf.un.org/countries" target="_blank">hlpf.un.org/countries</a>.</td>
+          </tr>
+          <tr>
+            <td><span class="source-tag">UN SDG DB</span></td>
+            <td class="source-text"><strong>United Nations SDG Database</strong> — internationally harmonised time-series data on electricity access (7.1.1), water access (6.1.1), sanitation (6.2.1), tax revenue (17.1.1), debt service (17.4.1), IWRM (6.5.1) and GDP growth (Goal 17 series). Available at <a href="https://unstats.un.org/sdgs/dataportal" target="_blank">unstats.un.org/sdgs/dataportal</a>.</td>
+          </tr>
+          <tr>
+            <td><span class="source-tag">Prior VNRs</span></td>
+            <td class="source-text"><strong>Earlier Voluntary National Reviews</strong> — used to construct multi-year trend series for countries with prior reviews (e.g. DRC 2020 &amp; 2023, Senegal 2022, Tanzania 2023). Cited by year.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 05 Analytical Choices -->
+  <div class="section">
+    <div class="section-num">05</div>
+    <div class="section-body">
+      <h2>Indicator Selection and Analytical Framing</h2>
+      <p>The five headline indicators on the Overview tab were selected to be consistent across the cohort while reflecting each country's most salient development profile. Electricity access and water access are universal; domestic revenue (tax/GDP) and public debt/GDP are the two most commonly tracked fiscal indicators in VNR financing chapters. The fifth tile is country-specific — it captures the indicator each VNR most prominently foregrounds.</p>
+      <p>The five 2026 Focus Goals are taken directly from each country's VNR — the goals each government selected for in-depth reporting. The choice is theirs, not OSAA's.</p>
+      <p>The six Policy Responses per country are drawn from the policy chapters of each VNR, ranked by prominence (number of pages, depth of treatment, headline placement). OSAA has not evaluated the effectiveness of any policy instrument.</p>
+
+      <div class="callout">
+        <div class="callout-title">⚠ Limitations on comparability</div>
+        <p><strong>Cross-country comparability is indicative only.</strong> VNRs use different methodologies, base years and data sources. A figure of 72% electricity access in one country and 73% in another does not necessarily reflect a meaningful difference.</p>
+        <p><strong>Financing figures are illustrative.</strong> Development partner commitment bar charts show relative prominence in VNR documentation, not verified disbursement data. Bar lengths represent OSAA's reading of the VNR's own prioritisation, not contracted amounts.</p>
+        <p><strong>Debt composition charts are indicative.</strong> The internal/external debt split uses indicative trajectories between published data points. Countries use different definitions of domestic vs. external debt.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 AU Theme -->
+  <div class="section">
+    <div class="section-num">06</div>
+    <div class="section-body">
+      <h2>African Union Theme 2026: Year of Water Sustainability</h2>
+      <p>The African Union has designated 2026 the <strong>Year of Water Sustainability</strong>. OSAA added a dedicated seventh tab to each dashboard to reflect this theme — connecting each country's water access and water stress profile to their VNR's water chapter and the AU's continental water agenda.</p>
+      <p>The water stress indicator (withdrawal as % of available renewable freshwater resources) is sourced from the UN SDG Database (indicator 6.4.2). The IWRM implementation score (indicator 6.5.1) measures the degree of integrated water resource management in place. Both are internationally harmonised and comparable across the cohort.</p>
+    </div>
+  </div>
+
+  <!-- 07 LLM / Fact Sheets -->
+  <div class="section" id="factsheets">
+    <div class="section-num">07</div>
+    <div class="section-body">
+      <h2>Country Fact Sheets: LLM-Assisted Analysis</h2>
+      <p>The country fact sheets were produced using a combination of large language models (LLMs), large-scale structured datasets and machine learning techniques. OSAA trained and prompted LLMs on the full text of each country's VNR Key Messages document, enabling the models to extract thematic priorities, identify cross-cycle continuities, and surface the most frequently referenced policy concepts from each review.</p>
+    </div>
+  </div>
+
+  <!-- 08 Contact -->
+  <div class="section">
+    <div class="section-num">08</div>
+    <div class="section-body">
+      <h2>Questions and Feedback</h2>
+      <p>These dashboards are internal OSAA working tools produced for the July 2026 HLPF session. For questions about the analytical methodology, data sourcing or country-specific content, please contact Dr. Utku Teksoz (<a href="mailto:teksoz@un.org">teksoz@un.org</a>).</p>
+      <p>Corrections and feedback from country delegations are welcome and will be incorporated before the dashboards are finalised for public release.</p>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<footer>
+  Office of the Special Adviser on Africa (OSAA) · United Nations · Internal Review Document · HLPF July 2026
+</footer>
+
+</body>
+</html>

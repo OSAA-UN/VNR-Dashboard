@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
   html, body { margin: 0; padding: 0; background: #F6F7F9; }
   body { font-family: 'Source Sans 3', sans-serif; color: #1B2A3A; }
@@ -20,6 +20,7 @@
   @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
 </style>
+<script src="nav-bar.js"></script>
 </helmet>
 <div style="min-height: 100vh; display: flex; flex-direction: column;">
   <div style="height: 5px; background: linear-gradient(90deg, #1F6FB2 0%, #1F6FB2 60%, #2E7D5B 60%, #2E7D5B 80%, #B4533A 80%, #B4533A 100%);"></div>
@@ -27,10 +28,10 @@
   <!-- ============ HEADER + NAV ============ -->
   <header style="background: #FFFFFF; border-bottom: 1px solid #E3E7EC; padding: 26px 48px 0 48px;">
     <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Africa Operations / <span style="color: #1F6FB2; font-weight: 500;">Gabon</span> · Tableau de bord pays · RNV 2026</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Opérations Afrique / <span style="color: #1F6FB2; font-weight: 500;">Gabon</span> · Tableau de bord pays · RNV 2026</div>
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
         <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Gabon</h1>
-        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">Revues nationales volontaires (VNR) 2022 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
+        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">Revues nationales volontaires (RNV) 2022 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
       </div>
       <nav style="display: flex; gap: 4px; margin-top: 14px; flex-wrap: wrap;">
         <button data-tab-btn="overview" style="{{ tabBtn.overview }}" onClick="{{ onTab.overview }}">Aperçu &amp; tendances</button>
@@ -44,6 +45,8 @@
     </div>
   </header>
 
+  
+
   <main style="flex: 1; padding: 32px 48px 56px 48px;">
     <div style="max-width: 1280px; margin: 0 auto;">
 
@@ -55,27 +58,27 @@
           <button data-tile-btn="elec" style="{{ metricBtn.elec }}" onClick="{{ onMetric.elec }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Électrification nationale</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">92.8%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">91%+ renewable mix</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">91 %+ de mix renouvelable</span>
           </button>
           <button data-tile-btn="water" style="{{ metricBtn.water }}" onClick="{{ onMetric.water }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Accès eau rurale</span>
             <span style="font-size: 28px; font-weight: 700; color: #B0791F;">30%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">vs 60% urban</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">vs 60 % urbain</span>
           </button>
           <button data-tile-btn="rev" style="{{ metricBtn.rev }}" onClick="{{ onMetric.rev }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Recettes / PIB</span>
             <span style="font-size: 28px; font-weight: 700; color: #B0791F;">15.2%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">oil-driven, declining base</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B0791F;">base dépendante du pétrole, en baisse</span>
           </button>
           <button data-tile-btn="debt" style="{{ metricBtn.debt }}" onClick="{{ onMetric.debt }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Électrification rurale</span>
             <span style="font-size: 28px; font-weight: 700; color: #B4533A;">26.9%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B4533A;">vs ≈100% urban</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B4533A;">vs ≈100 % urbain</span>
           </button>
           <button data-tile-btn="fin" style="{{ metricBtn.fin }}" onClick="{{ onMetric.fin }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Couverture forestière</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">85%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">carbon-positive nation</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">nation à bilan carbone positif</span>
           </button>
         </div>
 
@@ -87,6 +90,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="110" x2="700" y2="110" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="20" x2="700" y2="20" stroke="#EEF1F4" stroke-width="1"></line>
@@ -97,11 +103,11 @@
             <polygon points="60,108 194,81 327,55 593,37 700,33 700,200 60,200" fill="url(#gE4)"></polygon>
             <polyline points="60,108 194,81 327,55 593,37 700,33" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="60,178 327,168 593,160 700,152" fill="none" stroke="#B4533A" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="60" cy="108" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2000, national electrification ~51% (RNV 2026)</title></circle>
-            <circle cx="327" cy="55" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.2s both;"><title>2010, ~74% (VNR trajectory)</title></circle>
+            <circle cx="60" cy="108" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2000, électrification nationale ~51 % (RNV 2026)</title></circle>
+            <circle cx="327" cy="55" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.2s both;"><title>2010, ~74 % (trajectoire RNV)</title></circle>
             <circle cx="700" cy="33" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.3s both;"><title>2024, 92.8% (RNV 2026)</title></circle>
-            <circle cx="60" cy="178" r="4.5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>2000, rural electrification ~12% (RNV 2026)</title></circle>
-            <circle cx="700" cy="152" r="5.5" fill="#B4533A" style="animation: pop 0.4s ease 0.4s both;"><title>2024, rural electrification 26.9% (RNV 2026)</title></circle>
+            <circle cx="60" cy="178" r="4.5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>2000, électrification rurale ~12 % (RNV 2026)</title></circle>
+            <circle cx="700" cy="152" r="5.5" fill="#B4533A" style="animation: pop 0.4s ease 0.4s both;"><title>2024, électrification rurale 26,9 % (RNV 2026)</title></circle>
             <text x="712" y="37" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#2E7D5B">92.8%</text>
             <text x="712" y="156" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B4533A">26.9%</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2000</text>
@@ -109,8 +115,12 @@
             <text x="593" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2020</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'électrification nationale a atteint 92,8 % en 2024, portée par les centrales hydroélectriques de Grand Poubara, Tchimbélé et Kinguélé — une hausse de 80 points en deux décennies. L'écart avec les zones rurales (26,9 %) est structurel : l'investissement dans le réseau s'est concentré sur les villes. Hydropower expansion and rural mini-grids are the VNR's stated accelerators for closing the divide.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Électrification nationale</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Électrification rurale</span>
+          </div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'électrification nationale a atteint 92,8 % en 2024, portée par les centrales hydroélectriques de Grand Poubara, Tchimbélé et Kinguélé — une hausse de 80 points en deux décennies. L'écart avec les zones rurales (26,9 %) est structurel : l'investissement dans le réseau s'est concentré sur les villes. L'expansion hydroélectrique et les mini-réseaux ruraux sont les accélérateurs mentionnés dans le RNV pour combler cet écart.</p>
+          <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
         </div>
         </div>
 
@@ -122,6 +132,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="128" x2="700" y2="128" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="56" x2="700" y2="56" stroke="#EEF1F4" stroke-width="1"></line>
@@ -130,10 +143,10 @@
             <text x="50" y="60" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">100%</text>
             <polyline points="60,92 327,81 593,70 700,56" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="60,164 327,155 593,146 700,128" fill="none" stroke="#B4533A" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="60" cy="92" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>Urban 2000, ~55%</title></circle>
-            <circle cx="700" cy="56" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>Urban 2024, 60% (RNV 2026)</title></circle>
-            <circle cx="60" cy="164" r="4.5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>Rural 2000, ~20%</title></circle>
-            <circle cx="700" cy="128" r="5" fill="#B4533A" style="animation: pop 0.4s ease 0.4s both;"><title>Rural 2024, 30% (RNV 2026)</title></circle>
+            <circle cx="60" cy="92" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>Urbain 2000, ~55 %</title></circle>
+            <circle cx="700" cy="56" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>Urbain 2024, 60 % (RNV 2026)</title></circle>
+            <circle cx="60" cy="164" r="4.5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>Rural 2000, ~20 %</title></circle>
+            <circle cx="700" cy="128" r="5" fill="#B4533A" style="animation: pop 0.4s ease 0.4s both;"><title>Rural 2024, 30 % (RNV 2026)</title></circle>
             <text x="712" y="60" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#1F6FB2">60%</text>
             <text x="712" y="132" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B4533A">30%</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2000</text>
@@ -142,11 +155,11 @@
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Urban</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Rural</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Urbain</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Électrification rurale</span>
           </div>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès à l'eau urbaine s'est amélioré de ~55 % à 60 % depuis 2000, tandis que l'accès rural a progressé plus lentement de ~20 % à 30 %. Le Grand Libreville fait face à un déficit structurel de 50 000 m³/jour malgré des précipitations abondantes — le RNV présente cela comme un défi de gouvernance et d'investissement en infrastructure, non une pénurie de ressourceity problem.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès à l'eau urbaine s'est amélioré de ~55 % à 60 % depuis 2000, tandis que l'accès rural a progressé plus lentement de ~20 % à 30 %. Le Grand Libreville fait face à un déficit structurel de 50 000 m³/jour malgré des précipitations abondantes — le RNV présente cela comme un défi de gouvernance et d'investissement en infrastructure, non une pénurie de ressource.</p>
+          <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
         </div>
         </div>
 
@@ -158,6 +171,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="137" x2="700" y2="137" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="74" x2="700" y2="74" stroke="#EEF1F4" stroke-width="1"></line>
@@ -184,10 +200,10 @@
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes publiques totales</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Non-oil revenue</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Recettes hors pétrole</span>
           </div>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les recettes du Gabon sont très dépendantes du pétrole : les revenus totaux ont culminé à plus de 35 % du PIB pendant les années d'expansion pétrolière et ont chuté fortement quand les prix se sont effondrés en 2014–2016. En 2024, la base s'est stabilisée autour de 21 %, avec des recettes hors pétrole croissant à ~13 %. Reducing this volatility through diversification and non-oil tax reform is a stated PNDC priority.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les recettes du Gabon sont très dépendantes du pétrole : les revenus totaux ont culminé à plus de 35 % du PIB pendant les années d'expansion pétrolière et ont chuté fortement quand les prix se sont effondrés en 2014–2016. En 2024, la base s'est stabilisée autour de 21 %, avec des recettes hors pétrole croissant à ~13 %. La réduction de cette volatilité par la diversification et la réforme fiscale hors pétrole est une priorité déclarée du PNDC.</p>
+          <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
         </div>
         </div>
 
@@ -199,6 +215,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -219,8 +238,10 @@
             <text x="593" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2022</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La dette extérieure est passée de ~29 % du PIB en 2010 à un pic de 43 % en 2016 lorsque le gouvernement a emprunté pour compenser le manque à gagner pétrolier. Les emprunts d'infrastructure (ports, énergie, routes) ont reconstitué le stock jusqu'en 2020 ; elle a depuis baissé à ~36 %. The CEMAC monetary union disciplines spending but also removes devaluation as an adjustment tool, making debt management the fiscal lever the PNDC must navigate.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, Goal 17</a> · <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Croissance du PIB (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Inflation (%)</span></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La dette extérieure est passée de ~29 % du PIB en 2010 à un pic de 43 % en 2016 lorsque le gouvernement a emprunté pour compenser le manque à gagner pétrolier. Les emprunts d'infrastructure (ports, énergie, routes) ont reconstitué le stock jusqu'en 2020 ; elle a depuis baissé à ~36 %. L'union monétaire CEMAC discipline les dépenses mais supprime aussi la dévaluation comme outil d'ajustement, faisant de la gestion de la dette le levier budgétaire central que le PNDC doit maîtriser.</p>
+          <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, Goal 17</a> · <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
         </div>
         </div>
 
@@ -232,16 +253,16 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Classement par importance dans le RNV 2026</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px; ">
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Energy &amp; grid <span style="color: #9AA7B4; font-size: 11.5px;">SDG 7</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 1: rural electrification &amp; new hydro — the PNDC flagship investment"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Énergie &amp; réseau <span style="color: #9AA7B4; font-size: 11.5px;">SDG 7</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 1: rural electrification &amp; new hydro — the PNDC flagship investment"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Infrastructure <span style="color: #9AA7B4; font-size: 11.5px;">SDG 9</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 2: roads, ports, SEZ investment"><div style="width: 87%; height: 100%; background: #3981BC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.12s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Finance verte <span style="color: #9AA7B4; font-size: 11.5px;">SDG 13</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 3: REDD+, carbon credits, biodiversity"><div style="width: 74%; height: 100%; background: #5493C6; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.19s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Eau et assainissement <span style="color: #9AA7B4; font-size: 11.5px;">SDG 6</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 4: Libreville deficit, rural solar boreholes"><div style="width: 60%; height: 100%; background: #6FA5D0; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Health <span style="color: #9AA7B4; font-size: 11.5px;">SDG 3</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 5"><div style="width: 47%; height: 100%; background: #8AB7DA; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.33s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Education <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 6"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Governance <span style="color: #9AA7B4; font-size: 11.5px;">SDG 16</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Santé <span style="color: #9AA7B4; font-size: 11.5px;">SDG 3</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 5"><div style="width: 47%; height: 100%; background: #8AB7DA; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.33s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Éducation <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 6"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Gouvernance <span style="color: #9AA7B4; font-size: 11.5px;">SDG 16</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
           <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement du Gabon.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC</a></div></div>
+          <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC</a></div></div>
         </div>
         </div>
       </div>
@@ -252,7 +273,7 @@
       <div data-screen-label="Focus Goals" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Objectifs prioritaires 2026 : Réalisations et priorités</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau 2026. Les chiffres combinent Gabon's Rapport national volontaire 2026 avec la Base de données ODD des Nations Unies, sélectionnez un objectif pour explorer.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau 2026. Les chiffres combinent la Revue nationale volontaire 2026 du Gabon avec la Base de données ODD des Nations Unies — sélectionnez un objectif pour explorer.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
@@ -266,13 +287,13 @@
         <div data-goal-panel="s6" style="{{ goalPanel.s6 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 6 · Eau propre et assainissement</div>
+            <div style="font-size: 18px; font-weight: 700;">ODD 6 · Eau propre et assainissement</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Eau urbaine</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Urban water access, 2024"><div style="width: 60%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">60%</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Eau rurale</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural water access, 2024"><div style="width: 30%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">30%</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Libreville</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Daily water deficit in Greater Libreville (RNV 2026)"><div style="width: 100%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">50k m³/day deficit</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Libreville</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Daily water deficit in Greater Libreville (RNV 2026)"><div style="width: 100%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">déficit 50 000 m³/jour</span></div>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
             <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">L'eau urbaine s'est améliorée de ~50 % à 60 % depuis 2000 ; les programmes de forages solaires ciblent l'écart rural ; les nouvelles capacités de traitement à Libreville comblent le déficit structurel de 50 000 m³/jour.</span></div>
@@ -284,13 +305,13 @@
         <div data-goal-panel="s7" style="{{ goalPanel.s7 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 7 · Énergie propre et abordable</div>
+            <div style="font-size: 18px; font-weight: 700;">ODD 7 · Énergie propre et abordable</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">National</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="National electrification rate, 2024"><div style="width: 92.8%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">92.8%</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">National</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Taux d'électrification nationale, 2024"><div style="width: 92.8%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">92.8%</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Mix renouvelable</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Renewable share of generation, hydro-led"><div style="width: 91%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">91%+</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Rural</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural electrification, 2024"><div style="width: 26.9%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">26.9%</span></div>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
             <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">92,8 % d'électrification nationale avec un mix renouvelable de 91 %+ — l'une des meilleures combinaisons d'Afrique — réalisée grâce aux centrales hydroélectriques de Grand Poubara, Tchimbélé et Kinguélé.</span></div>
@@ -299,16 +320,16 @@
         </div>
         </div>
 
-        <div data-goal-panel="s8" style="{{ goalPanel.s8 }}">
+        <div data-goal-panel="s9" style="{{ goalPanel.s9 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 8 · Travail décent et croissance économique</div>
+            <div style="font-size: 18px; font-weight: 700;">ODD 8 · Travail décent et croissance économique</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Couverture forestière</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Forest cover as % of national territory"><div style="width: 85%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">85%</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Pétrole / PIB</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Oil revenues share of GDP"><div style="width: 40%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">~40%</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Scolarisation</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="School enrolment rate, gender parity achieved"><div style="width: 88%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">88%</span></div>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2022 · RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2022 · RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
             <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">88 % de scolarisation avec parité de genre ; la ZES Nkok ancre la transformation du bois et retient la valeur en interne ; 85 % de couverture forestière absorbant plus de CO₂ qu'émis.</span></div>
@@ -317,16 +338,16 @@
         </div>
         </div>
 
-        <div data-goal-panel="s9" style="{{ goalPanel.s9 }}">
+        <div data-goal-panel="s11" style="{{ goalPanel.s11 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 9 · Industrie, innovation et infrastructure</div>
+            <div style="font-size: 18px; font-weight: 700;">ODD 9 · Industrie, innovation et infrastructure</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">ZES Nkok</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Nkok SEZ: wood processing, keeping value onshore"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">Actif</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Gouvernance locale</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Local governance reform: communes managing rural infrastructure"><div style="width: 60%; height: 100%; background: #B0791F; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B0791F; font-weight: 600;">Réforme en cours</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Infra rurale</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural infrastructure gaps remain despite national averages"><div style="width: 30%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">Gaps remain</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Infra rurale</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rural infrastructure gaps remain despite national averages"><div style="width: 30%; height: 100%; background: #B4533A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B4533A; font-weight: 600;">Lacunes persistantes</span></div>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
             <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">La ZES Nkok impose la transformation locale du bois (exportation de grumes brutes interdite depuis 2010), créant des clusters industriels et des emplois qualifiés.</span></div>
@@ -335,19 +356,20 @@
         </div>
         </div>
 
-        <div data-goal-panel="s11" style="{{ goalPanel.s11 }}">
+        <div data-goal-panel="s17" style="{{ goalPanel.s17 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 11 · Villes et communautés durables</div>
+            <div style="font-size: 18px; font-weight: 700;">ODD 11 · Villes et communautés durables</div>
             <div style="display: flex; align-items: center; gap: 24px;">
               <svg viewBox="0 0 120 120" style="width: 120px; height: 120px;">
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#EEF1F4" stroke-width="16"></circle>
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#1F6FB2" stroke-width="16" stroke-dasharray="261.6 39.8" stroke-linecap="round" transform="rotate(-90 60 60)"><title>87 % de la population est urbaine — le Gabon est l'un des pays les plus urbanisés d'Afrique</title></circle>
                 <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#1F6FB2">87%</text>
               </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
               <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">de la population est urbaine — l'un des taux les plus élevés d'Afrique, avec la moitié concentrée dans le Grand Libreville.</div>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
             <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">87 % d'urbanisation signifie que la majorité de la population bénéficie de services urbains quasi complets — électricité, eau, routes — le défi est d'étendre ces services aux zones rurales.</span></div>
@@ -363,49 +385,49 @@
       <div data-screen-label="Mise en œuvre conjointe" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Mise en œuvre conjointe des ODD et de l'Agenda 2063</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Le Gabon ancre l'Agenda 2030 et l'Agenda 2063 à la Vision GABON-2050 et au Plan national de développement et de la croissance (PNDC). The PNDC translates the vision into sector plans, a multi-year public-investment programme and a monitoring framework, coordinated by a Steering Committee under the Presidency of the Transition Government. State, private sector and civil society participate through structured dialogue.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Le Gabon ancre l'Agenda 2030 et l'Agenda 2063 à la Vision GABON-2050 et au Plan national de développement et de la croissance (PNDC). Le PNDC traduit cette vision en plans sectoriels, en un programme pluriannuel d'investissement public et en un cadre de suivi, coordonnés par un Comité de pilotage placé sous l'autorité de la Présidence du Gouvernement de la Transition. L'État, le secteur privé et la société civile y participent à travers un dialogue structuré.</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 34px 38px; display: flex; flex-direction: column; gap: 26px;">
             <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">Vision GABON-2050 &amp; PNDC, deux cycles RNV sous un cadre à long terme unique</div>
             <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>Vision GABON-2050 implementation</span><span style="color: #2E7D5B; font-weight: 600;">PNDC mid-cycle review 2026</span></div>
+              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>Mise en œuvre de la Vision GABON-2050</span><span style="color: #2E7D5B; font-weight: 600;">Revue à mi-parcours PNDC 2026</span></div>
               <div style="display: flex; height: 34px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both;">
-                <div style="width: 62%; background: #2E7D5B;" title="On track"></div>
+                <div style="width: 62%; background: #2E7D5B;" title="Sur la bonne voie"></div>
                 <div style="width: 18%; background: #D9A94A;" title="Progrès partiels"></div>
                 <div style="width: 20%; background: #DDE3E9;" title="Investissement à venir"></div>
               </div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 18px;">
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Energy &amp; rural access</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 50%; background: #2E7D5B;"></div><div style="width: 50%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">26.9% rural</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Eau et assainissement</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 60%; background: #1F6FB2;"></div><div style="width: 40%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #1F6FB2; font-weight: 600;">60% urban</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Green capital &amp; SEZ</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 85%; background: #2E7D5B;"></div><div style="width: 15%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">85% forests</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Governance &amp; PNDC</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 70%; background: #2E7D5B;"></div><div style="width: 30%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">Sur la bonne voie</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Énergie &amp; accès rural</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 50%; background: #2E7D5B;"></div><div style="width: 50%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">26.9% rural</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Eau et assainissement</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 60%; background: #1F6FB2;"></div><div style="width: 40%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #1F6FB2; font-weight: 600;">60 % urbain</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Capital vert &amp; ZES</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 85%; background: #2E7D5B;"></div><div style="width: 15%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">85 % forêts</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Gouvernance &amp; PNDC</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 70%; background: #2E7D5B;"></div><div style="width: 30%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">Sur la bonne voie</span></div>
             </div>
             <div style="display: flex; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #5A6B7C;">
               <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #2E7D5B;"></span>Sur la bonne voie</span>
               <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #D9A94A;"></span>Partiel</span>
               <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #DDE3E9;"></span>Investissement à venir</span>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC · Vision GABON-2050</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC · Vision GABON-2050</a></div></div>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 12px;">
               <div style="font-size: 16px; font-weight: 600;">Capital vert &amp; connectivité</div>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div style="background: #E5F1EB; border-radius: 10px; padding: 12px 14px;" title="Forest cover as % of national territory (RNV 2026)"><div style="font-size: 22px; font-weight: 700; color: #2E7D5B;">85%</div><div style="font-size: 11.5px; color: #5A6B7C;">Couverture forestière</div></div>
-                <div style="background: #E5F1EB; border-radius: 10px; padding: 12px 14px;" title="Renewable share of electricity generation, hydro-led"><div style="font-size: 22px; font-weight: 700; color: #2E7D5B;">91%+</div><div style="font-size: 11.5px; color: #5A6B7C;">Renewable energy mix</div></div>
-                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="National electrification rate, 2024"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">92.8%</div><div style="font-size: 11.5px; color: #5A6B7C;">National electrification</div></div>
-                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="School enrolment rate, gender parity achieved (RNV 2022)"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">88%</div><div style="font-size: 11.5px; color: #5A6B7C;">Scolarisation</div></div>
+                <div style="background: #E5F1EB; border-radius: 10px; padding: 12px 14px;" title="Couverture forestière en % du territoire national (RNV 2026)"><div style="font-size: 22px; font-weight: 700; color: #2E7D5B;">85%</div><div style="font-size: 11.5px; color: #5A6B7C;">Couverture forestière</div></div>
+                <div style="background: #E5F1EB; border-radius: 10px; padding: 12px 14px;" title="Part renouvelable de la production électrique, portée par l'hydro"><div style="font-size: 22px; font-weight: 700; color: #2E7D5B;">91%+</div><div style="font-size: 11.5px; color: #5A6B7C;">Mix énergétique renouvelable</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Taux d'électrification nationale, 2024"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">92.8%</div><div style="font-size: 11.5px; color: #5A6B7C;">Électrification nationale</div></div>
+                <div style="background: #F1F6FA; border-radius: 10px; padding: 12px 14px;" title="Taux de scolarisation, parité de genre atteinte (RNV 2022)"><div style="font-size: 22px; font-weight: 700; color: #1F6FB2;">88%</div><div style="font-size: 11.5px; color: #5A6B7C;">Scolarisation</div></div>
               </div>
-              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">La couverture forestière du Gabon à 85 % absorbe plus de CO₂ que le pays n'en émet — a globally significant carbon sink deployed as a green-finance asset. The 91%+ renewable electricity mix and 92.8% electrification are anchored by the Grand Poubara hydroelectric system. The PNDC pairs this green capital with the Nkok SEZ's industrial base to build a diversified, post-oil economy.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · RNV 2022</div></div>
+              <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: #5A6B7C;">La couverture forestière du Gabon à 85 % absorbe plus de CO₂ que le pays n'en émet — un puits de carbone d'importance mondiale valorisé comme un actif de finance verte. Le mix électrique composé à plus de 91 % d'énergies renouvelables et le taux d'électrification de 92,8 % reposent sur le complexe hydroélectrique du Grand Poubara. Le PNDC associe ce capital vert à la base industrielle de la ZES de Nkok pour bâtir une économie diversifiée de l'après-pétrole.</p>
+              <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · RNV 2022</div></div>
             </div>
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px;">
               <div style="font-size: 16px; font-weight: 600;">Vision GABON-2050 &amp; PNDC, l'ancre commune</div>
-              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">La Vision GABON-2050 et son plan opérationnel décennal, le PNDC, intègrent les ODD et l'Agenda 2063 dans un cadre national unique. Strategic coordination between the state, private sector and civil society — formalized through the PNDC Steering Committee — is the governance innovation the 2026 review highlights. Sector ministries align their quarterly reporting to PNDC targets mapped to SDG indicators.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC · Vision GABON-2050</a></div></div>
+              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">La Vision GABON-2050 et son plan opérationnel décennal, le PNDC, intègrent les ODD et l'Agenda 2063 dans un cadre national unique. La coordination stratégique entre l'État, le secteur privé et la société civile — formalisée à travers le Comité de pilotage du PNDC — est l'innovation de gouvernance mise en avant par la revue 2026. Les ministères sectoriels alignent leurs rapports trimestriels sur les objectifs du PNDC, cartographiés sur les indicateurs des ODD.</p>
+              <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC · Vision GABON-2050</a></div></div>
             </div>
           </div>
         </div>
@@ -422,11 +444,11 @@
 
         <div style="display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start;">
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">Vision GABON-2050</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">long-term national aspiration</span></button>
+            <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">Vision GABON-2050</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">aspiration nationale à long terme</span></button>
             <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">PNDC</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Plan National de Développement et de la Croissance</span></button>
-            <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Hydropower Strategy</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Grand Poubara &amp; nouveaux barrages</span></button>
-            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Solar-Borehole Programme</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">nexus eau &amp; énergie rural</span></button>
-            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Nkok Special Economic Zone</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">transformation bois · valeur locale</span></button>
+            <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Stratégie hydroélectrique</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Grand Poubara &amp; nouveaux barrages</span></button>
+            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Programme solaire-forage</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">nexus eau &amp; énergie rural</span></button>
+            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Zone économique spéciale de Nkok</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">transformation bois · valeur locale</span></button>
             <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Réforme gouvernance locale</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">infrastructure rurale durable</span></button>
           </div>
 
@@ -435,12 +457,12 @@
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
               <div><div style="font-size: 19px; font-weight: 700;">Vision GABON-2050</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Un Gabon émergent, diversifié et équitable d'ici 2050</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">2050</div><div style="font-size: 12px; color: #5A6B7C;">long-term development horizon</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">2050</div><div style="font-size: 12px; color: #5A6B7C;">horizon de développement à long terme</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">85%</div><div style="font-size: 12px; color: #5A6B7C;">couverture forestière — la base du capital vert</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">2</div><div style="font-size: 12px; color: #5A6B7C;">Cycles RNV : 2022 et 2026</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">La Vision GABON-2050 organise l'ambition à long terme du pays : une économie diversifiée au-delà du pétrole, une société équitable où les fossés territoriaux sont comblés, et un développement vert qui valorise le patrimoine forestier et la biodiversité pour la finance verte et les marchés carbone. Both VNRs are stepping stones inside this long-term frame.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · RNV 2022</a></div></div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">La Vision GABON-2050 organise l'ambition à long terme du pays : une économie diversifiée au-delà du pétrole, une société équitable où les fossés territoriaux sont comblés, et un développement vert qui valorise le patrimoine forestier et la biodiversité pour la finance verte et les marchés carbone. Les deux RNV sont des jalons à l'intérieur de ce cadre à long terme.</p>
+              <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · RNV 2022</a></div></div>
             </div>
             </div>
 
@@ -451,45 +473,45 @@
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">17/17</div><div style="font-size: 12px; color: #5A6B7C;">ODD intégrés dans les plans sectoriels</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">Inclusive</div><div style="font-size: 12px; color: #5A6B7C;">et modèle de croissance résilient</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le PNDC traduit la Vision GABON-2050 en plans d'investissement public pluriannuels, stratégies sectorielles et cadre de suivi. Sous le Gouvernement de transition, un Comité de pilotage sous la Présidence coordonne les ministères sectoriels, which align their budgets and quarterly reports to PNDC targets mapped to SDG indicators and Agenda 2063 aspirations.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC</a></div></div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le PNDC traduit la Vision GABON-2050 en plans d'investissement public pluriannuels, stratégies sectorielles et cadre de suivi. Sous le Gouvernement de transition, un Comité de pilotage sous la Présidence coordonne les ministères sectoriels, qui alignent leurs budgets et rapports trimestriels sur les objectifs du PNDC, cartographiés sur les indicateurs des ODD et les aspirations de l'Agenda 2063.</p>
+              <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="corr" style="{{ instPanel.corr }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Hydropower Strategy</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Grand Poubara, Tchimbélé, Kinguélé — et nouveaux barrages pour l'extension rurale</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Stratégie hydroélectrique</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Grand Poubara, Tchimbélé, Kinguélé — et nouveaux barrages pour l'extension rurale</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">91%+</div><div style="font-size: 12px; color: #5A6B7C;">part renouvelable de la production, portée par l'hydro</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">92.8%</div><div style="font-size: 12px; color: #5A6B7C;">national electrification achieved</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">92.8%</div><div style="font-size: 12px; color: #5A6B7C;">électrification nationale atteinte</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #B4533A;">26.9%</div><div style="font-size: 12px; color: #5A6B7C;">électrification rurale — l'écart restant</div></div>
               </div>
               <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le réseau hydroélectrique existant du Gabon produit l'énergie propre alimentant 92,8 % d'accès national. Les nouveaux projets et l'extension du réseau ciblent les zones rurales : 73,1 % des ruraux n'ont pas d'électricité, et les nouvelles centrales hydro plus les mini-réseaux ruraux sont l'instrument déclaré du RNV pour combler cet écart.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+              <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="pddsp" style="{{ instPanel.pddsp }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Solar-Borehole Programme</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Prioritisé pour l'eau rurale — l'instrument du nexus eau-énergie</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Programme de forages solaires</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Prioritisé pour l'eau rurale — l'instrument du nexus eau-énergie</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #26BDE2;">30%</div><div style="font-size: 12px; color: #5A6B7C;">accès eau rurale — le point de départ</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">Solar +</div><div style="font-size: 12px; color: #5A6B7C;">eaux souterraines — l'appariement technologique</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le RNV 2026 priorise explicitement les forages solaires pour l'eau rurale : des panneaux solaires alimentent des pompes submersibles exploitant les eaux souterraines, éliminant les coûts diesel et étendant la fiabilité aux villages hors réseau. The programme links SDG 6 and SDG 7 in one rural infrastructure investment.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le RNV 2026 priorise explicitement les forages solaires pour l'eau rurale : des panneaux solaires alimentent des pompes submersibles exploitant les eaux souterraines, éliminant les coûts diesel et étendant la fiabilité aux villages hors réseau. Ce programme lie les ODD 6 et 7 en un seul investissement d'infrastructure rurale.</p>
+              <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="pafen" style="{{ instPanel.pafen }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Nkok Special Economic Zone</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Wood processing &amp; manganese refining — value added kept onshore</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Zone économique spéciale de Nkok</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Transformation du bois &amp; raffinage du manganèse — valeur ajoutée conservée en interne</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">ZES Nkok</div><div style="font-size: 12px; color: #5A6B7C;">free-trade zone near Libreville</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">Raw-log ban</div><div style="font-size: 12px; color: #5A6B7C;">depuis 2010 — tout le bois transformé en interne</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">ZES Nkok</div><div style="font-size: 12px; color: #5A6B7C;">zone franche près de Libreville</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">Interdiction des grumes brutes</div><div style="font-size: 12px; color: #5A6B7C;">depuis 2010 — tout le bois transformé en interne</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le Gabon a interdit les exportations de grumes brutes en 2010, forçant la transformation du bois sur place via la ZES Nkok : scieries, usines de contreplaqué et fabricants de meubles créent de la valeur ajoutée locale. Port-Gentil's oil-service and manganese-refining industries extend the same logic to mineral resources — the diversification the PNDC depends on.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2022 · RNV 2026</a></div></div>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le Gabon a interdit les exportations de grumes brutes en 2010, forçant la transformation du bois sur place via la ZES Nkok : scieries, usines de contreplaqué et fabricants de meubles créent de la valeur ajoutée locale. Les industries de services pétroliers et de raffinage du manganèse de Port-Gentil étendent la même logique aux ressources minières — la diversification sur laquelle repose le PNDC.</p>
+              <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2022 · RNV 2026</a></div></div>
             </div>
             </div>
 
@@ -497,11 +519,11 @@
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
               <div><div style="font-size: 19px; font-weight: 700;">Réforme gouvernance locale</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Gouvernance durable de l'infrastructure — combler le fossé territorial</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">SDG 11</div><div style="font-size: 12px; color: #5A6B7C;">sustainable cities &amp; communities</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">SDG 11</div><div style="font-size: 12px; color: #5A6B7C;">villes et communautés durables</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #B4533A;">26.9%</div><div style="font-size: 12px; color: #5A6B7C;">électrification rurale — le fossé de gouvernance</div></div>
               </div>
               <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Construire des infrastructures ne suffit pas si les autorités locales ne peuvent pas les gérer et les entretenir. La réforme de gouvernance locale du PNDC transfère les responsabilités et le financement aux communes et préfectures.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+              <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
             </div>
             </div>
           </div>
@@ -514,16 +536,16 @@
       <div data-screen-label="Financement" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Financement des objectifs</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La base de financement du Gabon est concentrée dans les revenus pétroliers — ~40 % du PIB — rendant le financement des ODD très sensible aux prix des hydrocarbures. The PNDC strategy builds alternative pillars: green and climate finance, SEZ private investment, and non-oil domestic revenue growth.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La base de financement du Gabon est concentrée dans les revenus pétroliers — ~40 % du PIB — rendant le financement des ODD très sensible aux prix des hydrocarbures. La stratégie du PNDC construit des piliers alternatifs : finance verte et climatique, investissement privé dans les ZES, et croissance des recettes intérieures hors pétrole.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #E5F1EB; color: #2E7D5B; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">1</span><span style="font-size: 15px; font-weight: 600;">Instruments domestiques</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="Oil and manganese revenues fund the majority of the public budget; their volatility is the primary fiscal risk"><strong>Oil &amp; mineral revenues</strong>, ~40 % du PIB, l'ancre fiscale principale</div>
-              <div title="Non-oil revenue reform: broadening the tax base and collecting at the municipal level"><strong>Non-oil tax reform</strong>, élargissement de la base nationale au-delà des hydrocarbures</div>
-              <div title="The Nkok SEZ and Port-Gentil industrial zones generate manufacturing revenues that reduce commodity dependency"><strong>Nkok SEZ revenues</strong>, valeur ajoutée industrielle et réinvestissement</div>
+              <div title="Les revenus pétroliers et minières financent la majorité du budget public ; leur volatilité est le principal risque budgétaire"><strong>Revenus pétroliers &amp; miniers</strong>, ~40 % du PIB, l'ancre fiscale principale</div>
+              <div title="Réforme fiscale hors pétrole : élargissement de l'assiette et collecte au niveau municipal"><strong>Réforme fiscale hors pétrole</strong>, élargissement de la base nationale au-delà des hydrocarbures</div>
+              <div title="Les ZES Nkok et Port-Gentil génèrent des revenus industriels qui réduisent la dépendance aux matières premières"><strong>Revenus ZES Nkok</strong>, valeur ajoutée industrielle et réinvestissement</div>
             </div>
             <svg viewBox="0 0 240 60" style="width: 100%; height: auto; display: block; margin-top: auto;">
               <polyline points="14,50 120,42 226,28" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
@@ -532,27 +554,28 @@
               <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">8% '10</text>
               <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#2E7D5B">13% '24</text>
             </svg>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes hors pétrole (% PIB)</span></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F7EEDC; color: #B0791F; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">2</span><span style="font-size: 15px; font-weight: 600;">Finance climatique et innovante</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="Gabon's forests absorb more CO₂ than the country emits — the basis for carbon credit and green finance markets"><strong>Carbon credit markets</strong>, 85 % de couverture forestière comme puits de carbone d'importance mondiale</div>
-              <div title="REDD+ agreements and payment-for-ecosystem-services programmes align conservation with development revenues"><strong>REDD+ &amp; biodiversity finance</strong>, lié à la gestion des forêts protégées</div>
-              <div title="Green bonds and SDG-linked bonds as PNDC instruments for rural energy and water investment"><strong>Green bonds</strong>, instruments de financement du PNDC pour l'énergie et l'eau</div>
+              <div title="Les forêts du Gabon absorbent plus de CO₂ que le pays n'en émet — la base des marchés de crédits carbone et de finance verte"><strong>Marchés de crédits carbone</strong>, 85 % de couverture forestière comme puits de carbone d'importance mondiale</div>
+              <div title="Les accords REDD+ et paiements pour services écosystémiques alignent la conservation sur les revenus de développement"><strong>REDD+ &amp; biodiversity finance</strong>, lié à la gestion des forêts protégées</div>
+              <div title="Obligations vertes et ODD comme instruments du PNDC pour l'énergie et l'eau rurales"><strong>Obligations vertes</strong>, instruments de financement du PNDC pour l'énergie et l'eau</div>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · RNV 2022</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · RNV 2022</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F1F6FA; color: #1F6FB2; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">3</span><span style="font-size: 15px; font-weight: 600;">Canaux de partenariat</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="FDI in the Nkok SEZ and Port-Gentil oil-services sector, plus green-economy joint ventures"><strong>SEZ foreign investment</strong>, zones industrielles Nkok et Port-Gentil</div>
-              <div title="PPPs for hydropower projects, rural mini-grids and water treatment infrastructure"><strong>Public-private partnerships</strong>, pour l'hydroélectricité et l'infrastructure rurale</div>
-              <div title="CEMAC/BEAC regional capital market and bilateral development finance from AfDB and partners"><strong>Development finance</strong>, AfDB, BEAC, bilateral concessional lending</div>
+              <div title="IDE dans les ZES Nkok et Port-Gentil, plus co-entreprises d'économie verte"><strong>Investissement étranger ZES</strong>, zones industrielles Nkok et Port-Gentil</div>
+              <div title="PPP pour les projets hydroélectriques, mini-réseaux ruraux et infrastructure de traitement de l'eau"><strong>Partenariats public-privé</strong>, pour l'hydroélectricité et l'infrastructure rurale</div>
+              <div title="Marché des capitaux régional CEMAC/BEAC et financement du développement bilatéral de la BAD et partenaires"><strong>Finance de développement</strong>, BAD, BEAC, prêts concessionnels bilatéraux</div>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
           </div>
         </div>
 
@@ -563,15 +586,15 @@
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 14px; ">
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Emplois décents <span style="color: #9AA7B4; font-size: 11px;">SDG 8</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (RNV 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Industrialization <span style="color: #9AA7B4; font-size: 11px;">SDG 9</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 2 of 7"><div style="width: 87%; height: 100%; background: #3981BC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.12s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Energy <span style="color: #9AA7B4; font-size: 11px;">SDG 7</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 3 of 7"><div style="width: 74%; height: 100%; background: #5493C6; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.19s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Health <span style="color: #9AA7B4; font-size: 11px;">SDG 3</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 4 of 7"><div style="width: 60%; height: 100%; background: #6FA5D0; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Hunger <span style="color: #9AA7B4; font-size: 11px;">SDG 2</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 5 of 7"><div style="width: 47%; height: 100%; background: #8AB7DA; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.33s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Education <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
-            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Poverty <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Industrialisation <span style="color: #9AA7B4; font-size: 11px;">SDG 9</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 2 of 7"><div style="width: 87%; height: 100%; background: #3981BC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.12s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Énergie <span style="color: #9AA7B4; font-size: 11px;">SDG 7</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 3 of 7"><div style="width: 74%; height: 100%; background: #5493C6; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.19s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Santé <span style="color: #9AA7B4; font-size: 11px;">SDG 3</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 4 of 7"><div style="width: 60%; height: 100%; background: #6FA5D0; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Faim zéro <span style="color: #9AA7B4; font-size: 11px;">SDG 2</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 5 of 7"><div style="width: 47%; height: 100%; background: #8AB7DA; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.33s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Éducation <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
+            <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Pauvreté <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le PNDC du Gabon priorise l'énergie, l'infrastructure et la finance verte comme ses trois secteurs d'investissement phares — reflecting the twin goals of closing territorial gaps and monetising the country's forest capital. Bar lengths show relative prominence in the VNR; the PNDC does not publish a single combined commitment figure.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC</a></div></div>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le PNDC du Gabon priorise l'énergie, l'infrastructure et la finance verte comme ses trois secteurs d'investissement phares — reflétant les deux objectifs de combler les écarts territoriaux et de valoriser le capital forestier du pays. La longueur des barres indique la prominence relative dans le RNV ; le PNDC ne publie pas de chiffre d'engagement global combiné.</p>
+          <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026 · PNDC</a></div></div>
         </div>
       </div>
       </div>
@@ -588,6 +611,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Service de la dette, externe vs. interne</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -595,7 +621,7 @@
               <text x="32" y="104" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">6%</text>
               <text x="32" y="54" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">12%</text>
               <line x1="185" y1="26" x2="185" y2="150" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 4"></line>
-              <text x="191" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">2016 oil price shock</text>
+              <text x="191" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">Choc pétrolier 2016</text>
               <polyline points="60,100 185,75 295,88 410,88" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
               <circle cx="60" cy="100" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.1s both;"><title>2010, dette extérieure ~29 % du PIB (indicatif)</title></circle>
               <circle cx="185" cy="75" r="4.5" fill="#FFFFFF" stroke="#B4533A" stroke-width="2.5" style="animation: pop 0.4s ease 0.3s both;"><title>2016, dette extérieure ~43 % du PIB — pic d'emprunt choc pétrolier</title></circle>
@@ -605,13 +631,17 @@
               <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
               <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">La dette extérieure est passée de ~29 % du PIB en 2010 à un pic de 43 % en 2016. Elle a depuis baissé à ~36 % — gérable mais surveillée alors que le programme d'investissement du PNDC se poursuit dans le cadre des contraintes monétaires CEMAC.</p>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, Goal 17</a> · <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, Goal 17</a> · <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Recettes hors pétrole, une décennie de croissance</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -631,8 +661,10 @@
               <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
               <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
-            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Les recettes publiques totales fell sharply from the oil-boom peak (~38% of GDP in 2010) to ~21% after the 2014 oil price collapse. Non-oil revenues have grown from ~8% to ~13% of GDP over the decade — the structural diversification the PNDC is designed to accelerate further.</p>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Recettes internes (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Financement externe (%)</span></div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Les recettes publiques totales ont chuté fortement depuis le pic du boom pétrolier (~38 % du PIB en 2010) à ~21 % après l'effondrement des prix du pétrole en 2014. Les recettes hors pétrole ont crû de ~8 % à ~13 % du PIB sur la décennie — la diversification structurelle que le PNDC est conçu pour accélérer davantage.</p>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
           </div>
         </div>
       </div>
@@ -652,7 +684,7 @@
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);">déficit hydrique quotidien Libreville</span>
             <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
               <span style="font-size: 68px; font-weight: 700; letter-spacing: -0.02em; line-height: 0.9;">50,000</span>
-              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F4CE8A;">m³/day structural deficit</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F4CE8A;">déficit structurel en m³/jour</span>
             </div>
             <p style="margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.86);">Dans un pays équatorial riche en eau, le Grand Libreville fait face à un déficit hydrique de 50 000 m³/jour tandis que les zones rurales n'ont que 30 % d'accès. Le RNV présente cela comme un défi de gouvernance et d'infrastructure, non un problème de rareté des ressources — les rivières sont pleines ; les canalisations sont insuffisantes.</p>
           </div>
@@ -662,11 +694,11 @@
               <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.7);">l'écart urbain-rural</span>
             </div>
             <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Urban</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Urban water access 2024: 60% (RNV 2026)"><div style="width: 60%; height: 100%; background: #FFFFFF; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;">60%</span></div>
+              <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Urbain</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Urban water access 2024: 60% (RNV 2026)"><div style="width: 60%; height: 100%; background: #FFFFFF; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600;">60%</span></div>
               <div style="display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: 12px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.85);">Rural</span><div style="height: 20px; background: rgba(255,255,255,0.20); border-radius: 999px;" title="Rural water access 2024: 30% (RNV 2026)"><div style="width: 30%; height: 100%; background: #F4CE8A; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: #F4CE8A;">30%</span></div>
             </div>
-            <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.78);">Le programme de forages solaires lie les transitions eau et énergie : des pompes solaires étendent l'accès fiable à l'eau aux villages hors réseau. <strong style="color:#fff; font-weight:600;">Libreville's distribution system</strong> nécessite une réhabilitation et de nouvelles capacités de traitement pour combler le déficit de 50 000 m³/jour de la capitale.</p>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.55);">Sources : RNV 2026 · Base de données ODD des ONU, indicator 6.1.1</div></div>
+            <p style="margin: 0; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.78);">Le programme de forages solaires lie les transitions eau et énergie : des pompes solaires étendent l'accès fiable à l'eau aux villages hors réseau. <strong style="color:#fff; font-weight:600;">Le réseau de distribution de Libreville</strong> nécessite une réhabilitation et de nouvelles capacités de traitement pour combler le déficit de 50 000 m³/jour de la capitale.</p>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.55);">Sources : RNV 2026 · Base de données ODD des ONU, indicator 6.1.1</div></div>
           </div>
         </div>
 
@@ -674,23 +706,25 @@
         <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; align-items: stretch;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 16px; font-weight: 600;">Infrastructure hydrique de Libreville</div>
-            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Le Grand Libreville — qui abrite environ la moitié des 2,3 millions d'habitants du Gabon — est confronté à un déficit structurel de 50 000 m³/jour from urbanisation outpacing infrastructure investment. Aging pipes, distribution losses and insufficient treatment capacity combine to deliver less than demand. The PNDC includes new treatment plants, distribution rehabilitation and solar boreholes as the priority water investments.</p>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Le Grand Libreville — qui abrite environ la moitié des 2,3 millions d'habitants du Gabon — est confronté à un déficit structurel de 50 000 m³/jour du fait que l'urbanisation dépasse l'investissement en infrastructure. Des canalisations vieillissantes, des pertes de distribution et une capacité de traitement insuffisante se combinent pour livrer moins que la demande. Le PNDC inclut de nouvelles stations de traitement, la réhabilitation du réseau de distribution et des forages solaires comme investissements prioritaires en eau.</p>
             <div style="background: #F6F9FB; border-radius: 12px; padding: 16px 18px; margin-top: 2px;">
               <svg viewBox="0 0 420 84" style="width: 100%; height: auto; display: block;">
-                <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">Urban water access, % · 2000–2024</text>
+                <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">Accès eau urbaine, % · 2000–2024</text>
                 <polyline points="16,68 120,60 232,50 400,44" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
                 <circle cx="16" cy="68" r="4" fill="#1F6FB2"><title>2000, ~50% urban water access</title></circle>
                 <circle cx="400" cy="44" r="4.5" fill="#1F6FB2"><title>2024, 60% urban water access (RNV 2026)</title></circle>
-                <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">access improving despite rapid urbanisation — distribution investment lags behind population growth</text>
+                <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">accès en amélioration malgré l'urbanisation rapide — l'investissement en distribution est en retard sur la croissance démographique</text>
               </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes nationales (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Financement externe (%)</span></div>
             </div>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">La forêt comme cycle de l'eau</div>
             <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">La couverture forestière de 85 % du Gabon régule le cycle de l'eau : les forêts interceptent les précipitations, rechargent les aquifères et maintiennent le débit des rivières — une infrastructure hydrique naturelle protégée par le réseau de parcs du pays.</p>
-            <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2022 · RNV 2026</a></div></div>
+            <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2022 · RNV 2026</a></div></div>
           </div>
         </div>
 
@@ -698,16 +732,14 @@
         <div style="background: #FBF1EE; border: 1px solid #EAD3CB; border-left: 5px solid #B4533A; border-radius: 14px; padding: 24px 30px; display: flex; flex-direction: column; gap: 8px;">
           <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #B4533A;"></span><span style="font-size: 16px; font-weight: 600; color: #8A3B27;">L'eau comme défi de gouvernance, non de ressource</span></div>
           <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #6B4A40;">Dans l'un des pays les plus abondants en eau d'Afrique, le défi n'est pas la ressource mais l'infrastructure. <strong>Combler le déficit de 50 000 m³/jour à Libreville</strong> et l'écart hydrique rural nécessite une réforme institutionnelle, une gestion durable des infrastructures locales et les forages solaires que le RNV 2026 priorise.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B08A7E;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
+          <div data-src="" style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B08A7E;">Source : <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">RNV 2026</a></div></div>
         </div>
       </div>
       </div>
 
     </div>
-  </main>
-
-  <footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
-    <div style="max-width: 1280px; margin: 0 auto;">Sources : République gabonaise, <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">Second Rapport national volontaire 2026</a> (July 2026); Premier Rapport national volontaire 2022; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a> (consulté en juillet 2026). Chiffres tels que rapportés par l'État membre. Prototype pour consultation.tation.</div>
+  </main><footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
+    <div style="max-width: 1280px; margin: 0 auto;">Sources : République gabonaise, <a href="https://hlpf.un.org/countries/gabon" target="_blank" rel="noopener">Deuxième Revue nationale volontaire 2026</a> (juillet 2026); Première Revue nationale volontaire 2022; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/gab" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a> (consulté en juillet 2026). Chiffres tels que rapportés par l'État membre. Prototype pour consultation.tation.</div>
   </footer>
 </div>
 
@@ -718,7 +750,7 @@
     <rect x="720" y="0" width="240" height="30" fill="#2E7D5B"></rect>
     <rect x="960" y="0" width="240" height="30" fill="#B4533A"></rect>
     <text x="120" y="230" font-family="Georgia, serif" font-size="120" font-weight="700" fill="#1B2A3A">Gabon</text>
-    <text x="122" y="300" font-family="monospace" font-size="30" letter-spacing="6" fill="#7A8A9A">COUNTRY DASHBOARD</text>
+    <text x="122" y="300" font-family="monospace" font-size="30" letter-spacing="6" fill="#7A8A9A">TABLEAU DE BORD PAYS</text>
     <rect x="120" y="400" width="300" height="200" rx="16" fill="#FFFFFF" stroke="#E3E7EC" stroke-width="2"></rect>
     <rect x="450" y="400" width="300" height="200" rx="16" fill="#FFFFFF" stroke="#E3E7EC" stroke-width="2"></rect>
     <rect x="780" y="400" width="300" height="200" rx="16" fill="#FFFFFF" stroke="#E3E7EC" stroke-width="2"></rect>

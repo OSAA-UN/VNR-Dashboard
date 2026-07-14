@@ -20,6 +20,7 @@
   @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
 </style>
+<script src="nav-bar.js"></script>
 </helmet>
 <div style="min-height: 100vh; display: flex; flex-direction: column;">
   <div style="height: 5px; background: linear-gradient(90deg, #1F6FB2 0%, #1F6FB2 60%, #2E7D5B 60%, #2E7D5B 80%, #B4533A 80%, #B4533A 100%);"></div>
@@ -27,10 +28,10 @@
   <!-- ============ HEADER + NAV ============ -->
   <header style="background: #FFFFFF; border-bottom: 1px solid #E3E7EC; padding: 26px 48px 0 48px;">
     <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Africa Operations / <span style="color: #1F6FB2; font-weight: 500;">Algeria</span> · Tableau de bord pays · RNV 2026</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Opérations Afrique / <span style="color: #1F6FB2; font-weight: 500;">Algérie</span> · Tableau de bord pays · RNV 2026</div>
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-        <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Algeria</h1>
-        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">Revues nationales volontaires (VNR) 2019 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
+        <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Algérie</h1>
+        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">Revues nationales volontaires (RNV) 2019 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
       </div>
       <nav style="display: flex; gap: 4px; margin-top: 14px; flex-wrap: wrap;">
         <button data-tab-btn="overview" style="{{ tabBtn.overview }}" onClick="{{ onTab.overview }}">Aperçu &amp; tendances</button>
@@ -87,6 +88,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">MW</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -99,19 +103,21 @@
             <polyline points="60,198 200,196 380,193 520,188 620,170 700,56" fill="none" stroke="#FCC30B" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 4"></polyline>
             <polyline points="60,198 200,196 380,193 520,188" fill="none" stroke="#FCC30B" stroke-width="2.5" stroke-linecap="round"></polyline>
             <line x1="520" y1="20" x2="520" y2="200" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 4"></line>
-            <text x="526" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">2029 plan horizon</text>
+            <text x="526" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">horizon du plan 2029</text>
             <circle cx="60" cy="198" r="4.5" fill="#FCC30B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, installed solar ~180 MW</title></circle>
             <circle cx="380" cy="193" r="4.5" fill="#FCC30B" style="animation: pop 0.4s ease 0.2s both;"><title>2020, solar ~400 MW, gas still dominates</title></circle>
-            <circle cx="520" cy="188" r="4.5" fill="#FCC30B" style="animation: pop 0.4s ease 0.3s both;"><title>2024, solar ~700 MW — $60B plan launched</title></circle>
+            <circle cx="520" cy="188" r="4.5" fill="#FCC30B" style="animation: pop 0.4s ease 0.3s both;"><title>2024, solaire ~700 MW — plan 60 Mds$ lancé</title></circle>
             <circle cx="700" cy="56" r="5.5" fill="#FFFFFF" stroke="#FCC30B" stroke-width="2.5" style="animation: pop 0.4s ease 0.4s both;"><title>2030 target: 22,000 MW solar (RNV 2026)</title></circle>
             <text x="712" y="60" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#FCC30B">22,000</text>
-            <text x="712" y="73" font-family="IBM Plex Mono" font-size="10" fill="#B0791F">MW target</text>
+            <text x="712" y="73" font-family="IBM Plex Mono" font-size="10" fill="#B0791F">MW objectif</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2015</text>
             <text x="380" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2020</text>
             <text x="520" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2030</text>
           </svg>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'Algérie dispose déjà d'un accès quasi universel à l'électricité (~99 % au niveau national, y compris en zones rurales) — la frontière de la transition énergétique est la décarbonation, non l'accès. The $60 billion 2025–2029 programme targets 22,000 MW of solar by 2030 (from ~700 MW today), complemented by green hydrogen as an export commodity. This is among the most ambitious renewable energy plans in Africa and represents Algeria's answer to reducing hydrocarbon dependence over the long term.</p>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #FCC30B; border-radius: 2px;"></span>Part renouvelables (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Part hydrocarbures (%)</span></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'Algérie dispose déjà d'un accès quasi universel à l'électricité (~99 % au niveau national, y compris en zones rurales) — la frontière de la transition énergétique est la décarbonation, non l'accès. Le programme de 60 milliards de dollars 2025–2029 vise 22 000 MW de solaire d'ici 2030 (contre ~700 MW aujourd'hui), complété par l'hydrogène vert comme produit d'exportation. C'est l'un des plans d'énergie renouvelable les plus ambitieux d'Afrique et représente la réponse de l'Algérie à la réduction de la dépendance aux hydrocarbures sur le long terme.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.52</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
         </div>
         </div>
@@ -124,6 +130,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="128" x2="700" y2="128" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="56" x2="700" y2="56" stroke="#EEF1F4" stroke-width="1"></line>
@@ -132,10 +141,10 @@
             <text x="50" y="56" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">100%</text>
             <polyline points="60,68 380,52 700,38" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="60,118 380,96 700,84" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="60" cy="68" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>2015, urban drinking water network ~96%</title></circle>
-            <circle cx="700" cy="38" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>2024, urban drinking water ~99% (RNV 2026)</title></circle>
-            <circle cx="60" cy="118" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.2s both;"><title>2015, rural drinking water network ~91%</title></circle>
-            <circle cx="700" cy="84" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024, rural drinking water network >96% — near-universal (RNV 2026)</title></circle>
+            <circle cx="60" cy="68" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>2015, réseau eau potable urbaine ~96 %</title></circle>
+            <circle cx="700" cy="38" r="5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>2024, réseau eau potable urbaine ~99 % (RNV 2026)</title></circle>
+            <circle cx="60" cy="118" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.2s both;"><title>2015, réseau eau potable rurale ~91 %</title></circle>
+            <circle cx="700" cy="84" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2024, réseau eau potable rurale >96 % — quasi-universel (RNV 2026)</title></circle>
             <text x="712" y="42" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#1F6FB2">~99%</text>
             <text x="712" y="88" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#2E7D5B">&gt;96%</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2015</text>
@@ -147,7 +156,7 @@
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Réseau rural</span>
           </div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'Algérie a atteint une connexion quasi universelle au réseau d'eau potable — plus de 98 % des ménages — y compris en zones rurales, ce qui en fait l'un des pays africains les plus performants en matière de couverture réseau ODD 6. Le défi s'est déplacé de l'accès à la qualité, l'efficacité et la durabilité : l'Algérie withdraws more than 70% of its renewable freshwater supply, making water stress a defining long-term constraint. Desalination, wastewater reuse and irrigation modernisation are the priority instruments.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">WHO/UNICEF Joint Monitoring Programme 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
+          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">Programme conjoint de surveillance OMS/UNICEF 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
         </div>
         </div>
 
@@ -159,6 +168,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="155" x2="700" y2="155" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="110" x2="700" y2="110" stroke="#EEF1F4" stroke-width="1"></line>
@@ -200,6 +212,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -209,19 +224,21 @@
             <text x="50" y="84" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">10%</text>
             <text x="50" y="24" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">15%</text>
             <line x1="520" y1="20" x2="520" y2="200" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 4"></line>
-            <text x="528" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">fiscal anchor: hydrocarbon price cycle</text>
+            <text x="528" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">ancre budgétaire : cycle des prix des hydrocarbures</text>
             <polyline points="188,68 444,86 636,116" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="188,140 444,88 636,69" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, ~11% (indicative trajectory)</title></circle>
-            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
-            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, ~5% (indicative trajectory)</title></circle>
+            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Interne 2017, ~11 % (trajectoire indicative)</title></circle>
+            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Interne 2024, part en baisse</title></circle>
+            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Externe 2017, ~5 % (trajectoire indicative)</title></circle>
             <circle cx="636" cy="69" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
             <text x="648" y="73" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">10.9%</text>
-            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">internal</text>
+            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">interne</text>
             <text x="188" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2017</text>
             <text x="444" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2021</text>
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Croissance du PIB (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Inflation (%)</span></div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'Algérie maintient une dette extérieure très faible — inférieure à 3 % du PIB — ancrée sur de larges réserves de change provenant des exportations d'hydrocarbures. Le défi budgétaire est structurel : lorsque les revenus des hydrocarbures baissent, la capacité du gouvernement à financer les programmes ODD diminue également. Le RNV met l'accent sur la mobilisation des ressources publiques nationales comme principal canal de financement.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.87, 121</a></div></div>
         </div>
@@ -243,7 +260,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Education <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Agriculture &amp; food <span style="color: #9AA7B4; font-size: 11.5px;">SDG 2</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement de Algeria's national financing framework. Le rapport classe les secteurs par valeur engagée mais ne donne que le total combiné ; les longueurs des barres reflètent l'importance relativegths show rank order rather than dollar amounts.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement de l'Algérie national financing framework. Le rapport classe les secteurs par valeur engagée mais ne donne que le total combiné ; les longueurs des barres reflètent l'importance relativegths show rank order rather than dollar amounts.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Source : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.122 (Graphique 74)</a></div></div>
         </div>
         </div>
@@ -255,7 +272,7 @@
       <div data-screen-label="Focus Goals" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Objectifs prioritaires 2026 : Réalisations et priorités</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau 2026. Les chiffres combinent Algeria's Rapport national volontaire 2026 with the Base de données ODD des Nations Unies, sélectionnez un objectif pour explorer.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau 2026. Les chiffres combinent la Revue nationale volontaire 2026 de l'Algérie avec la Base de données ODD des Nations Unies — sélectionnez un objectif pour explorer.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
@@ -307,10 +324,13 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 8 · Travail décent — Diversification économique</div>
             <svg viewBox="0 0 380 130" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,65) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="190" y="128" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">Croissance du PIB et diversification hors hydrocarbures, 2019–2024</text>
               <line x1="30" y1="110" x2="360" y2="110" stroke="#E3E7EC" stroke-width="1"></line>
               <polyline points="40,70 140,75 200,72 280,58 350,55" fill="none" stroke="#2E7D5B" stroke-width="3" stroke-linecap="round"></polyline>
-              <circle cx="40" cy="70" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2019, GDP growth 0.8%</title></circle>
+              <circle cx="40" cy="70" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2019, croissance PIB 0,8 %</title></circle>
               <circle cx="200" cy="72" r="5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>2020, GDP growth -5.1% — COVID-19 contraction</title></circle>
               <circle cx="350" cy="55" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.3s both;"><title>2024, croissance du PIB 4,1 % — reprise et diversification</title></circle>
               <text x="56" y="60" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#2E7D5B">0.8%</text>
@@ -319,6 +339,7 @@
               <text x="200" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2020</text>
               <text x="350" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.58–59</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 9.1.1 &amp; 9.c.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
@@ -338,6 +359,7 @@
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#1F6FB2" stroke-width="16" stroke-dasharray="241.0 60.5" stroke-linecap="round" transform="rotate(-90 60 60)"><title>34,3 % de la population urbaine dans des établissements informels (2020, Base de données ODD des ONU, indicateur 11.1.1)</title></circle>
                 <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#B0791F">~80%</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Couverture énergétique (%)</span></div>
               <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">pénétration internet (2024) — l'infrastructure numérique algérienne se développe rapidement</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.66–67</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 11.1.1</a></div></div>
@@ -355,13 +377,13 @@
             <div style="font-size: 18px; font-weight: 700;">ODD 13 · Action climatique — La transition verte et énergétique</div>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Objectif solaire 2030</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="22,000 MW solar target by 2030"><div style="width: 100%; height: 100%; background: #FCC30B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #FCC30B; font-weight: 600;">22,000 MW</span></div>
-              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Objectif CDN</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Algeria's NDC: 27% renewables in the energy mix by 2030"><div style="width: 27%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">27% mix</span></div>
+              <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Objectif CDN</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="l'Algérie NDC: 27% renewables in the energy mix by 2030"><div style="width: 27%; height: 100%; background: #2E7D5B; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #2E7D5B; font-weight: 600;">27% mix</span></div>
               <div style="display: grid; grid-template-columns: 92px 1fr 48px; align-items: center; gap: 10px;"><span style="font-size: 12.5px; color: #5A6B7C;">Plan H₂ vert</span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Green hydrogen: embedded in the $60B plan as an export strategy"><div style="width: 60%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.2s both;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F6FB2; font-weight: 600;">Actif</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.85–89</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 17.1.1 &amp; 17.4.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Objectif 22 000 MW solaire d'ici 2030 ; la CDN s'engage sur 27 % de renouvelables dans le mix ; hydrogène vertrogen positioned as Algeria's post-hydrocarbon export commodity to Europe.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">Objectif 22 000 MW solaire d'ici 2030 ; la CDN s'engage sur 27 % de renouvelables dans le mix ; hydrogène vertrogen positioned as l'Algérie post-hydrocarbon export commodity to Europe.</span></div>
             <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">Exécuter le plan de 60 milliards dans les délais, construire la chaîne d'exportation d'hydrogène vert et diversifier l'économie avant le déclin des revenus d'hydrocarbures.</span></div>
           </div>
         </div>
@@ -374,14 +396,14 @@
       <div data-screen-label="Mise en œuvre conjointe" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Mise en œuvre conjointe des ODD et de l'Agenda 2063</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">L'Algérie présente son deuxième Rapport national volontaire en 2026, ayant soumis son premier rapport en 2019. L'Agenda 2030 est intégré dans la Vision Algérie 2035 and the National Plan for Renewable Energy and Energy Efficiency (PENREE). Algeria is both a provider and recipient of South-South cooperation through the African Union, NEPAD and bilateral frameworks. The review frames the $60B energy transition plan as the country's central contribution to both the SDGs and the African Union's Agenda 2063 green-growth pillar.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">L'Algérie présente son deuxième Revue nationale volontaire en 2026, ayant soumis son première Revue en 2019. L'Agenda 2030 est intégré dans la Vision Algérie 2035 et le Plan national pour les énergies renouvelables et l'efficacité énergétique (PENREE). L'Algérie est à la fois fournisseur et bénéficiaire de la coopération Sud-Sud via l'Union africaine, le NEPAD et des cadres bilatéraux. Le rapport présente le plan de transition énergétique de 60 milliards de dollars comme la contribution centrale du pays aux ODD et au pilier de croissance verte de l'Agenda 2063 de l'Union africaine.</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 34px 38px; display: flex; flex-direction: column; gap: 26px;">
             <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">Vision 2035 &amp; le nexus ODD-Climat — deuxième RNV de l'Algérie</div>
             <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>Vision 2035 SDG self-assessment</span><span style="color: #2E7D5B; font-weight: 600;">Second VNR — energy transition, water, diversification</span></div>
+              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>Auto-évaluation ODD Vision 2035</span><span style="color: #2E7D5B; font-weight: 600;">Deuxième RNV — transition énergétique, eau, diversification</span></div>
               <div style="display: flex; height: 34px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both;">
                 <div style="width: 65%; background: #2E7D5B;" title="On track"></div>
                 <div style="width: 20%; background: #D9A94A;" title="Partial"></div>
@@ -389,10 +411,10 @@
               </div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 18px;">
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Water &amp; universal services</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 98%; background: #2E7D5B;"></div><div style="width: 2%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">&gt;98%</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Energy transition</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 3%; background: #FCC30B;"></div><div style="width: 97%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">En montée en puissance</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Eau &amp; services universels</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 98%; background: #2E7D5B;"></div><div style="width: 2%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">&gt;98%</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Transition énergétique</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 3%; background: #FCC30B;"></div><div style="width: 97%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">En montée en puissance</span></div>
               <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Diversification économique</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 40%; background: #2E7D5B;"></div><div style="width: 35%; background: #D9A94A;"></div><div style="width: 25%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">En cours</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">South-South cooperation</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 80%; background: #2E7D5B;"></div><div style="width: 10%; background: #D9A94A;"></div><div style="width: 10%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">Fournisseur actif</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Coopération Sud-Sud</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 80%; background: #2E7D5B;"></div><div style="width: 10%; background: #D9A94A;"></div><div style="width: 10%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">Fournisseur actif</span></div>
             </div>
             <div style="display: flex; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #5A6B7C;">
               <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #2E7D5B;"></span>Sur la bonne voie</span>
@@ -415,7 +437,7 @@
             </div>
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px;">
               <div style="font-size: 16px; font-weight: 600;">Vision Algérie 2035 &amp; PENREE — l'ancre commune</div>
-              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">La Vision Algérie 2035 intègre les ODD et l'Agenda 2063 dans la planification nationale à long terme. The National Plan for Renewable Energy and Energy Efficiency (PENREE) and the $60B 2025–2029 investment programme carry the SDG 7, SDG 13 and diversification agenda. Domestic public resources — anchored by hydrocarbon revenues — are the primary SDG financing instrument, complemented by South-South cooperation.</p>
+              <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #5A6B7C;">La Vision Algérie 2035 intègre les ODD et l'Agenda 2063 dans la planification nationale à long terme. Le Plan national for Renewable Energy and Energy Efficiency (PENREE) and the $60B 2025–2029 investment programme carry the SDG 7, SDG 13 and diversification agenda. Domestic public resources — anchored by hydrocarbon revenues — are the primary SDG financing instrument, complemented by South-South cooperation.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.22, 29, 85–86</a></div></div>
             </div>
           </div>
@@ -433,12 +455,12 @@
 
         <div style="display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start;">
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">$60B Renewable Energy Plan</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2025–2029 · solar + green hydrogen</span></button>
+            <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">Plan d'énergie renouvelable 60 Mds$</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">2025–2029 · solar + green hydrogen</span></button>
             <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">PENREE</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Plan national énergies renouvelables &amp; efficacité</span></button>
-            <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Water Security Programme</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">desalination, reuse &amp; efficiency</span></button>
-            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Economic Diversification Strategy</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">non-hydrocarbon growth · manufacturing</span></button>
-            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">South-South Cooperation Framework</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">fournisseur &amp; bénéficiaire · intégration Afrique</span></button>
-            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Vision Algérie 2035</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">long-term SDG frame</span></button>
+            <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Programme de sécurité hydrique</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">desalination, reuse &amp; efficiency</span></button>
+            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Stratégie de diversification économique</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">non-hydrocarbon growth · manufacturing</span></button>
+            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Cadre de coopération Sud-Sud</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">fournisseur &amp; bénéficiaire · intégration Afrique</span></button>
+            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Vision Algérie 2035</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">cadre ODD à long terme</span></button>
           </div>
 
           <div>
@@ -446,7 +468,7 @@
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
               <div><div style="font-size: 19px; font-weight: 700;">$60 Billion Renewable Energy Plan</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">2025–2029 · stratégie d'exportation solaire, éolien et hydrogène vert</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">$60B</div><div style="font-size: 12px; color: #5A6B7C;">total investment 2025–2029</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">$60B</div><div style="font-size: 12px; color: #5A6B7C;">investissement total 2025–2029</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #FCC30B;">22,000 MW</div><div style="font-size: 12px; color: #5A6B7C;">objectif solaire 2030</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">Green H₂</div><div style="font-size: 12px; color: #5A6B7C;">export strategy — Europe &amp; Africa</div></div>
               </div>
@@ -460,28 +482,28 @@
               <div><div style="font-size: 19px; font-weight: 700;">PENREE — Plan national pour les énergies renouvelables et l'efficacité énergétique</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Le cadre stratégique de la transition énergétique de l'Algérie</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">27%</div><div style="font-size: 12px; color: #5A6B7C;">renouvelables dans le mix — objectif CDN 2030</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">27</div><div style="font-size: 12px; color: #5A6B7C;">desalination plants operational</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">27</div><div style="font-size: 12px; color: #5A6B7C;">usines de dessalement opérationnelles</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le PENREE définit les objectifs stratégiques et la feuille de route technologique pour la transition énergétique : solaire, éolien, efficacité énergétique et stockage. The $60B 2025–2029 plan operationalises the PENREE with specific projects, financing instruments and private-sector participation frameworks. Together they define Algeria's NDC contribution: 27% renewables in the energy mix by 2030.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le PENREE définit les objectifs stratégiques et la feuille de route technologique pour la transition énergétique : solaire, éolien, efficacité énergétique et stockage. The $60B 2025–2029 plan operationalises the PENREE with specific projects, financing instruments and private-sector participation frameworks. Together they define l'Algérie NDC contribution: 27% renewables in the energy mix by 2030.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.xiii, 15, 120–124</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="corr" style="{{ instPanel.corr }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Water Security Programme</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Dessalement, réutilisation des eaux usées et efficacité de l'irrigation</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Programme de sécurité hydrique</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Dessalement, réutilisation des eaux usées et efficacité de l'irrigation</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">27</div><div style="font-size: 12px; color: #5A6B7C;">usines de dessalement — 17 % de l'eau potable</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">~70%</div><div style="font-size: 12px; color: #5A6B7C;">water stress — high withdrawal rate</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">~70%</div><div style="font-size: 12px; color: #5A6B7C;">stress hydrique — taux de prélèvement élevé</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Les 27 usines de dessalement d'Algérie fournissent déjà ~17 % de l'eau potable ; le programme vise leur expansion pour réduire la dépendance aux eaux de surface et souterraines. Treated wastewater reuse for agriculture, drip irrigation modernisation and demand-side efficiency reduce the ~70% withdrawal rate that defines Algeria's water-stress position.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Les 27 usines de dessalement d'Algérie fournissent déjà ~17 % de l'eau potable ; le programme vise leur expansion pour réduire la dépendance aux eaux de surface et souterraines. Treated wastewater reuse for agriculture, drip irrigation modernisation and demand-side efficiency reduce the ~70% withdrawal rate that defines l'Algérie water-stress position.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.75–76</a></div></div>
             </div>
             </div>
 
             <div data-inst-panel="pddsp" style="{{ instPanel.pddsp }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Economic Diversification Strategy</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Construire une croissance hors hydrocarbures — industrie, agriculture, tourisme et numérique</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Stratégie de diversification économique</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Construire une croissance hors hydrocarbures — industrie, agriculture, tourisme et numérique</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">~95%</div><div style="font-size: 12px; color: #5A6B7C;">des exportations venant des hydrocarbures — l'impératif de diversification</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">4.1%</div><div style="font-size: 12px; color: #5A6B7C;">GDP growth 2024 — non-hydrocarbons leading</div></div>
@@ -493,10 +515,10 @@
 
             <div data-inst-panel="pafen" style="{{ instPanel.pafen }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">South-South Cooperation Framework</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">L'Algérie, fournisseur et bénéficiaire de la coopération au développement</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Cadre de coopération Sud-Sud</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">L'Algérie, fournisseur et bénéficiaire de la coopération au développement</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">Provider</div><div style="font-size: 12px; color: #5A6B7C;">solidarité énergétique vers l'Afrique subsaharienne</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">AU/NEPAD</div><div style="font-size: 12px; color: #5A6B7C;">multilateral South-South frameworks</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">AU/NEPAD</div><div style="font-size: 12px; color: #5A6B7C;">cadres multilatéraux de coopération Sud-Sud</div></div>
               </div>
               <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">L'Algérie joue un double rôle dans la coopération Sud-Sud : en tant que fournisseur de solidarité énergétique (gaz et, à terme, électricité renouvelable et hydrogène vert) à l'Afrique subsaharienne ; et en tant que bénéficiaire de transferts de technologie et de connaissances pour la transition énergétique. AU and NEPAD frameworks structure both.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.112, 114</a> · <a href="https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=BI" target="_blank" rel="noopener">World Bank projects, Algeria</a></div></div>
@@ -542,13 +564,14 @@
               <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">7.8% '16</text>
               <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#2E7D5B">10.6% '24</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.86–88, 121</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F7EEDC; color: #B0791F; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">2</span><span style="font-size: 15px; font-weight: 600;">Finance climatique et innovante</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="The review calls for institutional capacity-building to access both funds, plus biodiversity-finance instruments"><strong>Climate finance</strong>, $60B plan international component</div>
+              <div title="The review calls for institutional capacity-building to access both funds, plus biodiversity-finance instruments"><strong>Finance climatique</strong>, $60B plan international component</div>
               <div title="Named explicitly among sources to explore beyond traditional mechanisms"><strong>Green bonds</strong>, renewable energy financing instruments</div>
               <div title="The financing roadmap's stated end-state, with green-economy business plans for small businesses"><strong>Green hydrogen revenues</strong>, long-run export income stream</div>
             </div>
@@ -559,7 +582,7 @@
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F1F6FA; color: #1F6FB2; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">3</span><span style="font-size: 15px; font-weight: 600;">Canaux de partenariat</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
               <div title="Legal framework promoted for transformational, green-priority sectors and structuring infrastructure (roads, energy, water, digital)"><strong>IDE dans la transition énergétique</strong>, investissement privé solaire et éolien</div>
-              <div title="Incentive instruments to channel remittances through formal circuits"><strong>South-South solidarity</strong>, en tant que fournisseur à l'Afrique</div>
+              <div title="Incentive instruments to channel remittances through formal circuits"><strong>Solidarité Sud-Sud</strong>, en tant que fournisseur à l'Afrique</div>
               <div title="Plus advocacy toward multilateral development banks for more concessional financing to social and productive sectors"><strong>Gas export revenues</strong>, revenus transitoires finançant la transition</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.120–125</a></div></div>
@@ -569,7 +592,7 @@
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
             <div style="font-size: 16px; font-weight: 600;">Engagements des partenaires de financement jusqu'en 2035, par secteur</div>
-            <div style="font-size: 12.5px; color: #7A8A9A;">Total $1,507,171,475 · la longueur des barres indique le rang</div>
+            <div style="font-size: 12.5px; color: #7A8A9A;">Total 1 507 171 475 $ · la longueur des barres indique le rang</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 14px; ">
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Emplois décents <span style="color: #9AA7B4; font-size: 11px;">SDG 8</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (RNV 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
@@ -580,7 +603,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Education <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Poverty <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le financement des ODD de l'Algérie repose principalement sur les ressources publiques nationales provenant des revenus des hydrocarbures. L'énergie renouvelable est en tête des investissements dans le cadre du plan 2025–2029 de 60 milliards de dollars ; la diversification économique et la durabilité de l'eau suivent. The review prioritises South-South cooperation — Algeria is a provider as well as a recipient of development cooperation, channelling solidarity through African Union frameworks. Bar lengths show relative prominence in RNV 2026.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le financement des ODD de l'Algérie repose principalement sur les ressources publiques nationales provenant des revenus des hydrocarbures. L'énergie renouvelable est en tête des investissements dans le cadre du plan 2025–2029 de 60 milliards de dollars ; la diversification économique et la durabilité de l'eau suivent. Le rapport priorise la coopération Sud-Sud — l'Algérie est à la fois fournisseur et bénéficiaire de la coopération au développement, canalisant la solidarité via les cadres de l'Union africaine. La longueur des barres indique la prominence relative dans le RNV 2026.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.122 (Graphique 74)</a></div></div>
         </div>
       </div>
@@ -598,6 +621,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Dette extérieure — très faible selon les normes régionales</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -605,19 +631,21 @@
               <text x="32" y="104" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">6%</text>
               <text x="32" y="54" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">12%</text>
               <line x1="330" y1="26" x2="330" y2="150" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 4"></line>
-              <text x="336" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">fiscal anchor: hydrocarbon price cycle</text>
+              <text x="336" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">ancre budgétaire : cycle des prix des hydrocarbures</text>
               <polyline points="110,58 280,72 410,92" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
               <polyline points="110,110 280,74 410,59" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, larger share (indicative trajectory)</title></circle>
-              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
-              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, smaller share (indicative trajectory)</title></circle>
+              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Interne 2017, part plus élevée (trajectoire indicative)</title></circle>
+              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Interne 2024, part en baisse</title></circle>
+              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Externe 2017, part plus faible (trajectoire indicative)</title></circle>
               <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
               <text x="418" y="63" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">10.9%</text>
-              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">internal</text>
+              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">interne</text>
               <text x="110" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2017</text>
               <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
               <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Dette publique (% PIB)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Service de la dette (% exp.)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">L'Algérie maintient une dette extérieure inférieure à 3 % du PIB — parmi les ratios les plus faibles d'Afrique — soutenu par de larges revenus d'exportation des hydrocarbures et une politique d'évitement de l'emprunt extérieur. Le risque budgétaire est le cycle des prix des matières premières :estment without an alternative revenue base.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.121</a></div></div>
           </div>
@@ -625,6 +653,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Structure des recettes — ancrée dans les hydrocarbures</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -643,6 +674,8 @@
               <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
               <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes nationales (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Financement externe (%)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Les revenus des hydrocarbures dominent les recettes publiques. La stratégie de diversification vise à accroître les recettes fiscales hors hydrocarbures à mesure que l'industrie manufacturière, l'agriculture et les services numériques se développent. The $60B energy transition plan will generate new revenue streams from solar electricity exports and green hydrogen sales to replace declining fossil-fuel income over the 2030–2040 horizon.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
           </div>
@@ -664,7 +697,7 @@
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);">Couverture réseau eau potable</span>
             <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
               <span style="font-size: 68px; font-weight: 700; letter-spacing: -0.02em; line-height: 0.9;">98%+</span>
-              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F4CE8A;">near-universal, inc. rural areas</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #F4CE8A;">quasi-universel, y compris les zones rurales</span>
             </div>
             <p style="margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.86);">L'Algérie a atteint une connexion quasi universelle au réseau d'eau potable — plus de 98 % des ménages, y compris les zones rurales — une réalisation majeure en matière d'ODD 6. Le défi s'est entièrement déplacé vers la durabilité : l'Algérie prélève ~70 % de ses ressources en eau douce renouvelables, ce qui en fait l'un des pays les plus stressés hydriquement d'Afrique du Nord. Dessalement, réutilisation des eaux usées et efficacité de l'irrigation are the Année de la gestion durable de l'eau agenda for Algeria.</p>
           </div>
@@ -689,12 +722,13 @@
             <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">La transition solaire de l'Algérie résout directement son défi hydrique : le dessalement alimenté à l'énergie solaire réduit le coût énergétique et l'empreinte carbone de la production d'eau. The 27 existing desalination plants already supply 17% of potable water; scaling with solar power makes the two transitions mutually reinforcing. Algeria also shares transboundary aquifers (the Northwestern Sahara Aquifer System) with Libya and Tunisia, managed through the OSS observatory.</p>
             <div style="background: #F6F9FB; border-radius: 12px; padding: 16px 18px; margin-top: 2px;">
               <svg viewBox="0 0 420 84" style="width: 100%; height: auto; display: block;">
-                <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">Water stress trajectory, 2015–2024</text>
+                <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">Trajectoire du stress hydrique, 2015–2024</text>
                 <polyline points="16,54 150,52 280,50 400,48" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
-                <circle cx="160" cy="62" r="4" fill="#1F6FB2"><title>2015, water stress ~68% — high withdrawal rate</title></circle>
+                <circle cx="160" cy="62" r="4" fill="#1F6FB2"><title>2015, stress hydrique ~68 % — taux de prélèvement élevé</title></circle>
                 <circle cx="400" cy="48" r="4.5" fill="#1F6FB2"><title>2024, stress hydrique ~70 % — en hausse avec la population et la demande d'irrigation (Base de données ODDD des ONU, 6.4.2)</title></circle>
                 <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">stress en hausse lente · le dessalement et la réutilisation sont les instruments d'atténuation</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Priorités d'investissement (rang)</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">RNV 2026, p.72–73 · RNV 2020, p.85–86</a></div></div>
           </div>
@@ -719,7 +753,7 @@
   </main>
 
   <footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
-    <div style="max-width: 1280px; margin: 0 auto;">Sources : République de Algeria, <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">Second Rapport national volontaire 2026</a> (June 2026); Premier Rapport national volontaire 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour consultation.</div>
+    <div style="max-width: 1280px; margin: 0 auto;">Sources : République d'Algérie, <a href="https://hlpf.un.org/countries/algeria" target="_blank" rel="noopener">Deuxième Revue nationale volontaire 2026</a> (juin 2026); Première Revue nationale volontaire 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/dza" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour consultation.</div>
   </footer>
 </div>
 

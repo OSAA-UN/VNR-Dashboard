@@ -20,6 +20,7 @@
   @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
 </style>
+<script src="nav-bar.js"></script>
 </helmet>
 <div style="min-height: 100vh; display: flex; flex-direction: column;">
   <div style="height: 5px; background: linear-gradient(90deg, #1F6FB2 0%, #1F6FB2 60%, #2E7D5B 60%, #2E7D5B 80%, #B4533A 80%, #B4533A 100%);"></div>
@@ -27,10 +28,10 @@
   <!-- ============ HEADER + NAV ============ -->
   <header style="background: #FFFFFF; border-bottom: 1px solid #E3E7EC; padding: 26px 48px 0 48px;">
     <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Africa Operations / <span style="color: #1F6FB2; font-weight: 500;">Burkina Faso</span> · Tableau de bord pays · RNV 2026</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Opérations Afrique / <span style="color: #1F6FB2; font-weight: 500;">le Burkina Faso</span> · Tableau de bord pays · RNV 2026</div>
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-        <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Burkina Faso</h1>
-        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">Revues nationales volontaires (VNR) 2023 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
+        <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">le Burkina Faso</h1>
+        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">Revues nationales volontaires (RNV) 2023 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
       </div>
       <nav style="display: flex; gap: 4px; margin-top: 14px; flex-wrap: wrap;">
         <button data-tab-btn="overview" style="{{ tabBtn.overview }}" onClick="{{ onTab.overview }}">Aperçu &amp; tendances</button>
@@ -55,7 +56,7 @@
           <button data-tile-btn="elec" style="{{ metricBtn.elec }}" onClick="{{ onMetric.elec }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Couverture électrique</span>
             <span style="font-size: 28px; font-weight: 700; color: #1F6FB2;">53.3%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">renewables 29.7%</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">29,7 % de renouvelables</span>
           </button>
           <button data-tile-btn="water" style="{{ metricBtn.water }}" onClick="{{ onMetric.water }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Eau potable</span>
@@ -70,7 +71,7 @@
           <button data-tile-btn="debt" style="{{ metricBtn.debt }}" onClick="{{ onMetric.debt }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Internet mobile</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">82.1%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">2024 penetration</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">pénétration 2024</span>
           </button>
           <button data-tile-btn="fin" style="{{ metricBtn.fin }}" onClick="{{ onMetric.fin }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Personnes déplacées</span>
@@ -87,6 +88,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -103,15 +107,18 @@
             <circle cx="700" cy="81" r="5.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2024, electricity coverage 53.3%</title></circle>
             <circle cx="60" cy="134" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.2s both;"><title>Renewables share: 29.7% (RNV 2026)</title></circle>
             <circle cx="700" cy="134" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.3s both;"><title>Renewables share: 29.7% — solar parks + mini-grids</title></circle>
-            <circle cx="60" cy="98" r="4.5" fill="#26BDE2" style="animation: pop 0.4s ease 0.1s both;"><title>2016, drinking water access 72.4% (RNV 2026)</title></circle>
-            <circle cx="700" cy="74" r="5.5" fill="#26BDE2" style="animation: pop 0.4s ease 0.4s both;"><title>2025, drinking water access 78.9% — "Zéro corvée d'eau"</title></circle>
+            <circle cx="60" cy="98" r="4.5" fill="#26BDE2" style="animation: pop 0.4s ease 0.1s both;"><title>2016, accès eau potable 72,4 % (RNV 2026)</title></circle>
+            <circle cx="700" cy="74" r="5.5" fill="#26BDE2" style="animation: pop 0.4s ease 0.4s both;"><title>2025, accès eau potable 78,9 % — « Zéro corvée d'eau »</title></circle>
             <text x="712" y="85" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#1F6FB2">53.3%</text>
             <text x="712" y="138" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#2E7D5B">29.7%</text>
             <text x="712" y="78" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#26BDE2">78.9%</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2016</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024/25</text>
           </svg>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La couverture électrique a atteint 53,3 % avec une part renouvelable de 29,7 % grâce aux parcs solaires et aux mini-réseaux — des progrès accomplis malgré les contraintes sécuritaires. L'accès à l'eau potable est passé de 72,4 % (2016) à 78,9 % (2025) grâce à l'opération « Zéro corvée d'eau ». Both represent sovereign development delivery under exceptional conditions.</p>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Accès électricité (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Accès eau (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #26BDE2; border-radius: 2px;"></span>Eau urbaine (%)</span></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La couverture électrique a atteint 53,3 % avec une part renouvelable de 29,7 % grâce aux parcs solaires et aux mini-réseaux — des progrès accomplis malgré les contraintes sécuritaires. L'accès à l'eau potable est passé de 72,4 % (2016) à 78,9 % (2025) grâce à l'opération « Zéro corvée d'eau ». Les deux représentent une livraison souveraine du développement dans des conditions exceptionnelles.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.52</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
         </div>
         </div>
@@ -124,6 +131,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="128" x2="700" y2="128" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="56" x2="700" y2="56" stroke="#EEF1F4" stroke-width="1"></line>
@@ -131,14 +141,14 @@
             <text x="50" y="128" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">4%</text>
             <text x="50" y="56" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">8%</text>
             <line x1="60" y1="92" x2="700" y2="92" stroke="#1F6FB2" stroke-width="1.5" stroke-dasharray="4 4"></line>
-            <text x="66" y="87" font-family="IBM Plex Mono" font-size="10" fill="#1F6FB2">pre-crisis avg 5.2% (2016–2022)</text>
+            <text x="66" y="87" font-family="IBM Plex Mono" font-size="10" fill="#1F6FB2">moyenne pré-crise 5,2 % (2016–2022)</text>
             <defs><linearGradient id="gW4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7D5B" stop-opacity="0.16"></stop><stop offset="1" stop-color="#2E7D5B" stop-opacity="0"></stop></linearGradient></defs>
             <polygon points="60,92 230,92 380,165 510,92 700,87 700,200 60,200" fill="url(#gW4)"></polygon>
             <polyline points="60,92 230,92 380,165 510,92 700,87" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="60" cy="92" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2019–2021, GDP growth ~5.2% average (RNV 2026)</title></circle>
-            <circle cx="380" cy="165" r="5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>2022, GDP growth 1.5% — security disruption trough</title></circle>
+            <circle cx="60" cy="92" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2019–2021, croissance PIB ~5,2 % en moyenne (RNV 2026)</title></circle>
+            <circle cx="380" cy="165" r="5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>2022, croissance PIB 1,5 % — creux dû aux perturbations sécuritaires</title></circle>
             <circle cx="510" cy="92" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.3s both;"><title>2023, recovery begins</title></circle>
-            <circle cx="700" cy="87" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2025, GDP growth 5.3% — above pre-crisis average (RNV 2026)</title></circle>
+            <circle cx="700" cy="87" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.4s both;"><title>2025, croissance PIB 5,3 % — au-dessus de la moyenne pré-crise (RNV 2026)</title></circle>
             <text x="712" y="91" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#2E7D5B">5.3%</text>
             <text x="380" y="183" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B4533A">1.5%</text>
             <text x="60" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2019</text>
@@ -146,11 +156,11 @@
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2025</text>
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>GDP growth</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px; border-style: dashed;"></span>Pre-crisis average</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Croissance du PIB</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px; border-style: dashed;"></span>Moyenne pré-crise</span>
           </div>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La croissance est tombée à 1,5 % en 2022 sous l'effet des perturbations sécuritaires touchant l'agriculture, les mines et les chaînes d'approvisionnement. En 2025, elle a rebondi à 5,3 % — légèrement au-dessus de la moyenne 2016–2022 de 5,2 % — grâce aux réformes et à la relance productive portée par la stratégie « Produire local ». The review presents this as a sovereignty dividend: local production reducing external vulnerabilities.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">WHO/UNICEF Joint Monitoring Programme 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La croissance est tombée à 1,5 % en 2022 sous l'effet des perturbations sécuritaires touchant l'agriculture, les mines et les chaînes d'approvisionnement. En 2025, elle a rebondi à 5,3 % — légèrement au-dessus de la moyenne 2016–2022 de 5,2 % — grâce aux réformes et à la relance productive portée par la stratégie « Produire local ». Le rapport présente cela comme un dividende de souveraineté : la production locale réduisant les vulnérabilités externes.</p>
+          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">Programme conjoint de surveillance OMS/UNICEF 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
         </div>
         </div>
 
@@ -162,6 +172,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="155" x2="700" y2="155" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="110" x2="700" y2="110" stroke="#EEF1F4" stroke-width="1"></line>
@@ -173,7 +186,7 @@
             <text x="50" y="69" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">15%</text>
             <text x="50" y="24" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">20%</text>
             <line x1="60" y1="82" x2="700" y2="82" stroke="#B4533A" stroke-width="1.5" stroke-dasharray="4 4"></line>
-            <text x="66" y="94" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">mobile internet 82.1%, roads degraded — "contrasted" performance</text>
+            <text x="66" y="94" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">internet mobile 82,1 %, routes dégradées — performance « contrastée »</text>
             <polyline points="60,79 348,65 636,41" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="124,130 636,105" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"></polyline>
             <circle cx="60" cy="79" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, recettes publiques totales, 13,4 % du PIB</title></circle>
@@ -188,9 +201,9 @@
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Electricity coverage</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Couverture électrique</span>
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px; border-style: dashed;"></span>Renouvelables</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #26BDE2; border-radius: 2px;"></span>Drinking water</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #26BDE2; border-radius: 2px;"></span>Eau potable</span>
           </div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les performances aux ODD 9 et 11 sont « contrastées » selon le rapport : l'internet mobile à 82,1 % avance rapidement tandis que le réseau routier s'est dégradé sous la pression sécuritaire. L'industrie manufacturière a retrouvé 11,3 % du PIB avec la stratégie « Produire local ».</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
@@ -205,6 +218,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -214,20 +230,22 @@
             <text x="50" y="84" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">10%</text>
             <text x="50" y="24" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">15%</text>
             <line x1="520" y1="20" x2="520" y2="200" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 4"></line>
-            <text x="528" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">2022 security trough</text>
+            <text x="528" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">2022 creux sécuritaire</text>
             <polyline points="188,68 444,86 636,116" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="188,140 444,88 636,69" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, ~11% (indicative trajectory)</title></circle>
-            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
-            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, ~5% (indicative trajectory)</title></circle>
+            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Interne 2017, ~11 % (trajectoire indicative)</title></circle>
+            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Interne 2024, part en baisse</title></circle>
+            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Externe 2017, ~5 % (trajectoire indicative)</title></circle>
             <circle cx="636" cy="69" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
             <text x="648" y="73" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">10.9%</text>
-            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">internal</text>
+            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">interne</text>
             <text x="188" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2017</text>
             <text x="444" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2021</text>
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
-          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le Burkina Faso opère dans le cadre monétaire UEMOA/BCEAO (franc CFA), assurant la discipline des prix mais limitant les outils monétaires. Les dépenses sécuritaires extraordinaires compriment l'espace budgétaire : opérations militaires, soutien aux PDI et aide alimentaire d'urgence réduisent les investissements disponibles pour l'eau, l'énergie et le développement productif.</p>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Croissance du PIB (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Inflation (%)</span></div>
+          <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le le Burkina Faso opère dans le cadre monétaire UEMOA/BCEAO (franc CFA), assurant la discipline des prix mais limitant les outils monétaires. Les dépenses sécuritaires extraordinaires compriment l'espace budgétaire : opérations militaires, soutien aux PDI et aide alimentaire d'urgence réduisent les investissements disponibles pour l'eau, l'énergie et le développement productif.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.87, 121</a></div></div>
         </div>
         </div>
@@ -248,7 +266,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Education <span style="color: #9AA7B4; font-size: 11.5px;">SDG 4</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13.5px;">Réponse aux PDI <span style="color: #9AA7B4; font-size: 11.5px;">SDG 1</span></span><div style="height: 16px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement du Burkina Faso.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Les partenaires de développement, bailleurs bilatéraux et multilatéraux tels que les agences des Nations Unies et les banques de développement, se sont engagés à hauteur de 1,5 milliard de dollars jusqu'en 2035, horizon du cadre national de financement du le Burkina Faso.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.122 (Graphique 74)</a></div></div>
         </div>
         </div>
@@ -260,7 +278,7 @@
       <div data-screen-label="Focus Goals" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Objectifs prioritaires 2026 : Réalisations et priorités</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau 2026. Les chiffres combinent Burkina Faso's Rapport national volontaire 2026 with the Base de données ODD des Nations Unies, sélectionnez un objectif pour explorer.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau 2026. Les chiffres combinent la Revue nationale volontaire 2026 du Burkina Faso avec la Base de données ODD des Nations Unies — sélectionnez un objectif pour explorer.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
@@ -312,18 +330,19 @@
           <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 18px; font-weight: 700;">SDG 8 · Travail décent et croissance économique</div>
             <svg viewBox="0 0 380 130" style="width: 100%; height: auto; display: block;">
-              <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">GDP growth trajectory, 2019–2025</text>
+              <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">Trajectoire de croissance du PIB, 2019–2025</text>
               <line x1="30" y1="110" x2="360" y2="110" stroke="#E3E7EC" stroke-width="1"></line>
               <polyline points="40,60 140,60 200,100 280,60 350,56" fill="none" stroke="#2E7D5B" stroke-width="3" stroke-linecap="round"></polyline>
               <circle cx="40" cy="60" r="5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2020, GDP growth ~5.2%</title></circle>
-              <circle cx="200" cy="100" r="5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>2022, GDP growth 1.5% — security trough</title></circle>
-              <circle cx="350" cy="56" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.3s both;"><title>2025, GDP growth 5.3% — above pre-crisis average</title></circle>
+              <circle cx="200" cy="100" r="5" fill="#B4533A" style="animation: pop 0.4s ease 0.2s both;"><title>2022, croissance PIB 1,5 % — creux sécuritaire</title></circle>
+              <circle cx="350" cy="56" r="5.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.3s both;"><title>2025, croissance PIB 5,3 % — au-dessus de la moyenne pré-crise</title></circle>
               <text x="56" y="50" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#2E7D5B">5.2%</text>
               <text x="175" y="118" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B4533A">1.5%</text>
               <text x="40" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2020</text>
               <text x="200" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2022</text>
               <text x="350" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2025</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.58–59</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 9.1.1 &amp; 9.c.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
@@ -336,19 +355,20 @@
         <div data-goal-panel="s11" style="{{ goalPanel.s11 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 9 · Industrie, innovation et infrastructure</div>
+            <div style="font-size: 18px; font-weight: 700;">ODD 9 · Industrie, innovation et infrastructure</div>
             <div style="display: flex; align-items: center; gap: 24px;">
               <svg viewBox="0 0 120 120" style="width: 120px; height: 120px;">
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#EEF1F4" stroke-width="16"></circle>
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#2E7D5B" stroke-width="16" stroke-dasharray="247.4 54.1" stroke-linecap="round" transform="rotate(-90 60 60)"><title>34,3 % de la population urbaine dans des établissements informels (2020, Base de données ODD des ONU, indicateur 11.1.1)</title></circle>
                 <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#B0791F">82.1%</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Couverture internet mobile (%)</span></div>
               <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">pénétration internet mobile en 2024 — l'infrastructure numérique dépassant le réseau routier physique</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.66–67</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 11.1.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
-            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">La pénétration d'internet mobile à 82,1 % est la réalisation phare de l'ODD 9 — accélérée malgré la crise sécuritaire, permettant la monnaie mobile, l'administration électronique et l'information sur les marchés agricoles across the country, including in areas where physical access is limited.</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #E5F1EB; color: #2E7D5B; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Réalisation</span><span style="font-size: 14px; line-height: 1.55;">La pénétration d'internet mobile à 82,1 % est la réalisation phare de l'ODD 9 — accélérée malgré la crise sécuritaire, permettant la monnaie mobile, l'administration électronique et l'information sur les marchés agricoles à travers le pays, y compris dans les zones où l'accès physique est limité.</span></div>
             <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; background: #EAF1F8; color: #1F6FB2; padding: 4px 10px; border-radius: 999px; align-self: flex-start;">Priorité à venir</span><span style="font-size: 14px; line-height: 1.55;">La réhabilitation du réseau routier est la priorité critique de reconstruction : l'insécurité a dégradé l'infrastructure physique tandis que l'internet mobile avance rapidement.</span></div>
           </div>
         </div>
@@ -379,14 +399,14 @@
       <div data-screen-label="Mise en œuvre conjointe" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Mise en œuvre conjointe des ODD et de l'Agenda 2063</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Le rapport 2026 du Burkina Faso s'articule autour d'un récit national unique — reconquête, refondation et souveraineté — intégrant l'Agenda 2030 et l'Agenda 2063 dans le programme du gouvernement de transition. The PNDES II maps SDG targets to sector strategies and quarterly performance reviews, with the 2026 VNR marking the third accountability cycle.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Le rapport 2026 du le Burkina Faso s'articule autour d'un récit national unique — reconquête, refondation et souveraineté — intégrant l'Agenda 2030 et l'Agenda 2063 dans le programme du gouvernement de transition. The PNDES II maps SDG targets to sector strategies and quarterly performance reviews, with the 2026 VNR marking the third accountability cycle.</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 34px 38px; display: flex; flex-direction: column; gap: 26px;">
-            <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">PNDES II &amp; refoundation — three review cycles under one frame</div>
+            <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">PNDES II &amp; refondation — trois cycles d'examen sous un seul cadre</div>
             <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>PNDES II self-assessment</span><span style="color: #2E7D5B; font-weight: 600;">Croissance 5.3% — above pre-crisis average</span></div>
+              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>Auto-évaluation PNDES II</span><span style="color: #2E7D5B; font-weight: 600;">Croissance 5,3 % — au-dessus de la moyenne pré-crise</span></div>
               <div style="display: flex; height: 34px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both;">
                 <div style="width: 45%; background: #2E7D5B;" title="On track"></div>
                 <div style="width: 25%; background: #D9A94A;" title="Under security pressure"></div>
@@ -394,10 +414,10 @@
               </div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 18px;">
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Water &amp; energy sovereignty</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 79%; background: #2E7D5B;"></div><div style="width: 21%; background: #D9A94A;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">53.3%/78.9%</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Eau &amp; souveraineté énergétique</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 79%; background: #2E7D5B;"></div><div style="width: 21%; background: #D9A94A;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">53.3%/78.9%</span></div>
               <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Relance productive</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 53%; background: #2E7D5B;"></div><div style="width: 30%; background: #D9A94A;"></div><div style="width: 17%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">5.3% GDP</span></div>
               <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Infrastructure numérique</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 82%; background: #2E7D5B;"></div><div style="width: 18%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">82.1% 4G</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Reconquest &amp; LNOB</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 40%; background: #2E7D5B;"></div><div style="width: 30%; background: #D9A94A;"></div><div style="width: 30%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4533A; font-weight: 600;">1.99M IDPs</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Reconquête &amp; ne laisser personne pour compte</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 40%; background: #2E7D5B;"></div><div style="width: 30%; background: #D9A94A;"></div><div style="width: 30%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B4533A; font-weight: 600;">1.99M IDPs</span></div>
             </div>
             <div style="display: flex; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #5A6B7C;">
               <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #2E7D5B;"></span>Sur la bonne voie</span>
@@ -475,7 +495,7 @@
 
             <div data-inst-panel="corr" style="{{ instPanel.corr }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Produire Local — Produce Local</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Substitution aux importations et relance de l'industrie</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Produire local — Substitution aux importations</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Substitution aux importations et relance de l'industrie</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">11.3%</div><div style="font-size: 12px; color: #5A6B7C;">part industrie dans le PIB</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">5.3%</div><div style="font-size: 12px; color: #5A6B7C;">GDP growth 2025 — productive revival</div></div>
@@ -487,10 +507,10 @@
 
             <div data-inst-panel="pddsp" style="{{ instPanel.pddsp }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">PNDES II — Plan national de développement économique et social</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">SDG integration framework, transition period</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">PNDES II — Plan national de développement économique et social</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Cadre d'intégration des ODD, période de transition</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">17/17</div><div style="font-size: 12px; color: #5A6B7C;">ODD intégrés dans la planification nationale</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">3</div><div style="font-size: 12px; color: #5A6B7C;">VNR cycles since 2019</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">3</div><div style="font-size: 12px; color: #5A6B7C;">cycles RNV depuis 2019</div></div>
               </div>
               <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le PNDES II traduit l'Agenda 2030 et l'Agenda 2063 en plans ministériels sectoriels et en budget national. Les revues de performance trimestrielles du ministère de l'Économie suivent les progrès des indicateurs ODD et éclairent le cycle de révision budgétaire annuelle. Decentralisation to communes continues to deliver water, health and education services using PNDES II indicators under adapted transition governance.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.111–112</a></div></div>
@@ -505,7 +525,7 @@
                 <div><div style="font-size: 30px; font-weight: 700; color: #00689D;">3 axes</div><div style="font-size: 12px; color: #5A6B7C;">territory, state, sovereignty</div></div>
               </div>
               <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le rapport reconnaît franchement que la sécurité est une condition préalable à tout autre objectif : reprendre le territoire permet la réouverture des écoles, des cliniques et des points d'eau.</p>
-              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.112, 114</a> · <a href="https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=BI" target="_blank" rel="noopener">World Bank projects, Burkina Faso</a></div></div>
+              <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.112, 114</a> · <a href="https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=BI" target="_blank" rel="noopener">World Bank projects, le Burkina Faso</a></div></div>
             </div>
             </div>
 
@@ -516,7 +536,7 @@
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">1.99M</div><div style="font-size: 12px; color: #5A6B7C;">people displaced, 2023</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">Priority</div><div style="font-size: 12px; color: #5A6B7C;">SDG LNOB — leave no one behind</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">La réponse d'urgence fournit une aide alimentaire, l'approvisionnement en eau par camion et des unités de santé mobiles à 1,99 million de PDI. Reconstruction plans integrate them into the formal service-delivery network as territory is stabilised. The review frames displacement response as the most urgent SDG delivery challenge — the test of "leave no one behind" in Burkina Faso's context.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">La réponse d'urgence fournit une aide alimentaire, l'approvisionnement en eau par camion et des unités de santé mobiles à 1,99 million de PDI. Les plans de reconstruction les intègrent dans le réseau formel de prestation de services au fur et à mesure que le territoire est stabilisé. Le rapport présente la réponse aux déplacements comme le défi le plus urgent pour la mise en œuvre des ODD — le test de « ne laisser personne pour compte » dans le contexte du Burkina Faso.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.86, 120</a></div></div>
             </div>
             </div>
@@ -530,7 +550,7 @@
       <div data-screen-label="Financement" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Financement des objectifs</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Le financement du Burkina Faso repose sur les exportations d'or, les revenus du coton, la fiscalité intérieure et l'APD, le gouvernement de transition mettant l'accent sur la mobilisation des ressources nationales et le financement « souverain ». Security costs are compressing the fiscal space available for the SDGs — the binding constraint the review is candid about.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Le financement du Burkina Faso repose sur les exportations d'or, les revenus du coton, la fiscalité intérieure et l'APD, le gouvernement de transition mettant l'accent sur la mobilisation des ressources nationales et le financement « souverain ». Les coûts sécuritaires compriment l'espace budgétaire disponible pour les ODD — la contrainte déterminante sur laquelle le rapport est explicite.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
@@ -548,15 +568,16 @@
               <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">7.8% '16</text>
               <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#2E7D5B">10.6% '24</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.86–88, 121</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F7EEDC; color: #B0791F; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">2</span><span style="font-size: 15px; font-weight: 600;">Finance climatique et innovante</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="The review calls for institutional capacity-building to access both funds, plus biodiversity-finance instruments"><strong>Multilateral programmes</strong>, AfDB, IDA, UEMOA solidarity</div>
+              <div title="The review calls for institutional capacity-building to access both funds, plus biodiversity-finance instruments"><strong>Programmes multilatéraux</strong>, BAD, IDA, solidarité UEMOA</div>
               <div title="Named explicitly among sources to explore beyond traditional mechanisms"><strong>Bilateral ODA</strong>, en révision dans le contexte de transition</div>
-              <div title="The financing roadmap's stated end-state, with green-economy business plans for small businesses"><strong>Climate finance</strong>, parcs solaires et infrastructure hydraulique</div>
+              <div title="The financing roadmap's stated end-state, with green-economy business plans for small businesses"><strong>Finance climatique</strong>, parcs solaires et infrastructure hydraulique</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.123–125</a></div></div>
           </div>
@@ -575,7 +596,7 @@
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
             <div style="font-size: 16px; font-weight: 600;">Engagements des partenaires de financement jusqu'en 2035, par secteur</div>
-            <div style="font-size: 12.5px; color: #7A8A9A;">Total $1,507,171,475 · la longueur des barres indique le rang</div>
+            <div style="font-size: 12.5px; color: #7A8A9A;">Total 1 507 171 475 $ · la longueur des barres indique le rang</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 14px; ">
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Emplois décents <span style="color: #9AA7B4; font-size: 11px;">SDG 8</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (RNV 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
@@ -586,7 +607,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Education <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Poverty <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le PNDES II associe les cibles ODD aux allocations budgétaires dans les ministères sectoriels. Les dépenses sécuritaires sont la principale pression budgétaire ; les autres priorités d'investissement — eau, souveraineté énergétique et relance productive — sont financées par les revenus de l'or et du coton, les obligations souveraines UEMOA et les sources multilatérales concessional flows. Bar lengths show relative prominence in RNV 2026.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le PNDES II associe les cibles ODD aux allocations budgétaires dans les ministères sectoriels. Les dépenses sécuritaires sont la principale pression budgétaire ; les autres priorités d'investissement — eau, souveraineté énergétique et relance productive — sont financées par les revenus de l'or et du coton, les obligations souveraines UEMOA et les flux concessionnels multilatéraux. La longueur des barres indique la prominence relative dans le RNV 2026.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.122 (Graphique 74)</a></div></div>
         </div>
       </div>
@@ -597,13 +618,16 @@
       <div data-screen-label="Debt and Revenue" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Durabilité de la dette et revenus</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Le Burkina Faso opère au sein de l'union monétaire UEMOA/BCEAO (franc CFA), assurant la stabilité structurelle des prix mais supprimant les outils d'ajustement monétaire. Les dépenses sécuritaires compriment l'espace budgétaire ; la reprise de la croissance à 5,3 % est le principal argument de viabilité de la dette avancé par le rapport.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Le le Burkina Faso opère au sein de l'union monétaire UEMOA/BCEAO (franc CFA), assurant la stabilité structurelle des prix mais supprimant les outils d'ajustement monétaire. Les dépenses sécuritaires compriment l'espace budgétaire ; la reprise de la croissance à 5,3 % est le principal argument de viabilité de la dette avancé par le rapport.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Reprise de la croissance — de la crise à la résilience</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -611,19 +635,21 @@
               <text x="32" y="104" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">6%</text>
               <text x="32" y="54" text-anchor="end" font-family="IBM Plex Mono" font-size="9" fill="#9AA7B4">12%</text>
               <line x1="330" y1="26" x2="330" y2="150" stroke="#B4533A" stroke-width="1" stroke-dasharray="3 4"></line>
-              <text x="336" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">2022 security trough</text>
+              <text x="336" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">2022 creux sécuritaire</text>
               <polyline points="110,58 280,72 410,92" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
               <polyline points="110,110 280,74 410,59" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, larger share (indicative trajectory)</title></circle>
-              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
-              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, smaller share (indicative trajectory)</title></circle>
+              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Interne 2017, part plus élevée (trajectoire indicative)</title></circle>
+              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Interne 2024, part en baisse</title></circle>
+              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Externe 2017, part plus faible (trajectoire indicative)</title></circle>
               <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
               <text x="418" y="63" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">10.9%</text>
-              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">internal</text>
+              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">interne</text>
               <text x="110" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2017</text>
               <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
               <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Recettes internes (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Financement externe (%)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">La croissance est revenue à 5,3 % — au-dessus de la moyenne pré-crise à long terme — grâce aux réformes et à la relance productive « Produire local ». This is presented as evidence that the sovereign economic strategy is delivering despite the security context, and as the fiscal foundation for sustaining water, energy and social services.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.121</a></div></div>
           </div>
@@ -631,6 +657,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Cadre monétaire UEMOA et discipline des prix</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -649,7 +678,9 @@
               <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
               <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
-            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Dans le cadre UEMOA/BCEAO, le Burkina Faso bénéficie de la stabilité des prix du franc CFA mais ne dispose d'aucun outil monétaire autonome. La reprise de croissance du rapport repose entièrement sur des réformes du côté de l'offre — "Produire local," energy sovereignty, and the reconquest that allows economic activity to resume in previously disrupted areas.</p>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes nationales (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Financement externe (%)</span></div>
+            <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Dans le cadre UEMOA/BCEAO, le le Burkina Faso bénéficie de la stabilité des prix du franc CFA mais ne dispose d'aucun outil monétaire autonome. La reprise de croissance du rapport repose entièrement sur des réformes du côté de l'offre — "Produire local," energy sovereignty, and the reconquest that allows economic activity to resume in previously disrupted areas.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
           </div>
         </div>
@@ -692,7 +723,7 @@
         <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; align-items: stretch;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px;">
             <div style="font-size: 16px; font-weight: 600;">Le défi hydrique sahélien</div>
-            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Le Burkina Faso fait face à une véritable pénurie d'eau dans le nord sahélien : précipitations irrégulières, eaux souterraines comme source principale, et changement climatique prolongeant les sécheresses tout en réduisant la recharge. The 21.1% still without safe water live predominantly in the same areas most affected by displacement — reaching them requires solar-powered borehole deepening and conflict-sensitive infrastructure.</p>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Le le Burkina Faso fait face à une véritable pénurie d'eau dans le nord sahélien : précipitations irrégulières, eaux souterraines comme source principale, et changement climatique prolongeant les sécheresses tout en réduisant la recharge. The 21.1% still without safe water live predominantly in the same areas most affected by displacement — reaching them requires solar-powered borehole deepening and conflict-sensitive infrastructure.</p>
             <div style="background: #F6F9FB; border-radius: 12px; padding: 16px 18px; margin-top: 2px;">
               <svg viewBox="0 0 420 84" style="width: 100%; height: auto; display: block;">
                 <text x="8" y="12" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">Water access trend, 2016–2025</text>
@@ -701,6 +732,7 @@
                 <circle cx="400" cy="40" r="4.5" fill="#1F6FB2"><title>2025, drinking water 78.9% — "Zéro corvée d'eau" gains</title></circle>
                 <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">gain régulier de +6,5 points 2016–2025 · la mise en œuvre se poursuit dans les zones touchées par la sécurité</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Priorités d'investissement (rang)</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.72–73 · RNV 2020, p.85–86</a></div></div>
           </div>
@@ -715,7 +747,7 @@
         <!-- WATER SECURITY ACCENT STRIP -->
         <div style="background: #FBF1EE; border: 1px solid #EAD3CB; border-left: 5px solid #B4533A; border-radius: 14px; padding: 24px 30px; display: flex; flex-direction: column; gap: 8px;">
           <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #B4533A;"></span><span style="font-size: 16px; font-weight: 600; color: #8A3B27;">L'eau dans un contexte de conflit</span></div>
-          <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #6B4A40;">Les 1,99 million de PDI font face à une insécurité hydrique aiguë : les camps et les communautés d'accueil dépendent de l'approvisionnement en eau par camion et des forages d'urgence. Climate pressure compounds insecurity: irregular rainfall reduces agricultural productivity in areas already under stress. <strong>L'Année de la gestion durable de l'eau pour le Burkina Faso est une année de reconstruction des points d'eau et de réponse aux déplacements dans un contexte sensible aux conflits.</strong> — un défi de gouvernance et de logistique autant que de finance et d'infrastructure.</p>
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #6B4A40;">Les 1,99 million de PDI font face à une insécurité hydrique aiguë : les camps et les communautés d'accueil dépendent de l'approvisionnement en eau par camion et des forages d'urgence. Climate pressure compounds insecurity: irregular rainfall reduces agricultural productivity in areas already under stress. <strong>L'Année de la gestion durable de l'eau pour le le Burkina Faso est une année de reconstruction des points d'eau et de réponse aux déplacements dans un contexte sensible aux conflits.</strong> — un défi de gouvernance et de logistique autant que de finance et d'infrastructure.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #B08A7E;">Source : <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">RNV 2026, p.70–74</a></div></div>
         </div>
       </div>
@@ -725,7 +757,7 @@
   </main>
 
   <footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
-    <div style="max-width: 1280px; margin: 0 auto;">Sources : Burkina Faso, <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">Second Rapport national volontaire 2026</a> (June 2026); Premier Rapport national volontaire 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour consultation.</div>
+    <div style="max-width: 1280px; margin: 0 auto;">Sources : le Burkina Faso, <a href="https://hlpf.un.org/countries/burkina-faso" target="_blank" rel="noopener">Deuxième Revue nationale volontaire 2026</a> (juin 2026); Première Revue nationale volontaire 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/bfa" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour consultation.</div>
   </footer>
 </div>
 
@@ -735,7 +767,7 @@
     <rect x="0" y="0" width="1200" height="30" fill="#1F6FB2"></rect>
     <rect x="720" y="0" width="240" height="30" fill="#2E7D5B"></rect>
     <rect x="960" y="0" width="240" height="30" fill="#B4533A"></rect>
-    <text x="50" y="230" font-family="Georgia, serif" font-size="90" font-weight="700" fill="#1B2A3A">Burkina Faso</text>
+    <text x="50" y="230" font-family="Georgia, serif" font-size="90" font-weight="700" fill="#1B2A3A">le Burkina Faso</text>
     <text x="122" y="300" font-family="monospace" font-size="30" letter-spacing="6" fill="#7A8A9A">COUNTRY DASHBOARD</text>
     <rect x="120" y="400" width="300" height="200" rx="16" fill="#FFFFFF" stroke="#E3E7EC" stroke-width="2"></rect>
     <rect x="450" y="400" width="300" height="200" rx="16" fill="#FFFFFF" stroke="#E3E7EC" stroke-width="2"></rect>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100vh; background: #F5EFE0; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #1A1A1A; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+@media print { .no-print { display: none !important; } }
+</style>
+</helmet>
+
+<!-- Nav -->
+<div class="no-print" style="background:#1A2B1A;padding:0 32px;height:46px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;">
+  <a href="index.html" style="font-size:12px;font-weight:500;padding:5px 13px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.65);">← All countries</a>
+  <div style="width:1px;height:18px;background:rgba(255,255,255,0.15);"></div>
+  <div style="display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;">
+    <span style="color:rgba(255,255,255,0.35);">① Index</span><span style="color:rgba(255,255,255,0.18);">›</span>
+    <span style="background:#2E7D5B;color:#fff;font-weight:600;padding:2px 9px;border-radius:3px;">② Fact sheet</span>
+    <span style="color:rgba(255,255,255,0.18);">›</span><span style="color:rgba(255,255,255,0.35);">③ Dashboard</span>
+  </div>
+  <div style="flex:1;"></div>
+  <a href="factsheets.pdf" download style="font-size:12px;font-weight:500;padding:5px 13px;border-radius:5px;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.65);">↓ PDF</a>
+  <a href="Tanzania Dashboard.dc.html?country=Tanzania&factsheet=Tanzania%20Factsheet.dc.html" style="font-size:12px;font-weight:600;padding:6px 16px;border-radius:5px;background:#2E7D5B;color:#fff;">Dashboard →</a>
+</div>
+
+<div style="min-height:100vh;">
+
+  <!-- Header -->
+  <div style="background:#2B4A30;padding:28px 48px 24px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;">Voluntary National Review &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; High-Level Political Forum</div>
+    <div style="font-size:clamp(56px,7vw,96px);font-weight:700;letter-spacing:-0.01em;color:#fff;line-height:0.9;margin-bottom:20px;">TANZANIA</div>
+    <div style="height:2px;background:rgba(255,255,255,0.20);margin-bottom:20px;"></div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start;">
+      <div style="font-size:16px;line-height:1.55;color:rgba(255,255,255,0.82);font-weight:300;max-width:680px;">Accelerating the 2030 Agenda through whole-of-nation PLUS action, guided by Tanzania Development Vision (DIRA) 2050.</div>
+      <div style="background:#8B2020;padding:10px 14px;max-width:220px;flex-shrink:0;">
+        <div style="font-size:10px;line-height:1.5;color:rgba(255,255,255,0.9);font-style:italic;">This is a draft document prepared for consultation and review. The content is subject to revision and should not be cited or circulated as a final version.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:36px 48px 56px;">
+
+    <!-- Section 1 -->
+    <div style="font-size:22px;font-weight:700;color:#1A1A1A;margin-bottom:20px;">1. Six themes driving Tanzania's review</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:40px;">
+
+      <div style="background:#fff;border:1px solid #D8CEBC;">
+        <div style="background:#F0E8D5;padding:8px 12px;border-bottom:1px solid #D8CEBC;"><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:#1A9AC4;font-weight:500;">SDG 6 · Clean Water &amp; Sanitation</span></div>
+        <div style="padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:34px;height:34px;background:#26BDE2;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#fff;flex-shrink:0;">6</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;line-height:1.2;color:#1A1A1A;margin-bottom:6px;">Water Access &amp; Self-Reliance</div>
+            <div style="font-size:11.5px;line-height:1.6;color:#45525F;">Rural water coverage rose to 85% and regional centres to 92%, with non-revenue water and sanitation flagged as priorities for acceleration.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #D8CEBC;">
+        <div style="background:#F0E8D5;padding:8px 12px;border-bottom:1px solid #D8CEBC;"><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:#B8900A;font-weight:500;">SDG 7 · Affordable &amp; Clean Energy</span></div>
+        <div style="padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:34px;height:34px;background:#FCC30B;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#1A1A1A;flex-shrink:0;">7</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;line-height:1.2;color:#1A1A1A;margin-bottom:6px;">Energy Security as a Growth Engine</div>
+            <div style="font-size:11.5px;line-height:1.6;color:#45525F;">The Julius Nyerere Hydropower Project doubled generation capacity and connected all 26 regions; electricity access reached 86% with renewables at 80%.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #D8CEBC;">
+        <div style="background:#F0E8D5;padding:8px 12px;border-bottom:1px solid #D8CEBC;"><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:#D4500A;font-weight:500;">SDG 9 · Industry, Innovation &amp; Infrastructure</span></div>
+        <div style="padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:34px;height:34px;background:#FD6925;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#fff;flex-shrink:0;">9</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;line-height:1.2;color:#1A1A1A;margin-bottom:6px;">Connectivity Revolution</div>
+            <div style="font-size:11.5px;line-height:1.6;color:#45525F;">The Standard Gauge Railway cut Dar–Dodoma travel from 12 hours to 3, carrying nearly 5 million passengers, while internet penetration surged from 49% to 85%.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #D8CEBC;">
+        <div style="background:#F0E8D5;padding:8px 12px;border-bottom:1px solid #D8CEBC;"><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:#B07A1A;font-weight:500;">SDG 11 · Sustainable Cities &amp; Communities</span></div>
+        <div style="padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:34px;height:34px;background:#FD9D24;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;">11</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;line-height:1.2;color:#1A1A1A;margin-bottom:6px;">Reshaping Economic Geography</div>
+            <div style="font-size:11.5px;line-height:1.6;color:#45525F;">Expanded ports, aviation and the railway make Tanzania a regional trade and mobility hub, opening new opportunities across East Africa.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #D8CEBC;">
+        <div style="background:#F0E8D5;padding:8px 12px;border-bottom:1px solid #D8CEBC;"><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:#2E7D5B;font-weight:500;">SDG 13 · Climate Action</span></div>
+        <div style="padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:34px;height:34px;background:#3F9142;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;">13</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;line-height:1.2;color:#1A1A1A;margin-bottom:6px;">Climate Resilience Pathway</div>
+            <div style="font-size:11.5px;line-height:1.6;color:#45525F;">Strengthening agriculture, water and urban systems tackles disaster preparedness — one of three acceleration pathways for 2026–2030 under Dira 2050.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #D8CEBC;">
+        <div style="background:#F0E8D5;padding:8px 12px;border-bottom:1px solid #D8CEBC;"><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.1em;text-transform:uppercase;color:#19486A;font-weight:500;">SDG 17 · Partnerships for the Goals</span></div>
+        <div style="padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:34px;height:34px;background:#19486A;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;">17</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;line-height:1.2;color:#1A1A1A;margin-bottom:6px;">Fiscal Self-Reliance</div>
+            <div style="font-size:11.5px;line-height:1.6;color:#45525F;">Domestic revenue climbed to 16.4% of GDP and budget self-reliance rose from 58% to 78%, reinforcing the financing base for the SDGs.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Section 2 -->
+    <div style="font-size:22px;font-weight:700;color:#1A1A1A;margin-bottom:20px;">2. Theme continuity across review cycles</div>
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-bottom:6px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;font-style:italic;color:#C17F2A;">2023</div>
+      <div></div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;font-style:italic;color:#C17F2A;text-align:right;">2026</div>
+    </div>
+    <div style="height:2px;background:linear-gradient(90deg,#C17F2A 0%,#8B7355 100%);margin-bottom:10px;"></div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:40px;">
+
+      <div style="display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;gap:10px;background:#fff;border:1px solid #D8CEBC;padding:10px 16px;">
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:500;">Clean Water &amp; Electricity Access Gains</div>
+        <div style="text-align:center;"><span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.12em;font-weight:700;padding:4px 14px;border-radius:999px;border:1.5px solid #1A9E8A;color:#1A9E8A;text-transform:uppercase;">Sustained</span></div>
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:600;text-align:right;">Energy Security &amp; Water Self-Reliance</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;gap:10px;background:#F5EFE0;border:1px solid #D8CEBC;padding:10px 16px;">
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:500;">Infrastructure for Industry (rail, road, air)</div>
+        <div style="text-align:center;"><span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.12em;font-weight:700;padding:4px 14px;border-radius:999px;border:1.5px solid #7B3FA8;color:#7B3FA8;text-transform:uppercase;">Evolved</span></div>
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:600;text-align:right;">Connectivity Revolution &amp; Regional Trade Hub</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;gap:10px;background:#fff;border:1px solid #D8CEBC;padding:10px 16px;">
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:500;">Recovery from Global Shocks (COVID-19, conflict)</div>
+        <div style="text-align:center;"><span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.12em;font-weight:700;padding:4px 14px;border-radius:999px;border:1.5px solid #7B3FA8;color:#7B3FA8;text-transform:uppercase;">Evolved</span></div>
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:600;text-align:right;">Resilience via Dira 2050 &amp; Self-Reliance</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;gap:10px;background:#F5EFE0;border:1px solid #D8CEBC;padding:10px 16px;">
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:500;">Leave No One Behind &amp; Human Capital</div>
+        <div style="text-align:center;"><span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.12em;font-weight:700;padding:4px 14px;border-radius:999px;border:1.5px solid #1A9E8A;color:#1A9E8A;text-transform:uppercase;">Sustained</span></div>
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:600;text-align:right;">Whole-of-Nation PLUS Inclusion</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 130px 1fr;align-items:center;gap:10px;background:#fff;border:1px solid #D8CEBC;padding:10px 16px;">
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:500;">Innovative Financing &amp; Partnerships</div>
+        <div style="text-align:center;"><span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.12em;font-weight:700;padding:4px 14px;border-radius:999px;border:1.5px solid #7B3FA8;color:#7B3FA8;text-transform:uppercase;">Evolved</span></div>
+        <div style="font-size:12.5px;color:#1A1A1A;font-weight:600;text-align:right;">Broadening the Tax Base &amp; DRM</div>
+      </div>
+
+    </div>
+
+    <!-- Section 3: Heatmap -->
+    <div style="font-size:22px;font-weight:700;color:#1A1A1A;margin-bottom:6px;">3. Recurring concepts in the Key Messages</div>
+    <div style="font-size:13.5px;font-style:italic;color:#1A1A1A;margin-bottom:4px;">Tanzania's message centres on transformation, climate resilience and fiscal self-reliance under Dira 2050.</div>
+    <div style="font-size:11px;font-style:italic;color:#5A5040;margin-bottom:20px;">Numbers indicate the frequency of references to the concept in the Key Messages document</div>
+
+    <div style="display:flex;align-items:flex-end;gap:8px;height:130px;margin-bottom:8px;">
+      <div style="flex:1;"><div style="width:100%;background:#2B4A30;border-radius:2px 2px 0 0;height:130px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;"><span style="font-size:20px;font-weight:700;color:#fff;">10</span></div></div>
+      <div style="flex:1;"><div style="width:100%;background:#3A6040;border-radius:2px 2px 0 0;height:114px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;"><span style="font-size:20px;font-weight:700;color:#fff;">8</span></div></div>
+      <div style="flex:1;"><div style="width:100%;background:#4A7850;border-radius:2px 2px 0 0;height:98px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;"><span style="font-size:20px;font-weight:700;color:#fff;">7</span></div></div>
+      <div style="flex:1;"><div style="width:100%;background:#5C9062;border-radius:2px 2px 0 0;height:98px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;"><span style="font-size:20px;font-weight:700;color:#fff;">7</span></div></div>
+      <div style="flex:1;"><div style="width:100%;background:#72A878;border-radius:2px 2px 0 0;height:98px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;"><span style="font-size:20px;font-weight:700;color:#fff;">7</span></div></div>
+      <div style="flex:1;"><div style="width:100%;background:#85BA8B;border-radius:2px 2px 0 0;height:98px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;"><span style="font-size:20px;font-weight:700;color:#fff;">7</span></div></div>
+      <div style="flex:1;"><div style="width:100%;background:#98CBA0;border-radius:2px 2px 0 0;height:98px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;"><span style="font-size:18px;font-weight:700;color:#2B4A30;">7</span></div></div>
+      <div style="flex:1;"><div style="width:100%;background:#B8DCC0;border-radius:2px 2px 0 0;height:81px;display:flex;align-items:flex-start;justify-content:center;padding-top:6px;"><span style="font-size:20px;font-weight:700;color:#2B4A30;">6</span></div></div>
+      <div style="flex:1;"><div style="width:100%;background:#D6EDD9;border-radius:2px 2px 0 0;height:81px;display:flex;align-items:flex-start;justify-content:center;padding-top:6px;"><span style="font-size:20px;font-weight:700;color:#2B4A30;">6</span></div></div>
+    </div>
+    <div style="height:2px;background:#1A1A1A;margin-bottom:8px;"></div>
+    <div style="display:flex;gap:8px;">
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#1A1A1A;text-align:center;font-weight:500;">whole-of-<br>nation PLUS</div>
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#1A1A1A;text-align:center;font-weight:500;">fiscal self-<br>reliance</div>
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#1A1A1A;text-align:center;">climate<br>resilience</div>
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#1A1A1A;text-align:center;">human capital<br>&amp; jobs</div>
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#1A1A1A;text-align:center;">infra-<br>structure</div>
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#1A1A1A;text-align:center;">partner-<br>ships</div>
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#45525F;text-align:center;">trade &amp;<br>connectivity</div>
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#45525F;text-align:center;">domestic<br>revenue</div>
+      <div style="flex:1;font-size:10px;line-height:1.3;color:#45525F;text-align:center;">industria-<br>lization</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background:#F0E8D5;border-top:2px solid #D8CEBC;padding:20px 48px;display:flex;align-items:center;gap:16px;">
+    <svg width="40" height="40" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="#2B4A30" stroke-width="5" fill="none"/><ellipse cx="50" cy="50" rx="25" ry="46" stroke="#2B4A30" stroke-width="3" fill="none"/><ellipse cx="50" cy="50" rx="46" ry="18" stroke="#2B4A30" stroke-width="3" fill="none"/><line x1="4" y1="50" x2="96" y2="50" stroke="#2B4A30" stroke-width="3"/></svg>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#1A1A1A;">United Nations</div>
+      <div style="font-size:12px;color:#5A5040;">Office of the Special Adviser on Africa (OSAA)</div>
+      <div style="font-size:11px;color:#8B7355;margin-top:2px;">Voluntary National Review · High-Level Political Forum · July 2026</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

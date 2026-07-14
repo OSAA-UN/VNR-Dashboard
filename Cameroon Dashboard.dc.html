@@ -20,6 +20,7 @@
   @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
 </style>
+<script src="nav-bar.js"></script>
 </helmet>
 <div style="min-height: 100vh; display: flex; flex-direction: column;">
   <div style="height: 5px; background: linear-gradient(90deg, #1F6FB2 0%, #1F6FB2 60%, #2E7D5B 60%, #2E7D5B 80%, #B4533A 80%, #B4533A 100%);"></div>
@@ -27,10 +28,10 @@
   <!-- ============ HEADER + NAV ============ -->
   <header style="background: #FFFFFF; border-bottom: 1px solid #E3E7EC; padding: 26px 48px 0 48px;">
     <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Africa Operations / <span style="color: #1F6FB2; font-weight: 500;">Cameroon</span> · Tableau de bord pays · RNV 2026</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7A8A9A; text-transform: uppercase;">Opérations Afrique / <span style="color: #1F6FB2; font-weight: 500;">Cameroun</span> · Tableau de bord pays · RNV 2026</div>
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-        <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Cameroon</h1>
-        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">Revues nationales volontaires (VNR) 2022 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
+        <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.01em;">Cameroun</h1>
+        <span style="font-size: 13.5px; color: #5A6B7C;">Sources des données : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">Revues nationales volontaires (RNV) 2022 &amp; 2026</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données des ODD des Nations Unies</a></span>
       </div>
       <nav style="display: flex; gap: 4px; margin-top: 14px; flex-wrap: wrap;">
         <button data-tab-btn="overview" style="{{ tabBtn.overview }}" onClick="{{ onTab.overview }}">Aperçu &amp; tendances</button>
@@ -55,7 +56,7 @@
           <button data-tile-btn="elec" style="{{ metricBtn.elec }}" onClick="{{ onMetric.elec }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Électrification nationale</span>
             <span style="font-size: 28px; font-weight: 700; color: #2E7D5B;">72%</span>
-            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">▲ +31 pts since 2000</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #2E7D5B;">▲ +31 pts depuis 2000</span>
           </button>
           <button data-tile-btn="water" style="{{ metricBtn.water }}" onClick="{{ onMetric.water }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A8A9A;">Eau potable de base</span>
@@ -87,6 +88,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -98,10 +102,10 @@
             <polygon points="60,126 194,99 327,71 593,39 700,33 700,200 60,200" fill="url(#gE4)"></polygon>
             <polyline points="60,126 194,99 327,71 593,39 700,33" fill="none" stroke="#1F6FB2" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="60,200 327,174 593,161 700,152" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="60" cy="126" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>2000, national 41% (Base de données ODD des ONU, 7.1.1)</title></circle>
-            <circle cx="327" cy="71" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2010, national ~65%</title></circle>
-            <circle cx="700" cy="33" r="5.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>2024, national 72% (Base de données ODD des ONU, 7.1.1)</title></circle>
-            <circle cx="60" cy="200" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>2000, rural ~26% (Base de données ODD des ONU)</title></circle>
+            <circle cx="60" cy="126" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.1s both;"><title>2000, national 41 % (Base de données ODD des ONU, 7.1.1)</title></circle>
+            <circle cx="327" cy="71" r="4.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.2s both;"><title>2010, national ~65 %</title></circle>
+            <circle cx="700" cy="33" r="5.5" fill="#1F6FB2" style="animation: pop 0.4s ease 0.3s both;"><title>2024, national 72 % (Base de données ODD des ONU, 7.1.1)</title></circle>
+            <circle cx="60" cy="200" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>2000, rural ~26 % (Base de données ODD des ONU)</title></circle>
             <circle cx="700" cy="152" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>2024, rural 42.7%</title></circle>
             <text x="712" y="37" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#1F6FB2">72%</text>
             <text x="712" y="156" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">42.7%</text>
@@ -110,6 +114,8 @@
             <text x="593" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2020</text>
             <text x="700" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Accès électricité (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Eau sécurisée (%)</span></div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès national à l'électricité est passé de 41 % en 2000 à 72 % en 2024, un gain de 31 points porté par les investissements hydroélectriques (le mix renouvelable est de ~80 %). Le fossé rural-urbain reste critique : les villes sont à ~96 % tandis que les zones rurales n'ont atteint que 42,7 %.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.52</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 7.1.1</a></div></div>
         </div>
@@ -123,6 +129,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="128" x2="700" y2="128" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="56" x2="700" y2="56" stroke="#EEF1F4" stroke-width="1"></line>
@@ -144,10 +153,10 @@
           </svg>
           <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;">
             <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Eau de base</span>
-            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Basic sanitation</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Assainissement de base</span>
           </div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">L'accès à l'eau potable de base est passé de 55,8 % en 2000 à 71,4 % en 2024, un gain de 15,6 points. L'assainissement est le défi plus difficile : seulement 47,1 % disposent d'un service de base, 37,8 % d'un lavage des mains de base, et 4,4 % pratiquent encore la défécation à l'air libre. Le RNV 2026 identifie l'assainissement comme le défi structurel nécessitant un investissement accru.</p>
-          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">WHO/UNICEF Joint Monitoring Programme 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
+          <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.61–62</a> · <a href="https://washdata.org" target="_blank" rel="noopener">Programme conjoint de surveillance OMS/UNICEF 2024</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 6.1.1</a></div></div>
         </div>
         </div>
 
@@ -159,6 +168,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="155" x2="700" y2="155" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="110" x2="700" y2="110" stroke="#EEF1F4" stroke-width="1"></line>
@@ -170,7 +182,7 @@
             <text x="50" y="69" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">15%</text>
             <text x="50" y="24" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#9AA7B4">20%</text>
             <line x1="60" y1="82" x2="700" y2="82" stroke="#B4533A" stroke-width="1.5" stroke-dasharray="4 4"></line>
-            <text x="66" y="94" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">mobile money drives financial inclusion</text>
+            <text x="66" y="94" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">la monnaie mobile stimule l'inclusion financière</text>
             <polyline points="60,79 348,65 636,41" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="124,130 636,105" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"></polyline>
             <circle cx="60" cy="79" r="4.5" fill="#2E7D5B" style="animation: pop 0.4s ease 0.1s both;"><title>2015, recettes publiques totales, 13,4 % du PIB</title></circle>
@@ -201,6 +213,9 @@
             <div style="font-size: 12.5px; color: #5A6B7C;">Survolez les points pour les valeurs et sources</div>
           </div>
           <svg viewBox="0 0 760 250" style="width: 100%; height: auto; display: block; margin-top: 10px;">
+  <text transform="translate(10,125) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="380" y="248" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
             <line x1="60" y1="200" x2="700" y2="200" stroke="#E3E7EC" stroke-width="1"></line>
             <line x1="60" y1="140" x2="700" y2="140" stroke="#EEF1F4" stroke-width="1"></line>
             <line x1="60" y1="80" x2="700" y2="80" stroke="#EEF1F4" stroke-width="1"></line>
@@ -213,16 +228,18 @@
             <text x="528" y="34" font-family="IBM Plex Mono" font-size="10" fill="#B4533A">2006 HIPC completion</text>
             <polyline points="188,68 444,86 636,116" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
             <polyline points="188,140 444,88 636,69" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, ~11% (indicative trajectory)</title></circle>
-            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
-            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, ~5% (indicative trajectory)</title></circle>
+            <circle cx="188" cy="68" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Interne 2017, ~11 % (trajectoire indicative)</title></circle>
+            <circle cx="636" cy="116" r="5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Interne 2024, part en baisse</title></circle>
+            <circle cx="188" cy="140" r="4.5" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Externe 2017, ~5 % (trajectoire indicative)</title></circle>
             <circle cx="636" cy="69" r="5.5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
             <text x="648" y="73" font-family="IBM Plex Mono" font-size="12" font-weight="600" fill="#B0791F">10.9%</text>
-            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">internal</text>
+            <text x="648" y="120" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">interne</text>
             <text x="188" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2017</text>
             <text x="444" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2021</text>
             <text x="636" y="222" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#7A8A9A">2024</text>
           </svg>
+          <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Croissance du PIB (%)</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Inflation (%)</span></div>
           <p style="margin: 12px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">La dette extérieure est passée de 105,9 % du RNB en 2000 à 10,2 % après le point d'achèvement PPTE de 2006, puis a été reconstituée à 36,9 % d'ici 2020 suite aux investissements d'infrastructure financés par emprunt. Elle est depuis redescendue à 31,3 % — un niveau gérable mais surveillé alors que le programme d'investissement du SND30 se poursuit.</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 10px;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.87, 121</a></div></div>
         </div>
@@ -256,7 +273,7 @@
       <div data-screen-label="Focus Goals" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Objectifs prioritaires 2026 : Réalisations et priorités</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau 2026. Les chiffres combinent Cameroon's Rapport national volontaire 2026 with the Base de données ODD des Nations Unies, sélectionnez un objectif pour explorer.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">Les cinq Objectifs de développement durable examinés au Forum politique de haut niveau 2026. Les chiffres combinent la Revue nationale volontaire 2026 du Cameroun avec la Base de données ODD des Nations Unies — sélectionnez un objectif pour explorer.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
@@ -306,8 +323,11 @@
         <div data-goal-panel="s9" style="{{ goalPanel.s9 }}">
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; animation: rise 0.3s ease both;">
           <div style="display: flex; flex-direction: column; gap: 14px;">
-            <div style="font-size: 18px; font-weight: 700;">SDG 9 · Industrie, innovation et infrastructure</div>
+            <div style="font-size: 18px; font-weight: 700;">ODD 9 · Industrie, innovation et infrastructure</div>
             <svg viewBox="0 0 380 130" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,65) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="190" y="128" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <text x="8" y="14" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">Valeur ajoutée industrie et couverture 4G</text>
               <line x1="30" y1="110" x2="360" y2="110" stroke="#E3E7EC" stroke-width="1"></line>
               <polyline points="40,80 200,70 350,60" fill="none" stroke="#B0791F" stroke-width="3" stroke-linecap="round"></polyline>
@@ -318,6 +338,7 @@
               <text x="40" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2010</text>
               <text x="350" y="126" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7A8A9A">2025</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.58–59</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des ONU, indicators 9.1.1 &amp; 9.c.1</a></div></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center;">
@@ -337,6 +358,7 @@
                 <circle cx="60" cy="60" r="48" fill="none" stroke="#B0791F" stroke-width="16" stroke-dasharray="205.2 96.3" stroke-linecap="round" transform="rotate(-90 60 60)"><title>34,3 % de la population urbaine dans des établissements informels (2020, Base de données ODD des ONU, indicateur 11.1.1)</title></circle>
                 <text x="60" y="66" text-anchor="middle" font-family="IBM Plex Mono" font-size="21" font-weight="600" fill="#B0791F">32.7%</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Part recettes propres (%)</span></div>
               <div style="font-size: 13.5px; line-height: 1.55; color: #5A6B7C;">de la population urbaine vit dans des établissements informels (2024), contre 65,4 % en 2000</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Sources : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.66–67</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 11.1.1</a></div></div>
@@ -378,9 +400,9 @@
 
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 34px 38px; display: flex; flex-direction: column; gap: 26px;">
-            <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">SND30 &amp; Vision 2035 — three review cycles under one framework</div>
+            <div style="font-size: 21px; font-weight: 700; letter-spacing: -0.01em;">SND30 &amp; Vision 2035 — trois cycles d'examen sous un seul cadre</div>
             <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>SND30 mid-cycle self-assessment 2026</span><span style="color: #2E7D5B; font-weight: 600;">Third VNR — recovery &amp; transformation</span></div>
+              <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5A6B7C;"><span>Auto-évaluation à mi-parcours SND30 2026</span><span style="color: #2E7D5B; font-weight: 600;">Troisième RNV — reprise &amp; transformation</span></div>
               <div style="display: flex; height: 34px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.8s cubic-bezier(.2,.8,.2,1) both;">
                 <div style="width: 58%; background: #2E7D5B;" title="On track"></div>
                 <div style="width: 17%; background: #D9A94A;" title="Partial"></div>
@@ -388,10 +410,10 @@
               </div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 18px;">
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Structural transformation</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 40%; background: #B0791F;"></div><div style="width: 30%; background: #D9A94A;"></div><div style="width: 30%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">Lagging</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Human capital</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 65%; background: #2E7D5B;"></div><div style="width: 20%; background: #D9A94A;"></div><div style="width: 15%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">Sur la bonne voie</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Employment</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 50%; background: #2E7D5B;"></div><div style="width: 25%; background: #D9A94A;"></div><div style="width: 25%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">En cours</span></div>
-              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Governance &amp; SND30 coherence</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 72%; background: #2E7D5B;"></div><div style="width: 15%; background: #D9A94A;"></div><div style="width: 13%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">Strong</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Transformation structurelle</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.1s both;"><div style="width: 40%; background: #B0791F;"></div><div style="width: 30%; background: #D9A94A;"></div><div style="width: 30%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #B0791F; font-weight: 600;">Lagging</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Capital humain</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.18s both;"><div style="width: 65%; background: #2E7D5B;"></div><div style="width: 20%; background: #D9A94A;"></div><div style="width: 15%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">Sur la bonne voie</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Emploi</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.26s both;"><div style="width: 50%; background: #2E7D5B;"></div><div style="width: 25%; background: #D9A94A;"></div><div style="width: 25%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">En cours</span></div>
+              <div style="display: grid; grid-template-columns: 190px 1fr 58px; align-items: center; gap: 10px;"><span style="font-size: 15.5px; font-weight: 600;">Gouvernance &amp; cohérence SND30</span><div style="display: flex; height: 22px; border-radius: 999px; overflow: hidden; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.34s both;"><div style="width: 72%; background: #2E7D5B;"></div><div style="width: 15%; background: #D9A94A;"></div><div style="width: 13%; background: #DDE3E9;"></div></div><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #2E7D5B; font-weight: 600;">Strong</span></div>
             </div>
             <div style="display: flex; gap: 16px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #5A6B7C;">
               <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 9px; height: 9px; border-radius: 2px; background: #2E7D5B;"></span>Sur la bonne voie</span>
@@ -433,17 +455,17 @@
         <div style="display: grid; grid-template-columns: 300px 1fr; gap: 16px; align-items: start;">
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <button data-inst-btn="energy" style="{{ instBtn.energy }}" onClick="{{ onInst.energy }}"><span style="font-weight: 600;">SND30 (2020–2030)</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Stratégie nationale de développement · cadre ODD</span></button>
-            <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">Import-Substitution Policy</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">"produce local" · SND30 industrial pillar</span></button>
+            <button data-inst-btn="cnif" style="{{ instBtn.cnif }}" onClick="{{ onInst.cnif }}"><span style="font-weight: 600;">Politique de substitution aux importations</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">« produire local » · pilier industriel du SND30</span></button>
             <button data-inst-btn="corr" style="{{ instBtn.corr }}" onClick="{{ onInst.corr }}"><span style="font-weight: 600;">Couverture sanitaire universelle</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Phase 1 lancée 2023 · mères &amp; enfants</span></button>
-            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Decentralisation</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Code général 2019 · 10 conseils régionaux</span></button>
-            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">NW/SW Reconstruction Plan</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">crisis-affected regions · special status</span></button>
-            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Vision 2035</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">long-term frame</span></button>
+            <button data-inst-btn="pddsp" style="{{ instBtn.pddsp }}" onClick="{{ onInst.pddsp }}"><span style="font-weight: 600;">Décentralisation</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">Code général 2019 · 10 conseils régionaux</span></button>
+            <button data-inst-btn="pafen" style="{{ instBtn.pafen }}" onClick="{{ onInst.pafen }}"><span style="font-weight: 600;">Plan de reconstruction NO/SO</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">régions touchées par la crise · statut spécial</span></button>
+            <button data-inst-btn="vision" style="{{ instBtn.vision }}" onClick="{{ onInst.vision }}"><span style="font-weight: 600;">Vision 2035</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #7A8A9A;">cadre à long terme</span></button>
           </div>
 
           <div>
             <div data-inst-panel="energy" style="{{ instPanel.energy }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">SND30 — National Development Strategy</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">La décennie opérationnelle de la Vision 2035, adoptée en 2020</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">SND30 — Stratégie nationale de développement</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">La décennie opérationnelle de la Vision 2035, adoptée en 2020</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">4 pillars</div><div style="font-size: 12px; color: #5A6B7C;">transformation, human capital, employment, governance</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">3.9%</div><div style="font-size: 12px; color: #5A6B7C;">Croissance PIB 2025 (depuis −0,5 % en 2020)</div></div>
@@ -456,13 +478,13 @@
 
             <div data-inst-panel="cnif" style="{{ instPanel.cnif }}">
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
-              <div><div style="font-size: 19px; font-weight: 700;">Import-Substitution Policy</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">« Produire et consommer local » — pilier industriel du SND30</div></div>
+              <div><div style="font-size: 19px; font-weight: 700;">Politique de substitution aux importations</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">« Produire et consommer local » — pilier industriel du SND30</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">13.6%</div><div style="font-size: 12px; color: #5A6B7C;">part industrie dans le PIB, stable depuis deux décennies</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">46.3%</div><div style="font-size: 12px; color: #5A6B7C;">petites industries avec crédit, 2024</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">9.6%</div><div style="font-size: 12px; color: #5A6B7C;">de l'emploi dans l'industrie manufacturière</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">La doctrine « produire local » du SND30 : exigences de contenu local, chaînes de valeur agro-industrielles et financement des petits producteurs. The review is frank that manufacturing's contribution to GDP remains limited — which is why the policy anchors the strategy's second half.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">La doctrine « produire local » du SND30 : exigences de contenu local, chaînes de valeur agro-industrielles et financement des petits producteurs. Le rapport est franc sur le fait que la contribution de l'industrie manufacturière au PIB reste limitée — c'est pourquoi cette politique ancre la seconde moitié de la stratégie.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.xiii, 15, 120–124</a></div></div>
             </div>
             </div>
@@ -484,7 +506,7 @@
               <div><div style="font-size: 19px; font-weight: 700;">Decentralisation</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Code général des collectivités territoriales décentralisées (2019)</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
                 <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">10</div><div style="font-size: 12px; color: #5A6B7C;">conseils régionaux, en place depuis 2020</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">360+</div><div style="font-size: 12px; color: #5A6B7C;">communes carrying local development plans</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">360+</div><div style="font-size: 12px; color: #5A6B7C;">communes portant des plans de développement local</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #B0791F;">2</div><div style="font-size: 12px; color: #5A6B7C;">régions à statut spécial, NO et SO</div></div>
               </div>
               <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Le Code général de 2019 a consolidé la décentralisation : conseils régionaux élus, transferts aux communes et statut spécial pour les deux régions anglophones. It is both the governance answer to the crisis in the North-West and South-West and the SND30's mechanism for localising the SDGs through regional development plans.</p>
@@ -496,8 +518,8 @@
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
               <div><div style="font-size: 19px; font-weight: 700;">NW/SW Reconstruction Plan</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Plan présidentiel de reconstruction et développement</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">2</div><div style="font-size: 12px; color: #5A6B7C;">crisis-affected regions targeted</div></div>
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">3 axes</div><div style="font-size: 12px; color: #5A6B7C;">infrastructure, livelihoods, social cohesion</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #1F6FB2;">2</div><div style="font-size: 12px; color: #5A6B7C;">régions touchées par la crise ciblées</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">3 axes</div><div style="font-size: 12px; color: #5A6B7C;">infrastructure, moyens de subsistance, cohésion sociale</div></div>
               </div>
               <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">Programme de reconstruction pour les régions où le conflit a déplacé des communautés et détruit des infrastructures : reconstruction des écoles, centres de santé et marchés, restauration des moyens de subsistance et accompagnement de la décentralisation à statut spécial.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.112, 114</a> · <a href="https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=BI" target="_blank" rel="noopener">World Bank projects, Cameroon</a></div></div>
@@ -508,10 +530,10 @@
             <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 16px; animation: rise 0.3s ease both;">
               <div><div style="font-size: 19px; font-weight: 700;">Vision 2035</div><div style="font-size: 13px; font-style: italic; color: #9AA7B4;">Un pays émergent, démocratique et uni d'ici 2035</div></div>
               <div style="display: flex; gap: 28px; flex-wrap: wrap;">
-                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">3</div><div style="font-size: 12px; color: #5A6B7C;">VNR cycles: 2019, 2022, 2026</div></div>
+                <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">3</div><div style="font-size: 12px; color: #5A6B7C;">cycles RNV : 2019, 2022, 2026</div></div>
                 <div><div style="font-size: 30px; font-weight: 700; color: #2E7D5B;">2</div><div style="font-size: 12px; color: #5A6B7C;">decades: DSCE 2010–2019, SND30 2020–2030</div></div>
               </div>
-              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">L'horizon générationnel : émergence d'ici 2035 à travers des stratégies décennales successives. Le SND30 porte la décennie en cours ; le RNV 2026 en marque le point médian. Each VNR reads national progress against this single long-term frame rather than a separate SDG plan.</p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5A6B7C;">L'horizon générationnel : émergence d'ici 2035 à travers des stratégies décennales successives. Le SND30 porte la décennie en cours ; le RNV 2026 en marque le point médian. Each VNR reads national progress against this single cadre à long terme rather than a separate SDG plan.</p>
               <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.86, 120</a></div></div>
             </div>
             </div>
@@ -525,7 +547,7 @@
       <div data-screen-label="Financement" style="display: flex; flex-direction: column; gap: 20px; animation: rise 0.35s ease both;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Financement des objectifs</h2>
-          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La base de financement du Cameroun est étroite : recettes publiques de ~14 % du PIB, investissements étrangers inférieurs à 2 % et flux officiels de l'ordre de quelques centaines de millions. The review's strategy leans on domestic revenue mobilisation, concessional finance for infrastructure and the local financial deepening that mobile money has begun.</p>
+          <p style="margin: 0;  font-size: 14px; line-height: 1.6; color: #5A6B7C;">La base de financement du Cameroun est étroite : recettes publiques de ~14 % du PIB, investissements étrangers inférieurs à 2 % et flux officiels de l'ordre de quelques centaines de millions. La stratégie du rapport s'appuie sur la mobilisation des recettes nationales, le financement concessionnel pour l'infrastructure et l'approfondissement financier local qu'a amorcé la monnaie mobile.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
@@ -533,8 +555,8 @@
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #E5F1EB; color: #2E7D5B; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">1</span><span style="font-size: 15px; font-weight: 600;">Instruments domestiques</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
               <div title="Domestic taxes fund ~67% of the budget; the mobilisation target is lifting the ratio beyond 14% of GDP"><strong>Domestic taxes</strong>, financent ~67 % du budget</div>
-              <div title="Mobile money drove account ownership from 12.9% (2011) to ~61% (2024), the connective tissue of the SND30's financial-inclusion strategy"><strong>Revenue mobilisation</strong>, portant les recettes au-delà de 14 % du PIB</div>
-              <div title="Credit access for small-scale industry: 46.3% of small industries hold a loan or credit line (2024)"><strong>Mobile-money deepening</strong>, accounts up fivefold since 2011</div>
+              <div title="Mobile money drove account ownership from 12.9% (2011) to ~61% (2024), the connective tissue of the SND30's financial-inclusion strategy"><strong>Mobilisation des recettes</strong>, portant les recettes au-delà de 14 % du PIB</div>
+              <div title="Credit access for small-scale industry: 46.3% of small industries hold a loan or credit line (2024)"><strong>Approfondissement de la monnaie mobile</strong>, comptes multipliés par cinq depuis 2011</div>
             </div>
             <svg viewBox="0 0 240 60" style="width: 100%; height: auto; display: block; margin-top: auto;">
               <polyline points="14,44 120,34 226,16" fill="none" stroke="#2E7D5B" stroke-width="2.5" stroke-linecap="round"></polyline>
@@ -543,14 +565,15 @@
               <text x="14" y="32" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">7.8% '16</text>
               <text x="162" y="34" font-family="IBM Plex Mono" font-size="9.5" fill="#2E7D5B">10.6% '24</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes fiscales (% du PIB)</span></div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4;">Source : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.86–88, 121</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 30px; height: 30px; border-radius: 999px; background: #F7EEDC; color: #B0791F; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;">2</span><span style="font-size: 15px; font-weight: 600;">Finance climatique et innovante</span></div>
             <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; color: #45525F;">
-              <div title="Multilateral programmes from BCEAO, IDA, AfDB supporting recovery and reform under the SND30"><strong>Multilateral programmes</strong>, AfDB, IDA, WAEMU solidarity</div>
-              <div title="Concessional climate finance for the ~80% renewable energy mix and rural electrification"><strong>Concessional climate finance</strong>, hydro projects &amp; infrastructure</div>
+              <div title="Multilateral programmes from BCEAO, IDA, AfDB supporting recovery and reform under the SND30"><strong>Programmes multilatéraux</strong>, BAD, IDA, solidarité UEMOA</div>
+              <div title="Concessional climate finance for the ~80 % renouvelable energy mix and rural electrification"><strong>Concessional climate finance</strong>, hydro projects &amp; infrastructure</div>
               <div title="Official infrastructure flows reached $387M in 2024, anchoring the SND30 investment programme"><strong>Renewable energy finance</strong>, mix hydro ~80 % comme atout</div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.123–125</a></div></div>
@@ -570,7 +593,7 @@
         <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px;">
           <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
             <div style="font-size: 16px; font-weight: 600;">Engagements des partenaires de financement jusqu'en 2035, par secteur</div>
-            <div style="font-size: 12.5px; color: #7A8A9A;">Total $1,507,171,475 · la longueur des barres indique le rang</div>
+            <div style="font-size: 12.5px; color: #7A8A9A;">Total 1 507 171 475 $ · la longueur des barres indique le rang</div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; margin-top: 14px; ">
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Emplois décents <span style="color: #9AA7B4; font-size: 11px;">SDG 8</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 1 of 7 (RNV 2026, Graphique 74)"><div style="width: 100%; height: 100%; background: #1F6FB2; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.05s both;"></div></div></div>
@@ -581,7 +604,7 @@
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Education <span style="color: #9AA7B4; font-size: 11px;">SDG 4</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 6 of 7"><div style="width: 35%; height: 100%; background: #A5C9E3; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.4s both;"></div></div></div>
             <div style="display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 12px;"><span style="font-size: 13px;">Poverty <span style="color: #9AA7B4; font-size: 11px;">SDG 1</span></span><div style="height: 14px; background: #EEF1F4; border-radius: 999px;" title="Rank 7 of 7"><div style="width: 24%; height: 100%; background: #C0DAEC; border-radius: 999px; transform-origin: left; animation: grow 0.7s cubic-bezier(.2,.8,.2,1) 0.47s both;"></div></div></div>
           </div>
-          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le SND30 (Stratégie nationale de développement 2020–2030) priorise la transformation structurelle et le capital humain comme deux piliers, aux côtés de l'emploi et de la gouvernance. Bar lengths show relative prominence in RNV 2026 documentation; the review notes that manufacturing's contribution to GDP remains limited despite the "produce local" strategy.</p>
+          <p style="margin: 14px 0 0 0;  font-size: 13.5px; line-height: 1.6; color: #45525F;">Le SND30 (Stratégie nationale de développement 2020–2030) priorise la transformation structurelle et le capital humain comme deux piliers, aux côtés de l'emploi et de la gouvernance. La longueur des barres indique la prominence relative dans la documentation du RNV 2026 ; le rapport note que la contribution de l'industrie manufacturière au PIB reste limitée malgré la stratégie « produire local ».</p>
           <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: 12px;">Source : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.122 (Graphique 74)</a></div></div>
         </div>
       </div>
@@ -599,6 +622,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Stock de dette extérieure, % du RNB</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -609,16 +635,18 @@
               <text x="336" y="36" font-family="IBM Plex Mono" font-size="9" fill="#B4533A">2006 HIPC completion</text>
               <polyline points="110,58 280,72 410,92" fill="none" stroke="#7A8A9A" stroke-width="2.5" stroke-linecap="round"></polyline>
               <polyline points="110,110 280,74 410,59" fill="none" stroke="#B0791F" stroke-width="2.5" stroke-linecap="round"></polyline>
-              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Internal 2017, larger share (indicative trajectory)</title></circle>
-              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Internal 2024, declining share</title></circle>
-              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>External 2017, smaller share (indicative trajectory)</title></circle>
+              <circle cx="110" cy="58" r="4" fill="#7A8A9A" style="animation: pop 0.4s ease 0.1s both;"><title>Interne 2017, part plus élevée (trajectoire indicative)</title></circle>
+              <circle cx="410" cy="92" r="4.5" fill="#7A8A9A" style="animation: pop 0.4s ease 0.4s both;"><title>Interne 2024, part en baisse</title></circle>
+              <circle cx="110" cy="110" r="4" fill="#B0791F" style="animation: pop 0.4s ease 0.2s both;"><title>Externe 2017, part plus faible (trajectoire indicative)</title></circle>
               <circle cx="410" cy="59" r="5" fill="#B0791F" style="animation: pop 0.4s ease 0.4s both;"><title>Extérieure 2023, 10,9 % des exportations (Base de données ODD des ONU, indicateur 17.4.1)</title></circle>
               <text x="418" y="63" font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#B0791F">10.9%</text>
-              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">internal</text>
+              <text x="418" y="96" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">interne</text>
               <text x="110" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2017</text>
               <text x="280" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2021</text>
               <text x="410" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B4533A; border-radius: 2px;"></span>Recettes internes (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #B0791F; border-radius: 2px;"></span>Financement externe (%)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">La dette extérieure est passée de >105 % du RNB à 10,2 % après l'achèvement PPTE de 2006, puis a été reconstituée à 36,9 % lors du financement de l'infrastructure. Elle est depuis redescendue à 31,3 % — un niveau gérable et surveillé alors que le programme d'investissement du SND30 se poursuit.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.4.1</a> · <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.121</a></div></div>
           </div>
@@ -626,6 +654,9 @@
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Inflation maîtrisée — 2022–2025</div>
             <svg viewBox="0 0 460 190" style="width: 100%; height: auto; display: block;">
+  <text transform="translate(10,95) rotate(-90)" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">%</text>
+  <text x="230" y="188" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#B0BAC4">Année</text>
+  
               <line x1="40" y1="150" x2="440" y2="150" stroke="#E3E7EC" stroke-width="1"></line>
               <line x1="40" y1="100" x2="440" y2="100" stroke="#EEF1F4" stroke-width="1"></line>
               <line x1="40" y1="50" x2="440" y2="50" stroke="#EEF1F4" stroke-width="1"></line>
@@ -644,6 +675,8 @@
               <text x="250" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2020</text>
               <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#7A8A9A">2024</text>
             </svg>
+            <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #2E7D5B; border-radius: 2px;"></span>Recettes nationales (%)</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Financement externe (%)</span></div>
             <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #45525F;">Deux décennies de discipline du franc CFA ont maintenu l'inflation principalement sous 3 % jusqu'à ce que les coûts alimentaires et énergétiques importés la poussent à 7,4 % en 2023. Elle est retombée à 4,5 % en 2024 et, selon le rapport, à 3,4 % en 2025 — se rapprochant du plafond de convergence CEMAC.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.86–88, 120</a> · <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des ONU, indicator 17.1.1</a></div></div>
           </div>
@@ -696,13 +729,14 @@
                 <circle cx="400" cy="47" r="4.5" fill="#1F6FB2"><title>2023, IWRM score 49/100 (Base de données ODD des ONU, 6.5.1)</title></circle>
                 <text x="16" y="80" font-family="IBM Plex Mono" font-size="9.5" fill="#9AA7B4">Score GIRE en hausse ; 73 % du bassin transfrontalier couvert par une coopération opérationnelle (Lace Chad, Niger, Congo basins)</text>
               </svg>
+              <div style="display: flex; gap: 18px; margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5A6B7C;"><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 16px; height: 3px; background: #1F6FB2; border-radius: 2px;"></span>Priorités d'investissement (rang)</span></div>
             </div>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Sources : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.72–73 · RNV 2020, p.85–86</a></div></div>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid #E3E7EC; border-radius: 14px; padding: 26px 30px; display: flex; flex-direction: column; gap: 12px;">
             <div style="font-size: 16px; font-weight: 600;">Eau et énergie — le lien hydroélectrique</div>
-            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Les rivières du Cameroun font double usage : l'hydroélectricité maintient le mix à ~80 % renouvelable <strong>~80% renewable</strong> et les nouveaux barrages ancrent les plans d'industrialisation du SND30. Le rapport qualifie cette base renouvelable d'atout majeur de transition.ie cette base renouvelable d'atout majeur de transition.ase a major transition asset — provided transmission reaches the 57% of rural residents still without power.</p>
+            <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #5A6B7C;">Les rivières du Cameroun font double usage : l'hydroélectricité maintient le mix à ~80 % renouvelable <strong>~80 % renouvelable</strong> et les nouveaux barrages ancrent les plans d'industrialisation du SND30. Le rapport qualifie cette base renouvelable d'atout majeur de transition.ie cette base renouvelable d'atout majeur de transition.ase a major transition asset — provided transmission reaches the 57% of rural residents still without power.</p>
             <div data-src style="{{ srcStyle }}"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #9AA7B4; margin-top: auto;">Source : <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">RNV 2026, p.61–62, 74</a></div></div>
           </div>
         </div>
@@ -720,7 +754,7 @@
   </main>
 
   <footer style="background: #FFFFFF; border-top: 1px solid #E3E7EC; padding: 18px 48px; font-size: 11.5px; line-height: 1.6; color: #9AA7B4;">
-    <div style="max-width: 1280px; margin: 0 auto;">Sources : République du Cameroun, <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">Second Rapport national volontaire 2026</a> (June 2026); Premier Rapport national volontaire 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour consultation.</div>
+    <div style="max-width: 1280px; margin: 0 auto;">Sources : République du Cameroun, <a href="https://hlpf.un.org/countries/cameroon" target="_blank" rel="noopener">Deuxième Revue nationale volontaire 2026</a> (juin 2026); Première Revue nationale volontaire 2020; <a href="https://unstats.un.org/sdgs/dataportal/countryprofiles/cmr" target="_blank" rel="noopener">Base de données ODD des Nations Unies</a>. Les références de pages renvoient au RNV 2026 sauf indication contraire. · Prototype pour consultation.</div>
   </footer>
 </div>
 
